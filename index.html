@@ -158,8 +158,11 @@
     <div id="compare-backdrop"></div>
     <div id="compare-modal">
         <div class="compare-header">
-            <h2>השוואת מדינות ⚖️</h2>
+        <h2>השוואת מדינות ⚖️</h2>
+        <div>
+            <button id="share-compare-btn" class="icon-btn" title="שיתוף השוואה">🔗</button>
             <button id="close-compare-modal" class="icon-btn">✖</button>
+        </div>
         </div>
         <table class="compare-table">
             <thead>
@@ -250,22 +253,39 @@
                 }
             });
 
-            if (window.location.hash) {
-                const hashIso = window.location.hash.substring(1).toUpperCase();
-                const feature = allFeatures.find(f => f.properties.ISO_A2 === hashIso);
-                if (feature) loadFeature(feature);
-            }
-        }).catch(err => console.error("שגיאה בטעינת הנתונים:", err));
+            // סעיף 4: בדיקת URL Hash - תומך במדינה בודדת או בהשוואה
+        const checkUrlHash = () => {
+            const hash = window.location.hash.substring(1).toUpperCase();
+            if (!hash) return;
 
-        function getZoomLevel(area) {
-            let z = 4;
-            if (!area || area > 8000000) z = 2.5; 
-            else if (area > 1000000) z = 3.5; 
-            else if (area > 200000) z = 4.5;  
-            else z = 6.5;
-            if (isMobile) z -= 1.5; 
-            return Math.max(1, z);
-        }
+            if (hash.includes('-')) {
+            // מצב השוואה
+                const [iso1, iso2] = hash.split('-');
+                const feat1 = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === iso1);
+                const feat2 = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === iso2);
+                if (feat1 && feat2) {
+                    currentLoadedFeature = feat1; 
+                    executeComparison(feat1, feat2);
+                    }
+                } else {
+            // מדינה בודדת
+            const feature = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === hash);
+            if (feature) loadFeature(feature);
+            }
+        };
+        // הפעלה של הבדיקה
+        checkUrlHash();
+            }).catch(err => console.error("שגיאה בטעינת הנתונים:", err));
+    
+                function getZoomLevel(area) {
+                    let z = 4;
+                    if (!area || area > 8000000) z = 2.5; 
+                    else if (area > 1000000) z = 3.5; 
+                    else if (area > 200000) z = 4.5;  
+                    else z = 6.5;
+                    if (isMobile) z -= 1.5; 
+                    return Math.max(1, z);
+            }
 
         map.on('load', () => {
             map.addSource('seas', { type: 'geojson', data: 'seas.geojson' });
@@ -467,6 +487,7 @@
                 <tr><td class="metric-name">תוחלת חיים</td><td>${s1.Life_Expectancy || '---'}</td><td>${s2.Life_Expectancy || '---'}</td></tr>
                 <tr><td class="metric-name">אוריינות</td><td>${formatLit(s1.Literacy_Pct)}</td><td>${formatLit(s2.Literacy_Pct)}</td></tr>
             `;
+            window.location.hash = `${f1.properties.ISO_A2}-${f2.properties.ISO_A2}`;
 
             document.getElementById('compare-backdrop').style.display = 'block';
             document.getElementById('compare-modal').style.display = 'block';
