@@ -59,21 +59,43 @@
         .info-label { font-weight: bold; color: #555; display: block; font-size: 13px; margin-bottom: 2px; }
         .info-value { color: #111; font-size: 15px; }
 
+        .action-buttons { display: flex; gap: 10px; margin-bottom: 15px; margin-top: 5px; }
+        .text-btn { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; font-family: inherit; transition: background 0.2s; }
+        .text-btn:hover { background: #dbeafe; }
+
+        .toggle-more-btn { background: none; border: none; color: #3b82f6; font-weight: bold; font-size: 14px; cursor: pointer; padding: 0; margin: 10px 0 15px 0; font-family: inherit; }
+        .toggle-more-btn:hover { text-decoration: underline; }
+
         #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; }
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
-        #toast { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: #333; color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px; display: none; z-index: 100; }
+        #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
+        #toast { background: #333; }
+        #compare-banner { background: #1d4ed8; border: 2px solid #60a5fa; cursor: pointer; }
+        #compare-banner:hover { background: #1e3a8a; }
+
         #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; }
+
+        /* חלון ההשוואה */
+        #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
+        #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 650px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
+        .compare-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; padding-bottom: 15px; margin-bottom: 20px; }
+        .compare-header h2 { margin: 0; font-size: 22px; color: #111; }
+        .compare-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 14px; }
+        .compare-table th { padding: 10px; border-bottom: 2px solid #ddd; width: 33%; vertical-align: bottom; }
+        .compare-table td { padding: 12px 10px; border-bottom: 1px solid #eee; }
+        .compare-table .metric-name { font-weight: bold; color: #555; background: #f8f9fa; text-align: right; }
+        .compare-flag { width: 50px; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-bottom: 8px; }
+        .compare-name { font-size: 18px; font-weight: bold; color: #111; display: block; }
         
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
             #search-input { width: 140px; }
-            #info-panel { 
-                top: auto; bottom: 0; right: 0; left: 0; width: auto; 
-                height: 45vh; max-height: none; border-radius: 20px 20px 0 0; padding: 15px 20px; 
-            }
+            #info-panel { top: auto; bottom: 0; right: 0; left: 0; width: auto; height: 50vh; max-height: none; border-radius: 20px 20px 0 0; padding: 15px 20px; }
             #drag-handle-wrapper { display: flex; }
+            .compare-table th, .compare-table td { padding: 8px 5px; font-size: 13px; }
+            .compare-flag { width: 40px; }
         }
     </style>
 </head>
@@ -94,34 +116,66 @@
             <h2><span id="country-name">טוען...</span><img id="country-flag" src="" alt="דגל"></h2>
             <div><button id="share-btn" class="icon-btn">🔗</button><button id="close-panel" class="icon-btn">✖</button></div>
         </div>
+
+        <div class="action-buttons" id="country-actions">
+            <button id="compare-init-btn" class="text-btn">⚖️ השוואת מדינות</button>
+        </div>
         
-        <div class="info-row" id="row-capital"><span class="info-label">עיר בירה:</span> <span class="info-value" id="country-capital"></span></div>
-        <div class="info-row" id="row-govtype"><span class="info-label">משטר:</span> <span class="info-value" id="country-govtype"></span></div>
-        <div class="info-row" id="row-region"><span class="info-label">אזור:</span> <span class="info-value" id="country-region"></span></div>
-        <div class="info-row" id="row-languages"><span class="info-label">שפות רשמיות:</span> <span class="info-value" id="country-languages"></span></div>
-        <div class="info-row" id="row-indep"><span class="info-label">שנת עצמאות:</span> <span class="info-value" id="country-indep"></span></div>
-        
-        <div class="info-row" id="row-area"><span class="info-label">שטח:</span> <span class="info-value" id="country-area"></span></div>
-        <div class="info-row" id="row-climate"><span class="info-label">אקלים:</span> <span class="info-value" id="country-climate"></span></div>
-        <div class="info-row" id="row-highest"><span class="info-label">פסגה גבוהה ביותר:</span> <span class="info-value" id="country-highest"></span></div>
-        
-        <div class="info-row" id="row-pop"><span class="info-label">אוכלוסייה:</span> <span class="info-value" id="country-pop"></span></div>
-        <div class="info-row" id="row-pop-growth"><span class="info-label">קצב גידול אוכלוסייה:</span> <span class="info-value" id="country-pop-growth"></span></div>
-        <div class="info-row" id="row-fertility"><span class="info-label">שיעור פריון:</span> <span class="info-value" id="country-fertility"></span></div>
-        <div class="info-row" id="row-life"><span class="info-label">תוחלת חיים:</span> <span class="info-value" id="country-life"></span></div>
-        <div class="info-row" id="row-literacy"><span class="info-label">אחוזי אוריינות:</span> <span class="info-value" id="country-literacy"></span></div>
-        <div class="info-row" id="row-hdi"><span class="info-label">מדד פיתוח אנושי (HDI):</span> <span class="info-value" id="country-hdi"></span></div>
-        
-        <div class="info-row" id="row-currency"><span class="info-label">מטבע:</span> <span class="info-value" id="country-currency"></span></div>
-        <div class="info-row" id="row-gdp"><span class="info-label">תמ"ג (GDP):</span> <span class="info-value" id="country-gdp"></span></div>
-        <div class="info-row" id="row-gdp-pc"><span class="info-label">תמ"ג לנפש:</span> <span class="info-value" id="country-gdp-pc"></span></div>
-        
-        <div class="info-row" id="row-calltld"><span class="info-label">קידומת וסיומת אינטרנט:</span> <span class="info-value" id="country-calltld"></span></div>
+        <div id="basic-info">
+            <div class="info-row" id="row-capital"><span class="info-label">עיר בירה:</span> <span class="info-value" id="country-capital"></span></div>
+            <div class="info-row" id="row-region"><span class="info-label">אזור:</span> <span class="info-value" id="country-region"></span></div>
+            <div class="info-row" id="row-area"><span class="info-label">שטח:</span> <span class="info-value" id="country-area"></span></div>
+            <div class="info-row" id="row-pop"><span class="info-label">אוכלוסייה:</span> <span class="info-value" id="country-pop"></span></div>
+        </div>
+
+        <button id="toggle-more-btn" class="toggle-more-btn">הצג נתונים נוספים 🔽</button>
+
+        <div id="extended-info" style="display: none;">
+            <div class="info-row" id="row-govtype"><span class="info-label">משטר:</span> <span class="info-value" id="country-govtype"></span></div>
+            <div class="info-row" id="row-languages"><span class="info-label">שפות רשמיות:</span> <span class="info-value" id="country-languages"></span></div>
+            <div class="info-row" id="row-indep"><span class="info-label">שנת עצמאות:</span> <span class="info-value" id="country-indep"></span></div>
+            <div class="info-row" id="row-climate"><span class="info-label">אקלים:</span> <span class="info-value" id="country-climate"></span></div>
+            <div class="info-row" id="row-highest"><span class="info-label">פסגה גבוהה ביותר:</span> <span class="info-value" id="country-highest"></span></div>
+            
+            <div class="info-row" id="row-gdp"><span class="info-label">תמ"ג (GDP):</span> <span class="info-value" id="country-gdp"></span></div>
+            <div class="info-row" id="row-gdp-pc"><span class="info-label">תמ"ג לנפש:</span> <span class="info-value" id="country-gdp-pc"></span></div>
+            <div class="info-row" id="row-currency"><span class="info-label">מטבע:</span> <span class="info-value" id="country-currency"></span></div>
+            
+            <div class="info-row" id="row-pop-growth"><span class="info-label">קצב גידול אוכלוסייה:</span> <span class="info-value" id="country-pop-growth"></span></div>
+            <div class="info-row" id="row-fertility"><span class="info-label">שיעור פריון:</span> <span class="info-value" id="country-fertility"></span></div>
+            <div class="info-row" id="row-life"><span class="info-label">תוחלת חיים:</span> <span class="info-value" id="country-life"></span></div>
+            <div class="info-row" id="row-hdi"><span class="info-label">מדד פיתוח אנושי (HDI):</span> <span class="info-value" id="country-hdi"></span></div>
+            <div class="info-row" id="row-literacy"><span class="info-label">אחוזי אוריינות:</span> <span class="info-value" id="country-literacy"></span></div>
+            
+            <div class="info-row" id="row-call"><span class="info-label">קידומת טלפון בינלאומית:</span> <span class="info-value" id="country-call"></span></div>
+            <div class="info-row" id="row-tld"><span class="info-label">סיומת אינטרנט רשמית:</span> <span class="info-value" id="country-tld"></span></div>
+        </div>
 
         <div class="info-row"><span class="info-label">תקציר:</span><div id="country-wiki"></div></div>
         <div class="sources-links"><a id="link-wiki" target="_blank">ויקיפדיה</a></div>
     </div>
+
+    <div id="compare-backdrop"></div>
+    <div id="compare-modal">
+        <div class="compare-header">
+            <h2>השוואת מדינות ⚖️</h2>
+            <button id="close-compare-modal" class="icon-btn">✖</button>
+        </div>
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th id="comp-head-1"></th>
+                    <th id="comp-head-2"></th>
+                </tr>
+            </thead>
+            <tbody id="compare-tbody">
+                </tbody>
+        </table>
+    </div>
+
     <div id="toast">הועתק ללוח!</div>
+    <div id="compare-banner">בחר מדינה נוספת מהמפה או בחיפוש (לחץ לביטול)</div>
 
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZXlhbGZpZGVsIiwiYSI6ImNtbm5kNHhjYTFocW0ycXM5eWN1bmprYTMifQ.o78OO-6F8ieXVTPGbmMCcA';
@@ -142,31 +196,32 @@
         let searchIndex = [];
         let globalStats = {};
         let globalWiki = {};
+        
+        // משתני מצב להשוואה
+        let isComparingMode = false;
+        let baseCompareFeature = null;
+        let currentLoadedFeature = null;
 
-        // טעינת כל 4 הקבצים במקביל
         Promise.all([
             fetch('countries.geojson').then(res => res.json()),
             fetch('seas.geojson').then(res => res.ok ? res.json() : { features: [] }).catch(() => ({ features: [] })),
-            fetch('stats.json').then(res => res.json()).catch(() => ([])), // מערך מהאקסל
+            fetch('stats.json').then(res => res.json()).catch(() => ([])),
             fetch('wiki_summaries.json').then(res => res.json()).catch(() => ({}))
         ]).then(([countriesData, seasData, statsData, wikiData]) => {
             
             globalWiki = wikiData;
             
-            // המרת statsData למילון לשליפה נוחה
             statsData.forEach(row => {
                 if (row.ISOA2) {
                     globalStats[row.ISOA2] = row;
                 }
             });
             
-            // תהליך מדינות
             countriesData.features.forEach(f => {
                 f.properties.isSea = false;
                 const iso2 = f.properties.ISO_A2 || '';
                 const stats = globalStats[iso2];
                 
-                // הזרקת השם העברי מ-stats.json לחיפוש
                 if (stats && stats.Name_HE) {
                     f.properties.Name_HE = stats.Name_HE;
                 } else if (iso2 === 'PS') {
@@ -177,34 +232,24 @@
                 if (f.properties.Name_HE) {
                     let enNameReal = f.properties.Name_EN || f.properties.NAME_EN || '';
                     searchIndex.push({ 
-                        code: iso2, 
-                        feature: f, 
-                        name: f.properties.Name_HE, 
-                        enNameReal: enNameReal, 
-                        allText: (enNameReal + " " + f.properties.Name_HE).toLowerCase(), 
-                        type: 'מדינה' 
+                        code: iso2, feature: f, name: f.properties.Name_HE, 
+                        enNameReal: enNameReal, allText: (enNameReal + " " + f.properties.Name_HE).toLowerCase(), type: 'מדינה' 
                     });
                 }
             });
 
-            // תהליך ימים (המידע שלהם נשאר ב-geojson למעט התקציר)
             seasData.features.forEach(f => {
                 f.properties.isSea = true;
                 allFeatures.push(f);
                 if (f.properties.Name_HE) {
                     let enNameReal = f.properties.Name_EN || f.properties.NAME_EN || '';
                     searchIndex.push({ 
-                        code: f.properties.ISO_A2, 
-                        feature: f, 
-                        name: f.properties.Name_HE, 
-                        enNameReal: enNameReal, 
-                        allText: (enNameReal + " " + f.properties.Name_HE).toLowerCase(), 
-                        type: 'ים/אוקיינוס' 
+                        code: f.properties.ISO_A2, feature: f, name: f.properties.Name_HE, 
+                        enNameReal: enNameReal, allText: (enNameReal + " " + f.properties.Name_HE).toLowerCase(), type: 'ים/אוקיינוס' 
                     });
                 }
             });
 
-            // בדיקת URL Hash
             if (window.location.hash) {
                 const hashIso = window.location.hash.substring(1).toUpperCase();
                 const feature = allFeatures.find(f => f.properties.ISO_A2 === hashIso);
@@ -223,79 +268,90 @@
         }
 
         map.on('load', () => {
-            // הוספת שכבת ימים ראשונה (כדי שתהיה מתחת למדינות)
             map.addSource('seas', { type: 'geojson', data: 'seas.geojson' });
             map.addLayer({ 'id': 'seas-fill', 'type': 'fill', 'source': 'seas', 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } });
             map.addLayer({ 'id': 'sea-highlight', 'type': 'line', 'source': 'seas', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#0ea5e9', 'line-width': 2.5 } });
 
-            // הוספת שכבת מדינות שנייה (מעל הימים)
             map.addSource('countries', { type: 'geojson', data: 'countries.geojson' });
             map.addLayer({ 'id': 'countries-fill', 'type': 'fill', 'source': 'countries', 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } });
             map.addLayer({ 'id': 'feature-highlight', 'type': 'line', 'source': 'countries', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#3b82f6', 'line-width': 2.5 } });
 
-            // טיפול מרכזי בלחיצות שפותר את בעיית ה-Z-Index
             map.on('click', (e) => {
-                // בדיקה מהי השכבה העליונה ביותר תחת נקודת הלחיצה
                 const features = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
                 if (!features.length) return;
                 
-                const feature = features[0]; // הראשון הוא העליון ביותר (מדינות תמיד מעל ימים)
-                if (feature.layer.id === 'seas-fill') {
-                    feature.properties.isSea = true;
+                const feature = features[0];
+                feature.properties.isSea = (feature.layer.id === 'seas-fill');
+                
+                if (isComparingMode) {
+                    if (feature.properties.isSea) {
+                        alert("לא ניתן להשוות לים, אנא בחר מדינה.");
+                        return;
+                    }
+                    executeComparison(baseCompareFeature, feature);
                 } else {
-                    feature.properties.isSea = false;
+                    loadFeature(feature, e.lngLat);
                 }
-                loadFeature(feature, e.lngLat);
             });
 
-            // שינוי סמן העכבר
             map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
             map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'seas-fill', () => map.getCanvas().style.cursor = '');
         });
 
+        // פתיחה/סגירה של המידע המורחב
+        document.getElementById('toggle-more-btn').onclick = function() {
+            const extInfo = document.getElementById('extended-info');
+            if (extInfo.style.display === 'none') {
+                extInfo.style.display = 'block';
+                this.innerText = 'הסתר נתונים נוספים 🔼';
+            } else {
+                extInfo.style.display = 'none';
+                this.innerText = 'הצג נתונים נוספים 🔽';
+            }
+        };
+
         function loadFeature(feature, lngLat = null) {
+            currentLoadedFeature = feature; // שמירת המדינה הנוכחית לטובת השוואה
             const p = feature.properties;
             const iso = p.ISO_A2 || '';
             const isSea = p.isSea || false;
             
-            // שליפת המידע המעודכן מהמילונים
             const stats = isSea ? null : (globalStats[iso] || {});
             const wikiSummary = globalWiki[iso];
             const hebName = isSea ? p.Name_HE : (stats.Name_HE || p.Name_HE);
             
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
-            if (isMobile) panel.style.height = "45vh";
+            if (isMobile) panel.style.height = "50vh";
             
+            // איפוס תצוגת ההרחבה
+            document.getElementById('extended-info').style.display = 'none';
+            document.getElementById('toggle-more-btn').innerText = 'הצג נתונים נוספים 🔽';
+            document.getElementById('toggle-more-btn').style.display = isSea ? 'none' : 'block';
+            document.getElementById('country-actions').style.display = isSea ? 'none' : 'flex';
+
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
             map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
             
             window.location.hash = iso;
-
             document.getElementById('country-name').innerText = hebName || "לא ידוע";
             
-            // הסתרת/הצגת שורות לפי סוג הישות
-            const countryOnlyRows = ['row-capital', 'row-currency', 'row-pop', 'row-gdp', 'row-gdp-pc', 'row-govtype', 'row-region', 'row-languages', 'row-indep', 'row-climate', 'row-highest', 'row-pop-growth', 'row-fertility', 'row-life', 'row-literacy', 'row-hdi', 'row-calltld'];
-            
-            countryOnlyRows.forEach(rowId => {
-                document.getElementById(rowId).style.display = isSea ? 'none' : 'block';
-            });
+            const countryOnlyRows = ['row-capital', 'row-region', 'row-pop', 'row-govtype', 'row-languages', 'row-indep', 'row-climate', 'row-highest', 'row-gdp', 'row-gdp-pc', 'row-currency', 'row-pop-growth', 'row-fertility', 'row-life', 'row-hdi', 'row-literacy', 'row-call', 'row-tld'];
+            countryOnlyRows.forEach(rowId => { document.getElementById(rowId).style.display = isSea ? 'none' : 'block'; });
 
             const fImg = document.getElementById('country-flag');
-            
             let targetArea = null;
 
             if (isSea) {
                 fImg.style.display = 'none';
                 targetArea = p.Area_KM2;
             } else {
-                // מילוי נתוני המדינה מתוך stats.json
                 document.getElementById('country-capital').innerText = stats.Capital_HE || '---';
-                document.getElementById('country-govtype').innerText = stats.Gov_Type || '---';
                 document.getElementById('country-region').innerText = stats.Region || '---';
+                document.getElementById('country-govtype').innerText = stats.Gov_Type || '---';
                 document.getElementById('country-languages').innerText = stats.Languages || '---';
                 document.getElementById('country-indep').innerText = stats.Indep_Year || '---';
                 document.getElementById('country-climate').innerText = stats.Climate || '---';
@@ -303,14 +359,14 @@
                 
                 document.getElementById('country-pop-growth').innerText = stats.Pop_Growth_Pct ? stats.Pop_Growth_Pct + '%' : '---';
                 document.getElementById('country-fertility').innerText = stats.Fertility_Rate || '---';
-                document.getElementById('country-life').innerText = stats.Life_Expectancy ? stats.Life_Expectancy + ' שנים' : '---';
-                document.getElementById('country-literacy').innerText = stats.Literacy_Pct ? stats.Literacy_Pct + '%' : '---';
+                document.getElementById('country-life').innerText = stats.Life_Expectancy && stats.Life_Expectancy !== "אין נתונים" ? stats.Life_Expectancy + ' שנים' : '---';
                 document.getElementById('country-hdi').innerText = stats.HDI || '---';
                 
-                const callCode = stats.Call_Code ? `+${stats.Call_Code}` : '';
-                const tld = stats.TLD || '';
-                document.getElementById('country-calltld').innerText = (callCode && tld) ? `${callCode} | ${tld}` : (callCode || tld || '---');
-
+                let lit = stats.Literacy_Pct;
+                document.getElementById('country-literacy').innerText = (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "אין נתונים";
+                
+                document.getElementById('country-call').innerText = stats.Call_Code ? `+${stats.Call_Code}` : '---';
+                document.getElementById('country-tld').innerText = stats.TLD || '---';
                 document.getElementById('country-currency').innerText = stats.Currency_HE || '---';
                 
                 const formatRank = (rank) => rank ? ` (מקום ${rank})` : "";
@@ -320,42 +376,33 @@
                 
                 targetArea = stats.Area_KM2;
 
-                const localFlags = ['PR', 'NP', 'XK', 'GL', 'NC'];
-                let flagUrl = localFlags.includes(iso) ? `flags/${iso}.png` : (iso ? `https://flagcdn.com/w80/${iso.toLowerCase()}.png` : "");
-                if (flagUrl) {
-                    fImg.src = flagUrl;
-                    fImg.style.display = 'block';
-                    if (iso === 'NP') { fImg.style.border = 'none'; fImg.style.boxShadow = 'none'; } 
-                    else { fImg.style.border = '1px solid #eee'; fImg.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; }
-                } else fImg.style.display = 'none';
+                let flagUrl = "";
+                if (iso === 'NP') { 
+                    flagUrl = `https://flagcdn.com/w80/np.png`; 
+                    fImg.style.border = 'none'; fImg.style.boxShadow = 'none'; 
+                } else if (iso) { 
+                    flagUrl = `https://flagcdn.com/w80/${iso.toLowerCase()}.png`; 
+                    fImg.style.border = '1px solid #eee'; fImg.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; 
+                }
+                if (flagUrl) { fImg.src = flagUrl; fImg.style.display = 'block'; } else { fImg.style.display = 'none'; }
             }
 
-            // שטח - עובד גם למדינות וגם לימים
             let areaText = "---";
             if (targetArea) {
                 let a = parseFloat(targetArea);
-                if (a >= 10000000) {
-                    areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר';
-                } else {
-                    areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר';
-                }
+                if (a >= 10000000) { areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר'; } 
+                else { areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר'; }
             }
             const areaRankFormat = (!isSea && stats && stats.Area_Rank) ? ` (מקום ${stats.Area_Rank})` : "";
             document.getElementById('country-area').innerText = areaText + areaRankFormat;
 
-            // תקציר מוויקיפדיה - משתמש עכשיו בקובץ במקום ב-API
-            if (wikiSummary) {
-                document.getElementById('country-wiki').innerText = wikiSummary;
-            } else {
-                document.getElementById('country-wiki').innerText = 'לא נמצא תקציר.';
-            }
+            if (wikiSummary) { document.getElementById('country-wiki').innerText = wikiSummary; } 
+            else { document.getElementById('country-wiki').innerText = 'לא נמצא תקציר.'; }
             
-            // יצירת לינק לוויקיפדיה
             let wikiSearchTerm = p.Wiki_HE || p.WIKI_HE || hebName;
             if (iso === 'PS') wikiSearchTerm = 'הרשות הפלסטינית';
             document.getElementById('link-wiki').href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
 
-            // ניווט במפה (Zoom & Pan)
             const targetZoom = getZoomLevel(Number(targetArea));
             if (lngLat) map.flyTo({ center: lngLat, zoom: targetZoom });
             else {
@@ -364,13 +411,77 @@
                 else if (feature.geometry.type === 'MultiPolygon') {
                     let largestPoly = feature.geometry.coordinates.reduce((prev, curr) => turf.area(turf.polygon(curr)) > turf.area(turf.polygon(prev)) ? curr : prev);
                     targetCoords = turf.centerOfMass(turf.polygon(largestPoly)).geometry.coordinates;
-                } 
-                else targetCoords = turf.centerOfMass(feature).geometry.coordinates;
+                } else { targetCoords = turf.centerOfMass(feature).geometry.coordinates; }
                 map.flyTo({ center: targetCoords, zoom: targetZoom });
             }
         }
 
-        // סגירת פאנל
+        /* ----- לוגיקת השוואת מדינות ----- */
+        document.getElementById('compare-init-btn').onclick = () => {
+            if (!currentLoadedFeature || currentLoadedFeature.properties.isSea) return;
+            isComparingMode = true;
+            baseCompareFeature = currentLoadedFeature;
+            document.getElementById('info-panel').style.display = 'none';
+            document.getElementById('compare-banner').style.display = 'block';
+        };
+
+        document.getElementById('compare-banner').onclick = () => {
+            // ביטול מצב השוואה
+            isComparingMode = false;
+            document.getElementById('compare-banner').style.display = 'none';
+            document.getElementById('info-panel').style.display = 'block';
+        };
+
+        function executeComparison(f1, f2) {
+            isComparingMode = false;
+            document.getElementById('compare-banner').style.display = 'none';
+            document.getElementById('info-panel').style.display = 'block'; // מחזיר את הפאנל לרקע
+
+            const iso1 = f1.properties.ISO_A2;
+            const iso2 = f2.properties.ISO_A2;
+            const s1 = globalStats[iso1] || {};
+            const s2 = globalStats[iso2] || {};
+
+            const name1 = s1.Name_HE || f1.properties.Name_HE;
+            const name2 = s2.Name_HE || f2.properties.Name_HE;
+
+            const flag1 = `https://flagcdn.com/w80/${iso1.toLowerCase()}.png`;
+            const flag2 = `https://flagcdn.com/w80/${iso2.toLowerCase()}.png`;
+
+            document.getElementById('comp-head-1').innerHTML = `<img src="${flag1}" class="compare-flag"><br><span class="compare-name">${name1}</span>`;
+            document.getElementById('comp-head-2').innerHTML = `<img src="${flag2}" class="compare-flag"><br><span class="compare-name">${name2}</span>`;
+
+            const formatNum = (num) => num ? Number(num).toLocaleString() : '---';
+            const formatLit = (lit) => (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "---";
+
+            const tbody = document.getElementById('compare-tbody');
+            tbody.innerHTML = `
+                <tr><td class="metric-name">עיר בירה</td><td>${s1.Capital_HE || '---'}</td><td>${s2.Capital_HE || '---'}</td></tr>
+                <tr><td class="metric-name">אזור</td><td>${s1.Region || '---'}</td><td>${s2.Region || '---'}</td></tr>
+                <tr><td class="metric-name">משטר</td><td>${s1.Gov_Type || '---'}</td><td>${s2.Gov_Type || '---'}</td></tr>
+                <tr><td class="metric-name">אוכלוסייה</td><td>${formatNum(s1.Population)}</td><td>${formatNum(s2.Population)}</td></tr>
+                <tr><td class="metric-name">שטח (קמ"ר)</td><td>${formatNum(s1.Area_KM2)}</td><td>${formatNum(s2.Area_KM2)}</td></tr>
+                <tr><td class="metric-name">תמ"ג (מיליארד $)</td><td>${formatNum(s1.GDP_Billion_USD)}</td><td>${formatNum(s2.GDP_Billion_USD)}</td></tr>
+                <tr><td class="metric-name">תמ"ג לנפש</td><td>$${formatNum(s1.GDP_Per_Capita_USD)}</td><td>$${formatNum(s2.GDP_Per_Capita_USD)}</td></tr>
+                <tr><td class="metric-name">מדד פיתוח (HDI)</td><td>${s1.HDI || '---'}</td><td>${s2.HDI || '---'}</td></tr>
+                <tr><td class="metric-name">תוחלת חיים</td><td>${s1.Life_Expectancy || '---'}</td><td>${s2.Life_Expectancy || '---'}</td></tr>
+                <tr><td class="metric-name">אוריינות</td><td>${formatLit(s1.Literacy_Pct)}</td><td>${formatLit(s2.Literacy_Pct)}</td></tr>
+            `;
+
+            document.getElementById('compare-backdrop').style.display = 'block';
+            document.getElementById('compare-modal').style.display = 'block';
+        }
+
+        document.getElementById('close-compare-modal').onclick = () => {
+            document.getElementById('compare-backdrop').style.display = 'none';
+            document.getElementById('compare-modal').style.display = 'none';
+        };
+        document.getElementById('compare-backdrop').onclick = () => {
+            document.getElementById('compare-backdrop').style.display = 'none';
+            document.getElementById('compare-modal').style.display = 'none';
+        };
+        /* ------------------------------- */
+
         document.getElementById('close-panel').onclick = () => { 
             document.getElementById('info-panel').style.display = 'none'; 
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']); 
@@ -378,7 +489,6 @@
             history.pushState("", document.title, window.location.pathname + window.location.search);
         };
 
-        // משיכת פאנל במובייל
         const panel = document.getElementById('info-panel');
         const handle = document.getElementById('drag-handle-wrapper');
         let isDragging = false;
@@ -394,34 +504,27 @@
         }, { passive: false });
         document.addEventListener('touchend', () => { if (isDragging) { isDragging = false; panel.style.transition = 'height 0.2s ease-out'; }});
 
-        // כפתור אקראי
-        document.getElementById('random-btn').onclick = () => { if (allFeatures.length) loadFeature(allFeatures[Math.floor(Math.random() * allFeatures.length)]); };
+        document.getElementById('random-btn').onclick = () => { 
+            // לא נבחר ים אקראי כדי שיהיה יותר מעניין
+            let countriesOnly = allFeatures.filter(f => !f.properties.isSea);
+            if (countriesOnly.length) loadFeature(countriesOnly[Math.floor(Math.random() * countriesOnly.length)]); 
+        };
         
-        // כפתור שיתוף
         document.getElementById('share-btn').onclick = async () => {
             const countryName = document.getElementById('country-name').innerText;
             const currentUrl = window.location.href; 
-            const shareData = {
-                title: 'Atlas Beta',
-                text: `בדקו את ${countryName} ב-Atlas Beta!`,
-                url: currentUrl
-            };
-
+            const shareData = { title: 'Atlas Beta', text: `בדקו את ${countryName} ב-Atlas Beta!`, url: currentUrl };
             try {
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                } else {
+                if (navigator.share) { await navigator.share(shareData); } 
+                else {
                     await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
                     const t = document.getElementById('toast'); 
                     t.style.display = 'block'; t.style.opacity = '1';
                     setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
                 }
-            } catch (err) {
-                console.error('Share failed:', err);
-            }
+            } catch (err) { console.error('Share failed:', err); }
         };
 
-        // חיפוש
         const sIn = document.getElementById('search-input'), sSug = document.getElementById('suggestions');
         sIn.oninput = function() {
             const val = this.value.trim().toLowerCase(); 
@@ -429,21 +532,27 @@
             if (!val) { sSug.style.display = 'none'; return; }
             
             const isEnglishSearch = /[a-z]/.test(val);
-            
-            const matches = searchIndex.filter(i => {
-                return i.allText && i.allText.includes(val);
-            });
+            const matches = searchIndex.filter(i => i.allText && i.allText.includes(val));
             
             matches.forEach(m => {
                 const d = document.createElement('div'); d.className = 'suggestion-item'; 
-                
                 let displayText = m.name;
-                if (isEnglishSearch && m.enNameReal) {
-                    displayText = `${m.enNameReal} (${m.name})`;
-                }
-                
+                if (isEnglishSearch && m.enNameReal) { displayText = `${m.enNameReal} (${m.name})`; }
                 d.innerHTML = `${displayText} <span class="suggestion-type">${m.type}</span>`;
-                d.onclick = () => { loadFeature(m.feature); sIn.value = m.name; sSug.style.display = 'none'; };
+                
+                d.onclick = () => { 
+                    sIn.value = m.name; 
+                    sSug.style.display = 'none'; 
+                    if (isComparingMode) {
+                        if (m.feature.properties.isSea) {
+                            alert("לא ניתן להשוות לים, אנא בחר מדינה.");
+                        } else {
+                            executeComparison(baseCompareFeature, m.feature);
+                        }
+                    } else {
+                        loadFeature(m.feature); 
+                    }
+                };
                 sSug.appendChild(d);
             });
             sSug.style.display = matches.length ? 'block' : 'none';
