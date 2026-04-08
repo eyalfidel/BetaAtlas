@@ -58,6 +58,7 @@
         .info-row { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
         .info-label { font-weight: bold; color: #555; display: block; font-size: 13px; margin-bottom: 2px; }
         .info-value { color: #111; font-size: 15px; }
+        .rank-text { font-size: 13px; color: #6b7280; margin-right: 5px; }
 
         .action-buttons { display: flex; gap: 10px; margin-bottom: 15px; margin-top: 5px; }
         .text-btn { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; font-family: inherit; transition: background 0.2s; }
@@ -79,9 +80,10 @@
 
         /* חלון ההשוואה */
         #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
-        #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 650px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
+        #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
         .compare-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; padding-bottom: 15px; margin-bottom: 20px; }
         .compare-header h2 { margin: 0; font-size: 22px; color: #111; }
+        .compare-actions { display: flex; gap: 10px; align-items: center; }
         .compare-table { width: 100%; border-collapse: collapse; text-align: center; font-size: 14px; }
         .compare-table th { padding: 10px; border-bottom: 2px solid #ddd; width: 33%; vertical-align: bottom; }
         .compare-table td { padding: 12px 10px; border-bottom: 1px solid #eee; }
@@ -114,7 +116,10 @@
         <div id="drag-handle-wrapper"><div id="drag-handle"></div></div>
         <div class="panel-header">
             <h2><span id="country-name">טוען...</span><img id="country-flag" src="" alt="דגל"></h2>
-            <div><button id="share-btn" class="icon-btn">🔗</button><button id="close-panel" class="icon-btn">✖</button></div>
+            <div>
+                <button id="share-btn" class="icon-btn" title="שיתוף מדינה">🔗</button>
+                <button id="close-panel" class="icon-btn" title="סגור">✖</button>
+            </div>
         </div>
 
         <div class="action-buttons" id="country-actions">
@@ -158,11 +163,11 @@
     <div id="compare-backdrop"></div>
     <div id="compare-modal">
         <div class="compare-header">
-        <h2>השוואת מדינות ⚖️</h2>
-        <div>
-            <button id="share-compare-btn" class="icon-btn" title="שיתוף השוואה">🔗</button>
-            <button id="close-compare-modal" class="icon-btn">✖</button>
-        </div>
+            <h2>השוואת מדינות ⚖️</h2>
+            <div class="compare-actions">
+                <button id="share-compare-btn" class="icon-btn" title="שתף השוואה">🔗</button>
+                <button id="close-compare-modal" class="icon-btn" title="סגור">✖</button>
+            </div>
         </div>
         <table class="compare-table">
             <thead>
@@ -204,6 +209,8 @@
         let isComparingMode = false;
         let baseCompareFeature = null;
         let currentLoadedFeature = null;
+
+        const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
         Promise.all([
             fetch('countries.geojson').then(res => res.json()),
@@ -253,39 +260,42 @@
                 }
             });
 
-            // סעיף 4: בדיקת URL Hash - תומך במדינה בודדת או בהשוואה
+            checkUrlHash();
+
+        }).catch(err => console.error("שגיאה בטעינת הנתונים:", err));
+
+        // פונקציית בדיקת ה-URL: תומכת במדינה בודדת או השוואה
         const checkUrlHash = () => {
+            if (!window.location.hash) return;
             const hash = window.location.hash.substring(1).toUpperCase();
-            if (!hash) return;
 
             if (hash.includes('-')) {
-            // מצב השוואה
+                // מצב השוואה
                 const [iso1, iso2] = hash.split('-');
                 const feat1 = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === iso1);
                 const feat2 = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === iso2);
+                
                 if (feat1 && feat2) {
                     currentLoadedFeature = feat1; 
-                    executeComparison(feat1, feat2);
-                    }
-                } else {
-            // מדינה בודדת
-            const feature = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === hash);
-            if (feature) loadFeature(feature);
+                    loadFeature(feat1); // טוען את המדינה הראשונה ברקע
+                    executeComparison(feat1, feat2); // מקפיץ את חלון ההשוואה
+                }
+            } else {
+                // מדינה בודדת
+                const feature = allFeatures.find(f => (f.properties.ISO_A2 || '').toUpperCase() === hash);
+                if (feature) loadFeature(feature);
             }
         };
-        // הפעלה של הבדיקה
-        checkUrlHash();
-            }).catch(err => console.error("שגיאה בטעינת הנתונים:", err));
-    
-                function getZoomLevel(area) {
-                    let z = 4;
-                    if (!area || area > 8000000) z = 2.5; 
-                    else if (area > 1000000) z = 3.5; 
-                    else if (area > 200000) z = 4.5;  
-                    else z = 6.5;
-                    if (isMobile) z -= 1.5; 
-                    return Math.max(1, z);
-            }
+
+        function getZoomLevel(area) {
+            let z = 4;
+            if (!area || area > 8000000) z = 2.5; 
+            else if (area > 1000000) z = 3.5; 
+            else if (area > 200000) z = 4.5;  
+            else z = 6.5;
+            if (isMobile) z -= 1.5; 
+            return Math.max(1, z);
+        }
 
         map.on('load', () => {
             map.addSource('seas', { type: 'geojson', data: 'seas.geojson' });
@@ -333,7 +343,7 @@
         };
 
         function loadFeature(feature, lngLat = null) {
-            currentLoadedFeature = feature; // שמירת המדינה הנוכחית לטובת השוואה
+            currentLoadedFeature = feature; 
             const p = feature.properties;
             const iso = p.ISO_A2 || '';
             const isSea = p.isSea || false;
@@ -377,10 +387,11 @@
                 document.getElementById('country-climate').innerText = stats.Climate || '---';
                 document.getElementById('country-highest').innerText = stats.Highest_Point || '---';
                 
-                document.getElementById('country-pop-growth').innerText = stats.Pop_Growth_Pct ? stats.Pop_Growth_Pct + '%' : '---';
-                document.getElementById('country-fertility').innerText = stats.Fertility_Rate || '---';
-                document.getElementById('country-life').innerText = stats.Life_Expectancy && stats.Life_Expectancy !== "אין נתונים" ? stats.Life_Expectancy + ' שנים' : '---';
-                document.getElementById('country-hdi').innerText = stats.HDI || '---';
+                // נתונים עם דירוג חדש
+                document.getElementById('country-pop-growth').innerHTML = (stats.Pop_Growth_Pct ? stats.Pop_Growth_Pct + '%' : '---') + formatRank(stats.Growth_Rank);
+                document.getElementById('country-fertility').innerHTML = (stats.Fertility_Rate || '---') + formatRank(stats.Fert_Rank);
+                document.getElementById('country-life').innerHTML = (stats.Life_Expectancy && stats.Life_Expectancy !== "אין נתונים" ? stats.Life_Expectancy + ' שנים' : '---') + formatRank(stats.LifeEx_Rank);
+                document.getElementById('country-hdi').innerHTML = (stats.HDI || '---') + formatRank(stats.HDI_Rank);
                 
                 let lit = stats.Literacy_Pct;
                 document.getElementById('country-literacy').innerText = (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "אין נתונים";
@@ -389,10 +400,9 @@
                 document.getElementById('country-tld').innerText = stats.TLD || '---';
                 document.getElementById('country-currency').innerText = stats.Currency_HE || '---';
                 
-                const formatRank = (rank) => rank ? ` (מקום ${rank})` : "";
-                document.getElementById('country-pop').innerText = (stats.Population ? Number(stats.Population).toLocaleString() : "---") + formatRank(stats.Pop_Rank);
-                document.getElementById('country-gdp').innerText = (stats.GDP_Billion_USD ? Number(stats.GDP_Billion_USD).toLocaleString() + ' מיליארד $' : "---") + formatRank(stats.GDP_Rank);
-                document.getElementById('country-gdp-pc').innerText = (stats.GDP_Per_Capita_USD ? '$' + Number(stats.GDP_Per_Capita_USD).toLocaleString() : "---") + formatRank(stats.GDPPC_Rank);
+                document.getElementById('country-pop').innerHTML = (stats.Population ? Number(stats.Population).toLocaleString('he-IL') : "---") + formatRank(stats.Pop_Rank);
+                document.getElementById('country-gdp').innerHTML = (stats.GDP_Billion_USD ? Number(stats.GDP_Billion_USD).toLocaleString('he-IL') + ' מיליארד $' : "---") + formatRank(stats.GDP_Rank);
+                document.getElementById('country-gdp-pc').innerHTML = (stats.GDP_Per_Capita_USD ? '$' + Number(stats.GDP_Per_Capita_USD).toLocaleString('he-IL') : "---") + formatRank(stats.GDPPC_Rank);
                 
                 targetArea = stats.Area_KM2;
 
@@ -413,8 +423,8 @@
                 if (a >= 10000000) { areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר'; } 
                 else { areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר'; }
             }
-            const areaRankFormat = (!isSea && stats && stats.Area_Rank) ? ` (מקום ${stats.Area_Rank})` : "";
-            document.getElementById('country-area').innerText = areaText + areaRankFormat;
+            const areaRankHtml = (!isSea && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
+            document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
 
             if (wikiSummary) { document.getElementById('country-wiki').innerText = wikiSummary; } 
             else { document.getElementById('country-wiki').innerText = 'לא נמצא תקציר.'; }
@@ -446,7 +456,6 @@
         };
 
         document.getElementById('compare-banner').onclick = () => {
-            // ביטול מצב השוואה
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
             document.getElementById('info-panel').style.display = 'block';
@@ -455,10 +464,14 @@
         function executeComparison(f1, f2) {
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
-            document.getElementById('info-panel').style.display = 'block'; // מחזיר את הפאנל לרקע
+            document.getElementById('info-panel').style.display = 'block'; 
 
             const iso1 = f1.properties.ISO_A2;
             const iso2 = f2.properties.ISO_A2;
+            
+            // עדכון ה-URL כדי לאפשר שיתוף של ההשוואה
+            window.location.hash = `${iso1}-${iso2}`;
+
             const s1 = globalStats[iso1] || {};
             const s2 = globalStats[iso2] || {};
 
@@ -471,36 +484,42 @@
             document.getElementById('comp-head-1').innerHTML = `<img src="${flag1}" class="compare-flag"><br><span class="compare-name">${name1}</span>`;
             document.getElementById('comp-head-2').innerHTML = `<img src="${flag2}" class="compare-flag"><br><span class="compare-name">${name2}</span>`;
 
-            const formatNum = (num) => num ? Number(num).toLocaleString() : '---';
+            const formatNum = (num) => num ? Number(num).toLocaleString('he-IL') : '---';
             const formatLit = (lit) => (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "---";
 
             const tbody = document.getElementById('compare-tbody');
+            
+            // בניית טבלת ההשוואה המורחבת כולל דירוגים
             tbody.innerHTML = `
                 <tr><td class="metric-name">עיר בירה</td><td>${s1.Capital_HE || '---'}</td><td>${s2.Capital_HE || '---'}</td></tr>
                 <tr><td class="metric-name">אזור</td><td>${s1.Region || '---'}</td><td>${s2.Region || '---'}</td></tr>
                 <tr><td class="metric-name">משטר</td><td>${s1.Gov_Type || '---'}</td><td>${s2.Gov_Type || '---'}</td></tr>
-                <tr><td class="metric-name">אוכלוסייה</td><td>${formatNum(s1.Population)}</td><td>${formatNum(s2.Population)}</td></tr>
-                <tr><td class="metric-name">שטח (קמ"ר)</td><td>${formatNum(s1.Area_KM2)}</td><td>${formatNum(s2.Area_KM2)}</td></tr>
-                <tr><td class="metric-name">תמ"ג (מיליארד $)</td><td>${formatNum(s1.GDP_Billion_USD)}</td><td>${formatNum(s2.GDP_Billion_USD)}</td></tr>
-                <tr><td class="metric-name">תמ"ג לנפש</td><td>$${formatNum(s1.GDP_Per_Capita_USD)}</td><td>$${formatNum(s2.GDP_Per_Capita_USD)}</td></tr>
-                <tr><td class="metric-name">מדד פיתוח (HDI)</td><td>${s1.HDI || '---'}</td><td>${s2.HDI || '---'}</td></tr>
-                <tr><td class="metric-name">תוחלת חיים</td><td>${s1.Life_Expectancy || '---'}</td><td>${s2.Life_Expectancy || '---'}</td></tr>
+                <tr><td class="metric-name">אוכלוסייה</td><td>${formatNum(s1.Population)}<br>${formatRank(s1.Pop_Rank)}</td><td>${formatNum(s2.Population)}<br>${formatRank(s2.Pop_Rank)}</td></tr>
+                <tr><td class="metric-name">קצב גידול</td><td>${s1.Pop_Growth_Pct ? s1.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s1.Growth_Rank)}</td><td>${s2.Pop_Growth_Pct ? s2.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s2.Growth_Rank)}</td></tr>
+                <tr><td class="metric-name">שטח (קמ"ר)</td><td>${formatNum(s1.Area_KM2)}<br>${formatRank(s1.Area_Rank)}</td><td>${formatNum(s2.Area_KM2)}<br>${formatRank(s2.Area_Rank)}</td></tr>
+                <tr><td class="metric-name">תמ"ג (מיליארד $)</td><td>${formatNum(s1.GDP_Billion_USD)}<br>${formatRank(s1.GDP_Rank)}</td><td>${formatNum(s2.GDP_Billion_USD)}<br>${formatRank(s2.GDP_Rank)}</td></tr>
+                <tr><td class="metric-name">תמ"ג לנפש</td><td>$${formatNum(s1.GDP_Per_Capita_USD)}<br>${formatRank(s1.GDPPC_Rank)}</td><td>$${formatNum(s2.GDP_Per_Capita_USD)}<br>${formatRank(s2.GDPPC_Rank)}</td></tr>
+                <tr><td class="metric-name">מדד פיתוח (HDI)</td><td>${s1.HDI || '---'}<br>${formatRank(s1.HDI_Rank)}</td><td>${s2.HDI || '---'}<br>${formatRank(s2.HDI_Rank)}</td></tr>
+                <tr><td class="metric-name">תוחלת חיים</td><td>${s1.Life_Expectancy && s1.Life_Expectancy !== "אין נתונים" ? s1.Life_Expectancy : '---'}<br>${formatRank(s1.LifeEx_Rank)}</td><td>${s2.Life_Expectancy && s2.Life_Expectancy !== "אין נתונים" ? s2.Life_Expectancy : '---'}<br>${formatRank(s2.LifeEx_Rank)}</td></tr>
+                <tr><td class="metric-name">שיעור פריון</td><td>${s1.Fertility_Rate || '---'}<br>${formatRank(s1.Fert_Rank)}</td><td>${s2.Fertility_Rate || '---'}<br>${formatRank(s2.Fert_Rank)}</td></tr>
                 <tr><td class="metric-name">אוריינות</td><td>${formatLit(s1.Literacy_Pct)}</td><td>${formatLit(s2.Literacy_Pct)}</td></tr>
             `;
-            window.location.hash = `${f1.properties.ISO_A2}-${f2.properties.ISO_A2}`;
 
             document.getElementById('compare-backdrop').style.display = 'block';
             document.getElementById('compare-modal').style.display = 'block';
         }
 
-        document.getElementById('close-compare-modal').onclick = () => {
+        const closeCompareModal = () => {
             document.getElementById('compare-backdrop').style.display = 'none';
             document.getElementById('compare-modal').style.display = 'none';
+            // חזרה ל-URL של המדינה הבסיסית
+            if (currentLoadedFeature) {
+                window.location.hash = currentLoadedFeature.properties.ISO_A2;
+            }
         };
-        document.getElementById('compare-backdrop').onclick = () => {
-            document.getElementById('compare-backdrop').style.display = 'none';
-            document.getElementById('compare-modal').style.display = 'none';
-        };
+
+        document.getElementById('close-compare-modal').onclick = closeCompareModal;
+        document.getElementById('compare-backdrop').onclick = closeCompareModal;
         /* ------------------------------- */
 
         document.getElementById('close-panel').onclick = () => { 
@@ -526,11 +545,11 @@
         document.addEventListener('touchend', () => { if (isDragging) { isDragging = false; panel.style.transition = 'height 0.2s ease-out'; }});
 
         document.getElementById('random-btn').onclick = () => { 
-            // לא נבחר ים אקראי כדי שיהיה יותר מעניין
             let countriesOnly = allFeatures.filter(f => !f.properties.isSea);
             if (countriesOnly.length) loadFeature(countriesOnly[Math.floor(Math.random() * countriesOnly.length)]); 
         };
         
+        // כפתור שיתוף למדינה בודדת
         document.getElementById('share-btn').onclick = async () => {
             const countryName = document.getElementById('country-name').innerText;
             const currentUrl = window.location.href; 
@@ -538,8 +557,30 @@
             try {
                 if (navigator.share) { await navigator.share(shareData); } 
                 else {
-                    await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+                    await navigator.clipboard.writeText(currentUrl);
                     const t = document.getElementById('toast'); 
+                    t.innerText = "הועתק ללוח!";
+                    t.style.display = 'block'; t.style.opacity = '1';
+                    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
+                }
+            } catch (err) { console.error('Share failed:', err); }
+        };
+
+        // כפתור שיתוף להשוואת מדינות
+        document.getElementById('share-compare-btn').onclick = async () => {
+            const shareUrl = window.location.href; 
+            const shareData = {
+                title: 'Atlas Beta - השוואת מדינות',
+                text: `ראו את ההשוואה שערכתי ב-Atlas Beta!`,
+                url: shareUrl
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(shareUrl);
+                    const t = document.getElementById('toast'); 
+                    t.innerText = "קישור להשוואה הועתק ללוח!";
                     t.style.display = 'block'; t.style.opacity = '1';
                     setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
                 }
