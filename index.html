@@ -212,8 +212,8 @@
         };
         const disputedAreas = Object.keys(disputedRegions);
 
-        // Core Data Structures
-        const globalData = new Map(); // ISO -> Full Data Object
+        // מבני נתונים
+        const globalData = new Map(); 
         const searchIndex = [];
         
         let isComparingMode = false;
@@ -222,7 +222,7 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
-        // אתחול נתונים
+        // אתחול נתונים מ-JSON
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
@@ -270,7 +270,6 @@
             processFeatures(countriesData.features, false);
             processFeatures(seasData.features, true);
 
-            // URL Hash Check
             if (window.location.hash) {
                 const hash = window.location.hash.substring(1).toUpperCase();
                 if (hash.includes('-')) {
@@ -298,7 +297,6 @@
         }
 
         map.on('load', () => {
-            // שכבות המילוי בלתי נראות אבל אוטמות לחיצה
             
             // 1. ימים (מתחת למדינות)
             map.addSource('seas-vec', { type: 'vector', url: 'mapbox://eyalfidel.9x1r7ppe' });
@@ -307,7 +305,8 @@
                 'type': 'fill', 
                 'source': 'seas-vec',
                 'source-layer': 'seas-b6hmy3',
-                'paint': { 'fill-color': 'rgba(0,0,0,0)', 'fill-opacity': 1 } 
+                // שקיפות רשמית של Mapbox לזיהוי אובייקטים: צבע שחור, שקיפות 0. 
+                'paint': { 'fill-color': '#000000', 'fill-opacity': 0 } 
             });
 
             // 2. מדינות
@@ -317,7 +316,7 @@
                 'type': 'fill', 
                 'source': 'countries-vec', 
                 'source-layer': 'countries-50fsub',
-                'paint': { 'fill-color': 'rgba(0,0,0,0)', 'fill-opacity': 1 } 
+                'paint': { 'fill-color': '#000000', 'fill-opacity': 0 } 
             });
             
             // 3. גבולות קבועים למדינות
@@ -339,7 +338,7 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
-            // 5. הדגשת ימים (בסוף הערימה כדי שלא יוסתר)
+            // 5. הדגשת ימים (בסוף הערימה כדי שלא יוסתרו)
             map.addLayer({ 
                 'id': 'seas-highlight', 
                 'type': 'line', 
@@ -349,25 +348,32 @@
                 'paint': { 'line-color': '#0284c7', 'line-width': 4 } 
             });
 
-            // מנגנון הלחיצה המדויק
+            // מנגנון הלחיצה - "האצבע השמנה" לעכבר המחשב
             map.on('click', (e) => {
-                // שואל את המפה מה יש מתחת לעכבר (העליון יחזור ראשון)
-                const features = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
+                
+                // התיקון הגדול למחשב: ייצור "קופסת מגע" (Bounding Box) של 10x10 פיקסלים סביב לחיצת העכבר
+                const bbox = [
+                    [e.point.x - 5, e.point.y - 5],
+                    [e.point.x + 5, e.point.y + 5]
+                ];
+                
+                // חיפוש בתוך קופסת המגע
+                const features = map.queryRenderedFeatures(bbox, { layers: ['countries-fill', 'seas-fill'] });
                 
                 let clickedIso = null;
 
                 if (features.length > 0) {
-                    // זיהוי ויזואלי הצליח
+                    // זיהוי ויזואלי הצליח בתוך הקופסה! ניקח את הראשון שנמצא.
                     clickedIso = features[0].properties.ISO_A2 || features[0].properties.iso_a2 || '';
                 } else {
-                    // רדאר הגיבוי: מופעל *רק* אם לחצנו על ריק ולא תפסנו לא מדינה ולא ים.
-                    // נחפש רק מדינות/שטחים בטווח של 600 ק"מ. מתעלם לחלוטין מימים!
+                    // רדאר הגיבוי: מופעל *רק* אם הלחיצה באמת לא פגעה בכלום (כמו זום סופר רחוק).
                     let minDistance = Infinity;
                     const clickLat = e.lngLat.lat;
                     const clickLng = e.lngLat.lng;
 
                     globalData.forEach((data, iso) => {
-                        if (data.isSea) return; // הרדאר לא רלוונטי לימים
+                        // מתעלמים מימים! ככה לחיצה על הים לא תקפיץ בטעות מדינות (כמו באג בנגלדש)
+                        if (data.isSea) return; 
                         const coords = data.pointFeature.geometry.coordinates;
                         const dist = haversine(clickLat, clickLng, coords[1], coords[0]);
                         if (dist < minDistance) {
@@ -376,12 +382,13 @@
                         }
                     });
 
-                    // אם הלחיצה הייתה באמצע האוקיינוס ואין שום מדינה ברדיוס 600 ק"מ, נבטל
+                    // תקרת זכוכית: אם הלחיצה הייתה בלב האוקיינוס ואין שום מדינה ברדיוס 600 ק"מ, נבטל.
                     if (minDistance > 600) {
                         clickedIso = null;
                     }
                 }
 
+                // הפעלת התהליך אם נמצאה ישות תקינה
                 if (clickedIso && globalData.has(clickedIso)) {
                     const targetData = globalData.get(clickedIso);
                     
@@ -397,13 +404,14 @@
                 }
             });
 
+            // שינוי סמן העכבר
             map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
             map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'seas-fill', () => map.getCanvas().style.cursor = '');
         });
 
-        // טעינת ישות (ים או מדינה)
+        // טעינת ישות (ים או מדינה) למסך והדגשה
         function loadFeature(iso) {
             const data = globalData.get(iso);
             if (!data) return;
@@ -412,11 +420,12 @@
             const stats = data.stats;
             const p = data.pointFeature.properties;
             
-            // איפוס והחלת הדגשות (הפילטר חסין לאותיות קטנות/גדולות)
+            // איפוס והחלת הדגשות
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']);
             
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
+            // פילטר חסין לאותיות קטנות/גדולות מהשרת של Mapbox
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
             // תעופה אל היעד
@@ -431,7 +440,7 @@
             
             map.flyTo({ center: coords, zoom: Math.max(1, z) });
 
-            // עדכון ממשק
+            // עדכון ממשק פאנל
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
@@ -505,7 +514,7 @@
             document.getElementById('link-wiki').href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
         }
 
-        /* ----- UI Buttons & Logic ----- */
+        /* ----- כפתורי ממשק וסגירה ----- */
         document.getElementById('toggle-more-btn').onclick = function() {
             const extInfo = document.getElementById('extended-info');
             extInfo.style.display = extInfo.style.display === 'none' ? 'block' : 'none';
