@@ -52,7 +52,7 @@
         .panel-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; margin-bottom: 15px; }
         #info-panel h2 { margin: 0; color: #1a1a1a; display: flex; align-items: center; gap: 10px; font-size: 20px; }
         
-        #country-flag { height: 26px; display: none; border-radius: 4px; }
+        #country-flag { height: 26px; display: none; border-radius: 4px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         
         .info-row { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
         .info-label { font-weight: bold; color: #555; display: block; font-size: 13px; margin-bottom: 2px; }
@@ -75,6 +75,8 @@
         #compare-banner { background: #1d4ed8; border: 2px solid #60a5fa; cursor: pointer; }
         #compare-banner:hover { background: #1e3a8a; }
 
+        #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
+
         /* חלון ההשוואה */
         #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
         #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
@@ -88,7 +90,7 @@
         .compare-flag { width: 50px; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-bottom: 8px; }
         .compare-name { font-size: 18px; font-weight: bold; color: #111; display: block; }
         
-        #close-panel, #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
+        #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
@@ -309,14 +311,19 @@
 
         map.on('load', () => {
             
-            // מחיקת קווי הגבול של Mapbox (מונע כפילויות של גבולות ישנים)
+            // =========================================================================================
+            // *** הערה לעריכה עתידית: 
+            // אם אתה רוצה להחזיר את הגבולות והשמות הדיפולטיביים של Mapbox, 
+            // פשוט תמחק את הפונקציה הבאה (מכאן ועד סוף הבלוק).
             const styleLayers = map.getStyle().layers;
             styleLayers.forEach(layer => {
-                if (layer.id.includes('admin') || layer.id.includes('boundary')) {
+                if (layer.id.includes('admin') || layer.id.includes('boundary') || layer.id.includes('country-label')) {
                     map.setLayoutProperty(layer.id, 'visibility', 'none');
                 }
             });
+            // =========================================================================================
 
+            // שכבת ימים (Mapbox Vector Tiles)
             map.addSource('seas-vec', { 
                 type: 'vector', 
                 url: 'mapbox://eyalfidel.9x1r7ppe' 
@@ -328,15 +335,17 @@
                 'source-layer': 'seas-b6hmy3',
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
+            // שכבת קווי המתאר (ההדגשה) לימים
             map.addLayer({ 
                 'id': 'sea-highlight', 
                 'type': 'line', 
                 'source': 'seas-vec', 
                 'source-layer': 'seas-b6hmy3',
                 'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'line-color': '#0ea5e9', 'line-width': 2.5 } 
+                'paint': { 'line-color': '#0ea5e9', 'line-width': 3 } 
             });
 
+            // שכבת מדינות (Mapbox Vector Tiles)
             map.addSource('countries-vec', { 
                 type: 'vector', 
                 url: 'mapbox://eyalfidel.c129uxl6' 
@@ -348,13 +357,24 @@
                 'source-layer': 'countries-50fsub',
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
+            
+            // גבולות קבועים ואפורים למדינות (מפצה על מחיקת הגבולות של Mapbox)
+            map.addLayer({
+                'id': 'countries-borders',
+                'type': 'line',
+                'source': 'countries-vec',
+                'source-layer': 'countries-50fsub',
+                'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
+            });
+
+            // שכבת קווי המתאר (ההדגשה) למדינות
             map.addLayer({ 
                 'id': 'feature-highlight', 
                 'type': 'line', 
                 'source': 'countries-vec', 
                 'source-layer': 'countries-50fsub',
                 'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'line-color': '#3b82f6', 'line-width': 2.5 } 
+                'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
             map.on('click', (e) => {
@@ -411,6 +431,8 @@
             
             let hebName = p.Name_HE;
             if (!isSea && !isDisputed && stats && stats.Name_HE) hebName = stats.Name_HE;
+            // משיכת שם למקרה של אזור במחלוקת מה-JSON
+            if (isDisputed && globalStats[iso] && globalStats[iso].Name_HE) hebName = globalStats[iso].Name_HE;
             
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
@@ -421,6 +443,7 @@
             document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
             document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
+            // ניקוי הדגשות קודמות, והחלת ההדגשה על השכבה הרלוונטית (ים או מדינה)
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
             map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
@@ -428,12 +451,11 @@
             window.location.hash = iso;
             document.getElementById('country-name').innerText = hebName || "לא ידוע";
             
-            // תצוגת אזור תלויה אם זה שטח מחלוקת או ים
             document.getElementById('row-region').style.display = isSea ? 'none' : 'block';
             document.getElementById('row-area').style.display = isSea ? 'none' : 'block';
 
             if (isDisputed) {
-                document.getElementById('country-region').innerText = disputedRegions[iso] || '---';
+                document.getElementById('country-region').innerText = disputedRegions[iso] || (globalStats[iso] ? globalStats[iso].Region : '---');
             } else if (!isSea) {
                 document.getElementById('country-region').innerText = stats.Region || '---';
             }
@@ -454,7 +476,7 @@
                 document.getElementById('country-climate').innerText = stats.Climate || '---';
                 document.getElementById('country-highest').innerText = stats.Highest_Point || '---';
                 
-                document.getElementById('country-pop-growth').innerHTML = (stats.Pop_Growth_Pct !== undefined ? stats.Pop_Growth_Pct + '%' : '---') + formatRank(stats.Growth_Rank);
+                document.getElementById('country-pop-growth').innerHTML = (stats.Pop_Growth_Pct !== undefined && stats.Pop_Growth_Pct !== "") ? stats.Pop_Growth_Pct + '%' + formatRank(stats.Growth_Rank) : '---';
                 document.getElementById('country-fertility').innerHTML = (stats.Fertility_Rate || '---') + formatRank(stats.Fert_Rank);
                 document.getElementById('country-life').innerHTML = (stats.Life_Expectancy && stats.Life_Expectancy !== "אין נתונים" ? stats.Life_Expectancy + ' שנים' : '---') + formatRank(stats.LifeEx_Rank);
                 document.getElementById('country-hdi').innerHTML = (stats.HDI && stats.HDI !== "ללא" && stats.HDI !== "אין נתונים" ? stats.HDI : '---') + formatRank(stats.HDI_Rank);
@@ -466,9 +488,9 @@
                 document.getElementById('country-tld').innerText = stats.TLD || '---';
                 document.getElementById('country-currency').innerText = stats.Currency_HE || '---';
                 
-                document.getElementById('country-pop').innerHTML = (stats.Population !== undefined ? Number(stats.Population).toLocaleString('he-IL') : "---") + formatRank(stats.Pop_Rank);
-                document.getElementById('country-gdp').innerHTML = (stats.GDP_Billion_USD !== undefined ? Number(stats.GDP_Billion_USD).toLocaleString('he-IL') + ' מיליארד $' : "---") + formatRank(stats.GDP_Rank);
-                document.getElementById('country-gdp-pc').innerHTML = (stats.GDP_Per_Capita_USD !== undefined ? '$' + Number(stats.GDP_Per_Capita_USD).toLocaleString('he-IL') : "---") + formatRank(stats.GDPPC_Rank);
+                document.getElementById('country-pop').innerHTML = (stats.Population !== undefined && stats.Population !== "") ? Number(stats.Population).toLocaleString('he-IL') + formatRank(stats.Pop_Rank) : "---";
+                document.getElementById('country-gdp').innerHTML = (stats.GDP_Billion_USD !== undefined && stats.GDP_Billion_USD !== "") ? Number(stats.GDP_Billion_USD).toLocaleString('he-IL') + ' מיליארד $' + formatRank(stats.GDP_Rank) : "---";
+                document.getElementById('country-gdp-pc').innerHTML = (stats.GDP_Per_Capita_USD !== undefined && stats.GDP_Per_Capita_USD !== "") ? '$' + Number(stats.GDP_Per_Capita_USD).toLocaleString('he-IL') + formatRank(stats.GDPPC_Rank) : "---";
                 
                 let flagUrl = "";
                 if (iso === 'NP') { 
@@ -547,7 +569,7 @@
             document.getElementById('comp-head-1').innerHTML = `<img src="${getFlagUrl(iso1)}" class="compare-flag"><br><span class="compare-name">${name1}</span>`;
             document.getElementById('comp-head-2').innerHTML = `<img src="${getFlagUrl(iso2)}" class="compare-flag"><br><span class="compare-name">${name2}</span>`;
 
-            const formatNum = (num) => num !== undefined ? Number(num).toLocaleString('he-IL') : '---';
+            const formatNum = (num) => (num !== undefined && num !== "") ? Number(num).toLocaleString('he-IL') : '---';
             const formatLit = (lit) => (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "---";
 
             const tbody = document.getElementById('compare-tbody');
@@ -557,7 +579,7 @@
                 <tr><td class="metric-name">אזור</td><td>${s1.Region || '---'}</td><td>${s2.Region || '---'}</td></tr>
                 <tr><td class="metric-name">משטר</td><td>${s1.Gov_Type || '---'}</td><td>${s2.Gov_Type || '---'}</td></tr>
                 <tr><td class="metric-name">אוכלוסייה</td><td>${formatNum(s1.Population)}<br>${formatRank(s1.Pop_Rank)}</td><td>${formatNum(s2.Population)}<br>${formatRank(s2.Pop_Rank)}</td></tr>
-                <tr><td class="metric-name">קצב גידול</td><td>${s1.Pop_Growth_Pct !== undefined ? s1.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s1.Growth_Rank)}</td><td>${s2.Pop_Growth_Pct !== undefined ? s2.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s2.Growth_Rank)}</td></tr>
+                <tr><td class="metric-name">קצב גידול</td><td>${(s1.Pop_Growth_Pct !== undefined && s1.Pop_Growth_Pct !== "") ? s1.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s1.Growth_Rank)}</td><td>${(s2.Pop_Growth_Pct !== undefined && s2.Pop_Growth_Pct !== "") ? s2.Pop_Growth_Pct+'%' : '---'}<br>${formatRank(s2.Growth_Rank)}</td></tr>
                 <tr><td class="metric-name">שטח (קמ"ר)</td><td>${formatNum(s1.Area_KM2)}<br>${formatRank(s1.Area_Rank)}</td><td>${formatNum(s2.Area_KM2)}<br>${formatRank(s2.Area_Rank)}</td></tr>
                 <tr><td class="metric-name">תמ"ג (מיליארד $)</td><td>${formatNum(s1.GDP_Billion_USD)}<br>${formatRank(s1.GDP_Rank)}</td><td>${formatNum(s2.GDP_Billion_USD)}<br>${formatRank(s2.GDP_Rank)}</td></tr>
                 <tr><td class="metric-name">תמ"ג לנפש</td><td>$${formatNum(s1.GDP_Per_Capita_USD)}<br>${formatRank(s1.GDPPC_Rank)}</td><td>$${formatNum(s2.GDP_Per_Capita_USD)}<br>${formatRank(s2.GDPPC_Rank)}</td></tr>
