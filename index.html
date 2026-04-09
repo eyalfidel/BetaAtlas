@@ -327,8 +327,10 @@
                 'type': 'fill', 
                 'source': 'seas-vec',
                 'source-layer': 'seas-b6hmy3',
-                // שקיפות מינימלית בלתי נראית לעין כדי להבטיח זיהוי לחיצה גם מעל מים מובנים
-                'paint': { 'fill-color': '#0ea5e9', 'fill-opacity': 0.01 } 
+                'paint': { 
+                    'fill-color': 'rgba(0, 0, 0, 0)', // צבע שקוף לחלוטין (אלפא 0)
+                    'fill-opacity': 1 // אטימות 100% כדי להכריח זיהוי לחיצה
+                } 
             });
             // שכבת קווי המתאר (ההדגשה) לימים
             map.addLayer({ 
@@ -350,7 +352,10 @@
                 'type': 'fill', 
                 'source': 'countries-vec', 
                 'source-layer': 'countries-50fsub',
-                'paint': { 'fill-color': '#fff', 'fill-opacity': 0.01 } 
+                'paint': { 
+                    'fill-color': 'rgba(0, 0, 0, 0)', 
+                    'fill-opacity': 1 
+                } 
             });
             
             // גבולות קבועים ואפורים למדינות (משלים את הגבולות הקיימים במקומות שאתה שולט בהם)
