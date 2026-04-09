@@ -311,18 +311,6 @@
 
         map.on('load', () => {
             
-            // =========================================================================================
-            // *** הערה לעריכה עתידית: 
-            // אם אתה רוצה להחזיר את הגבולות והשמות הדיפולטיביים של Mapbox, 
-            // פשוט תמחק את הפונקציה הבאה (מכאן ועד סוף הבלוק).
-            const styleLayers = map.getStyle().layers;
-            styleLayers.forEach(layer => {
-                if (layer.id.includes('admin') || layer.id.includes('boundary') || layer.id.includes('country-label')) {
-                    map.setLayoutProperty(layer.id, 'visibility', 'none');
-                }
-            });
-            // =========================================================================================
-
             // שכבת ימים (Mapbox Vector Tiles)
             map.addSource('seas-vec', { 
                 type: 'vector', 
@@ -335,7 +323,7 @@
                 'source-layer': 'seas-b6hmy3',
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
-            // שכבת קווי המתאר (ההדגשה) לימים
+            // שכבת קווי המתאר (ההדגשה) לימים - תוקן והוחזר!
             map.addLayer({ 
                 'id': 'sea-highlight', 
                 'type': 'line', 
@@ -358,15 +346,6 @@
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
             
-            // גבולות קבועים ואפורים למדינות (מפצה על מחיקת הגבולות של Mapbox)
-            map.addLayer({
-                'id': 'countries-borders',
-                'type': 'line',
-                'source': 'countries-vec',
-                'source-layer': 'countries-50fsub',
-                'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
-            });
-
             // שכבת קווי המתאר (ההדגשה) למדינות
             map.addLayer({ 
                 'id': 'feature-highlight', 
@@ -377,14 +356,21 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
+            // פונקציית הלחיצה חסינת התקלות החדשה
             map.on('click', (e) => {
                 const clickedRenderedFeatures = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
                 if (!clickedRenderedFeatures.length) return;
                 
-                const clickedISO = clickedRenderedFeatures[0].properties.ISO_A2;
+                const clickedProps = clickedRenderedFeatures[0].properties;
+                // חיפוש חכם שתופס את ה-ISO גם אם Mapbox שינו לו אותיות, וגיבוי לשם בעברית
+                const clickedISO = clickedProps.ISO_A2 || clickedProps.iso_a2 || '';
+                const clickedName = clickedProps.Name_HE || clickedProps.name_he || clickedProps.NAME_HE || '';
                 const isSeaClick = (clickedRenderedFeatures[0].layer.id === 'seas-fill');
                 
-                const pointItem = searchIndex.find(item => item.code === clickedISO);
+                const pointItem = searchIndex.find(item => 
+                    (clickedISO && item.code === clickedISO) || 
+                    (clickedName && item.name === clickedName)
+                );
                 
                 if (pointItem) {
                     const feature = pointItem.feature;
@@ -399,6 +385,8 @@
                     } else {
                         loadFeature(feature, e.lngLat);
                     }
+                } else {
+                    console.warn("לא נמצאה נקודת ממשק במערכת עבור הפוליגון שנלחץ:", clickedProps);
                 }
             });
 
@@ -422,16 +410,15 @@
         function loadFeature(feature, clickLngLat = null) {
             currentLoadedFeature = feature; 
             const p = feature.properties;
-            const iso = p.ISO_A2 || '';
+            const iso = p.ISO_A2 || p.iso_a2 || '';
             const isSea = p.isSea;
             const isDisputed = disputedAreas.includes(iso);
             
             const stats = (isSea || isDisputed) ? null : (globalStats[iso] || {});
             const wikiSummary = globalWiki[iso];
             
-            let hebName = p.Name_HE;
+            let hebName = p.Name_HE || p.name_he;
             if (!isSea && !isDisputed && stats && stats.Name_HE) hebName = stats.Name_HE;
-            // משיכת שם למקרה של אזור במחלוקת מה-JSON
             if (isDisputed && globalStats[iso] && globalStats[iso].Name_HE) hebName = globalStats[iso].Name_HE;
             
             const panel = document.getElementById('info-panel');
@@ -443,10 +430,14 @@
             document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
             document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
-            // ניקוי הדגשות קודמות, והחלת ההדגשה על השכבה הרלוונטית (ים או מדינה)
+            // מנגנון הדגשה מתוקן (מאפס הכל, ומדגיש רק את השכבה הנכונה, מגובה בשם עברי אם אין ISO)
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
-            map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
+            if (iso) {
+                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
+            } else if (hebName) {
+                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'Name_HE', hebName]);
+            }
             
             window.location.hash = iso;
             document.getElementById('country-name').innerText = hebName || "לא ידוע";
