@@ -7,6 +7,7 @@
     
     <meta property="og:title" content="Atlas Beta - האטלס האנציקלופדי">
     <meta property="og:description" content="אטלס תלת-ממדי אינטראקטיבי לחקר מדינות, ימים ומידע גיאוגרפי (גרסת בטא).">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
     
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
@@ -305,8 +306,9 @@
                 'type': 'fill', 
                 'source': 'seas-vec',
                 'source-layer': 'seas-b6hmy3',
-                // שקיפות רשמית של Mapbox לזיהוי אובייקטים: צבע שחור, שקיפות 0. 
-                'paint': { 'fill-color': '#000000', 'fill-opacity': 0 } 
+                // שקיפות רשמית חסינת-באגים של Mapbox למחשב ופלאפון: צבע שחור, שקיפות 0.005. 
+                // העין לא רואה, אבל ה-WebGL מצייר ולכן זה לחיץ בעכבר!
+                'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
             });
 
             // 2. מדינות
@@ -316,7 +318,7 @@
                 'type': 'fill', 
                 'source': 'countries-vec', 
                 'source-layer': 'countries-50fsub',
-                'paint': { 'fill-color': '#000000', 'fill-opacity': 0 } 
+                'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
             });
             
             // 3. גבולות קבועים למדינות
@@ -338,7 +340,7 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
-            // 5. הדגשת ימים (בסוף הערימה כדי שלא יוסתרו)
+            // 5. הדגשת ימים
             map.addLayer({ 
                 'id': 'seas-highlight', 
                 'type': 'line', 
@@ -348,32 +350,23 @@
                 'paint': { 'line-color': '#0284c7', 'line-width': 4 } 
             });
 
-            // מנגנון הלחיצה - "האצבע השמנה" לעכבר המחשב
+            // מנגנון הלחיצה
             map.on('click', (e) => {
                 
-                // התיקון הגדול למחשב: ייצור "קופסת מגע" (Bounding Box) של 10x10 פיקסלים סביב לחיצת העכבר
-                const bbox = [
-                    [e.point.x - 5, e.point.y - 5],
-                    [e.point.x + 5, e.point.y + 5]
-                ];
-                
-                // חיפוש בתוך קופסת המגע
-                const features = map.queryRenderedFeatures(bbox, { layers: ['countries-fill', 'seas-fill'] });
-                
+                const features = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
                 let clickedIso = null;
 
                 if (features.length > 0) {
-                    // זיהוי ויזואלי הצליח בתוך הקופסה! ניקח את הראשון שנמצא.
+                    // זיהוי ויזואלי מדויק מהמפה
                     clickedIso = features[0].properties.ISO_A2 || features[0].properties.iso_a2 || '';
                 } else {
-                    // רדאר הגיבוי: מופעל *רק* אם הלחיצה באמת לא פגעה בכלום (כמו זום סופר רחוק).
+                    // רדאר הגיבוי: מופעל *רק* אם הוקלק אזור ריק ש-Mapbox העלים
                     let minDistance = Infinity;
                     const clickLat = e.lngLat.lat;
                     const clickLng = e.lngLat.lng;
 
                     globalData.forEach((data, iso) => {
-                        // מתעלמים מימים! ככה לחיצה על הים לא תקפיץ בטעות מדינות (כמו באג בנגלדש)
-                        if (data.isSea) return; 
+                        if (data.isSea) return; // לא מנחשים ימים דרך רדאר
                         const coords = data.pointFeature.geometry.coordinates;
                         const dist = haversine(clickLat, clickLng, coords[1], coords[0]);
                         if (dist < minDistance) {
@@ -382,13 +375,11 @@
                         }
                     });
 
-                    // תקרת זכוכית: אם הלחיצה הייתה בלב האוקיינוס ואין שום מדינה ברדיוס 600 ק"מ, נבטל.
                     if (minDistance > 600) {
-                        clickedIso = null;
+                        clickedIso = null; // רחוק מדי, מבטל לחיצה
                     }
                 }
 
-                // הפעלת התהליך אם נמצאה ישות תקינה
                 if (clickedIso && globalData.has(clickedIso)) {
                     const targetData = globalData.get(clickedIso);
                     
@@ -404,14 +395,13 @@
                 }
             });
 
-            // שינוי סמן העכבר
             map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
             map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'seas-fill', () => map.getCanvas().style.cursor = '');
         });
 
-        // טעינת ישות (ים או מדינה) למסך והדגשה
+        // טעינת ישות למסך
         function loadFeature(iso) {
             const data = globalData.get(iso);
             if (!data) return;
@@ -420,12 +410,11 @@
             const stats = data.stats;
             const p = data.pointFeature.properties;
             
-            // איפוס והחלת הדגשות
+            // איפוס והחלת הדגשות (חסין לאותיות קטנות/גדולות)
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']);
             
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
-            // פילטר חסין לאותיות קטנות/גדולות מהשרת של Mapbox
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
             // תעופה אל היעד
@@ -514,7 +503,7 @@
             document.getElementById('link-wiki').href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
         }
 
-        /* ----- כפתורי ממשק וסגירה ----- */
+        /* ----- כפתורי ממשק ----- */
         document.getElementById('toggle-more-btn').onclick = function() {
             const extInfo = document.getElementById('extended-info');
             extInfo.style.display = extInfo.style.display === 'none' ? 'block' : 'none';
@@ -630,7 +619,7 @@
         };
         document.onclick = e => { if (e.target !== sIn && e.target !== sSug) sSug.style.display = 'none'; };
 
-        /* ----- שיתוף וגרירה (מובייל) ----- */
+        /* ----- שיתוף וגרירה ----- */
         const handleShare = async (title, textSuffix) => {
             const url = window.location.href;
             if (navigator.share) {
