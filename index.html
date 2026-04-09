@@ -266,7 +266,7 @@
             });
 
             seasData.features.forEach(f => {
-                f.properties.isSea = true;
+                f.properties.isSea = true; // סימון הכרחי לזיהוי ברדאר ובלחיצה
                 const iso2 = f.properties.ISO_A2 || f.properties.iso_a2 || f.properties.ISOA2 || '';
                 pointFeatures.push(f);
                 if (f.properties.Name_HE) {
@@ -321,34 +321,16 @@
 
         map.on('load', () => {
             
-            // שכבת ימים (Mapbox Vector Tiles)
-            map.addSource('seas-vec', { 
-                type: 'vector', 
-                url: 'mapbox://eyalfidel.9x1r7ppe' 
-            });
+            // 1. שכבת מילוי ימים - אטימות שקופה לגמרי (0,0,0,0) עם opacity 1 לזיהוי עכבר
             map.addLayer({ 
                 'id': 'seas-fill', 
                 'type': 'fill', 
                 'source': 'seas-vec',
                 'source-layer': 'seas-b6hmy3',
-                // שקיפות מתוקנת: צבע שקוף לחלוטין עם אטימות מלאה לזיהוי עכבר
                 'paint': { 'fill-color': 'rgba(0, 0, 0, 0)', 'fill-opacity': 1 } 
             });
-            // שכבת קווי המתאר (ההדגשה) לימים
-            map.addLayer({ 
-                'id': 'sea-highlight', 
-                'type': 'line', 
-                'source': 'seas-vec', 
-                'source-layer': 'seas-b6hmy3',
-                'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'line-color': '#0ea5e9', 'line-width': 3 } 
-            });
 
-            // שכבת מדינות (Mapbox Vector Tiles)
-            map.addSource('countries-vec', { 
-                type: 'vector', 
-                url: 'mapbox://eyalfidel.c129uxl6' 
-            });
+            // 2. שכבת מילוי מדינות - כנ"ל
             map.addLayer({ 
                 'id': 'countries-fill', 
                 'type': 'fill', 
@@ -357,7 +339,16 @@
                 'paint': { 'fill-color': 'rgba(0, 0, 0, 0)', 'fill-opacity': 1 } 
             });
             
-            // שכבת קווי המתאר (ההדגשה) למדינות
+            // 3. גבולות מדינות קבועים באפור
+            map.addLayer({
+                'id': 'countries-borders',
+                'type': 'line',
+                'source': 'countries-vec',
+                'source-layer': 'countries-50fsub',
+                'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
+            });
+
+            // 4. הדגשת מדינות נבחרות
             map.addLayer({ 
                 'id': 'feature-highlight', 
                 'type': 'line', 
@@ -367,7 +358,17 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
-            // מנגנון הלחיצה המתקדם: Mapbox Visual + גיבוי "רדאר" מתמטי
+            // 5. הדגשת ימים - שוּנָה מיקום לסוף כדי שתרונדר מעל כל הגבולות, וחוזק הצבע/עובי!
+            map.addLayer({ 
+                'id': 'sea-highlight', 
+                'type': 'line', 
+                'source': 'seas-vec', 
+                'source-layer': 'seas-b6hmy3',
+                'filter': ['==', 'ISO_A2', ''], 
+                'paint': { 'line-color': '#0284c7', 'line-width': 4 } 
+            });
+
+            // מנגנון הלחיצה המתקדם: Mapbox Visual + גיבוי "רדאר" מתמטי לזום רחוק
             map.on('click', (e) => {
                 const clickedRenderedFeatures = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
                 
@@ -388,7 +389,7 @@
                     if (pointItem) targetFeature = pointItem.feature;
                 }
                 
-                // 2. רדאר מתמטי חלופי (מופעל אם לוחצים בזום רחוק מדי ו-Mapbox מפספס)
+                // 2. גיבוי רדאר מתמטי: אם Mapbox מפספס כי הגלובוס קטן מדי
                 if (!targetFeature) {
                     let minDistance = Infinity;
                     const clickLat = e.lngLat.lat;
@@ -477,10 +478,11 @@
             document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
             document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
-            // מנגנון פילטר חכם חסין לבאגים של Mapbox
+            // מנגנון פילטר חכם חסין לבאגים של Mapbox - איפוס כללי
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
             
+            // בניית פילטר חכם שסורק גם אותיות קטנות וגדולות ושמות
             const targetLayer = isSea ? 'sea-highlight' : 'feature-highlight';
             const filterConditions = ['any'];
             if (iso) {
