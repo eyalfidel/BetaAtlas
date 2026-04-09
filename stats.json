@@ -801,7 +801,7 @@
     "GDP_Billion_USD": 17,
     "GDP_Per_Capita_USD": 7300,
     "Pop_Rank": 145,
-    "Area_Rank": 47,
+    "Area_Rank": 46,
     "GDP_Rank": 126,
     "GDPPC_Rank": 87
   },
@@ -956,7 +956,7 @@
     "GDP_Billion_USD": 2,
     "GDP_Per_Capita_USD": 400,
     "Pop_Rank": 125,
-    "Area_Rank": 44,
+    "Area_Rank": 43,
     "GDP_Rank": 173,
     "GDPPC_Rank": 198
   },
@@ -1111,7 +1111,7 @@
     "GDP_Billion_USD": 45,
     "GDP_Per_Capita_USD": 1600,
     "Pop_Rank": 52,
-    "Area_Rank": 54,
+    "Area_Rank": 53,
     "GDP_Rank": 90,
     "GDPPC_Rank": 159
   },
@@ -1669,7 +1669,7 @@
     "GDP_Billion_USD": 1427,
     "GDP_Per_Capita_USD": 30115,
     "Pop_Rank": 30,
-    "Area_Rank": 52,
+    "Area_Rank": 51,
     "GDP_Rank": 14,
     "GDPPC_Rank": 37
   },
@@ -1824,7 +1824,7 @@
     "GDP_Billion_USD": 2957,
     "GDP_Per_Capita_USD": 43518,
     "Pop_Rank": 21,
-    "Area_Rank": 49,
+    "Area_Rank": 48,
     "GDP_Rank": 7,
     "GDPPC_Rank": 25
   },
@@ -2692,7 +2692,7 @@
     "GDP_Billion_USD": 110,
     "GDP_Per_Capita_USD": 2000,
     "Pop_Rank": 26,
-    "Area_Rank": 48,
+    "Area_Rank": 47,
     "GDP_Rank": 63,
     "GDPPC_Rank": 152
   },
@@ -3467,7 +3467,7 @@
     "GDP_Billion_USD": 14,
     "GDP_Per_Capita_USD": 500,
     "Pop_Rank": 51,
-    "Area_Rank": 46,
+    "Area_Rank": 45,
     "GDP_Rank": 132,
     "GDPPC_Rank": 193
   },
@@ -5013,11 +5013,11 @@
     "Fert_Rank": 32,
     "Currency_HE": "שילינג סומלי",
     "Population": 16359500,
-    "Area_KM2": 637657,
+    "Area_KM2": 471815,
     "GDP_Billion_USD": 7,
     "GDP_Per_Capita_USD": 400,
     "Pop_Rank": 73,
-    "Area_Rank": 43,
+    "Area_Rank": 54,
     "GDP_Rank": 155,
     "GDPPC_Rank": 198
   },
@@ -5296,7 +5296,7 @@
     "GDP_Billion_USD": 505,
     "GDP_Per_Capita_USD": 7200,
     "Pop_Rank": 20,
-    "Area_Rank": 51,
+    "Area_Rank": 50,
     "GDP_Rank": 25,
     "GDPPC_Rank": 90
   },
@@ -5389,7 +5389,7 @@
     "GDP_Billion_USD": 45,
     "GDP_Per_Capita_USD": 7300,
     "Pop_Rank": 112,
-    "Area_Rank": 53,
+    "Area_Rank": 52,
     "GDP_Rank": 90,
     "GDPPC_Rank": 87
   },
@@ -5637,7 +5637,7 @@
     "GDP_Billion_USD": 200,
     "GDP_Per_Capita_USD": 4500,
     "Pop_Rank": 35,
-    "Area_Rank": 45,
+    "Area_Rank": 44,
     "GDP_Rank": 53,
     "GDPPC_Rank": 116
   },
@@ -5978,7 +5978,7 @@
     "GDP_Billion_USD": 21,
     "GDP_Per_Capita_USD": 700,
     "Pop_Rank": 48,
-    "Area_Rank": 50,
+    "Area_Rank": 49,
     "GDP_Rank": 113,
     "GDPPC_Rank": 186
   },
@@ -6257,7 +6257,7 @@
     "GDP_Billion_USD": 0,
     "GDP_Per_Capita_USD": 0,
     "Pop_Rank": 0,
-    "Area_Rank": 2,
+    "Area_Rank": 0,
     "GDP_Rank": 0,
     "GDPPC_Rank": 0
   }
