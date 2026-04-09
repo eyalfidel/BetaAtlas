@@ -75,8 +75,6 @@
         #compare-banner { background: #1d4ed8; border: 2px solid #60a5fa; cursor: pointer; }
         #compare-banner:hover { background: #1e3a8a; }
 
-        #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; }
-
         /* חלון ההשוואה */
         #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
         #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
@@ -89,6 +87,8 @@
         .compare-table .metric-name { font-weight: bold; color: #555; background: #f8f9fa; text-align: right; }
         .compare-flag { width: 50px; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-bottom: 8px; }
         .compare-name { font-size: 18px; font-weight: bold; color: #111; display: block; }
+        
+        #close-panel, #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
@@ -197,13 +197,26 @@
             zoom: initialZoom, 
             projection: 'globe' 
         });
-        map.on('style.load', () => { map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); });
+        
+        map.on('style.load', () => { 
+            map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); 
+        });
+
+        // הגדרת האזורים הסטטיים עבור שטחי המחלוקת (ה-Xים)
+        const disputedRegions = {
+            'XB': 'צפון-מזרח אפריקה (שטח הפקר)',
+            'XS': 'דרום-מזרח אסיה (ים סין הדרומי)',
+            'XC': 'דרום-מזרח אסיה (ים סין הדרומי)',
+            'XJ': 'האיים הקריביים',
+            'XR': 'האיים הקריביים',
+            'XP': 'אמריקה הדרומית (פטגוניה)'
+        };
 
         // Logic arrays & objects
         let searchIndex = [];
         let globalStats = {};
         let globalWiki = {};
-        let pointFeatures = []; // שומר את הפוליגונים הקלים (נקודות)
+        let pointFeatures = [];
         
         // מצב השוואה
         let isComparingMode = false;
@@ -212,7 +225,6 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
         const disputedAreas = ['XB', 'XS', 'XJ', 'XC', 'XR', 'XP'];
-        const shouldHideStats = (feature) => feature.properties.isSea || disputedAreas.includes(feature.properties.ISO_A2);
 
         // טעינת נתוני הלוגיקה והנקודות מתיקיית json
         Promise.all([
@@ -230,7 +242,6 @@
                 }
             });
             
-            // עיבוד נקודות המדינות לחיפוש
             countriesData.features.forEach(f => {
                 f.properties.isSea = false;
                 const iso2 = f.properties.ISO_A2 || '';
@@ -252,7 +263,6 @@
                 }
             });
 
-            // עיבוד נקודות הימים לחיפוש
             seasData.features.forEach(f => {
                 f.properties.isSea = true;
                 pointFeatures.push(f);
@@ -297,15 +307,20 @@
             return Math.max(1, z);
         }
 
-        // טעינת שכבות Mapbox Vector Tiles
         map.on('load', () => {
             
-            // מקור וקטורי לימים
+            // מחיקת קווי הגבול של Mapbox (מונע כפילויות של גבולות ישנים)
+            const styleLayers = map.getStyle().layers;
+            styleLayers.forEach(layer => {
+                if (layer.id.includes('admin') || layer.id.includes('boundary')) {
+                    map.setLayoutProperty(layer.id, 'visibility', 'none');
+                }
+            });
+
             map.addSource('seas-vec', { 
                 type: 'vector', 
                 url: 'mapbox://eyalfidel.9x1r7ppe' 
             });
-            // שכבה בלתי נראית לתפיסת לחיצות
             map.addLayer({ 
                 'id': 'seas-fill', 
                 'type': 'fill', 
@@ -313,7 +328,6 @@
                 'source-layer': 'seas-b6hmy3',
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
-            // קווי מתאר בבחירה
             map.addLayer({ 
                 'id': 'sea-highlight', 
                 'type': 'line', 
@@ -323,12 +337,10 @@
                 'paint': { 'line-color': '#0ea5e9', 'line-width': 2.5 } 
             });
 
-            // מקור וקטורי למדינות
             map.addSource('countries-vec', { 
                 type: 'vector', 
                 url: 'mapbox://eyalfidel.c129uxl6' 
             });
-            // שכבה בלתי נראית לתפיסת לחיצות
             map.addLayer({ 
                 'id': 'countries-fill', 
                 'type': 'fill', 
@@ -336,7 +348,6 @@
                 'source-layer': 'countries-50fsub',
                 'paint': { 'fill-color': '#fff', 'fill-opacity': 0 } 
             });
-            // קווי מתאר בבחירה
             map.addLayer({ 
                 'id': 'feature-highlight', 
                 'type': 'line', 
@@ -346,7 +357,6 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 2.5 } 
             });
 
-            // ניהול לחיצות על המפה - קריאה מה-Tiles, אבל שימוש בלוגיקה מקובץ ה-Points
             map.on('click', (e) => {
                 const clickedRenderedFeatures = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
                 if (!clickedRenderedFeatures.length) return;
@@ -354,15 +364,14 @@
                 const clickedISO = clickedRenderedFeatures[0].properties.ISO_A2;
                 const isSeaClick = (clickedRenderedFeatures[0].layer.id === 'seas-fill');
                 
-                // מחפשים את ישות הנקודה התואמת בזיכרון המקומי שלנו
                 const pointItem = searchIndex.find(item => item.code === clickedISO);
                 
                 if (pointItem) {
                     const feature = pointItem.feature;
-                    feature.properties.isSea = isSeaClick; // מוודאים התאמה לסוג
+                    feature.properties.isSea = isSeaClick;
                     
                     if (isComparingMode) {
-                        if (shouldHideStats(feature)) {
+                        if (feature.properties.isSea || disputedAreas.includes(clickedISO)) {
                             alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
                             return;
                         }
@@ -390,18 +399,18 @@
             }
         };
 
-        // loadFeature מקבל עכשיו תמיד את ה-Point Feature מהזיכרון הלוגי
         function loadFeature(feature, clickLngLat = null) {
             currentLoadedFeature = feature; 
             const p = feature.properties;
             const iso = p.ISO_A2 || '';
-            const hideStats = shouldHideStats(feature);
+            const isSea = p.isSea;
+            const isDisputed = disputedAreas.includes(iso);
             
-            const stats = hideStats ? null : (globalStats[iso] || {});
+            const stats = (isSea || isDisputed) ? null : (globalStats[iso] || {});
             const wikiSummary = globalWiki[iso];
             
             let hebName = p.Name_HE;
-            if (!hideStats && stats && stats.Name_HE) hebName = stats.Name_HE;
+            if (!isSea && !isDisputed && stats && stats.Name_HE) hebName = stats.Name_HE;
             
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
@@ -409,28 +418,36 @@
             
             document.getElementById('extended-info').style.display = 'none';
             document.getElementById('toggle-more-btn').innerText = 'הצג נתונים נוספים 🔽';
-            document.getElementById('toggle-more-btn').style.display = hideStats ? 'none' : 'block';
-            document.getElementById('country-actions').style.display = hideStats ? 'none' : 'flex';
+            document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
+            document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
-            // הדגשת קווי המתאר בשכבת ה-Vector Tiles המרונדרת
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
-            map.setFilter(p.isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
+            map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
             
             window.location.hash = iso;
             document.getElementById('country-name').innerText = hebName || "לא ידוע";
             
-            const countryOnlyRows = ['row-capital', 'row-region', 'row-pop', 'row-govtype', 'row-languages', 'row-indep', 'row-climate', 'row-highest', 'row-gdp', 'row-gdp-pc', 'row-currency', 'row-pop-growth', 'row-fertility', 'row-life', 'row-hdi', 'row-literacy', 'row-call', 'row-tld'];
-            countryOnlyRows.forEach(rowId => { document.getElementById(rowId).style.display = hideStats ? 'none' : 'block'; });
+            // תצוגת אזור תלויה אם זה שטח מחלוקת או ים
+            document.getElementById('row-region').style.display = isSea ? 'none' : 'block';
+            document.getElementById('row-area').style.display = isSea ? 'none' : 'block';
+
+            if (isDisputed) {
+                document.getElementById('country-region').innerText = disputedRegions[iso] || '---';
+            } else if (!isSea) {
+                document.getElementById('country-region').innerText = stats.Region || '---';
+            }
+
+            const strictlyCountryRows = ['row-capital', 'row-pop', 'row-govtype', 'row-languages', 'row-indep', 'row-climate', 'row-highest', 'row-gdp', 'row-gdp-pc', 'row-currency', 'row-pop-growth', 'row-fertility', 'row-life', 'row-hdi', 'row-literacy', 'row-call', 'row-tld'];
+            strictlyCountryRows.forEach(rowId => { document.getElementById(rowId).style.display = (isSea || isDisputed) ? 'none' : 'block'; });
 
             const fImg = document.getElementById('country-flag');
-            let targetArea = p.Area_KM2 || (stats ? stats.Area_KM2 : null);
+            let targetArea = p.Area_KM2 || (globalStats[iso] ? globalStats[iso].Area_KM2 : null);
 
-            if (hideStats) {
+            if (isSea || isDisputed) {
                 fImg.style.display = 'none';
             } else {
                 document.getElementById('country-capital').innerText = stats.Capital_HE || '---';
-                document.getElementById('country-region').innerText = stats.Region || '---';
                 document.getElementById('country-govtype').innerText = stats.Gov_Type || '---';
                 document.getElementById('country-languages').innerText = stats.Languages || '---';
                 document.getElementById('country-indep').innerText = stats.Indep_Year || '---';
@@ -458,7 +475,6 @@
                     flagUrl = `https://flagcdn.com/w80/np.png`; 
                     fImg.style.border = 'none'; fImg.style.boxShadow = 'none'; 
                 } else if (iso === 'XL') {
-                    // קריאת דגל סומלילנד מהתיקייה המקומית (אותיות קטנות לתיקייה כפי שביקשת)
                     flagUrl = `flags/XL.png`; 
                     fImg.style.border = '1px solid #eee'; fImg.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; 
                 } else if (iso) { 
@@ -475,7 +491,7 @@
                 if (a >= 10000000) { areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר'; } 
                 else { areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר'; }
             }
-            const areaRankHtml = (!hideStats && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
+            const areaRankHtml = (!isSea && !isDisputed && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
             document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
 
             if (wikiSummary) { document.getElementById('country-wiki').innerText = wikiSummary; } 
@@ -487,11 +503,9 @@
 
             const targetZoom = getZoomLevel(Number(targetArea));
             
-            // תעופה אל היעד: שימוש בקואורדינטות הנקודה מקובץ ה-Points או מיקום הלחיצה (אם זמין ונוח)
             if (clickLngLat) {
                 map.flyTo({ center: clickLngLat, zoom: targetZoom });
             } else {
-                // המבנה של GeoJSON Point הוא מערך [lng, lat]
                 const targetCoords = feature.geometry.coordinates; 
                 map.flyTo({ center: targetCoords, zoom: targetZoom });
             }
@@ -499,7 +513,7 @@
 
         /* ----- לוגיקת השוואת מדינות ----- */
         document.getElementById('compare-init-btn').onclick = () => {
-            if (!currentLoadedFeature || shouldHideStats(currentLoadedFeature)) return;
+            if (!currentLoadedFeature || currentLoadedFeature.properties.isSea || disputedAreas.includes(currentLoadedFeature.properties.ISO_A2)) return;
             isComparingMode = true;
             baseCompareFeature = currentLoadedFeature;
             document.getElementById('info-panel').style.display = 'none';
@@ -592,7 +606,7 @@
         document.addEventListener('touchend', () => { if (isDragging) { isDragging = false; panel.style.transition = 'height 0.2s ease-out'; }});
 
         document.getElementById('random-btn').onclick = () => { 
-            let validFeatures = pointFeatures.filter(f => !shouldHideStats(f));
+            let validFeatures = pointFeatures.filter(f => !f.properties.isSea && !disputedAreas.includes(f.properties.ISO_A2));
             if (validFeatures.length) loadFeature(validFeatures[Math.floor(Math.random() * validFeatures.length)]); 
         };
         
@@ -651,7 +665,7 @@
                     sIn.value = m.name; 
                     sSug.style.display = 'none'; 
                     if (isComparingMode) {
-                        if (shouldHideStats(m.feature)) {
+                        if (m.feature.properties.isSea || disputedAreas.includes(m.feature.properties.ISO_A2)) {
                             alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
                         } else {
                             executeComparison(baseCompareFeature, m.feature);
