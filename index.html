@@ -204,6 +204,7 @@
             map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); 
         });
 
+        // הגדרת האזורים הסטטיים עבור שטחי המחלוקת (ה-Xים)
         const disputedRegions = {
             'XB': 'צפון-מזרח אפריקה (שטח הפקר)',
             'XS': 'דרום-מזרח אסיה (ים סין הדרומי)',
@@ -213,11 +214,13 @@
             'XP': 'אמריקה הדרומית (פטגוניה)'
         };
 
+        // Logic arrays & objects
         let searchIndex = [];
         let globalStats = {};
         let globalWiki = {};
         let pointFeatures = [];
         
+        // מצב השוואה
         let isComparingMode = false;
         let baseCompareFeature = null;
         let currentLoadedFeature = null;
@@ -225,6 +228,7 @@
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
         const disputedAreas = ['XB', 'XS', 'XJ', 'XC', 'XR', 'XP'];
 
+        // טעינת נתוני הלוגיקה והנקודות מתיקיית json
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.json()).catch(() => ({ features: [] })),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : { features: [] }).catch(() => ({ features: [] })),
@@ -327,10 +331,8 @@
                 'type': 'fill', 
                 'source': 'seas-vec',
                 'source-layer': 'seas-b6hmy3',
-                'paint': { 
-                    'fill-color': 'rgba(0, 0, 0, 0)', // צבע שקוף לחלוטין (אלפא 0)
-                    'fill-opacity': 1 // אטימות 100% כדי להכריח זיהוי לחיצה
-                } 
+                // שקיפות מתוקנת: צבע שקוף לחלוטין עם אטימות מלאה לזיהוי עכבר
+                'paint': { 'fill-color': 'rgba(0, 0, 0, 0)', 'fill-opacity': 1 } 
             });
             // שכבת קווי המתאר (ההדגשה) לימים
             map.addLayer({ 
@@ -352,21 +354,9 @@
                 'type': 'fill', 
                 'source': 'countries-vec', 
                 'source-layer': 'countries-50fsub',
-                'paint': { 
-                    'fill-color': 'rgba(0, 0, 0, 0)', 
-                    'fill-opacity': 1 
-                } 
+                'paint': { 'fill-color': 'rgba(0, 0, 0, 0)', 'fill-opacity': 1 } 
             });
             
-            // גבולות קבועים ואפורים למדינות (משלים את הגבולות הקיימים במקומות שאתה שולט בהם)
-            map.addLayer({
-                'id': 'countries-borders',
-                'type': 'line',
-                'source': 'countries-vec',
-                'source-layer': 'countries-50fsub',
-                'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
-            });
-
             // שכבת קווי המתאר (ההדגשה) למדינות
             map.addLayer({ 
                 'id': 'feature-highlight', 
@@ -377,32 +367,72 @@
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
+            // מנגנון הלחיצה המתקדם: Mapbox Visual + גיבוי "רדאר" מתמטי
             map.on('click', (e) => {
                 const clickedRenderedFeatures = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
-                if (!clickedRenderedFeatures.length) return;
                 
-                const props = clickedRenderedFeatures[0].properties;
-                const clickedISO = props.ISO_A2 || props.iso_a2 || props.ISOA2 || '';
-                const clickedName = props.Name_HE || props.name_he || props.NAME_HE || '';
-                const isSeaClick = (clickedRenderedFeatures[0].layer.id === 'seas-fill');
-                
-                const pointItem = searchIndex.find(item => 
-                    (clickedISO && item.code === clickedISO) || 
-                    (clickedName && item.name === clickedName)
-                );
-                
-                if (pointItem) {
-                    const feature = pointItem.feature;
-                    feature.properties.isSea = isSeaClick;
+                let targetFeature = null;
+                let isSeaClick = false;
+
+                // 1. ניסיון ראשון: זיהוי ויזואלי של Mapbox
+                if (clickedRenderedFeatures.length > 0) {
+                    const props = clickedRenderedFeatures[0].properties;
+                    const clickedISO = props.ISO_A2 || props.iso_a2 || props.ISOA2 || '';
+                    const clickedName = props.Name_HE || props.name_he || props.NAME_HE || '';
+                    isSeaClick = (clickedRenderedFeatures[0].layer.id === 'seas-fill');
                     
+                    const pointItem = searchIndex.find(item => 
+                        (clickedISO && item.code === clickedISO) || 
+                        (clickedName && item.name === clickedName)
+                    );
+                    if (pointItem) targetFeature = pointItem.feature;
+                }
+                
+                // 2. רדאר מתמטי חלופי (מופעל אם לוחצים בזום רחוק מדי ו-Mapbox מפספס)
+                if (!targetFeature) {
+                    let minDistance = Infinity;
+                    const clickLat = e.lngLat.lat;
+                    const clickLng = e.lngLat.lng;
+
+                    pointFeatures.forEach(f => {
+                        if (!f.geometry || !f.geometry.coordinates) return;
+                        const lon2 = f.geometry.coordinates[0];
+                        const lat2 = f.geometry.coordinates[1];
+
+                        // נוסחת Haversine למרחק מדויק
+                        const R = 6371; 
+                        const dLat = (lat2 - clickLat) * Math.PI / 180;
+                        const dLon = (lon2 - clickLng) * Math.PI / 180;
+                        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                                  Math.cos(clickLat * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                                  Math.sin(dLon/2) * Math.sin(dLon/2);
+                        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                        const distance = R * c;
+
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            targetFeature = f;
+                        }
+                    });
+                    
+                    if (targetFeature) {
+                        isSeaClick = !!targetFeature.properties.isSea;
+                    }
+                }
+
+                // הפעלת הפונקציה לאחר הזיהוי
+                if (targetFeature) {
+                    targetFeature.properties.isSea = isSeaClick;
+                    
+                    const isoToCheck = targetFeature.properties.ISO_A2 || targetFeature.properties.iso_a2 || '';
                     if (isComparingMode) {
-                        if (feature.properties.isSea || disputedAreas.includes(clickedISO)) {
+                        if (targetFeature.properties.isSea || disputedAreas.includes(isoToCheck)) {
                             alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
                             return;
                         }
-                        executeComparison(baseCompareFeature, feature);
+                        executeComparison(baseCompareFeature, targetFeature);
                     } else {
-                        loadFeature(feature, e.lngLat);
+                        loadFeature(targetFeature, e.lngLat);
                     }
                 }
             });
@@ -447,7 +477,7 @@
             document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
             document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
-            // מנגנון פילטר חכם ועמיד לבאגים מול Mapbox
+            // מנגנון פילטר חכם חסין לבאגים של Mapbox
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
             
@@ -457,7 +487,7 @@
                 filterConditions.push(['==', 'ISO_A2', iso], ['==', 'iso_a2', iso], ['==', 'ISOA2', iso]);
             }
             if (hebName) {
-                filterConditions.push(['==', 'Name_HE', hebName], ['==', 'name_he', hebName]);
+                filterConditions.push(['==', 'Name_HE', hebName], ['==', 'name_he', hebName], ['==', 'NAME_HE', hebName]);
             }
             if (filterConditions.length > 1) {
                 map.setFilter(targetLayer, filterConditions);
