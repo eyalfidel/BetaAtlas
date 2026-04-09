@@ -430,13 +430,15 @@
             document.getElementById('toggle-more-btn').style.display = (isSea || isDisputed) ? 'none' : 'block';
             document.getElementById('country-actions').style.display = (isSea || isDisputed) ? 'none' : 'flex';
 
-            // מנגנון הדגשה מתוקן (מאפס הכל, ומדגיש רק את השכבה הנכונה, מגובה בשם עברי אם אין ISO)
+            // מנגנון הדגשה מתוקן (תומך באותיות קטנות של Mapbox)
             map.setFilter('feature-highlight', ['==', 'ISO_A2', '']);
-            map.setFilter('sea-highlight', ['==', 'ISO_A2', '']);
+            map.setFilter('sea-highlight', ['any', ['==', 'ISO_A2', ''], ['==', 'iso_a2', '']]);
             if (iso) {
-                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'ISO_A2', iso]);
+                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', 
+                    isSea ? ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]] : ['==', 'ISO_A2', iso]);
             } else if (hebName) {
-                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', ['==', 'Name_HE', hebName]);
+                map.setFilter(isSea ? 'sea-highlight' : 'feature-highlight', 
+                    isSea ? ['any', ['==', 'Name_HE', hebName], ['==', 'name_he', hebName]] : ['==', 'Name_HE', hebName]);
             }
             
             window.location.hash = iso;
