@@ -7,7 +7,6 @@
     
     <meta property="og:title" content="Atlas Beta - האטלס האנציקלופדי">
     <meta property="og:description" content="אטלס תלת-ממדי אינטראקטיבי לחקר מדינות, ימים ומידע גיאוגרפי (גרסת בטא).">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
     
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
@@ -92,6 +91,13 @@
         
         #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
+        /* עיצוב הפופאפ לנקודות העניין */
+        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .mapboxgl-popup-close-button { display: none; }
+        .poi-popup h4 { margin: 0 0 5px 0; color: #111; font-size: 16px; border-bottom: 2px solid #fbbf24; padding-bottom: 3px; display: inline-block;}
+        .poi-popup a { color: #3b82f6; text-decoration: none; font-size: 13px; font-weight: bold; display: block; margin-top: 8px; }
+        .poi-popup a:hover { text-decoration: underline; }
+
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
             #search-input { width: 140px; }
@@ -202,7 +208,6 @@
             map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); 
         });
 
-        // אזורים מיוחדים
         const disputedRegions = {
             'XB': 'צפון-מזרח אפריקה (שטח הפקר)',
             'XS': 'דרום-מזרח אסיה (ים סין הדרומי)',
@@ -213,8 +218,8 @@
         };
         const disputedAreas = Object.keys(disputedRegions);
 
-        // מבני נתונים
         const globalData = new Map(); 
+        let globalCapitalsData = { type: 'FeatureCollection', features: [] };
         const searchIndex = [];
         
         let isComparingMode = false;
@@ -223,14 +228,22 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
-        // אתחול נתונים מ-JSON
+        // אתחול נתונים מ-JSON, כולל את קובץ הבירות החדש
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/stats.json').then(res => res.ok ? res.json() : []),
-            fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {})
-        ]).then(([countriesData, seasData, statsData, wikiData]) => {
+            fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {}),
+            fetch('json/capitals.geojson').then(res => res.ok ? res.json() : {features:[]})
+        ]).then(([countriesData, seasData, statsData, wikiData, capitalsData]) => {
             
+            globalCapitalsData = capitalsData;
+            
+            // במקרה שהמפה כבר נטענה בזמן שה-fetch רץ, נעדכן את המקור שלה
+            if (map.getSource('capitals')) {
+                map.getSource('capitals').setData(globalCapitalsData);
+            }
+
             const statsMap = new Map();
             statsData.forEach(row => { if (row.ISOA2) statsMap.set(row.ISOA2, row); });
 
@@ -286,7 +299,6 @@
             }
         });
 
-        // חישוב מרחק מתמטי (רדאר)
         function haversine(lat1, lon1, lat2, lon2) {
             const R = 6371; 
             const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -299,74 +311,116 @@
 
         map.on('load', () => {
             
-            // 1. ימים (מתחת למדינות)
+            // --- שכבות רקע ומדינות/ימים ---
             map.addSource('seas-vec', { type: 'vector', url: 'mapbox://eyalfidel.9x1r7ppe' });
             map.addLayer({ 
-                'id': 'seas-fill', 
-                'type': 'fill', 
-                'source': 'seas-vec',
-                'source-layer': 'seas-b6hmy3',
-                // שקיפות רשמית חסינת-באגים של Mapbox למחשב ופלאפון: צבע שחור, שקיפות 0.005. 
-                // העין לא רואה, אבל ה-WebGL מצייר ולכן זה לחיץ בעכבר!
+                'id': 'seas-fill', 'type': 'fill', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3',
                 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
             });
 
-            // 2. מדינות
             map.addSource('countries-vec', { type: 'vector', url: 'mapbox://eyalfidel.c129uxl6' });
             map.addLayer({ 
-                'id': 'countries-fill', 
-                'type': 'fill', 
-                'source': 'countries-vec', 
-                'source-layer': 'countries-50fsub',
+                'id': 'countries-fill', 'type': 'fill', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
                 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
             });
             
-            // 3. גבולות קבועים למדינות
             map.addLayer({
-                'id': 'countries-borders',
-                'type': 'line',
-                'source': 'countries-vec',
-                'source-layer': 'countries-50fsub',
+                'id': 'countries-borders', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
                 'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
             });
 
-            // 4. הדגשת מדינות נבחרות
             map.addLayer({ 
-                'id': 'countries-highlight', 
-                'type': 'line', 
-                'source': 'countries-vec', 
-                'source-layer': 'countries-50fsub',
+                'id': 'countries-highlight', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
                 'filter': ['==', 'ISO_A2', ''], 
                 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
             });
 
-            // 5. הדגשת ימים
             map.addLayer({ 
-                'id': 'seas-highlight', 
-                'type': 'line', 
-                'source': 'seas-vec', 
-                'source-layer': 'seas-b6hmy3',
+                'id': 'seas-highlight', 'type': 'line', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3',
                 'filter': ['==', 'ISO_A2', ''], 
                 'paint': { 'line-color': '#0284c7', 'line-width': 4 } 
             });
 
-            // מנגנון הלחיצה
+            // --- שכבות נקודות עניין (ערי בירה) ---
+            map.addSource('capitals', {
+                type: 'geojson',
+                data: globalCapitalsData
+            });
+
+            // סיכה עגולה זהובה
+            map.addLayer({
+                'id': 'capitals-layer',
+                'type': 'circle',
+                'source': 'capitals',
+                'filter': ['==', 'ISO_A2', ''], // מוסתר כברירת מחדל עד שבוחרים מדינה
+                'paint': {
+                    'circle-radius': 7,
+                    'circle-color': '#fbbf24', 
+                    'circle-stroke-color': '#ffffff',
+                    'circle-stroke-width': 2,
+                    'circle-pitch-alignment': 'map'
+                }
+            });
+
+            // כיתוב השם ליד הסיכה
+            map.addLayer({
+                'id': 'capitals-label',
+                'type': 'symbol',
+                'source': 'capitals',
+                'filter': ['==', 'ISO_A2', ''],
+                'layout': {
+                    'text-field': ['get', 'name'],
+                    'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                    'text-size': 14,
+                    'text-offset': [0, 1.2],
+                    'text-anchor': 'top'
+                },
+                'paint': {
+                    'text-color': '#ffffff',
+                    'text-halo-color': '#000000',
+                    'text-halo-width': 2
+                }
+            });
+
+            // מנגנון הלחיצה הראשי (המחשב מוגן עם Bounding Box)
             map.on('click', (e) => {
                 
-                const features = map.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'seas-fill'] });
+                // 1. קודם כל נבדוק אם המשתמש לחץ על נקודת עניין (סיכת עיר בירה)
+                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label'] });
+                if (poiFeatures.length > 0) {
+                    const props = poiFeatures[0].properties;
+                    const popupContent = `
+                        <div class="poi-popup" dir="rtl">
+                            <h4>${props.name}</h4>
+                            ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
+                        </div>
+                    `;
+                    new mapboxgl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML(popupContent)
+                        .addTo(map);
+                        
+                    return; // עוצר את המשך הפונקציה - כדי שהמדינה למטה לא תיטען מחדש!
+                }
+
+                // 2. אם לא לחצנו על סיכה, נמשיך לזהות לחיצה על מדינה/ים עם ה"אצבע השמנה" למחשב
+                const bbox = [
+                    [e.point.x - 5, e.point.y - 5],
+                    [e.point.x + 5, e.point.y + 5]
+                ];
+                
+                const features = map.queryRenderedFeatures(bbox, { layers: ['countries-fill', 'seas-fill'] });
                 let clickedIso = null;
 
                 if (features.length > 0) {
-                    // זיהוי ויזואלי מדויק מהמפה
                     clickedIso = features[0].properties.ISO_A2 || features[0].properties.iso_a2 || '';
                 } else {
-                    // רדאר הגיבוי: מופעל *רק* אם הוקלק אזור ריק ש-Mapbox העלים
                     let minDistance = Infinity;
                     const clickLat = e.lngLat.lat;
                     const clickLng = e.lngLat.lng;
 
                     globalData.forEach((data, iso) => {
-                        if (data.isSea) return; // לא מנחשים ימים דרך רדאר
+                        if (data.isSea) return; 
                         const coords = data.pointFeature.geometry.coordinates;
                         const dist = haversine(clickLat, clickLng, coords[1], coords[0]);
                         if (dist < minDistance) {
@@ -376,7 +430,7 @@
                     });
 
                     if (minDistance > 600) {
-                        clickedIso = null; // רחוק מדי, מבטל לחיצה
+                        clickedIso = null;
                     }
                 }
 
@@ -395,13 +449,15 @@
                 }
             });
 
+            // שינוי סמן העכבר
             map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
             map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'seas-fill', () => map.getCanvas().style.cursor = '');
+            map.on('mouseenter', 'capitals-layer', () => map.getCanvas().style.cursor = 'pointer');
+            map.on('mouseleave', 'capitals-layer', () => map.getCanvas().style.cursor = '');
         });
 
-        // טעינת ישות למסך
         function loadFeature(iso) {
             const data = globalData.get(iso);
             if (!data) return;
@@ -410,14 +466,22 @@
             const stats = data.stats;
             const p = data.pointFeature.properties;
             
-            // איפוס והחלת הדגשות (חסין לאותיות קטנות/גדולות)
+            // איפוס והחלת הדגשות (פוליגונים)
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']);
-            
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            // תעופה אל היעד
+            // פילטור נקודות העניין (כדי שרק הבירה של המדינה הזו תופיע)
+            if (!data.isSea && !isComparingMode) {
+                map.setFilter('capitals-layer', ['==', 'ISO_A2', iso]);
+                map.setFilter('capitals-label', ['==', 'ISO_A2', iso]);
+            } else {
+                map.setFilter('capitals-layer', ['==', 'ISO_A2', '']);
+                map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
+            }
+
+            // תעופה
             const coords = data.pointFeature.geometry.coordinates;
             let targetArea = p.Area_KM2 || stats.Area_KM2;
             let z = 4;
@@ -429,7 +493,7 @@
             
             map.flyTo({ center: coords, zoom: Math.max(1, z) });
 
-            // עדכון ממשק פאנל
+            // UI
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
@@ -514,6 +578,8 @@
             document.getElementById('info-panel').style.display = 'none'; 
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']); 
+            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); // הסתרת הסיכה בסגירה
+            map.setFilter('capitals-label', ['==', 'ISO_A2', '']); 
             history.pushState("", document.title, window.location.pathname + window.location.search);
         };
 
@@ -530,12 +596,18 @@
             isComparingMode = true;
             document.getElementById('info-panel').style.display = 'none';
             document.getElementById('compare-banner').style.display = 'block';
+            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); // הסתרת סיכות במצב השוואה
+            map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
         };
 
         document.getElementById('compare-banner').onclick = () => {
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
             document.getElementById('info-panel').style.display = 'block';
+            if (currentLoadedISO) {
+                map.setFilter('capitals-layer', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('capitals-label', ['==', 'ISO_A2', currentLoadedISO]);
+            }
         };
 
         function executeComparison(targetData) {
@@ -546,6 +618,9 @@
             const iso1 = baseCompareFeature.iso;
             const iso2 = targetData.iso;
             window.location.hash = `${iso1}-${iso2}`;
+            
+            map.setFilter('capitals-layer', ['==', 'ISO_A2', iso2]);
+            map.setFilter('capitals-label', ['==', 'ISO_A2', iso2]);
 
             const s1 = baseCompareFeature.stats || {};
             const s2 = targetData.stats || {};
