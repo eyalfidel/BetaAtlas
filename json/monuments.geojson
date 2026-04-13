@@ -1,0 +1,1013 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.975,
+          24.6587
+        ]
+      },
+      "properties": {
+        "name": "פוג'יין טולואו",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%92%27%D7%99%D7%99%D7%9F_%D7%98%D7%95%D7%9C%D7%95%D7%90%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.520782,
+          22.261814
+        ]
+      },
+      "properties": {
+        "name": "דיאולואו וכפרים בקאיפינג",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%99%D7%90%D7%95%D7%9C%D7%95%D7%90%D7%95_%D7%95%D7%9B%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%A7%D7%90%D7%99%D7%A4%D7%99%D7%A0%D7%92",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.254722222,
+          56.995277777
+        ]
+      },
+      "properties": {
+        "name": "מבצרי הטבעת מתקופת הוויקינגים",
+        "ISO_A2": "DK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%91%D7%A6%D7%A8%D7%99_%D7%94%D7%98%D7%91%D7%A2%D7%AA_%D7%9E%D7%AA%D7%A7%D7%95%D7%A4%D7%AA_%D7%94%D7%95%D7%95%D7%99%D7%A7%D7%99%D7%A0%D7%92%D7%99%D7%9D",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.661255555,
+          28.043558333
+        ]
+      },
+      "properties": {
+        "name": "ריסקו קאידו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A1%D7%A7%D7%95_%D7%A7%D7%90%D7%99%D7%93%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.970833333,
+          55.274444444
+        ]
+      },
+      "properties": {
+        "name": "הרצועה הקורונית",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%A6%D7%95%D7%A2%D7%94_%D7%94%D7%A7%D7%95%D7%A8%D7%95%D7%A0%D7%99%D7%AA",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.00472222,
+          53.30277778
+        ]
+      },
+      "properties": {
+        "name": "ימת באיקל",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%9E%D7%AA_%D7%91%D7%90%D7%99%D7%A7%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.825911341,
+          34.439613877
+        ]
+      },
+      "properties": {
+        "name": "מתחם היריד הבינלאומי על שם רשיד כראמי",
+        "ISO_A2": "LB",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%AA%D7%97%D7%9D_%D7%94%D7%99%D7%A8%D7%99%D7%93_%D7%94%D7%91%D7%99%D7%9F-%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%A2%D7%9C_%D7%A9%D7%9D_%D7%A8%D7%A9%D7%99%D7%93_%D7%9B%D7%A8%D7%90%D7%9E%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.3286,
+          57.8072
+        ]
+      },
+      "properties": {
+        "name": "כנסיות בית הספר לאדריכלות של פסקוב",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A0%D7%A1%D7%99%D7%95%D7%AA_%D7%91%D7%99%D7%AA_%D7%94%D7%A1%D7%A4%D7%A8_%D7%9C%D7%90%D7%93%D7%A8%D7%99%D7%9B%D7%9C%D7%95%D7%AA_%D7%A9%D7%9C_%D7%A4%D7%A1%D7%A7%D7%95%D7%91",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.873725,
+          35.237263888
+        ]
+      },
+      "properties": {
+        "name": "תילי הקבורה מתקופת קאיה",
+        "ISO_A2": "KR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%99%D7%9C%D7%99_%D7%94%D7%A7%D7%91%D7%95%D7%A8%D7%94_%D7%9E%D7%AA%D7%A7%D7%95%D7%A4%D7%AA_%D7%A7%D7%90%D7%99%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.012639,
+          61.7299
+        ]
+      },
+      "properties": {
+        "name": "הפטרוגליפים של ימת אונגה והים הלבן",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%98%D7%A8%D7%95%D7%92%D7%9C%D7%99%D7%A4%D7%99%D7%9D_%D7%A9%D7%9C_%D7%99%D7%9E%D7%AA_%D7%90%D7%95%D7%A0%D7%92%D7%94_%D7%95%D7%94%D7%99%D7%9D_%D7%94%D7%9C%D7%91%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.335227777,
+          15.426769444
+        ]
+      },
+      "properties": {
+        "name": "אתרי ממלכת סבא העתיקה",
+        "ISO_A2": "YE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%AA%D7%A8%D7%99_%D7%9E%D7%9E%D7%9C%D7%9B%D7%AA_%D7%A1%D7%91%D7%90_%D7%94%D7%A2%D7%AA%D7%99%D7%A7%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          110.3647778,
+          -7.8013889
+        ]
+      },
+      "properties": {
+        "name": "הציר הקוסמולוגי של יוגיאקרטה והאתרים ההיסטוריים שלו",
+        "ISO_A2": "ID",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A6%D7%99%D7%A8_%D7%94%D7%A7%D7%95%D7%A1%D7%9E%D7%95%D7%9C%D7%95%D7%92%D7%99_%D7%A9%D7%9C_%D7%99%D7%95%D7%92%D7%99%D7%90%D7%A7%D7%A8%D7%98%D7%94_%D7%95%D7%94%D7%90%D7%AA%D7%A8%D7%99%D7%9D_%D7%94%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%99%D7%9D_%D7%A9%D7%9C%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.041944444,
+          27.175
+        ]
+      },
+      "properties": {
+        "name": "טאג' מהאל",
+        "ISO_A2": "IN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%90%D7%92%27_%D7%9E%D7%94%D7%90%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.211388888,
+          33.508333333
+        ]
+      },
+      "properties": {
+        "name": "האתרים הפרהיסטוריים של עמק ח'ורמאבאד",
+        "ISO_A2": "IR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%AA%D7%A8%D7%99%D7%9D_%D7%94%D7%A4%D7%A8%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%99%D7%9D_%D7%A9%D7%9C_%D7%A2%D7%9E%D7%A7_%D7%97%27%D7%95%D7%A8%D7%9E%D7%90%D7%91%D7%90%D7%93",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.034166666,
+          44.025833333
+        ]
+      },
+      "properties": {
+        "name": "מדבריות החורף הקרים של טוראן",
+        "ISO_A2": "UZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%93%D7%91%D7%A8%D7%99%D7%95%D7%AA_%D7%94%D7%97%D7%95%D7%A8%D7%A3_%D7%94%D7%A7%D7%A8%D7%99%D7%9D_%D7%A9%D7%9C_%D7%98%D7%95%D7%A8%D7%90%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -139.5,
+          -9.0
+        ]
+      },
+      "properties": {
+        "name": "טה הנואה אנטה – איי מרקיז",
+        "ISO_A2": "FR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%94_%D7%94%D7%A0%D7%95%D7%90%D7%94_%D7%90%D7%A0%D7%98%D7%94_%E2%80%93_%D7%90%D7%99%D7%99_%D7%9E%D7%A8%D7%A7%D7%99%D7%96",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.388916666,
+          44.379944444
+        ]
+      },
+      "properties": {
+        "name": "קרסט ומערות אוופוריטיים באפנינים הצפוניים",
+        "ISO_A2": "IT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%A1%D7%98_%D7%95%D7%9E%D7%A2%D7%A8%D7%95%D7%AA_%D7%90%D7%95%D7%95%D7%A4%D7%95%D7%A8%D7%99%D7%98%D7%99%D7%99%D7%9D_%D7%91%D7%90%D7%A4%D7%A0%D7%99%D7%A0%D7%99%D7%9D_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%99%D7%9D",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -179.4,
+          71.233333333
+        ]
+      },
+      "properties": {
+        "name": "וראנגל",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%A8%D7%90%D7%A0%D7%92%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          94.804166666,
+          40.037222222
+        ]
+      },
+      "properties": {
+        "name": "מערות מוגאו",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%95%D7%92%D7%90%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.2814,
+          51.8636
+        ]
+      },
+      "properties": {
+        "name": "גני דסאו וורליץ",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%9E%D7%9C%D7%9B%D7%AA_%D7%94%D7%92%D7%A0%D7%99%D7%9D_%D7%A9%D7%9C_%D7%93%D7%A1%D7%90%D7%95-%D7%95%D7%A8%D7%9C%D7%99%D7%A5",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.0,
+          50.466666666
+        ]
+      },
+      "properties": {
+        "name": "הרי הזהב של אלטאי",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%99_%D7%94%D7%96%D7%94%D7%91_%D7%A9%D7%9C_%D7%90%D7%9C%D7%98%D7%90%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.773888888,
+          32.077777777
+        ]
+      },
+      "properties": {
+        "name": "העיר הלבנה",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A2%D7%99%D7%A8_%D7%94%D7%9C%D7%91%D7%A0%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.27122,
+          37.39121
+        ]
+      },
+      "properties": {
+        "name": "דלוס",
+        "ISO_A2": "GR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%9C%D7%95%D7%A1",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.353888888,
+          31.315555555
+        ]
+      },
+      "properties": {
+        "name": "מצדה",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A6%D7%93%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.649444444,
+          52.289444444
+        ]
+      },
+      "properties": {
+        "name": "הקשת הגאודזית של שטרובה",
+        "ISO_A2": "LV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A7%D7%A9%D7%AA_%D7%94%D7%92%D7%90%D7%95%D7%93%D7%96%D7%99%D7%AA_%D7%A9%D7%9C_%D7%A9%D7%98%D7%A8%D7%95%D7%91%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.710556,
+          65.024444
+        ]
+      },
+      "properties": {
+        "name": "איי סולובצקי",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99_%D7%A1%D7%95%D7%9C%D7%95%D7%91%D7%A6%D7%A7%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.207583333,
+          31.704305555
+        ]
+      },
+      "properties": {
+        "name": "כנסיית המולד",
+        "ISO_A2": "PS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A0%D7%A1%D7%99%D7%99%D7%AA_%D7%94%D7%9E%D7%95%D7%9C%D7%93",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.398333333,
+          14.666944444
+        ]
+      },
+      "properties": {
+        "name": "גורה",
+        "ISO_A2": "SN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%95%D7%A8%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -42.55,
+          -8.6667
+        ]
+      },
+      "properties": {
+        "name": "הפארק הלאומי סרה דה קפיברה",
+        "ISO_A2": "BR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%A1%D7%A8%D7%94_%D7%93%D7%94_%D7%A7%D7%A4%D7%99%D7%91%D7%A8%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.556583333,
+          55.725972222
+        ]
+      },
+      "properties": {
+        "name": "מנזר נובודוויצ'י",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%96%D7%A8_%D7%A0%D7%95%D7%91%D7%95%D7%93%D7%95%D7%95%D7%99%D7%A6%27%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          93.0,
+          69.0
+        ]
+      },
+      "properties": {
+        "name": "רמת פוטוראנה",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%9E%D7%AA_%D7%A4%D7%95%D7%98%D7%95%D7%A8%D7%90%D7%A0%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.66650397,
+          49.875433345
+        ]
+      },
+      "properties": {
+        "name": "מושבת האומנים של דרמשטאדט",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A9%D7%91%D7%AA_%D7%94%D7%90%D7%95%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%9C_%D7%93%D7%A8%D7%9E%D7%A9%D7%98%D7%90%D7%93%D7%98",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.045,
+          40.69
+        ]
+      },
+      "properties": {
+        "name": "ליברטי איילנד",
+        "ISO_A2": "US",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%91%D7%A8%D7%98%D7%99_%D7%90%D7%99%D7%99%D7%9C%D7%A0%D7%93",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.13065,
+          56.31035
+        ]
+      },
+      "properties": {
+        "name": "לאוורת השילוש-סרגייב",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%95%D7%95%D7%A8%D7%AA_%D7%94%D7%A9%D7%99%D7%9C%D7%95%D7%A9-%D7%A1%D7%A8%D7%92%D7%99%D7%99%D7%91",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.55,
+          45.55
+        ]
+      },
+      "properties": {
+        "name": "הווילות הפלדיאניות בוונטו",
+        "ISO_A2": "IT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%95%D7%95%D7%99%D7%9C%D7%95%D7%AA_%D7%94%D7%A4%D7%9C%D7%93%D7%99%D7%90%D7%A0%D7%99%D7%95%D7%AA_%D7%91%D7%95%D7%95%D7%A0%D7%98%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.657777777,
+          31.0975
+        ]
+      },
+      "properties": {
+        "name": "דרך הבשמים (ישראל)",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%9A_%D7%94%D7%91%D7%A9%D7%9E%D7%99%D7%9D_(%D7%99%D7%A9%D7%A8%D7%90%D7%9C)",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.066666666,
+          50.2
+        ]
+      },
+      "properties": {
+        "name": "באד קיסינגן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93_%D7%A7%D7%99%D7%A1%D7%99%D7%A0%D7%92%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.5325,
+          33.36138889
+        ]
+      },
+      "properties": {
+        "name": "האי הגעשי ג'ג'ו וצינורות הלבה",
+        "ISO_A2": "KR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%99_%D7%94%D7%92%D7%A2%D7%A9%D7%99_%D7%A6%27%D7%92%27%D7%95_%D7%95%D7%A6%D7%99%D7%A0%D7%95%D7%A8%D7%95%D7%AA_%D7%94%D7%9C%D7%91%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.10724,
+          55.797442
+        ]
+      },
+      "properties": {
+        "name": "הקרמלין בקאזאן",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A7%D7%A8%D7%9E%D7%9C%D7%99%D7%9F_%D7%91%D7%A7%D7%90%D7%96%D7%90%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.15,
+          65.06666667
+        ]
+      },
+      "properties": {
+        "name": "היערות הבתוליים בקומי",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%99%D7%A2%D7%A8%D7%95%D7%AA_%D7%94%D7%91%D7%AA%D7%95%D7%9C%D7%99%D7%99%D7%9D_%D7%91%D7%A7%D7%95%D7%9E%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.545555555,
+          -13.163333333
+        ]
+      },
+      "properties": {
+        "name": "מאצ'ו פיצ'ו",
+        "ISO_A2": "PE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%A6%27%D7%95_%D7%A4%D7%99%D7%A6%27%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.133333333,
+          -2.483333333
+        ]
+      },
+      "properties": {
+        "name": "הפארק הלאומי לנסויס מרניינסס",
+        "ISO_A2": "BR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%9C%D7%A0%D7%A1%D7%95%D7%99%D7%A1_%D7%9E%D7%A8%D7%A0%D7%99%D7%99%D7%A0%D7%A1%D7%A1",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.315555555,
+          59.938888888
+        ]
+      },
+      "properties": {
+        "name": "המרכז ההיסטורי של סנקט פטרבורג ואתרים קשורים",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A8%D7%9B%D7%96_%D7%94%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99_%D7%A9%D7%9C_%D7%A1%D7%A0%D7%A7%D7%98_%D7%A4%D7%98%D7%A8%D7%91%D7%95%D7%A8%D7%92_%D7%95%D7%90%D7%AA%D7%A8%D7%99%D7%9D_%D7%A7%D7%A9%D7%95%D7%A8%D7%99%D7%9D",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.982575,
+          50.419988888
+        ]
+      },
+      "properties": {
+        "name": "מכרות הצור הנאוליתיים בספיין",
+        "ISO_A2": "BE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%9B%D7%A8%D7%95%D7%AA_%D7%94%D7%A6%D7%95%D7%A8_%D7%94%D7%A0%D7%90%D7%95%D7%9C%D7%99%D7%AA%D7%99%D7%99%D7%9D_%D7%91%D7%A1%D7%A4%D7%99%D7%99%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.178452777,
+          -9.592775
+        ]
+      },
+      "properties": {
+        "name": "צ'אווין דה ואנטאר",
+        "ISO_A2": "PE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A6%27%D7%90%D7%95%D7%95%D7%99%D7%9F_%D7%93%D7%94_%D7%95%D7%90%D7%A0%D7%98%D7%90%D7%A8",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.5675,
+          59.956388888
+        ]
+      },
+      "properties": {
+        "name": "מנזר פראפונטוב",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%96%D7%A8_%D7%A4%D7%A8%D7%90%D7%A4%D7%95%D7%A0%D7%98%D7%95%D7%91",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.128055555,
+          32.704166666
+        ]
+      },
+      "properties": {
+        "name": "בית שערים",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%A9%D7%A2%D7%A8%D7%99%D7%9D",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -44.32434,
+          -15.12251
+        ]
+      },
+      "properties": {
+        "name": "הפארק הלאומי קוורנס דו פרואסו",
+        "ISO_A2": "BR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%A7%D7%95%D7%95%D7%A8%D7%A0%D7%A1_%D7%93%D7%95_%D7%A4%D7%A8%D7%95%D7%90%D7%A1%D7%95",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.227777777,
+          46.074444444
+        ]
+      },
+      "properties": {
+        "name": "הנקרופוליס הנוצרי המוקדם בפץ'",
+        "ISO_A2": "HU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A0%D7%A7%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%A1_%D7%94%D7%A0%D7%95%D7%A6%D7%A8%D7%99_%D7%94%D7%9E%D7%95%D7%A7%D7%93%D7%9D_%D7%91%D7%A4%D7%A5%27",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.4167,
+          56.15
+        ]
+      },
+      "properties": {
+        "name": "האתרים הלבנים בוולדימיר ובסוזדל",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%AA%D7%A8%D7%99%D7%9D_%D7%94%D7%9C%D7%91%D7%A0%D7%99%D7%9D_%D7%91%D7%95%D7%95%D7%9C%D7%93%D7%99%D7%9E%D7%99%D7%A8_%D7%95%D7%91%D7%A1%D7%95%D7%96%D7%93%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.966111111,
+          32.670833333
+        ]
+      },
+      "properties": {
+        "name": "נחל מערות",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%97%D7%9C_%D7%9E%D7%A2%D7%A8%D7%95%D7%AA",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.89778,
+          18.93472
+        ]
+      },
+      "properties": {
+        "name": "מנזרי המאה ה-16 על מורדות הפופוקטפטל",
+        "ISO_A2": "MX",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%96%D7%A8%D7%99_%D7%94%D7%9E%D7%90%D7%94_%D7%94-16_%D7%A2%D7%9C_%D7%9E%D7%95%D7%A8%D7%93%D7%95%D7%AA_%D7%94%D7%A4%D7%95%D7%A4%D7%95%D7%A7%D7%98%D7%A4%D7%98%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.0272187,
+          25.9833949
+        ]
+      },
+      "properties": {
+        "name": "א-זובארה",
+        "ISO_A2": "QA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90-%D7%96%D7%95%D7%91%D7%90%D7%A8%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.11916667,
+          55.79083333
+        ]
+      },
+      "properties": {
+        "name": "מצפה הכוכבים האסטרונומי של קאזאן",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A6%D7%A4%D7%94_%D7%94%D7%9B%D7%95%D7%9B%D7%91%D7%99%D7%9D_%D7%94%D7%90%D7%A1%D7%98%D7%A8%D7%95%D7%A0%D7%95%D7%9E%D7%99_%D7%A9%D7%9C_%D7%A7%D7%90%D7%96%D7%90%D7%9F",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.89833333,
+          31.61305556
+        ]
+      },
+      "properties": {
+        "name": "בית גוברין - מרשה",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%AA_%D7%92%D7%95%D7%91%D7%A8%D7%99%D7%9F_-_%D7%9E%D7%A8%D7%A9%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.195833333,
+          61.707222222
+        ]
+      },
+      "properties": {
+        "name": "בתי החווה המעוטרים בהלסינגלנד",
+        "ISO_A2": "SE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%AA%D7%99_%D7%94%D7%97%D7%95%D7%95%D7%94_%D7%94%D7%9E%D7%A2%D7%95%D7%98%D7%A8%D7%99%D7%9D_%D7%91%D7%94%D7%9C%D7%A1%D7%99%D7%A0%D7%92%D7%9C%D7%A0%D7%93",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.063888888,
+          53.044444444
+        ]
+      },
+      "properties": {
+        "name": "מערת שולגן-טש",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A2%D7%A8%D7%AA_%D7%A9%D7%95%D7%9C%D7%92%D7%9F-%D7%98%D7%A9",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.014545,
+          22.201885
+        ]
+      },
+      "properties": {
+        "name": "הנוף התרבותי של יערות התה העתיקים של הר ג'ינגמאי בפו'אר",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A0%D7%95%D7%A3_%D7%94%D7%AA%D7%A8%D7%91%D7%95%D7%AA%D7%99_%D7%A9%D7%9C_%D7%99%D7%A2%D7%A8%D7%95%D7%AA_%D7%94%D7%AA%D7%94_%D7%94%D7%A2%D7%AA%D7%99%D7%A7%D7%99%D7%9D_%D7%A9%D7%9C_%D7%94%D7%A8_%D7%92%27%D7%99%D7%A0%D7%92%D7%9E%D7%90%D7%99_%D7%91%D7%A4%D7%95%27%D7%90%D7%A8",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.652451,
+          55.770124
+        ]
+      },
+      "properties": {
+        "name": "מנזר העלייה לשמים בסביאז'סק",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%96%D7%A8_%D7%94%D7%A2%D7%9C%D7%99%D7%99%D7%94_%D7%9C%D7%A9%D7%9E%D7%99%D7%9D_%D7%91%D7%A1%D7%91%D7%99%D7%90%D7%96%27%D7%A1%D7%A7",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.0,
+          51.0
+        ]
+      },
+      "properties": {
+        "name": "פימצ'יואין אקי",
+        "ISO_A2": "CA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%9E%D7%A6%27%D7%99%D7%95%D7%90%D7%99%D7%9F_%D7%90%D7%A7%D7%99",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.0064,
+          39.3758
+        ]
+      },
+      "properties": {
+        "name": "הפארק הלאומי ההיסטורי תרבות הופוול",
+        "ISO_A2": "US",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%94%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99_%D7%AA%D7%A8%D7%91%D7%95%D7%AA_%D7%94%D7%95%D7%A4%D7%95%D7%95%D7%9C",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.159411,
+          47.180789
+        ]
+      },
+      "properties": {
+        "name": "הלימס של דאקיה",
+        "ISO_A2": "RO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9C%D7%99%D7%9E%D7%A1_%D7%A9%D7%9C_%D7%93%D7%90%D7%A7%D7%99%D7%94",
+        "poi_type": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.94611,
+          49.0775
+        ]
+      },
+      "properties": {
+        "name": "הכרמים, היקבים ומרתפי היין של שמפאן",
+        "ISO_A2": "FR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9B%D7%A8%D7%9E%D7%99%D7%9D,_%D7%94%D7%99%D7%A7%D7%91%D7%99%D7%9D_%D7%95%D7%9E%D7%A8%D7%AA%D7%A4%D7%99_%D7%94%D7%99%D7%99%D7%9F_%D7%A9%D7%9C_%D7%A9%D7%9E%D7%A4%D7%90%D7%9F",
+        "poi_type": "monument"
+      }
+    }
+  ]
+}
