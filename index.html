@@ -72,6 +72,18 @@
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
+        /* מקרא המפה */
+        #poi-legend {
+            position: absolute; bottom: 20px; right: 20px;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
+            padding: 15px; border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: none; z-index: 5; border: 1px solid #eee;
+        }
+        #poi-legend h4 { margin: 0 0 12px 0; font-size: 15px; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; }
+        .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); margin-left: 10px; }
+
         #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
         #toast { background: #333; }
         #compare-banner { background: #1d4ed8; border: 2px solid #60a5fa; cursor: pointer; }
@@ -94,13 +106,14 @@
         
         #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
-        /* עיצוב הפופאפ לנקודות העניין */
-        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 280px;}
-        .mapboxgl-popup-close-button { font-size: 16px; color: #888; }
-        .poi-popup h4 { margin: 0 0 5px 0; color: #111; font-size: 18px; border-bottom: 2px solid #fbbf24; padding-bottom: 3px; display: inline-block;}
-        .poi-popup p { font-size: 13px; line-height: 1.5; color: #444; margin: 8px 0; max-height: 150px; overflow-y: auto; text-align: justify; }
-        .poi-popup a { color: #3b82f6; text-decoration: none; font-size: 13px; font-weight: bold; display: block; margin-top: 8px; }
-        .poi-popup a:hover { text-decoration: underline; }
+        /* עיצוב הפופאפ לנקודות העניין - מוגדל ומרווח */
+        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw;}
+        .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; }
+        .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
+        .poi-popup h4 { margin: 0 0 8px 0; color: #111; font-size: 18px; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; display: inline-block;}
+        .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 200px; overflow-y: auto; text-align: justify; }
+        .poi-popup a { color: #1d4ed8; text-decoration: none; font-size: 14px; font-weight: bold; display: inline-block; margin-top: 10px; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s;}
+        .poi-popup a:hover { background: #dbeafe; }
 
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
@@ -109,7 +122,8 @@
             #drag-handle-wrapper { display: flex; }
             .compare-table th, .compare-table td { padding: 8px 5px; font-size: 13px; }
             .compare-flag { width: 40px; }
-            .mapboxgl-popup-content { width: 240px; }
+            .mapboxgl-popup-content { width: 280px; }
+            #poi-legend { bottom: 55vh; transform: translateY(-20px); right: 10px; padding: 10px; }
         }
     </style>
 </head>
@@ -124,6 +138,12 @@
         <button id="random-btn" class="icon-btn" title="יעד אקראי">🎲</button>
     </div>
     
+    <div id="poi-legend">
+        <h4>מקרא נקודות עניין</h4>
+        <div class="legend-item"><span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</div>
+        <div class="legend-item"><span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</div>
+    </div>
+
     <div id="info-panel">
         <div id="drag-handle-wrapper"><div id="drag-handle"></div></div>
         <div class="panel-header">
@@ -197,43 +217,21 @@
     <div id="compare-banner">בחר מדינה נוספת מהמפה או בחיפוש (לחץ לביטול)</div>
 
     <script>
-        // תיקון RTL טקסט הפוך (עברית/ערבית) - נטען אוטומטית ע"י Mapbox
-        mapboxgl.setRTLTextPlugin(
-            'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.3.0/mapbox-gl-rtl-text.js',
-            null,
-            true // טעינה עצלה
-        );
-
+        mapboxgl.setRTLTextPlugin('https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.3.0/mapbox-gl-rtl-text.js', null, true);
         mapboxgl.accessToken = 'pk.eyJ1IjoiZXlhbGZpZGVsIiwiYSI6ImNtbm5kNHhjYTFocW0ycXM5eWN1bmprYTMifQ.o78OO-6F8ieXVTPGbmMCcA';
         
         const isMobile = window.innerWidth < 600;
-        
-        const map = new mapboxgl.Map({ 
-            container: 'map', 
-            style: 'mapbox://styles/mapbox/light-v11',
-            center: [34.78, 32.08], 
-            zoom: isMobile ? 1.2 : 3, 
-            projection: 'globe' 
-        });
-        
-        map.on('style.load', () => { 
-            map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); 
-        });
+        const map = new mapboxgl.Map({ container: 'map', style: 'mapbox://styles/mapbox/light-v11', center: [34.78, 32.08], zoom: isMobile ? 1.2 : 3, projection: 'globe' });
+        map.on('style.load', () => { map.setFog({'color': 'rgb(220, 230, 240)', 'high-color': 'rgb(36, 92, 223)', 'space-color': 'rgb(11, 11, 25)'}); });
 
-        const disputedRegions = {
-            'XB': 'צפון-מזרח אפריקה (שטח הפקר)',
-            'XS': 'דרום-מזרח אסיה (ים סין הדרומי)',
-            'XC': 'דרום-מזרח אסיה (ים סין הדרומי)',
-            'XJ': 'האיים הקריביים',
-            'XR': 'האיים הקריביים',
-            'XP': 'אמריקה הדרומית (פטגוניה)'
-        };
+        const disputedRegions = { 'XB': 'צפון-מזרח אפריקה (שטח הפקר)', 'XS': 'דרום-מזרח אסיה (ים סין הדרומי)', 'XC': 'דרום-מזרח אסיה (ים סין הדרומי)', 'XJ': 'האיים הקריביים', 'XR': 'האיים הקריביים', 'XP': 'אמריקה הדרומית (פטגוניה)' };
         const disputedAreas = Object.keys(disputedRegions);
 
         const globalData = new Map(); 
         let globalCapitalsData = { type: 'FeatureCollection', features: [] };
+        let globalMonumentsData = { type: 'FeatureCollection', features: [] };
         const searchIndex = [];
-        let activePopup = null; // שמירת מופע הפופאפ הפתוח
+        let activePopup = null; 
         
         let isComparingMode = false;
         let baseCompareFeature = null;
@@ -241,46 +239,39 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
-        // פונקציה למשיכת תקציר מוויקיפדיה (API רשמי)
         async function getWikiSummary(title) {
             try {
                 const response = await fetch(`https://he.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
                 if (!response.ok) return 'לא נמצא תקציר זמין בוויקיפדיה עבור ערך זה.';
                 const data = await response.json();
                 return data.extract || 'לא נמצא תקציר.';
-            } catch (e) {
-                return 'שגיאה בטעינת התקציר מהשרת.';
-            }
+            } catch (e) { return 'שגיאה בטעינת התקציר מהשרת.'; }
         }
 
-        // פונקציה לפתיחת בועית עיר בירה - משמשת גם בלחיצה על המפה וגם בלחיצה מהפאנל
-        function openCapitalPopup(feature, coordinates) {
+        function openPOIPopup(feature, coordinates) {
             if (activePopup) activePopup.remove();
-            
             const props = feature.properties;
-            // חילוץ שם הערך מתוך הקישור (החלק האחרון אחרי ה-/)
             let wikiTitle = props.name;
-            if (props.wiki_url && props.wiki_url.includes('/wiki/')) {
-                wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
-            }
+            if (props.wiki_url && props.wiki_url.includes('/wiki/')) wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
             
-            // יצירת פופאפ ראשוני עם מצב "טוען"
-            activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
+            // שינוי צבע הכותרת בפופאפ בהתאם לסוג הנקודה
+            const titleBorderColor = props.type === 'capital' ? '#fbbf24' : '#ec4899';
+            
+            activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, maxWidth: 'none' })
                 .setLngLat(coordinates)
                 .setHTML(`
                     <div class="poi-popup" dir="rtl">
-                        <h4>${props.name}</h4>
+                        <h4 style="border-bottom-color: ${titleBorderColor};">${props.name}</h4>
                         <p><i>טוען נתונים מוויקיפדיה... ⏳</i></p>
                     </div>
                 `)
                 .addTo(map);
 
-            // הבאת הנתונים ועדכון הפופאפ
             getWikiSummary(wikiTitle).then(summary => {
                 if (activePopup && activePopup.isOpen()) {
                     activePopup.setHTML(`
                         <div class="poi-popup" dir="rtl">
-                            <h4>${props.name}</h4>
+                            <h4 style="border-bottom-color: ${titleBorderColor};">${props.name}</h4>
                             <p>${summary}</p>
                             ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
                         </div>
@@ -289,20 +280,20 @@
             });
         }
 
-        // אתחול נתונים מ-JSON
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/stats.json').then(res => res.ok ? res.json() : []),
             fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {}),
-            fetch('json/capitals.geojson').then(res => res.ok ? res.json() : {features:[]})
-        ]).then(([countriesData, seasData, statsData, wikiData, capitalsData]) => {
+            fetch('json/capitals.geojson').then(res => res.ok ? res.json() : {features:[]}),
+            fetch('json/monuments.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]}))
+        ]).then(([countriesData, seasData, statsData, wikiData, capitalsData, monumentsData]) => {
             
             globalCapitalsData = capitalsData;
+            globalMonumentsData = monumentsData;
             
-            if (map.getSource('capitals')) {
-                map.getSource('capitals').setData(globalCapitalsData);
-            }
+            if (map.getSource('capitals')) map.getSource('capitals').setData(globalCapitalsData);
+            if (map.getSource('monuments')) map.getSource('monuments').setData(globalMonumentsData);
 
             const statsMap = new Map();
             statsData.forEach(row => { if (row.ISOA2) statsMap.set(row.ISOA2, row); });
@@ -311,33 +302,14 @@
                 features.forEach(f => {
                     const iso = f.properties.ISO_A2 || f.properties.iso_a2 || '';
                     if (!iso) return;
-                    
                     const stats = statsMap.get(iso) || {};
                     let hebName = stats.Name_HE || f.properties.Name_HE || f.properties.name_he || '';
                     if (iso === 'PS') hebName = 'הרשות הפלסטינית';
                     if (disputedAreas.includes(iso) && stats.Name_HE) hebName = stats.Name_HE;
-
                     const enName = f.properties.Name_EN || f.properties.NAME_EN || '';
                     
-                    globalData.set(iso, {
-                        iso: iso,
-                        isSea: isSea,
-                        isDisputed: disputedAreas.includes(iso),
-                        name: hebName,
-                        pointFeature: f,
-                        stats: stats,
-                        wiki: wikiData[iso] || ''
-                    });
-
-                    if (hebName) {
-                        searchIndex.push({
-                            code: iso,
-                            name: hebName,
-                            enName: enName,
-                            allText: (enName + " " + hebName).toLowerCase(),
-                            type: isSea ? 'ים/אוקיינוס' : (disputedAreas.includes(iso) ? 'שטח במחלוקת' : 'מדינה')
-                        });
-                    }
+                    globalData.set(iso, { iso: iso, isSea: isSea, isDisputed: disputedAreas.includes(iso), name: hebName, pointFeature: f, stats: stats, wiki: wikiData[iso] || '' });
+                    if (hebName) searchIndex.push({ code: iso, name: hebName, enName: enName, allText: (enName + " " + hebName).toLowerCase(), type: isSea ? 'ים/אוקיינוס' : (disputedAreas.includes(iso) ? 'שטח במחלוקת' : 'מדינה') });
                 });
             };
 
@@ -353,162 +325,92 @@
                         baseCompareFeature = globalData.get(iso1);
                         executeComparison(globalData.get(iso2));
                     }
-                } else if (globalData.has(hash)) {
-                    loadFeature(hash);
-                }
+                } else if (globalData.has(hash)) loadFeature(hash);
             }
         });
 
         function haversine(lat1, lon1, lat2, lon2) {
-            const R = 6371; 
-            const dLat = (lat2 - lat1) * Math.PI / 180;
-            const dLon = (lon2 - lon1) * Math.PI / 180;
-            const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                      Math.sin(dLon/2) * Math.sin(dLon/2);
+            const R = 6371; const dLat = (lat2 - lat1) * Math.PI / 180; const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
         map.on('load', () => {
-            
-            // --- שכבות רקע ומדינות/ימים ---
             map.addSource('seas-vec', { type: 'vector', url: 'mapbox://eyalfidel.9x1r7ppe' });
-            map.addLayer({ 
-                'id': 'seas-fill', 'type': 'fill', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3',
-                'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
-            });
-
+            map.addLayer({ 'id': 'seas-fill', 'type': 'fill', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } });
             map.addSource('countries-vec', { type: 'vector', url: 'mapbox://eyalfidel.c129uxl6' });
-            map.addLayer({ 
-                'id': 'countries-fill', 'type': 'fill', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
-                'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } 
-            });
-            
+            map.addLayer({ 'id': 'countries-fill', 'type': 'fill', 'source': 'countries-vec', 'source-layer': 'countries-50fsub', 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } });
+            map.addLayer({ 'id': 'countries-borders', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub', 'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 } });
+            map.addLayer({ 'id': 'countries-highlight', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } });
+            map.addLayer({ 'id': 'seas-highlight', 'type': 'line', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#0284c7', 'line-width': 4 } });
+
+            // --- מקור וסיכות לערי בירה ---
+            map.addSource('capitals', { type: 'geojson', data: globalCapitalsData });
             map.addLayer({
-                'id': 'countries-borders', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
-                'paint': { 'line-color': '#a1a1aa', 'line-width': 0.5 }
+                'id': 'capitals-layer', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', ''], 
+                'paint': { 'circle-radius': 7, 'circle-color': '#fbbf24', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
             });
-
-            map.addLayer({ 
-                'id': 'countries-highlight', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub',
-                'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'line-color': '#3b82f6', 'line-width': 3 } 
-            });
-
-            map.addLayer({ 
-                'id': 'seas-highlight', 'type': 'line', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3',
-                'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'line-color': '#0284c7', 'line-width': 4 } 
-            });
-
-            // --- שכבות נקודות עניין (ערי בירה) ---
-            map.addSource('capitals', {
-                type: 'geojson',
-                data: globalCapitalsData
-            });
-
             map.addLayer({
-                'id': 'capitals-layer',
-                'type': 'circle',
-                'source': 'capitals',
-                'filter': ['==', 'ISO_A2', ''], 
-                'paint': {
-                    'circle-radius': 7,
-                    'circle-color': '#fbbf24', 
-                    'circle-stroke-color': '#ffffff',
-                    'circle-stroke-width': 2,
-                    'circle-pitch-alignment': 'map'
-                }
+                'id': 'capitals-label', 'type': 'symbol', 'source': 'capitals', 'filter': ['==', 'ISO_A2', ''],
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 14, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
+            // --- מקור וסיכות למונומנטים ---
+            map.addSource('monuments', { type: 'geojson', data: globalMonumentsData });
             map.addLayer({
-                'id': 'capitals-label',
-                'type': 'symbol',
-                'source': 'capitals',
-                'filter': ['==', 'ISO_A2', ''],
-                'layout': {
-                    'text-field': ['get', 'name'],
-                    'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-                    'text-size': 14,
-                    'text-offset': [0, 1.2],
-                    'text-anchor': 'top'
-                },
-                'paint': {
-                    'text-color': '#ffffff',
-                    'text-halo-color': '#000000',
-                    'text-halo-width': 2
-                }
+                'id': 'monuments-layer', 'type': 'circle', 'source': 'monuments', 'filter': ['==', 'ISO_A2', ''], 
+                'paint': { 'circle-radius': 6, 'circle-color': '#ec4899', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
+            });
+            map.addLayer({
+                'id': 'monuments-label', 'type': 'symbol', 'source': 'monuments', 'filter': ['==', 'ISO_A2', ''],
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // מנגנון הלחיצה הראשי 
             map.on('click', (e) => {
-                
-                // 1. קודם כל נבדוק אם המשתמש לחץ על נקודת עניין (סיכת עיר בירה)
-                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label'] });
+                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'monuments-layer', 'monuments-label'] });
                 if (poiFeatures.length > 0) {
-                    openCapitalPopup(poiFeatures[0], e.lngLat);
-                    return; // עוצר את הלחיצה כדי לא לטעון את המדינה שוב
+                    openPOIPopup(poiFeatures[0], e.lngLat);
+                    return; 
                 }
 
-                // 2. זיהוי מדינה/ים עם "אצבע שמנה" למחשב
-                const bbox = [
-                    [e.point.x - 5, e.point.y - 5],
-                    [e.point.x + 5, e.point.y + 5]
-                ];
-                
+                const bbox = [[e.point.x - 5, e.point.y - 5], [e.point.x + 5, e.point.y + 5]];
                 const features = map.queryRenderedFeatures(bbox, { layers: ['countries-fill', 'seas-fill'] });
                 let clickedIso = null;
 
-                if (features.length > 0) {
-                    clickedIso = features[0].properties.ISO_A2 || features[0].properties.iso_a2 || '';
-                } else {
-                    let minDistance = Infinity;
-                    const clickLat = e.lngLat.lat;
-                    const clickLng = e.lngLat.lng;
-
+                if (features.length > 0) { clickedIso = features[0].properties.ISO_A2 || features[0].properties.iso_a2 || ''; } 
+                else {
+                    let minDistance = Infinity; const clickLat = e.lngLat.lat; const clickLng = e.lngLat.lng;
                     globalData.forEach((data, iso) => {
                         if (data.isSea) return; 
                         const coords = data.pointFeature.geometry.coordinates;
                         const dist = haversine(clickLat, clickLng, coords[1], coords[0]);
-                        if (dist < minDistance) {
-                            minDistance = dist;
-                            clickedIso = iso;
-                        }
+                        if (dist < minDistance) { minDistance = dist; clickedIso = iso; }
                     });
-
-                    if (minDistance > 600) {
-                        clickedIso = null;
-                    }
+                    if (minDistance > 600) clickedIso = null;
                 }
 
                 if (clickedIso && globalData.has(clickedIso)) {
                     const targetData = globalData.get(clickedIso);
-                    
                     if (isComparingMode) {
-                        if (targetData.isSea || targetData.isDisputed) {
-                            alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
-                            return;
-                        }
+                        if (targetData.isSea || targetData.isDisputed) { alert("לא ניתן להשוות לימים או לשטחים במחלוקת."); return; }
                         executeComparison(targetData);
-                    } else {
-                        loadFeature(clickedIso);
-                    }
+                    } else { loadFeature(clickedIso); }
                 }
             });
 
-            map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
-            map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
-            map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
-            map.on('mouseleave', 'seas-fill', () => map.getCanvas().style.cursor = '');
-            map.on('mouseenter', 'capitals-layer', () => map.getCanvas().style.cursor = 'pointer');
-            map.on('mouseleave', 'capitals-layer', () => map.getCanvas().style.cursor = '');
+            ['countries-fill', 'seas-fill', 'capitals-layer', 'monuments-layer'].forEach(layer => {
+                map.on('mouseenter', layer, () => map.getCanvas().style.cursor = 'pointer');
+                map.on('mouseleave', layer, () => map.getCanvas().style.cursor = '');
+            });
         });
 
         function loadFeature(iso) {
             const data = globalData.get(iso);
             if (!data) return;
 
-            if (activePopup) activePopup.remove(); // סגירת פופאפ פתוח בעת מעבר למדינה חדשה
+            if (activePopup) activePopup.remove(); 
             currentLoadedISO = iso;
             const stats = data.stats;
             const p = data.pointFeature.properties;
@@ -518,12 +420,20 @@
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            if (!data.isSea && !isComparingMode) {
+            // פילטור נקודות עניין וחשיפת מקרא
+            const legend = document.getElementById('poi-legend');
+            if (!data.isSea && !isComparingMode && !data.isDisputed) {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', iso]);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', iso]);
+                map.setFilter('monuments-layer', ['==', 'ISO_A2', iso]);
+                map.setFilter('monuments-label', ['==', 'ISO_A2', iso]);
+                legend.style.display = 'block';
             } else {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', '']);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
+                map.setFilter('monuments-layer', ['==', 'ISO_A2', '']);
+                map.setFilter('monuments-label', ['==', 'ISO_A2', '']);
+                legend.style.display = 'none';
             }
 
             const coords = data.pointFeature.geometry.coordinates;
@@ -562,7 +472,6 @@
                 fImg.style.display = 'none';
                 capEl.innerText = '---';
             } else {
-                // לוגיקת לחיצה על עיר הבירה מהפאנל
                 const capFeature = globalCapitalsData.features ? globalCapitalsData.features.find(f => f.properties.ISO_A2 === iso) : null;
                 const capName = stats.Capital_HE || '---';
                 
@@ -571,7 +480,7 @@
                     capEl.onclick = (e) => {
                         e.stopPropagation();
                         map.flyTo({ center: capFeature.geometry.coordinates, zoom: 7, essential: true });
-                        openCapitalPopup(capFeature, capFeature.geometry.coordinates);
+                        openPOIPopup(capFeature, capFeature.geometry.coordinates);
                     };
                 } else {
                     capEl.innerText = capName;
@@ -607,17 +516,14 @@
                 fImg.style.boxShadow = (iso === 'NP') ? 'none' : '0 2px 4px rgba(0,0,0,0.1)';
             }
 
-            if (data.isDisputed) {
-                document.getElementById('country-region').innerText = disputedRegions[iso] || (stats ? stats.Region : '---');
-            } else if (!data.isSea) {
-                document.getElementById('country-region').innerText = stats.Region || '---';
-            }
+            if (data.isDisputed) document.getElementById('country-region').innerText = disputedRegions[iso] || (stats ? stats.Region : '---');
+            else if (!data.isSea) document.getElementById('country-region').innerText = stats.Region || '---';
 
             let areaText = "---";
             if (targetArea) {
                 let a = parseFloat(targetArea);
-                if (a >= 10000000) { areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר'; } 
-                else { areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר'; }
+                if (a >= 10000000) areaText = (a / 1000000).toLocaleString('he-IL', {maximumFractionDigits: 1}) + ' מיליון קמ"ר'; 
+                else areaText = Math.round(a).toLocaleString('he-IL') + ' קמ"ר'; 
             }
             const areaRankHtml = (!data.isSea && !data.isDisputed && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
             document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
@@ -637,10 +543,13 @@
         document.getElementById('close-panel').onclick = () => { 
             if (activePopup) activePopup.remove();
             document.getElementById('info-panel').style.display = 'none'; 
+            document.getElementById('poi-legend').style.display = 'none';
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']); 
+            map.setFilter('monuments-layer', ['==', 'ISO_A2', '']); 
+            map.setFilter('monuments-label', ['==', 'ISO_A2', '']); 
             history.pushState("", document.title, window.location.pathname + window.location.search);
         };
 
@@ -656,18 +565,24 @@
             isComparingMode = true;
             document.getElementById('info-panel').style.display = 'none';
             document.getElementById('compare-banner').style.display = 'block';
+            document.getElementById('poi-legend').style.display = 'none';
             if (activePopup) activePopup.remove();
             map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
+            map.setFilter('monuments-layer', ['==', 'ISO_A2', '']); 
+            map.setFilter('monuments-label', ['==', 'ISO_A2', '']);
         };
 
         document.getElementById('compare-banner').onclick = () => {
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
             document.getElementById('info-panel').style.display = 'block';
+            document.getElementById('poi-legend').style.display = 'block';
             if (currentLoadedISO) {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', currentLoadedISO]);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('monuments-layer', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('monuments-label', ['==', 'ISO_A2', currentLoadedISO]);
             }
         };
 
@@ -675,6 +590,7 @@
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
             document.getElementById('info-panel').style.display = 'block'; 
+            document.getElementById('poi-legend').style.display = 'block';
 
             const iso1 = baseCompareFeature.iso;
             const iso2 = targetData.iso;
@@ -682,12 +598,13 @@
             
             map.setFilter('capitals-layer', ['==', 'ISO_A2', iso2]);
             map.setFilter('capitals-label', ['==', 'ISO_A2', iso2]);
+            map.setFilter('monuments-layer', ['==', 'ISO_A2', iso2]);
+            map.setFilter('monuments-label', ['==', 'ISO_A2', iso2]);
 
             const s1 = baseCompareFeature.stats || {};
             const s2 = targetData.stats || {};
 
             const getFlagUrl = (iso) => iso === 'XL' ? 'flags/XL.png' : `https://flagcdn.com/w80/${iso.toLowerCase()}.png`;
-
             document.getElementById('comp-head-1').innerHTML = `<img src="${getFlagUrl(iso1)}" class="compare-flag"><br><span class="compare-name">${baseCompareFeature.name}</span>`;
             document.getElementById('comp-head-2').innerHTML = `<img src="${getFlagUrl(iso2)}" class="compare-flag"><br><span class="compare-name">${targetData.name}</span>`;
 
@@ -708,7 +625,6 @@
                 <tr><td class="metric-name">שיעור פריון</td><td>${s1.Fertility_Rate || '---'}<br>${formatRank(s1.Fert_Rank)}</td><td>${s2.Fertility_Rate || '---'}<br>${formatRank(s2.Fert_Rank)}</td></tr>
                 <tr><td class="metric-name">אוריינות</td><td>${formatLit(s1.Literacy_Pct)}</td><td>${formatLit(s2.Literacy_Pct)}</td></tr>
             `;
-
             document.getElementById('compare-backdrop').style.display = 'block';
             document.getElementById('compare-modal').style.display = 'block';
         }
@@ -739,14 +655,9 @@
                     sSug.style.display = 'none'; 
                     const targetData = globalData.get(m.code);
                     if (isComparingMode) {
-                        if (targetData.isSea || targetData.isDisputed) {
-                            alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
-                        } else {
-                            executeComparison(targetData);
-                        }
-                    } else {
-                        loadFeature(m.code); 
-                    }
+                        if (targetData.isSea || targetData.isDisputed) alert("לא ניתן להשוות לימים או לשטחים במחלוקת.");
+                        else executeComparison(targetData);
+                    } else { loadFeature(m.code); }
                 };
                 sSug.appendChild(d);
             });
@@ -779,7 +690,6 @@
             panel.style.height = `${newHeight}px`;
         }, { passive: false });
         document.addEventListener('touchend', () => { if (isDragging) { isDragging = false; panel.style.transition = 'height 0.2s ease-out'; }});
-
     </script>
 </body>
 </html>
