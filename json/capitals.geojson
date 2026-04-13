@@ -1,0 +1,3199 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.753055555,
+          12.0525
+        ]
+      },
+      "properties": {
+        "name": "סנט ג'ורג'",
+        "ISO_A2": "GD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98_%D7%92%27%D7%95%D7%A8%D7%92%27%D7%A1_(%D7%92%D7%A8%D7%A0%D7%93%D7%94)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.133333333,
+          -26.316666666
+        ]
+      },
+      "properties": {
+        "name": "מבבנה",
+        "ISO_A2": "SZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%91%D7%91%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.225555555,
+          31.778888888
+        ]
+      },
+      "properties": {
+        "name": "ירושלים",
+        "ISO_A2": "IL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.291944444,
+          33.513055555
+        ]
+      },
+      "properties": {
+        "name": "דמשק",
+        "ISO_A2": "SY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%9E%D7%A9%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1275,
+          51.507222222
+        ]
+      },
+      "properties": {
+        "name": "לונדון",
+        "ISO_A2": "GB",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A0%D7%93%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.44845,
+          43.932011111
+        ]
+      },
+      "properties": {
+        "name": "סן מרינו",
+        "ISO_A2": "SM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%9E%D7%A8%D7%99%D7%A0%D7%95_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.115,
+          -1.9525
+        ]
+      },
+      "properties": {
+        "name": "קיגאלי",
+        "ISO_A2": "RW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%92%D7%90%D7%9C%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.7925,
+          41.7225
+        ]
+      },
+      "properties": {
+        "name": "טביליסי",
+        "ISO_A2": "GE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%91%D7%99%D7%9C%D7%99%D7%A1%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6175,
+          55.750555555
+        ]
+      },
+      "properties": {
+        "name": "מוסקבה",
+        "ISO_A2": "RU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%A7%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.529444444,
+          25.286111111
+        ]
+      },
+      "properties": {
+        "name": "דוחה",
+        "ISO_A2": "QA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%97%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.260277777,
+          53.349722222
+        ]
+      },
+      "properties": {
+        "name": "דבלין",
+        "ISO_A2": "IE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%91%D7%9C%D7%99%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.921027777,
+          11.569583333
+        ]
+      },
+      "properties": {
+        "name": "פנום פן",
+        "ISO_A2": "KH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A0%D7%95%D7%9D_%D7%A4%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1969,
+          5.55602
+        ]
+      },
+      "properties": {
+        "name": "אקרה",
+        "ISO_A2": "GH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A7%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.44743,
+          46.94798
+        ]
+      },
+      "properties": {
+        "name": "ברן",
+        "ISO_A2": "CH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.208888888,
+          28.613888888
+        ]
+      },
+      "properties": {
+        "name": "ניו דלהי",
+        "ISO_A2": "IN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%93%D7%9C%D7%94%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.271111111,
+          -4.269444444
+        ]
+      },
+      "properties": {
+        "name": "ברזוויל",
+        "ISO_A2": "CG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%96%D7%95%D7%95%D7%99%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.583333333,
+          26.216666666
+        ]
+      },
+      "properties": {
+        "name": "מנאמה",
+        "ISO_A2": "BH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%90%D7%9E%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.916388888,
+          6.9
+        ]
+      },
+      "properties": {
+        "name": "סרי ג'ייוורדנפורה-קוטה",
+        "ISO_A2": "LK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A8%D7%99_%D7%92%27%D7%99%D7%99%D7%95%D7%95%D7%A8%D7%93%D7%A0%D7%A4%D7%95%D7%A8%D7%94-%D7%A7%D7%95%D7%98%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.235833333,
+          30.044444444
+        ]
+      },
+      "properties": {
+        "name": "קהיר",
+        "ISO_A2": "EG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%94%D7%99%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.905515,
+          47.921357
+        ]
+      },
+      "properties": {
+        "name": "אולן בטור",
+        "ISO_A2": "MN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%9C%D7%9F_%D7%91%D7%98%D7%95%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.191311111,
+          -34.905916666
+        ]
+      },
+      "properties": {
+        "name": "מונטווידאו",
+        "ISO_A2": "UY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A0%D7%98%D7%95%D7%95%D7%99%D7%93%D7%90%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.65,
+          -33.4375
+        ]
+      },
+      "properties": {
+        "name": "סנטיאגו דה צ'ילה",
+        "ISO_A2": "CL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%99%D7%90%D7%92%D7%95_%D7%93%D7%94_%D7%A6%27%D7%99%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.083611111,
+          -22.57
+        ]
+      },
+      "properties": {
+        "name": "וינדהוק",
+        "ISO_A2": "NA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A0%D7%93%D7%94%D7%95%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.00614,
+          13.9957
+        ]
+      },
+      "properties": {
+        "name": "קסטריז",
+        "ISO_A2": "LC",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%98%D7%A8%D7%99%D7%96",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.431666666,
+          41.996111111
+        ]
+      },
+      "properties": {
+        "name": "סקופיה",
+        "ISO_A2": "MK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A7%D7%95%D7%A4%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.28,
+          54.687222222
+        ]
+      },
+      "properties": {
+        "name": "וילנה",
+        "ISO_A2": "LT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%9C%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.358888888,
+          23.136666666
+        ]
+      },
+      "properties": {
+        "name": "הוואנה",
+        "ISO_A2": "CU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%95%D7%95%D7%90%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.433333333,
+          51.133333333
+        ]
+      },
+      "properties": {
+        "name": "אסטנה",
+        "ISO_A2": "KZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%98%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.522222222,
+          42.507222222
+        ]
+      },
+      "properties": {
+        "name": "אנדורה לה ולה",
+        "ISO_A2": "AD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%93%D7%95%D7%A8%D7%94_%D7%9C%D7%94_%D7%95%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          139.691666666,
+          35.689444444
+        ]
+      },
+      "properties": {
+        "name": "טוקיו",
+        "ISO_A2": "JP",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%A7%D7%99%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.274166666,
+          6.816111111
+        ]
+      },
+      "properties": {
+        "name": "יאמוסוקרו",
+        "ISO_A2": "CI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%9E%D7%95%D7%A1%D7%95%D7%A7%D7%A8%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.977222222,
+          45.813055555
+        ]
+      },
+      "properties": {
+        "name": "זאגרב",
+        "ISO_A2": "HR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%96%D7%90%D7%92%D7%A8%D7%91",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.882777777,
+          -15.793888888
+        ]
+      },
+      "properties": {
+        "name": "ברזיליה",
+        "ISO_A2": "BR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%96%D7%99%D7%9C%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.583333333,
+          11.86
+        ]
+      },
+      "properties": {
+        "name": "ביסאו",
+        "ISO_A2": "GW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%A1%D7%90%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.491388888,
+          9.055555555
+        ]
+      },
+      "properties": {
+        "name": "אבוג'ה",
+        "ISO_A2": "NG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%95%D7%92%27%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.746,
+          -6.1835
+        ]
+      },
+      "properties": {
+        "name": "דודומה",
+        "ISO_A2": "TZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%95%D7%9E%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.165833333,
+          34.532777777
+        ]
+      },
+      "properties": {
+        "name": "קאבול",
+        "ISO_A2": "AF",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%90%D7%91%D7%95%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.48,
+          -29.31
+        ]
+      },
+      "properties": {
+        "name": "מסרו",
+        "ISO_A2": "LS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A8%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -62.734166666,
+          17.298333333
+        ]
+      },
+      "properties": {
+        "name": "באסטר",
+        "ISO_A2": "KN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%A1%D7%98%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.578333333,
+          -8.553611111
+        ]
+      },
+      "properties": {
+        "name": "דילי",
+        "ISO_A2": "TL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%99%D7%9C%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.514444444,
+          40.181388888
+        ]
+      },
+      "properties": {
+        "name": "ירוואן",
+        "ISO_A2": "AM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%95%D7%95%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.036666666,
+          38.895
+        ]
+      },
+      "properties": {
+        "name": "וושינגטון די. סי.",
+        "ISO_A2": "US",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%95%D7%A9%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F_%D7%93%D7%99._%D7%A1%D7%99.",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.440277777,
+          0.407777777
+        ]
+      },
+      "properties": {
+        "name": "ליברוויל",
+        "ISO_A2": "GA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%91%D7%A8%D7%95%D7%95%D7%99%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.341944444,
+          2.039166666
+        ]
+      },
+      "properties": {
+        "name": "מוגדישו",
+        "ISO_A2": "SO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%92%D7%93%D7%99%D7%A9%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.188055555,
+          -25.746388888
+        ]
+      },
+      "properties": {
+        "name": "פרטוריה",
+        "ISO_A2": "ZA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%98%D7%95%D7%A8%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.977222222,
+          14.595833333
+        ]
+      },
+      "properties": {
+        "name": "מנילה",
+        "ISO_A2": "PH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%99%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.513055555,
+          33.886944444
+        ]
+      },
+      "properties": {
+        "name": "ביירות",
+        "ISO_A2": "LB",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%99%D7%A8%D7%95%D7%AA",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.381944444,
+          -34.599722222
+        ]
+      },
+      "properties": {
+        "name": "בואנוס איירס",
+        "ISO_A2": "AR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%90%D7%A0%D7%95%D7%A1_%D7%90%D7%99%D7%99%D7%A8%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          57.498888888,
+          -20.161944444
+        ]
+      },
+      "properties": {
+        "name": "פור לואי",
+        "ISO_A2": "MU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8_%D7%9C%D7%95%D7%90%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.2,
+          15.35
+        ]
+      },
+      "properties": {
+        "name": "צנעא",
+        "ISO_A2": "YE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A6%D7%A0%D7%A2%D7%90",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.933333333,
+          31.95
+        ]
+      },
+      "properties": {
+        "name": "עמאן",
+        "ISO_A2": "JO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.456944444,
+          44.817777777
+        ]
+      },
+      "properties": {
+        "name": "בלגרד",
+        "ISO_A2": "RS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%9C%D7%92%D7%A8%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.63,
+          17.98
+        ]
+      },
+      "properties": {
+        "name": "ויינטיאן",
+        "ISO_A2": "LA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%99%D7%A0%D7%98%D7%99%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.566666666,
+          42.866666666
+        ]
+      },
+      "properties": {
+        "name": "בישקק",
+        "ISO_A2": "KG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%A9%D7%A7%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3725,
+          48.208333333
+        ]
+      },
+      "properties": {
+        "name": "וינה",
+        "ISO_A2": "AT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.745,
+          59.437222222
+        ]
+      },
+      "properties": {
+        "name": "טאלין",
+        "ISO_A2": "EE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%90%D7%9C%D7%99%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.835183333,
+          40.366655555
+        ]
+      },
+      "properties": {
+        "name": "באקו",
+        "ISO_A2": "AZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%A7%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.916666666,
+          4.916666666
+        ]
+      },
+      "properties": {
+        "name": "בנדר סרי בגוואן",
+        "ISO_A2": "BN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%93%D7%A8_%D7%A1%D7%A8%D7%99_%D7%91%D7%92%D7%95%D7%95%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.311944444,
+          -4.321944444
+        ]
+      },
+      "properties": {
+        "name": "קינשאסה",
+        "ISO_A2": "CD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A0%D7%A9%D7%90%D7%A1%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.804722222,
+          6.310555555
+        ]
+      },
+      "properties": {
+        "name": "מונרוביה",
+        "ISO_A2": "LR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A0%D7%A8%D7%95%D7%91%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.253611111,
+          -11.703611111
+        ]
+      },
+      "properties": {
+        "name": "מורוני",
+        "ISO_A2": "KM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A8%D7%95%D7%A0%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.283333333,
+          -15.416666666
+        ]
+      },
+      "properties": {
+        "name": "לוסקה",
+        "ISO_A2": "ZM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A1%D7%A7%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9375,
+          60.170833333
+        ]
+      },
+      "properties": {
+        "name": "הלסינקי",
+        "ISO_A2": "FI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9C%D7%A1%D7%99%D7%A0%D7%A7%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.365,
+          35.1725
+        ]
+      },
+      "properties": {
+        "name": "ניקוסיה",
+        "ISO_A2": "CY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%A7%D7%95%D7%A1%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.106944444,
+          56.9475
+        ]
+      },
+      "properties": {
+        "name": "ריגה",
+        "ISO_A2": "LV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%92%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.036944444,
+          33.698888888
+        ]
+      },
+      "properties": {
+        "name": "אסלאמאבאד",
+        "ISO_A2": "PK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%9C%D7%90%D7%9E%D7%90%D7%91%D7%90%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.432,
+          14.672555555
+        ]
+      },
+      "properties": {
+        "name": "דקר",
+        "ISO_A2": "SN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%A8_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.52654,
+          15.60308
+        ]
+      },
+      "properties": {
+        "name": "ח'רטום",
+        "ISO_A2": "SD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%27%D7%A8%D7%98%D7%95%D7%9D",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.383333333,
+          52.516666666
+        ]
+      },
+      "properties": {
+        "name": "ברלין",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9C%D7%99%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.5825,
+          4.853888888
+        ]
+      },
+      "properties": {
+        "name": "ג'ובה",
+        "ISO_A2": "SS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%95%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.992222222,
+          12.645833333
+        ]
+      },
+      "properties": {
+        "name": "במקו",
+        "ISO_A2": "ML",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%9E%D7%A7%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.45,
+          -22.266666666
+        ]
+      },
+      "properties": {
+        "name": "נומאה",
+        "ISO_A2": "NC",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%9E%D7%90%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.234444444,
+          -8.838333333
+        ]
+      },
+      "properties": {
+        "name": "לואנדה",
+        "ISO_A2": "AO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%90%D7%A0%D7%93%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.616666666,
+          6.483333333
+        ]
+      },
+      "properties": {
+        "name": "פורטו נובו",
+        "ISO_A2": "BJ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98%D7%95_%D7%A0%D7%95%D7%91%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.712222222,
+          9.509166666
+        ]
+      },
+      "properties": {
+        "name": "קונאקרי",
+        "ISO_A2": "GN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A0%D7%90%D7%A7%D7%A8%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.366111111,
+          33.315277777
+        ]
+      },
+      "properties": {
+        "name": "בגדאד",
+        "ISO_A2": "IQ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%92%D7%93%D7%90%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.112777777,
+          48.144722222
+        ]
+      },
+      "properties": {
+        "name": "ברטיסלאבה",
+        "ISO_A2": "SK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%98%D7%99%D7%A1%D7%9C%D7%90%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.728333333,
+          0.3375
+        ]
+      },
+      "properties": {
+        "name": "סאו טומה",
+        "ISO_A2": "ST",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%95_%D7%98%D7%95%D7%9E%D7%94_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8,
+          1.3
+        ]
+      },
+      "properties": {
+        "name": "סינגפור",
+        "ISO_A2": "SG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%A0%D7%92%D7%A4%D7%95%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.413055555,
+          43.856388888
+        ]
+      },
+      "properties": {
+        "name": "סרייבו",
+        "ISO_A2": "BA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A8%D7%99%D7%99%D7%91%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.523611111,
+          50.45
+        ]
+      },
+      "properties": {
+        "name": "קייב",
+        "ISO_A2": "UA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%99%D7%91",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.733333333,
+          64.175
+        ]
+      },
+      "properties": {
+        "name": "נוק",
+        "ISO_A2": "GL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.133333333,
+          -16.495833333
+        ]
+      },
+      "properties": {
+        "name": "לה פאס",
+        "ISO_A2": "BO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%94_%D7%A4%D7%90%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.78725,
+          -13.96692
+        ]
+      },
+      "properties": {
+        "name": "לילונגווה",
+        "ISO_A2": "MW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%9C%D7%95%D7%A0%D7%92%D7%95%D7%95%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.215833333,
+          6.13
+        ]
+      },
+      "properties": {
+        "name": "לומה",
+        "ISO_A2": "TG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%9E%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.818055555,
+          41.328333333
+        ]
+      },
+      "properties": {
+        "name": "טירנה",
+        "ISO_A2": "AL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%99%D7%A8%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.116666666,
+          18.465277777
+        ]
+      },
+      "properties": {
+        "name": "סן חואן",
+        "ISO_A2": "PR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%97%D7%95%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0375,
+          -12.06
+        ]
+      },
+      "properties": {
+        "name": "לימה",
+        "ISO_A2": "PE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%9E%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          158.185,
+          6.917777777
+        ]
+      },
+      "properties": {
+        "name": "פליקיר",
+        "ISO_A2": "FM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%99%D7%A7%D7%99%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.562833333,
+          4.37325
+        ]
+      },
+      "properties": {
+        "name": "בנגי",
+        "ISO_A2": "CF",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%92%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.235555555,
+          8.487222222
+        ]
+      },
+      "properties": {
+        "name": "פריטאון",
+        "ISO_A2": "SL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%98%D7%90%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          55.454444444,
+          -4.623611111
+        ]
+      },
+      "properties": {
+        "name": "ויקטוריה",
+        "ISO_A2": "SC",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A7%D7%98%D7%95%D7%A8%D7%99%D7%94_(%D7%A1%D7%99%D7%99%D7%A9%D7%9C)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5275,
+          12.368611111
+        ]
+      },
+      "properties": {
+        "name": "ואגאדוגו",
+        "ISO_A2": "BF",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%90%D7%92%D7%90%D7%93%D7%95%D7%92%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.728055555,
+          37.984166666
+        ]
+      },
+      "properties": {
+        "name": "אתונה",
+        "ISO_A2": "GR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%AA%D7%95%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.522222222,
+          47.140555555
+        ]
+      },
+      "properties": {
+        "name": "ואדוץ",
+        "ISO_A2": "LI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%90%D7%93%D7%95%D7%A5",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.908611111,
+          -24.656944444
+        ]
+      },
+      "properties": {
+        "name": "גאבורונה",
+        "ISO_A2": "BW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%90%D7%91%D7%95%D7%A8%D7%95%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5625,
+          25.0375
+        ]
+      },
+      "properties": {
+        "name": "טאיפיי",
+        "ISO_A2": "TW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%90%D7%99%D7%A4%D7%99%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          69.279722222,
+          41.311111111
+        ]
+      },
+      "properties": {
+        "name": "טשקנט",
+        "ISO_A2": "UZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A9%D7%A7%D7%A0%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.068611111,
+          59.329444444
+        ]
+      },
+      "properties": {
+        "name": "סטוקהולם",
+        "ISO_A2": "SE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%95%D7%A7%D7%94%D7%95%D7%9C%D7%9D",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.139016,
+          38.708042
+        ]
+      },
+      "properties": {
+        "name": "ליסבון",
+        "ISO_A2": "PT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%A1%D7%91%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.786388888,
+          38.573055555
+        ]
+      },
+      "properties": {
+        "name": "דושנבה",
+        "ISO_A2": "TJ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%A9%D7%A0%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.513333333,
+          14.641666666
+        ]
+      },
+      "properties": {
+        "name": "גואטמלה סיטי",
+        "ISO_A2": "GT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%95%D7%90%D7%98%D7%9E%D7%9C%D7%94_%D7%A1%D7%99%D7%98%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.321726,
+          42.697886
+        ]
+      },
+      "properties": {
+        "name": "סופיה",
+        "ISO_A2": "BG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%95%D7%A4%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.63367,
+          27.47135
+        ]
+      },
+      "properties": {
+        "name": "טהימפהו",
+        "ISO_A2": "BT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%94%D7%99%D7%9E%D7%A4%D7%94%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.576388888,
+          -25.915277777
+        ]
+      },
+      "properties": {
+        "name": "מפוטו",
+        "ISO_A2": "MZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A4%D7%95%D7%98%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.132777777,
+          49.610555555
+        ]
+      },
+      "properties": {
+        "name": "לוקסמבורג",
+        "ISO_A2": "LU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A7%D7%A1%D7%9E%D7%91%D7%95%D7%A8%D7%92_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.383333333,
+          37.95
+        ]
+      },
+      "properties": {
+        "name": "אשגבאט",
+        "ISO_A2": "TM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A9%D7%92%D7%91%D7%90%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.581111111,
+          0.313611111
+        ]
+      },
+      "properties": {
+        "name": "קמפלה",
+        "ISO_A2": "UG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9E%D7%A4%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.338611111,
+          25.078055555
+        ]
+      },
+      "properties": {
+        "name": "נסאו",
+        "ISO_A2": "BS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%A1%D7%90%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.13589,
+          19.353773
+        ]
+      },
+      "properties": {
+        "name": "מקסיקו סיטי",
+        "ISO_A2": "MX",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A7%D7%A1%D7%99%D7%A7%D7%95_%D7%A1%D7%99%D7%98%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.052222222,
+          -17.829166666
+        ]
+      },
+      "properties": {
+        "name": "הארארה",
+        "ISO_A2": "ZW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%A8%D7%90%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.508333333,
+          4.175
+        ]
+      },
+      "properties": {
+        "name": "מאלה",
+        "ISO_A2": "MV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.011111111,
+          52.23
+        ]
+      },
+      "properties": {
+        "name": "ורשה",
+        "ISO_A2": "PL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%A8%D7%A9%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.835277777,
+          47.022777777
+        ]
+      },
+      "properties": {
+        "name": "קישינב",
+        "ISO_A2": "MD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A9%D7%99%D7%A0%D7%91",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.914444444,
+          10.506111111
+        ]
+      },
+      "properties": {
+        "name": "קראקס",
+        "ISO_A2": "VE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%90%D7%A7%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.695277777,
+          3.147777777
+        ]
+      },
+      "properties": {
+        "name": "קואלה לומפור",
+        "ISO_A2": "MY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%90%D7%9C%D7%94_%D7%9C%D7%95%D7%9E%D7%A4%D7%95%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.84117,
+          21.0245
+        ]
+      },
+      "properties": {
+        "name": "האנוי",
+        "ISO_A2": "VN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%A0%D7%95%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.22742,
+          13.15527
+        ]
+      },
+      "properties": {
+        "name": "קינגסטאון",
+        "ISO_A2": "VC",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A0%D7%92%D7%A1%D7%98%D7%90%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.506111111,
+          46.051388888
+        ]
+      },
+      "properties": {
+        "name": "ליובליאנה",
+        "ISO_A2": "SI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%95%D7%91%D7%9C%D7%99%D7%90%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.150833333,
+          6.805833333
+        ]
+      },
+      "properties": {
+        "name": "ג'ורג'טאון",
+        "ISO_A2": "GY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%95%D7%A8%D7%92%27%D7%98%D7%90%D7%95%D7%9F_(%D7%92%D7%99%D7%90%D7%A0%D7%94)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.518055555,
+          3.857777777
+        ]
+      },
+      "properties": {
+        "name": "יאונדה",
+        "ISO_A2": "CM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%95%D7%A0%D7%93%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.568888888,
+          55.676111111
+        ]
+      },
+      "properties": {
+        "name": "קופנהגן",
+        "ISO_A2": "DK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A4%D7%A0%D7%94%D7%92%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.040833333,
+          47.498333333
+        ]
+      },
+      "properties": {
+        "name": "בודפשט",
+        "ISO_A2": "HU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%93%D7%A4%D7%A9%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.421388888,
+          50.0875
+        ]
+      },
+      "properties": {
+        "name": "פראג",
+        "ISO_A2": "CZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%90%D7%92",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.561837,
+          53.902246
+        ]
+      },
+      "properties": {
+        "name": "מינסק",
+        "ISO_A2": "BY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A0%D7%A1%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.482777777,
+          41.893055555
+        ]
+      },
+      "properties": {
+        "name": "רומא",
+        "ISO_A2": "IT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%9E%D7%90",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.351666666,
+          50.846666666
+        ]
+      },
+      "properties": {
+        "name": "בריסל",
+        "ISO_A2": "BE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%A1%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.516666666,
+          13.75
+        ]
+      },
+      "properties": {
+        "name": "בנגקוק",
+        "ISO_A2": "TH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%92%D7%A7%D7%95%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          58.592222222,
+          23.613888888
+        ]
+      },
+      "properties": {
+        "name": "מסקט",
+        "ISO_A2": "OM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A7%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.525,
+          -18.91
+        ]
+      },
+      "properties": {
+        "name": "אנטננריבו",
+        "ISO_A2": "MG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%98%D7%A0%D7%A0%D7%A8%D7%99%D7%91%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.695,
+          45.424722222
+        ]
+      },
+      "properties": {
+        "name": "אוטווה",
+        "ISO_A2": "CA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%98%D7%95%D7%95%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.407526,
+          39.90403
+        ]
+      },
+      "properties": {
+        "name": "בייג'ינג",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%99%D7%92%27%D7%99%D7%A0%D7%92",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.883333333,
+          52.366666666
+        ]
+      },
+      "properties": {
+        "name": "אמסטרדם",
+        "ISO_A2": "NL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9E%D7%A1%D7%98%D7%A8%D7%93%D7%9D",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.509155555,
+          14.917719444
+        ]
+      },
+      "properties": {
+        "name": "פראיה",
+        "ISO_A2": "CV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%90%D7%99%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.262777777,
+          42.441388888
+        ]
+      },
+      "properties": {
+        "name": "פודגוריצה",
+        "ISO_A2": "ME",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%93%D7%92%D7%95%D7%A8%D7%99%D7%A6%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          54.396944444,
+          24.451111111
+        ]
+      },
+      "properties": {
+        "name": "אבו דאבי",
+        "ISO_A2": "AE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%95_%D7%93%D7%90%D7%91%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.5775,
+          13.453055555
+        ]
+      },
+      "properties": {
+        "name": "בנג'ול",
+        "ISO_A2": "GM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%92%27%D7%95%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.352222222,
+          48.856666666
+        ]
+      },
+      "properties": {
+        "name": "פריז",
+        "ISO_A2": "FR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%96",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.935,
+          64.1475
+        ]
+      },
+      "properties": {
+        "name": "רייקיאוויק",
+        "ISO_A2": "IS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%99%D7%A7%D7%99%D7%90%D7%95%D7%95%D7%99%D7%A7",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.99,
+          37.56
+        ]
+      },
+      "properties": {
+        "name": "סיאול",
+        "ISO_A2": "KR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%90%D7%95%D7%9C",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.738888888,
+          59.913333333
+        ]
+      },
+      "properties": {
+        "name": "אוסלו",
+        "ISO_A2": "NO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A1%D7%9C%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.817222222,
+          -1.286388888
+        ]
+      },
+      "properties": {
+        "name": "ניירובי",
+        "ISO_A2": "KE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%91%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.394444444,
+          23.728888888
+        ]
+      },
+      "properties": {
+        "name": "דאקה",
+        "ISO_A2": "BD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%90%D7%A7%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.793055555,
+          17.971388888
+        ]
+      },
+      "properties": {
+        "name": "קינגסטון",
+        "ISO_A2": "JM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%A0%D7%92%D7%A1%D7%98%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.5125,
+          35.897777777
+        ]
+      },
+      "properties": {
+        "name": "ולטה",
+        "ISO_A2": "MT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%9C%D7%98%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.058611111,
+          36.776388888
+        ]
+      },
+      "properties": {
+        "name": "אלג'יר",
+        "ISO_A2": "DZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%92%27%D7%99%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.08175,
+          4.60971
+        ]
+      },
+      "properties": {
+        "name": "בוגוטה",
+        "ISO_A2": "CO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%92%D7%95%D7%98%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1175,
+          13.515
+        ]
+      },
+      "properties": {
+        "name": "ניאמיי",
+        "ISO_A2": "NE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%90%D7%9E%D7%99%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.273725,
+          12.154680555
+        ]
+      },
+      "properties": {
+        "name": "מנגואה",
+        "ISO_A2": "NI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%92%D7%95%D7%90%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.516666666,
+          10.666666666
+        ]
+      },
+      "properties": {
+        "name": "פורט אוף ספיין",
+        "ISO_A2": "TT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98_%D7%90%D7%95%D7%A3_%D7%A1%D7%A4%D7%99%D7%99%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.05,
+          12.11
+        ]
+      },
+      "properties": {
+        "name": "נג'מנה",
+        "ISO_A2": "TD",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%92%27%D7%9E%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -175.201808,
+          -21.1343401
+        ]
+      },
+      "properties": {
+        "name": "נוקואלופה",
+        "ISO_A2": "TO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A7%D7%95%D7%90%D7%9C%D7%95%D7%A4%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.822222222,
+          1.591666666
+        ]
+      },
+      "properties": {
+        "name": "סיודאד דה לה פאס",
+        "ISO_A2": "GQ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%95%D7%93%D7%90%D7%93_%D7%93%D7%94_%D7%9C%D7%94_%D7%A4%D7%90%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.703333333,
+          40.416944444
+        ]
+      },
+      "properties": {
+        "name": "מדריד",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%93%D7%A8%D7%99%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.389722222,
+          35.688888888
+        ]
+      },
+      "properties": {
+        "name": "טהראן",
+        "ISO_A2": "IR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%94%D7%A8%D7%90%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          147.149444444,
+          -9.478888888
+        ]
+      },
+      "properties": {
+        "name": "פורט מורסבי",
+        "ISO_A2": "PG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98_%D7%9E%D7%95%D7%A8%D7%A1%D7%91%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          134.624167,
+          7.500556
+        ]
+      },
+      "properties": {
+        "name": "נגרולמוד",
+        "ISO_A2": "PW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%92%D7%A8%D7%95%D7%9C%D7%9E%D7%95%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.433333333,
+          -18.133333333
+        ]
+      },
+      "properties": {
+        "name": "סובה",
+        "ISO_A2": "FJ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%95%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.7475,
+          39.016666666
+        ]
+      },
+      "properties": {
+        "name": "פיונגיאנג",
+        "ISO_A2": "KP",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%95%D7%A0%D7%92%D7%99%D7%90%D7%A0%D7%92",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          159.95,
+          -9.433333
+        ]
+      },
+      "properties": {
+        "name": "הוניארה",
+        "ISO_A2": "SB",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%95%D7%A0%D7%99%D7%90%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.32,
+          27.71
+        ]
+      },
+      "properties": {
+        "name": "קטמנדו",
+        "ISO_A2": "NP",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%98%D7%9E%D7%A0%D7%93%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.966666666,
+          1.333333333
+        ]
+      },
+      "properties": {
+        "name": "דרום טאראווה",
+        "ISO_A2": "KI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%95%D7%9D_%D7%98%D7%90%D7%A8%D7%90%D7%95%D7%95%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.191155555,
+          13.697597222
+        ]
+      },
+      "properties": {
+        "name": "סן סלוודור",
+        "ISO_A2": "SV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%A1%D7%9C%D7%95%D7%95%D7%93%D7%95%D7%A8",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.98,
+          29.375
+        ]
+      },
+      "properties": {
+        "name": "כווית סיטי",
+        "ISO_A2": "KW",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9B%D7%95%D7%95%D7%99%D7%AA_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.916666666,
+          15.333333333
+        ]
+      },
+      "properties": {
+        "name": "אסמרה",
+        "ISO_A2": "ER",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%9E%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.841388888,
+          34.021111111
+        ]
+      },
+      "properties": {
+        "name": "רבאט",
+        "ISO_A2": "MA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%91%D7%90%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.148055555,
+          11.595
+        ]
+      },
+      "properties": {
+        "name": "ג'יבוטי",
+        "ISO_A2": "DJ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%99%D7%91%D7%95%D7%98%D7%99_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          166.920867,
+          -0.5477
+        ]
+      },
+      "properties": {
+        "name": "יארן",
+        "ISO_A2": "NR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%A8%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -57.634444444,
+          -25.28
+        ]
+      },
+      "properties": {
+        "name": "אסונסיון",
+        "ISO_A2": "PY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%95%D7%A0%D7%A1%D7%99%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          179.117361111,
+          -8.504777777
+        ]
+      },
+      "properties": {
+        "name": "פנאפוטי",
+        "ISO_A2": "TV",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A0%D7%90%D7%A4%D7%95%D7%98%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.166666666,
+          5.866666666
+        ]
+      },
+      "properties": {
+        "name": "פרמריבו",
+        "ISO_A2": "SR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%9E%D7%A8%D7%99%D7%91%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.18746,
+          32.87519
+        ]
+      },
+      "properties": {
+        "name": "טריפולי",
+        "ISO_A2": "LY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A8%D7%99%D7%A4%D7%95%D7%9C%D7%99_(%D7%9C%D7%95%D7%91)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.079613888,
+          9.932738888
+        ]
+      },
+      "properties": {
+        "name": "סן חוסה",
+        "ISO_A2": "CR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%97%D7%95%D7%A1%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.777222222,
+          -41.288888888
+        ]
+      },
+      "properties": {
+        "name": "ולינגטון",
+        "ISO_A2": "NZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%9C%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F_(%D7%A0%D7%99%D7%95_%D7%96%D7%99%D7%9C%D7%A0%D7%93)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.71,
+          24.65
+        ]
+      },
+      "properties": {
+        "name": "ריאד",
+        "ISO_A2": "SA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%90%D7%93",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.9785,
+          18.08581
+        ]
+      },
+      "properties": {
+        "name": "נואקשוט",
+        "ISO_A2": "MR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%90%D7%A7%D7%A9%D7%95%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.383333333,
+          15.3
+        ]
+      },
+      "properties": {
+        "name": "רוזו",
+        "ISO_A2": "DM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%96%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.3802,
+          7.0918
+        ]
+      },
+      "properties": {
+        "name": "מג'ורו",
+        "ISO_A2": "MH",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%92%27%D7%95%D7%A8%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.115,
+          19.7475
+        ]
+      },
+      "properties": {
+        "name": "נייפידאו",
+        "ISO_A2": "MM",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%99%D7%A4%D7%99%D7%93%D7%90%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.826944444,
+          -6.175277777
+        ]
+      },
+      "properties": {
+        "name": "ג'קרטה",
+        "ISO_A2": "ID",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%A7%D7%A8%D7%98%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.18,
+          36.800833333
+        ]
+      },
+      "properties": {
+        "name": "תוניס",
+        "ISO_A2": "TN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%A0%D7%99%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -171.833333333,
+          -13.833333333
+        ]
+      },
+      "properties": {
+        "name": "אפיה",
+        "ISO_A2": "WS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%99%D7%94_(%D7%A2%D7%99%D7%A8)",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.201666666,
+          31.896944444
+        ]
+      },
+      "properties": {
+        "name": "רמאללה",
+        "ISO_A2": "PS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%9E%D7%90%D7%9C%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.424815,
+          43.73097
+        ]
+      },
+      "properties": {
+        "name": "מונקו-ויל",
+        "ISO_A2": "MC",
+        "wiki_url": "",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.925,
+          -3.428333333
+        ]
+      },
+      "properties": {
+        "name": "גיטגה",
+        "ISO_A2": "BI",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%99%D7%98%D7%92%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.166666666,
+          42.666666666
+        ]
+      },
+      "properties": {
+        "name": "פרישטינה",
+        "ISO_A2": "XK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%A9%D7%98%D7%99%D7%A0%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.097777777,
+          44.413361111
+        ]
+      },
+      "properties": {
+        "name": "בוקרשט",
+        "ISO_A2": "RO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%A7%D7%A8%D7%A9%D7%98",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.736944444,
+          9.027222222
+        ]
+      },
+      "properties": {
+        "name": "אדיס אבבה",
+        "ISO_A2": "ET",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%93%D7%99%D7%A1_%D7%90%D7%91%D7%91%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.5125,
+          -0.22
+        ]
+      },
+      "properties": {
+        "name": "קיטו",
+        "ISO_A2": "EC",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%98%D7%95",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.534722222,
+          8.971111111
+        ]
+      },
+      "properties": {
+        "name": "פנמה סיטי",
+        "ISO_A2": "PA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A0%D7%9E%D7%94_%D7%A1%D7%99%D7%98%D7%99",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.83869,
+          39.93576
+        ]
+      },
+      "properties": {
+        "name": "אנקרה",
+        "ISO_A2": "TR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%A7%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.340277777,
+          18.546944444
+        ]
+      },
+      "properties": {
+        "name": "פורט-או-פרנס",
+        "ISO_A2": "HT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98-%D7%90%D7%95-%D7%A4%D7%A8%D7%A0%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.7675,
+          17.25
+        ]
+      },
+      "properties": {
+        "name": "בלמופן",
+        "ISO_A2": "BZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%9C%D7%9E%D7%95%D7%A4%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.204705555,
+          14.105783333
+        ]
+      },
+      "properties": {
+        "name": "טגוסיגלפה",
+        "ISO_A2": "HN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%92%D7%95%D7%A1%D7%99%D7%92%D7%9C%D7%A4%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.316667,
+          -17.73333
+        ]
+      },
+      "properties": {
+        "name": "פורט וילה",
+        "ISO_A2": "VU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98_%D7%95%D7%99%D7%9C%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -59.616666666,
+          13.0975
+        ]
+      },
+      "properties": {
+        "name": "ברידג'טאון",
+        "ISO_A2": "BB",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%99%D7%93%D7%92%27%D7%98%D7%90%D7%95%D7%9F",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.844722222,
+          17.121111111
+        ]
+      },
+      "properties": {
+        "name": "סנט ג'ונס",
+        "ISO_A2": "AG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98_%D7%92%27%D7%95%D7%A0%D7%A1",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          149.126944444,
+          -35.293055555
+        ]
+      },
+      "properties": {
+        "name": "קנברה",
+        "ISO_A2": "AU",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%91%D7%A8%D7%94",
+        "type": "capital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.936111111,
+          18.4625
+        ]
+      },
+      "properties": {
+        "name": "סנטו דומינגו",
+        "ISO_A2": "DO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%95_%D7%93%D7%95%D7%9E%D7%99%D7%A0%D7%92%D7%95",
+        "type": "capital"
+      },{
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [ 12.453389, 41.90225 ] },
+      "properties": { "name": "קריית הוותיקן", "ISO_A2": "VA", "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%99%D7%99%D7%AA_%D7%94%D7%95%D7%95%D7%AA%D7%99%D7%A7%D7%9F", "type": "capital" }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [ 44.062778, 9.562222 ] },
+      "properties": { "name": "הרגייסה", "ISO_A2": "XL", "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%92%D7%99%D7%99%D7%A1%D7%94", "type": "capital" }
+    }
+
+    }
+  ]
+}
