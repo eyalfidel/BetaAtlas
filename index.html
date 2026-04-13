@@ -141,7 +141,10 @@
     <div id="poi-legend">
         <h4>מקרא נקודות עניין</h4>
         <div class="legend-item"><span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</div>
+        <div class="legend-item"><span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</div>
         <div class="legend-item"><span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</div>
+        <div class="legend-item"><span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</div>
+        <div class="legend-item"><span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</div>
     </div>
 
     <div id="info-panel">
@@ -229,7 +232,7 @@
 
         const globalData = new Map(); 
         let globalCapitalsData = { type: 'FeatureCollection', features: [] };
-        let globalMonumentsData = { type: 'FeatureCollection', features: [] };
+        let globalPlacesData = { type: 'FeatureCollection', features: [] }; // המשתנה החדש לקובץ ה-Places!
         const searchIndex = [];
         let activePopup = null; 
         
@@ -248,20 +251,26 @@
             } catch (e) { return 'שגיאה בטעינת התקציר מהשרת.'; }
         }
 
+        // פופאפ שמותאם לצבעי הקטגוריות
         function openPOIPopup(feature, coordinates) {
             if (activePopup) activePopup.remove();
             const props = feature.properties;
             let wikiTitle = props.name;
             if (props.wiki_url && props.wiki_url.includes('/wiki/')) wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
             
-            // שינוי צבע הכותרת בפופאפ בהתאם לסוג הנקודה
-            const titleBorderColor = props.type === 'capital' ? '#fbbf24' : '#ec4899';
+            // צבע גבול בהתאם לסוג הנקודה
+            let borderColor = '#9ca3af'; // ברירת מחדל אפור
+            if (props.type === 'capital') borderColor = '#fbbf24';
+            else if (props.poi_category === 'nature') borderColor = '#22c55e';
+            else if (props.poi_category === 'history') borderColor = '#d97706';
+            else if (props.poi_category === 'monument') borderColor = '#ec4899';
+            else if (props.poi_category === 'city') borderColor = '#8b5cf6';
             
             activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, maxWidth: 'none' })
                 .setLngLat(coordinates)
                 .setHTML(`
                     <div class="poi-popup" dir="rtl">
-                        <h4 style="border-bottom-color: ${titleBorderColor};">${props.name}</h4>
+                        <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
                         <p><i>טוען נתונים מוויקיפדיה... ⏳</i></p>
                     </div>
                 `)
@@ -271,7 +280,7 @@
                 if (activePopup && activePopup.isOpen()) {
                     activePopup.setHTML(`
                         <div class="poi-popup" dir="rtl">
-                            <h4 style="border-bottom-color: ${titleBorderColor};">${props.name}</h4>
+                            <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
                             <p>${summary}</p>
                             ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
                         </div>
@@ -280,20 +289,21 @@
             });
         }
 
+        // טעינת הקבצים (הוספנו את places.geojson)
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/stats.json').then(res => res.ok ? res.json() : []),
             fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {}),
             fetch('json/capitals.geojson').then(res => res.ok ? res.json() : {features:[]}),
-            fetch('json/monuments.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]}))
-        ]).then(([countriesData, seasData, statsData, wikiData, capitalsData, monumentsData]) => {
+            fetch('json/places.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]}))
+        ]).then(([countriesData, seasData, statsData, wikiData, capitalsData, placesData]) => {
             
             globalCapitalsData = capitalsData;
-            globalMonumentsData = monumentsData;
+            globalPlacesData = placesData;
             
             if (map.getSource('capitals')) map.getSource('capitals').setData(globalCapitalsData);
-            if (map.getSource('monuments')) map.getSource('monuments').setData(globalMonumentsData);
+            if (map.getSource('places')) map.getSource('places').setData(globalPlacesData);
 
             const statsMap = new Map();
             statsData.forEach(row => { if (row.ISOA2) statsMap.set(row.ISOA2, row); });
@@ -356,20 +366,39 @@
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // --- מקור וסיכות למונומנטים ---
-            map.addSource('monuments', { type: 'geojson', data: globalMonumentsData });
+            // --- מקור וסיכות לכל שאר המקומות (places.geojson) ---
+            map.addSource('places', { type: 'geojson', data: globalPlacesData });
             map.addLayer({
-                'id': 'monuments-layer', 'type': 'circle', 'source': 'monuments', 'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'circle-radius': 6, 'circle-color': '#ec4899', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
+                'id': 'places-layer', 
+                'type': 'circle', 
+                'source': 'places', 
+                'filter': ['==', 'ISO_A2', ''], 
+                'paint': { 
+                    'circle-radius': 6, 
+                    // צביעה חכמה לפי הקטגוריה שהוגדרה בפייתון!
+                    'circle-color': [
+                        'match',
+                        ['get', 'poi_category'],
+                        'nature', '#22c55e',    // ירוק
+                        'history', '#d97706',   // כתום כהה
+                        'monument', '#ec4899',  // ורוד
+                        'city', '#8b5cf6',      // סגול
+                        '#9ca3af'               // אפור (ברירת מחדל אם לא נמצא)
+                    ], 
+                    'circle-stroke-color': '#ffffff', 
+                    'circle-stroke-width': 2, 
+                    'circle-pitch-alignment': 'map' 
+                }
             });
             map.addLayer({
-                'id': 'monuments-label', 'type': 'symbol', 'source': 'monuments', 'filter': ['==', 'ISO_A2', ''],
+                'id': 'places-label', 'type': 'symbol', 'source': 'places', 'filter': ['==', 'ISO_A2', ''],
                 'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
             map.on('click', (e) => {
-                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'monuments-layer', 'monuments-label'] });
+                // בדיקת לחיצה על כל אחת מהסיכות (גם בירות וגם פלייסס)
+                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'places-layer', 'places-label'] });
                 if (poiFeatures.length > 0) {
                     openPOIPopup(poiFeatures[0], e.lngLat);
                     return; 
@@ -400,7 +429,7 @@
                 }
             });
 
-            ['countries-fill', 'seas-fill', 'capitals-layer', 'monuments-layer'].forEach(layer => {
+            ['countries-fill', 'seas-fill', 'capitals-layer', 'places-layer'].forEach(layer => {
                 map.on('mouseenter', layer, () => map.getCanvas().style.cursor = 'pointer');
                 map.on('mouseleave', layer, () => map.getCanvas().style.cursor = '');
             });
@@ -425,14 +454,14 @@
             if (!data.isSea && !isComparingMode && !data.isDisputed) {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', iso]);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', iso]);
-                map.setFilter('monuments-layer', ['==', 'ISO_A2', iso]);
-                map.setFilter('monuments-label', ['==', 'ISO_A2', iso]);
+                map.setFilter('places-layer', ['==', 'ISO_A2', iso]);
+                map.setFilter('places-label', ['==', 'ISO_A2', iso]);
                 legend.style.display = 'block';
             } else {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', '']);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
-                map.setFilter('monuments-layer', ['==', 'ISO_A2', '']);
-                map.setFilter('monuments-label', ['==', 'ISO_A2', '']);
+                map.setFilter('places-layer', ['==', 'ISO_A2', '']);
+                map.setFilter('places-label', ['==', 'ISO_A2', '']);
                 legend.style.display = 'none';
             }
 
@@ -548,8 +577,8 @@
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']); 
-            map.setFilter('monuments-layer', ['==', 'ISO_A2', '']); 
-            map.setFilter('monuments-label', ['==', 'ISO_A2', '']); 
+            map.setFilter('places-layer', ['==', 'ISO_A2', '']); 
+            map.setFilter('places-label', ['==', 'ISO_A2', '']); 
             history.pushState("", document.title, window.location.pathname + window.location.search);
         };
 
@@ -569,8 +598,8 @@
             if (activePopup) activePopup.remove();
             map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
-            map.setFilter('monuments-layer', ['==', 'ISO_A2', '']); 
-            map.setFilter('monuments-label', ['==', 'ISO_A2', '']);
+            map.setFilter('places-layer', ['==', 'ISO_A2', '']); 
+            map.setFilter('places-label', ['==', 'ISO_A2', '']);
         };
 
         document.getElementById('compare-banner').onclick = () => {
@@ -581,8 +610,8 @@
             if (currentLoadedISO) {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', currentLoadedISO]);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', currentLoadedISO]);
-                map.setFilter('monuments-layer', ['==', 'ISO_A2', currentLoadedISO]);
-                map.setFilter('monuments-label', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('places-layer', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('places-label', ['==', 'ISO_A2', currentLoadedISO]);
             }
         };
 
@@ -598,8 +627,8 @@
             
             map.setFilter('capitals-layer', ['==', 'ISO_A2', iso2]);
             map.setFilter('capitals-label', ['==', 'ISO_A2', iso2]);
-            map.setFilter('monuments-layer', ['==', 'ISO_A2', iso2]);
-            map.setFilter('monuments-label', ['==', 'ISO_A2', iso2]);
+            map.setFilter('places-layer', ['==', 'ISO_A2', iso2]);
+            map.setFilter('places-label', ['==', 'ISO_A2', iso2]);
 
             const s1 = baseCompareFeature.stats || {};
             const s2 = targetData.stats || {};
