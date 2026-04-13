@@ -59,8 +59,9 @@
             resize: both; direction: rtl; transition: height 0.3s ease;
         }
 
-        #drag-handle-wrapper { width: 100%; padding: 15px 0; margin-top: -15px; display: none; justify-content: center; cursor: pointer; touch-action: none; }
+        #drag-handle-wrapper { width: 100%; padding: 15px 0; margin-top: -15px; display: none; justify-content: center; cursor: pointer; touch-action: none; flex-direction: column; align-items: center;}
         #drag-handle { width: 50px; height: 6px; background: #bbb; border-radius: 4px; }
+        #drag-hint { font-size: 11px; color: #888; margin-top: 4px; display: none; } /* יוסתר במחשב, יוצג במובייל כשממוזער */
 
         .panel-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; margin-bottom: 15px; }
         #info-panel h2 { margin: 0; color: #1a1a1a; display: flex; align-items: center; gap: 10px; font-size: 20px; }
@@ -74,14 +75,15 @@
         .clickable-link { cursor: pointer; color: #3b82f6; text-decoration: underline; font-weight: 600; }
         .clickable-link:hover { color: #1d4ed8; }
 
-        .action-buttons { display: flex; gap: 10px; margin-bottom: 15px; margin-top: 5px; }
-        .text-btn { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; font-family: inherit; transition: background 0.2s; }
-        .text-btn:hover { background: #dbeafe; }
-
         .toggle-more-btn { background: none; border: none; color: #3b82f6; font-weight: bold; font-size: 14px; cursor: pointer; padding: 0; margin: 10px 0 15px 0; font-family: inherit; }
         .toggle-more-btn:hover { text-decoration: underline; }
 
-        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; resize: vertical; overflow: auto; min-height: 60px; max-height: 300px; }
+        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; resize: vertical; overflow: auto; min-height: 60px; max-height: 300px; margin-bottom: 15px;}
+        
+        /* כפתורי פעולה בתחתית חלונית המדינה */
+        .bottom-actions { display: flex; gap: 10px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; flex-wrap: wrap;}
+        .primary-btn { color: #1d4ed8; text-decoration: none; font-size: 13px; font-weight: bold; background: #eff6ff; padding: 8px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; cursor: pointer; display:inline-flex; align-items: center; gap: 5px; font-family: inherit;}
+        .primary-btn:hover { background: #dbeafe; }
         
         /* המקרא המתקפל */
         #poi-legend {
@@ -135,19 +137,21 @@
         .about-content { font-size: 15px; line-height: 1.6; color: #333; }
         .about-content ul { padding-right: 20px; margin-top: 5px; }
 
-        /* חלונית פופאפ נגררת */
+        /* חלונית פופאפ נגררת ויפה */
         .mapboxgl-popup { z-index: 50; }
         .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw; position: relative; transition: transform 0s; }
         .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; z-index: 2;}
         .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
         
-        .popup-drag-handle { text-align: center; cursor: grab; color: #aaa; font-size: 20px; padding-bottom: 5px; margin-top: -15px; user-select: none; font-weight: bold;}
+        .popup-controls { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: -15px; padding-bottom: 5px; border-bottom: 1px solid #f0f0f0; margin-bottom: 10px;}
+        .popup-drag-handle { cursor: grab; color: #aaa; font-size: 20px; user-select: none; font-weight: bold; line-height: 1;}
         .popup-drag-handle:active { cursor: grabbing; color: #3b82f6;}
+        .popup-recenter-btn { cursor: pointer; color: #aaa; font-size: 16px; transition: color 0.2s;}
+        .popup-recenter-btn:hover { color: #3b82f6;}
         
-        .poi-popup h4 { margin: 0 0 8px 0; color: #111; font-size: 18px; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; display: inline-block;}
-        .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 150px; overflow-y: auto; text-align: justify; }
-        .poi-btn { color: #1d4ed8; text-decoration: none; font-size: 13px; font-weight: bold; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; cursor: pointer; display:inline-block; font-family: inherit;}
-        .poi-btn:hover { background: #dbeafe; }
+        .poi-popup h4 { margin: 0 0 8px 0; color: #111; font-size: 18px; display: inline-block;}
+        .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 150px; overflow-y: auto; text-align: justify; padding-left: 5px;}
+        .poi-actions { margin-top:15px; display:flex; gap:10px; border-top: 1px solid #eee; padding-top: 10px;}
 
         /* התאמות מובייל */
         @media (max-width: 600px) {
@@ -157,8 +161,11 @@
             #search-container { max-width: none; }
             #search-settings { width: 100%; box-sizing: border-box; }
             
-            #info-panel { top: auto; bottom: 0; right: 0; left: 0; width: auto; max-width: none; height: 50vh; border-radius: 20px 20px 0 0; padding: 15px 20px; resize: none; z-index: 10;}
-            #info-panel.minimized { height: 60px !important; overflow: hidden; padding-bottom: 0; }
+            /* מיני-קארד במובייל */
+            #info-panel { top: auto; bottom: 0; right: 0; left: 0; width: auto; max-width: none; height: 50vh; border-radius: 20px 20px 0 0; padding: 15px 20px; resize: none; z-index: 10; box-shadow: 0 -5px 20px rgba(0,0,0,0.2);}
+            #info-panel.minimized { height: 75px !important; overflow: hidden; padding-bottom: 0; cursor: pointer; }
+            #info-panel.minimized .panel-header { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+            #info-panel.minimized #drag-hint { display: block; }
             #drag-handle-wrapper { display: flex; }
             
             .compare-table th, .compare-table td { padding: 8px 5px; font-size: 13px; }
@@ -217,7 +224,10 @@
     </div>
 
     <div id="info-panel">
-        <div id="drag-handle-wrapper"><div id="drag-handle"></div></div>
+        <div id="drag-handle-wrapper">
+            <div id="drag-handle"></div>
+            <span id="drag-hint">החלק למעלה למידע נוסף</span>
+        </div>
         <div class="panel-header">
             <h2><span id="country-name">טוען...</span><img id="country-flag" src="" alt="דגל"></h2>
             <div>
@@ -226,10 +236,6 @@
             </div>
         </div>
 
-        <div class="action-buttons" id="country-actions">
-            <button id="compare-init-btn" class="text-btn">⚖️ השוואת מדינות</button>
-        </div>
-        
         <div id="basic-info">
             <div class="info-row" id="row-capital"><span class="info-label">עיר בירה:</span> <span class="info-value" id="country-capital"></span></div>
             <div class="info-row" id="row-region"><span class="info-label">אזור:</span> <span class="info-value" id="country-region"></span></div>
@@ -257,8 +263,12 @@
             <div class="info-row" id="row-tld"><span class="info-label">סיומת אינטרנט רשמית:</span> <span class="info-value" id="country-tld"></span></div>
         </div>
 
-        <div class="info-row"><span class="info-label">תקציר:</span><div id="country-wiki"></div></div>
-        <div class="sources-links"><a id="link-wiki" target="_blank">ויקיפדיה</a></div>
+        <div class="info-row" style="margin-top: 15px;"><span class="info-label">תקציר:</span><div id="country-wiki"></div></div>
+        
+        <div class="bottom-actions">
+            <a id="link-wiki" target="_blank" class="primary-btn">W ערך בוויקיפדיה</a>
+            <button id="compare-init-btn" class="primary-btn">⚖️ השוואת מדינות</button>
+        </div>
     </div>
 
     <div id="about-backdrop"></div>
@@ -277,7 +287,7 @@
                 <li>להשוות נתונים סטטיסטיים בין שתי מדינות (בעזרת כפתור ⚖️).</li>
                 <li>לסנן את התצוגה במפה בעזרת מערכת המקרא החכמה והחיפוש המתקדם.</li>
                 <li>להגריל יעד אקראי (🎲) מתוך רשימת הסינונים ולגלות מקומות חדשים.</li>
-                <li>לשתף חברים מדויק ישירות לכל עיר, אתר או מדינה (🔗).</li>
+                <li>לשתף חברים באופן מדויק ישירות לכל עיר, אתר או מדינה (🔗).</li>
             </ul>
 
             <h4 style="color: #1d4ed8; margin-bottom: 5px; margin-top: 20px;">מקורות מידע ותשתית:</h4>
@@ -389,12 +399,13 @@
             }
         }
 
-        // הפעלת פונקציית גרירה (Drag) לתוכן של הפופאפ
-        function enablePopupDrag(popupObj) {
+        // פונקציית גרירה ומרכוז לפופאפ
+        function enablePopupDrag(popupObj, originalCoords) {
             const popupEl = popupObj.getElement();
             if(!popupEl) return;
             const content = popupEl.querySelector('.mapboxgl-popup-content');
             const handle = popupEl.querySelector('.popup-drag-handle');
+            const recenterBtn = popupEl.querySelector('.popup-recenter-btn');
             if(!content || !handle) return;
 
             let isDown = false, startX, startY, currentTransX = 0, currentTransY = 0;
@@ -403,7 +414,7 @@
                 isDown = true;
                 startX = clientX - currentTransX;
                 startY = clientY - currentTransY;
-                map.dragPan.disable(); // מונע הזזה של המפה תוך כדי
+                map.dragPan.disable(); 
             };
             const doDrag = (clientX, clientY) => {
                 if(!isDown) return;
@@ -415,15 +426,65 @@
                 if(isDown) { isDown = false; map.dragPan.enable(); }
             };
 
-            // עכבר (מחשב)
             handle.addEventListener('mousedown', e => startDrag(e.clientX, e.clientY));
             window.addEventListener('mousemove', e => doDrag(e.clientX, e.clientY));
             window.addEventListener('mouseup', endDrag);
             
-            // מגע (מובייל)
             handle.addEventListener('touchstart', e => startDrag(e.touches[0].clientX, e.touches[0].clientY), {passive: false});
             window.addEventListener('touchmove', e => doDrag(e.touches[0].clientX, e.touches[0].clientY), {passive: false});
             window.addEventListener('touchend', endDrag);
+
+            if(recenterBtn) {
+                recenterBtn.addEventListener('click', () => {
+                    currentTransX = 0; currentTransY = 0;
+                    content.style.transform = `translate(0px, 0px)`;
+                    map.flyTo({ center: originalCoords });
+                });
+            }
+        }
+
+        // פונקציית אנימציית פעימה לפריט בודד
+        let pulseAnimId = null;
+        function startPOIPulse(coordinates) {
+            stopPOIPulse(); // מנקה קודמים אם יש
+            
+            const size = 100;
+            const pulsingDot = {
+                width: size, height: size, data: new Uint8Array(size * size * 4),
+                onAdd: function() {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = this.width; canvas.height = this.height;
+                    this.context = canvas.getContext('2d');
+                },
+                render: function() {
+                    const duration = 1500;
+                    const t = (performance.now() % duration) / duration;
+                    const radius = (size / 2) * 0.3;
+                    const outerRadius = (size / 2) * 0.7 * t + radius;
+                    const context = this.context;
+                    context.clearRect(0, 0, this.width, this.height);
+                    context.beginPath(); context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
+                    context.fillStyle = `rgba(59, 130, 246, ${1 - t})`; context.fill();
+                    context.beginPath(); context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
+                    context.fillStyle = 'rgba(59, 130, 246, 1)'; context.strokeStyle = 'white'; context.lineWidth = 2 + 4 * (1 - t);
+                    context.fill(); context.stroke();
+                    this.data = context.getImageData(0, 0, this.width, this.height).data;
+                    map.triggerRepaint(); return true;
+                }
+            };
+
+            if(!map.hasImage('pulsing-dot')) map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+            
+            if(!map.getSource('active-poi')) {
+                map.addSource('active-poi', { type: 'geojson', data: { type: 'Point', coordinates: coordinates } });
+                map.addLayer({ id: 'active-poi-layer', type: 'symbol', source: 'active-poi', layout: { 'icon-image': 'pulsing-dot' }});
+            } else {
+                map.getSource('active-poi').setData({ type: 'Point', coordinates: coordinates });
+            }
+        }
+        
+        function stopPOIPulse() {
+            if(map.getSource('active-poi')) map.getSource('active-poi').setData({ type: 'FeatureCollection', features: [] });
         }
 
         function openPOIPopup(feature, coordinates) {
@@ -437,23 +498,34 @@
             let borderColor = getPoiColor(realCategory);
             let safeName = props.name.replace(/'/g, "\\'");
             
+            // מפעיל את פעימת המיקוד על האתר
+            startPOIPulse(coordinates);
+
             activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, maxWidth: 'none' })
                 .setLngLat(coordinates)
                 .setHTML(`
                     <div class="poi-popup" dir="rtl">
-                        <div class="popup-drag-handle" title="הזז חלונית">≡</div>
-                        <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
+                        <div class="popup-controls">
+                            <span class="popup-drag-handle" title="הזז חלונית">≡</span>
+                            <span class="popup-recenter-btn" title="מרכז מפה וחלונית">🎯</span>
+                        </div>
+                        <h4 style="border-bottom: 2px solid ${borderColor}; margin-top:5px;">${props.name}</h4>
                         <p><i>טוען נתונים מוויקיפדיה... ⏳</i></p>
                     </div>
                 `)
                 .addTo(map);
 
-            enablePopupDrag(activePopup);
+            enablePopupDrag(activePopup, coordinates);
 
-            if (isMobile) document.getElementById('info-panel').classList.add('minimized');
+            // במובייל: מזער את חלונית המדינה כדי שהפופאפ לא יוסתר!
+            if (isMobile) {
+                const p = document.getElementById('info-panel');
+                if(p.style.display === 'block') p.classList.add('minimized');
+            }
 
             activePopup.on('close', () => { 
                 activePOIFeature = null; 
+                stopPOIPulse(); // עוצר פעימה כשסוגרים
                 if (isMobile) document.getElementById('info-panel').classList.remove('minimized');
             });
 
@@ -464,17 +536,20 @@
                     
                     activePopup.setHTML(`
                         <div class="poi-popup" dir="rtl">
-                            <div class="popup-drag-handle" title="הזז חלונית">≡</div>
-                            <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
+                            <div class="popup-controls">
+                                <span class="popup-drag-handle" title="הזז חלונית">≡</span>
+                                <span class="popup-recenter-btn" title="מרכז מפה וחלונית">🎯</span>
+                            </div>
+                            <h4 style="border-bottom: 2px solid ${borderColor}; margin-top:5px;">${props.name}</h4>
                             ${extraInfo}
                             <p>${summary}</p>
-                            <div style="margin-top:10px; display:flex; gap:10px;">
-                                ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank" class="poi-btn">📌 קרא עוד</a>` : ''}
+                            <div class="poi-actions">
+                                ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank" class="poi-btn">W ערך בוויקיפדיה</a>` : ''}
                                 <button onclick="sharePOI('${props.ISO_A2}', '${safeName}')" class="poi-btn">🔗 שתף אתר</button>
                             </div>
                         </div>
                     `);
-                    enablePopupDrag(activePopup);
+                    enablePopupDrag(activePopup, coordinates);
                 }
             });
         }
@@ -557,6 +632,7 @@
                 }
             });
 
+            // ערי בירה סטטיות כעת (בלי פעימה)
             const showCapitals = activeCats.includes('capital');
             map.setFilter('capitals-highlight', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
             map.setFilter('capitals-layer', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
@@ -572,7 +648,6 @@
             map.setFilter('small-cities-layer', smallFilter);
             map.setFilter('small-cities-label', smallFilter);
 
-            // לוגיקת זום חכמה: ערים קטנות תמיד יופיעו אם בודדנו אותן במקרא
             if (map.getLayer('small-cities-layer')) {
                 let minZ = 5.5; 
                 if (isolatedCategory === 'city' || (isAdvancedLegend && activeCats.includes('city') && activeCats.length === 1)) {
@@ -695,6 +770,19 @@
             }
         });
 
+        // פונקציה חיצונית לטעינת עיר בירה מהטבלה
+        window.loadCapitalFromTable = function(iso) {
+            closeCompare();
+            const capFeature = globalCapitalsData.features.find(f => f.properties.ISO_A2 === iso);
+            if (capFeature) {
+                loadFeature(iso, true);
+                setTimeout(() => {
+                    map.flyTo({ center: capFeature.geometry.coordinates, zoom: 12 });
+                    setTimeout(() => openPOIPopup(capFeature, capFeature.geometry.coordinates), 500);
+                }, 300);
+            }
+        };
+
         map.on('load', () => {
             map.addSource('seas-vec', { type: 'vector', url: 'mapbox://eyalfidel.9x1r7ppe' });
             map.addLayer({ 'id': 'seas-fill', 'type': 'fill', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } });
@@ -742,10 +830,11 @@
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
+            // ערי בירה כעת סטטיות (בלי פעימה, רק הילה יציבה)
             map.addSource('capitals', { type: 'geojson', data: globalCapitalsData });
             map.addLayer({
                 'id': 'capitals-highlight', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'],
-                'paint': { 'circle-radius': 10, 'circle-color': 'rgba(251, 191, 36, 0.4)', 'circle-stroke-color': 'rgba(251, 191, 36, 0.8)', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
+                'paint': { 'circle-radius': 14, 'circle-color': 'rgba(251, 191, 36, 0.3)', 'circle-stroke-color': 'rgba(251, 191, 36, 0.6)', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
                 'id': 'capitals-layer', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'], 
@@ -756,20 +845,6 @@
                 'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 16.5, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 3 }
             });
-
-            let pulseTime = 0;
-            function animateCapitalHalo() {
-                pulseTime = (pulseTime + 1) % 100;
-                let radius = 10 + (pulseTime / 100) * 15;
-                let opacity = 1 - (pulseTime / 100);
-                if (map.getLayer('capitals-highlight')) {
-                    map.setPaintProperty('capitals-highlight', 'circle-radius', radius);
-                    map.setPaintProperty('capitals-highlight', 'circle-opacity', opacity);
-                    map.setPaintProperty('capitals-highlight', 'circle-stroke-opacity', opacity);
-                }
-                requestAnimationFrame(animateCapitalHalo);
-            }
-            animateCapitalHalo();
 
             map.on('click', (e) => {
                 const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'places-layer', 'places-label', 'major-cities-layer', 'major-cities-label', 'small-cities-layer', 'small-cities-label'] });
@@ -855,9 +930,11 @@
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
+            
+            // מובייל - חלונית קומפקטית
             if (isMobile) {
                 panel.style.height = "50vh";
-                panel.classList.remove('minimized');
+                panel.classList.add('minimized');
             }
             
             document.getElementById('extended-info').style.display = 'none';
@@ -933,9 +1010,20 @@
             document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
 
             document.getElementById('country-wiki').innerText = data.wiki || 'לא נמצא תקציר.';
+            
+            // עדכון כפתור ויקיפדיה
             let wikiSearchTerm = p.Wiki_HE || p.WIKI_HE || data.name;
             if (iso === 'PS') wikiSearchTerm = 'הרשות הפלסטינית';
-            document.getElementById('link-wiki').href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
+            const linkWiki = document.getElementById('link-wiki');
+            linkWiki.href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
+            
+            if(data.isSea || data.isDisputed) {
+                linkWiki.style.display = 'inline-flex';
+                document.getElementById('compare-init-btn').style.display = 'none';
+            } else {
+                linkWiki.style.display = 'inline-flex';
+                document.getElementById('compare-init-btn').style.display = 'inline-flex';
+            }
         }
 
         document.getElementById('toggle-more-btn').onclick = function() {
@@ -1065,7 +1153,11 @@
             isComparingMode = false;
             document.getElementById('compare-banner').style.display = 'none';
             document.getElementById('info-panel').style.display = 'block';
-            if (currentLoadedISO) updatePOIFilters(currentLoadedISO);
+            
+            // תיקון באג: כשמבטלים, החזר תצוגה למדינה המקורית (baseCompareFeature)
+            if (baseCompareFeature) {
+                loadFeature(baseCompareFeature.iso, true);
+            }
         };
 
         function executeComparison(targetData) {
@@ -1077,11 +1169,9 @@
             const iso2 = targetData.iso;
             window.location.hash = `${iso1}-${iso2}`;
             
-            // תוקן באג השוואת הגבולות - מסמן את שתי המדינות במקביל!
             map.setFilter('countries-highlight', ['in', 'ISO_A2', iso1, iso2]);
             map.setFilter('seas-highlight', ['in', 'ISO_A2', iso1, iso2]);
             
-            // מציג אתרים רק של המדינה החדשה שנבחרה
             updatePOIFilters(iso2);
 
             const s1 = baseCompareFeature.stats || {};
@@ -1094,8 +1184,11 @@
             const formatNum = (num) => (num !== undefined && num !== "") ? Number(num).toLocaleString('he-IL') : '---';
             const formatLit = (lit) => (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "---";
 
+            const cap1HTML = s1.Capital_HE ? `<span class="clickable-link" onclick="loadCapitalFromTable('${iso1}')">${s1.Capital_HE}</span>` : '---';
+            const cap2HTML = s2.Capital_HE ? `<span class="clickable-link" onclick="loadCapitalFromTable('${iso2}')">${s2.Capital_HE}</span>` : '---';
+
             document.getElementById('compare-tbody').innerHTML = `
-                <tr><td class="metric-name">עיר בירה</td><td>${s1.Capital_HE || '---'}</td><td>${s2.Capital_HE || '---'}</td></tr>
+                <tr><td class="metric-name">עיר בירה</td><td>${cap1HTML}</td><td>${cap2HTML}</td></tr>
                 <tr><td class="metric-name">אזור</td><td>${s1.Region || '---'}</td><td>${s2.Region || '---'}</td></tr>
                 <tr><td class="metric-name">משטר</td><td>${s1.Gov_Type || '---'}</td><td>${s2.Gov_Type || '---'}</td></tr>
                 <tr><td class="metric-name">אוכלוסייה</td><td>${formatNum(s1.Population)}<br>${formatRank(s1.Pop_Rank)}</td><td>${formatNum(s2.Population)}<br>${formatRank(s2.Pop_Rank)}</td></tr>
@@ -1115,11 +1208,11 @@
         const closeCompare = () => {
             document.getElementById('compare-backdrop').style.display = 'none';
             document.getElementById('compare-modal').style.display = 'none';
-            if (currentLoadedISO) window.location.hash = currentLoadedISO;
-            // מנקה את ההיילייט הכפול ומחזיר לבודד
-            if (currentLoadedISO) {
-                map.setFilter('countries-highlight', ['==', 'ISO_A2', currentLoadedISO]);
-                map.setFilter('seas-highlight', ['==', 'ISO_A2', currentLoadedISO]);
+            
+            // תיקון באג סגירת השוואה - חזרה למדינה המקורית במקום למדינה שהשווינו אליה
+            if (baseCompareFeature) {
+                window.location.hash = baseCompareFeature.iso;
+                loadFeature(baseCompareFeature.iso, true); 
             }
         };
         document.getElementById('close-compare-modal').onclick = closeCompare;
