@@ -74,11 +74,10 @@
         .toggle-more-btn { background: none; border: none; color: #3b82f6; font-weight: bold; font-size: 14px; cursor: pointer; padding: 0; margin: 10px 0 15px 0; font-family: inherit; }
         .toggle-more-btn:hover { text-decoration: underline; }
 
-        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; resize: vertical; overflow: auto; min-height: 60px; max-height: 300px; }
+        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; }
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
-        /* המקרא החדש - בידוד בלחיצה */
         #poi-legend {
             position: absolute; bottom: 20px; left: 20px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
@@ -91,10 +90,11 @@
         
         .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; padding: 4px 6px; border-radius: 6px; transition: background 0.2s, opacity 0.2s; }
         .legend-item:hover { background-color: #f0f7ff; }
-        .legend-item.dimmed { opacity: 0.3; }
+        .legend-item.dimmed { opacity: 0.35; }
         
-        .legend-item input[type="checkbox"] { display: none; margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; }
-        #poi-legend.advanced-mode .legend-item input[type="checkbox"] { display: inline-block; }
+        /* הסתרת צ'קבוקסים במצב רגיל, הצגה רק במצב מתקדם */
+        .legend-item input[type="checkbox"] { display: none; margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; pointer-events: none; }
+        #poi-legend.advanced-mode .legend-item input[type="checkbox"] { display: inline-block; pointer-events: auto; }
         
         .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); margin-left: 8px; }
 
@@ -126,8 +126,8 @@
         .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
         .poi-popup h4 { margin: 0 0 8px 0; color: #111; font-size: 18px; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; display: inline-block;}
         .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 200px; overflow-y: auto; text-align: justify; }
-        .poi-popup a { color: #1d4ed8; text-decoration: none; font-size: 14px; font-weight: bold; display: inline-block; margin-top: 10px; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s;}
-        .poi-popup a:hover { background: #dbeafe; }
+        .poi-btn { color: #1d4ed8; text-decoration: none; font-size: 13px; font-weight: bold; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; cursor: pointer; border:none; display:inline-block;}
+        .poi-btn:hover { background: #dbeafe; }
 
         @media (max-width: 600px) {
             #top-bar { top: 10px; left: 10px; right: 10px; justify-content: space-between; padding: 10px; }
@@ -185,7 +185,7 @@
         <div class="panel-header">
             <h2><span id="country-name">טוען...</span><img id="country-flag" src="" alt="דגל"></h2>
             <div>
-                <button id="share-btn" class="icon-btn" title="שיתוף מיקום">🔗</button>
+                <button id="share-btn" class="icon-btn" title="שיתוף מדינה">🔗</button>
                 <button id="close-panel" class="icon-btn" title="סגור">✖</button>
             </div>
         </div>
@@ -271,6 +271,20 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
+        // פונקציית שיתוף אתר ישירות מהפופאפ
+        window.sharePOI = function(iso, name) {
+            const url = window.location.origin + window.location.pathname + `#POI-${iso}-${encodeURIComponent(name)}`;
+            if (navigator.share) {
+                navigator.share({ title: name, url: url }).catch(()=>{});
+            } else {
+                navigator.clipboard.writeText(url);
+                const t = document.getElementById('toast'); 
+                t.innerText = 'קישור לאתר הועתק!';
+                t.style.display = 'block'; t.style.opacity = '1';
+                setTimeout(() => { t.style.opacity = '0'; setTimeout(() => { t.style.display = 'none'; t.innerText = 'הועתק ללוח!'; }, 300); }, 2000);
+            }
+        };
+
         async function getWikiSummary(title) {
             try {
                 const response = await fetch(`https://he.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
@@ -301,6 +315,7 @@
             
             let realCategory = props.type === 'capital' ? 'capital' : props.poi_category;
             let borderColor = getPoiColor(realCategory);
+            let safeName = props.name.replace(/'/g, "\\'");
             
             activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, maxWidth: 'none' })
                 .setLngLat(coordinates)
@@ -324,7 +339,10 @@
                             <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
                             ${extraInfo}
                             <p>${summary}</p>
-                            ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
+                            <div style="margin-top:10px; display:flex; gap:10px;">
+                                ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank" class="poi-btn" style="color: #1d4ed8; text-decoration: none;">📌 קרא עוד</a>` : ''}
+                                <button onclick="sharePOI('${props.ISO_A2}', '${safeName}')" class="poi-btn">🔗 שתף אתר</button>
+                            </div>
                         </div>
                     `);
                 }
@@ -353,21 +371,17 @@
             updatePOIFilters(currentLoadedISO);
         });
 
-        // עדכון התנהגות המקרא לפי הבקשה: לחיצה מבודדת, לחיצה שנייה מחזירה הכל.
+        // לוגיקת המקרא: לחיצה מבודדת את השכבה
         legendItems.forEach(item => {
             item.addEventListener('click', (e) => {
-                if (isAdvancedLegend) return; 
+                if (isAdvancedLegend) return; // במצב מתקדם הצ'קבוקסים שולטים
+                e.preventDefault(); // מונע סימון אוטומטי של הצ'קבוקס הנסתר
                 const category = item.getAttribute('data-val');
                 
                 if (isolatedCategory === category) {
-                    isolatedCategory = null;
-                    legendItems.forEach(i => i.classList.remove('dimmed'));
+                    isolatedCategory = null; // ביטול בידוד
                 } else {
-                    isolatedCategory = category;
-                    legendItems.forEach(i => {
-                        if (i.getAttribute('data-val') === category) i.classList.remove('dimmed');
-                        else i.classList.add('dimmed');
-                    });
+                    isolatedCategory = category; // הפעלת בידוד
                 }
                 updatePOIFilters(currentLoadedISO);
             });
@@ -404,6 +418,16 @@
             } else {
                 activeCats = ['capital', 'major_city', 'city', 'monument', 'history', 'nature'];
             }
+
+            // עדכון המראה החזותי של המקרא במצב רגיל
+            legendItems.forEach(i => {
+                if (!isAdvancedLegend && isolatedCategory) {
+                    if (i.getAttribute('data-val') !== isolatedCategory) i.classList.add('dimmed');
+                    else i.classList.remove('dimmed');
+                } else {
+                    i.classList.remove('dimmed');
+                }
+            });
 
             const showCapitals = activeCats.includes('capital');
             map.setFilter('capitals-highlight', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
@@ -502,7 +526,6 @@
                 addPOItoSearch(f, f.properties.poi_category, dt);
             });
 
-            // מנגנון הטעינה דרך קישור מעודכן ל-Deep Links עבור POIs
             if (window.location.hash) {
                 const hash = decodeURIComponent(window.location.hash.substring(1));
                 if (hash.startsWith('POI-')) {
@@ -511,15 +534,14 @@
                         const iso = parts[1];
                         const poiName = parts.slice(2).join('-');
                         if (globalData.has(iso)) {
-                            loadFeature(iso);
+                            loadFeature(iso, true); // true = אל תבצע זום של מדינה!
                             setTimeout(() => {
                                 const poiMatch = searchIndex.find(item => item.code === iso && item.name === poiName && item.feature);
                                 if (poiMatch) {
-                                    // זום ייעודי וממוקד על האתר
                                     map.flyTo({ center: poiMatch.feature.geometry.coordinates, zoom: 14 });
                                     setTimeout(() => openPOIPopup(poiMatch.feature, poiMatch.feature.geometry.coordinates), 500);
                                 }
-                            }, 1000); 
+                            }, 500); 
                         }
                     }
                 } else if (hash.includes('-')) {
@@ -650,7 +672,8 @@
             });
         });
 
-        function loadFeature(iso) {
+        // הוספנו פרמטר preventZoom כדי שהחיפוש יוכל לדרוס את תעופת המדינה ולטוס ישר לאתר!
+        function loadFeature(iso, preventZoom = false) {
             const data = globalData.get(iso);
             if (!data) return;
 
@@ -688,7 +711,9 @@
             else z = 6.5;
             if (isMobile) z -= 1.5; 
             
-            map.flyTo({ center: coords, zoom: Math.max(1, z) });
+            if (!preventZoom) {
+                map.flyTo({ center: coords, zoom: Math.max(1, z) });
+            }
 
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
@@ -838,10 +863,12 @@
                     sSug.style.display = 'none'; 
                     
                     if (m.feature) {
-                        if (currentLoadedISO !== m.code) loadFeature(m.code);
-                        // זום ממוקד ישירות לאתר/עיר (רמה 14)
-                        map.flyTo({ center: m.feature.geometry.coordinates, zoom: 14 });
-                        setTimeout(() => openPOIPopup(m.feature, m.feature.geometry.coordinates), 500);
+                        if (currentLoadedISO !== m.code) loadFeature(m.code, true); // true עוצר את הזום של המדינה!
+                        // ומיד טס לנקודה המדויקת
+                        setTimeout(() => {
+                            map.flyTo({ center: m.feature.geometry.coordinates, zoom: 14 });
+                            setTimeout(() => openPOIPopup(m.feature, m.feature.geometry.coordinates), 500);
+                        }, 500);
                     } else {
                         const targetData = globalData.get(m.code);
                         if (isComparingMode) {
@@ -874,9 +901,11 @@
             if (pool.length > 0) {
                 let rand = pool[Math.floor(Math.random() * pool.length)];
                 if (rand.feature) {
-                    if (currentLoadedISO !== rand.code) loadFeature(rand.code);
-                    map.flyTo({ center: rand.feature.geometry.coordinates, zoom: 14 });
-                    setTimeout(() => openPOIPopup(rand.feature, rand.feature.geometry.coordinates), 500);
+                    if (currentLoadedISO !== rand.code) loadFeature(rand.code, true);
+                    setTimeout(() => {
+                        map.flyTo({ center: rand.feature.geometry.coordinates, zoom: 14 });
+                        setTimeout(() => openPOIPopup(rand.feature, rand.feature.geometry.coordinates), 500);
+                    }, 500);
                 } else {
                     loadFeature(rand.code);
                 }
@@ -947,42 +976,16 @@
         document.getElementById('close-compare-modal').onclick = closeCompare;
         document.getElementById('compare-backdrop').onclick = closeCompare;
 
-        // מערכת שיתוף משופרת ל-Deep Linking
-        const handleShare = async () => {
+        document.getElementById('share-btn').onclick = () => {
             let url = window.location.origin + window.location.pathname;
-            let shareTitle = 'Atlas Beta';
-            let shareText = 'בדקו את האטלס!';
+            if (currentLoadedISO) url += `#${currentLoadedISO}`;
             
-            if (activePopup && activePopup.isOpen() && activePOIFeature) {
-                const poiName = activePOIFeature.properties.name;
-                url += `#POI-${currentLoadedISO}-${encodeURIComponent(poiName)}`;
-                shareTitle = poiName;
-                shareText = `בדקו את ${poiName} ב-Atlas Beta!`;
-            } else if (currentLoadedISO) {
-                url += `#${currentLoadedISO}`;
-                const countryName = document.getElementById('country-name').innerText;
-                shareTitle = countryName;
-                shareText = `בדקו את ${countryName} ב-Atlas Beta!`;
-            }
-
             if (navigator.share) {
-                try { await navigator.share({ title: shareTitle, text: shareText, url: url }); } catch(e){}
-            } else {
-                await navigator.clipboard.writeText(url);
-                const t = document.getElementById('toast'); 
-                t.style.display = 'block'; t.style.opacity = '1';
-                setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
-            }
-        };
-        document.getElementById('share-btn').onclick = handleShare;
-        
-        document.getElementById('share-compare-btn').onclick = () => {
-            let url = window.location.origin + window.location.pathname + window.location.hash;
-            if (navigator.share) {
-                navigator.share({ title: 'השוואת מדינות', text: 'ראו את ההשוואה ב-Atlas Beta!', url: url });
+                navigator.share({ title: 'Atlas Beta', url: url }).catch(()=>{});
             } else {
                 navigator.clipboard.writeText(url);
                 const t = document.getElementById('toast'); 
+                t.innerText = 'הקישור הועתק ללוח!';
                 t.style.display = 'block'; t.style.opacity = '1';
                 setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
             }
