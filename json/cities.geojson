@@ -17533,23 +17533,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -5.991186625,
-          37.384426149
-        ]
-      },
-      "properties": {
-        "name": "מצודת סביליה",
-        "ISO_A2": "ES",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A6%D7%95%D7%93%D7%AA_%D7%A1%D7%91%D7%99%D7%9C%D7%99%D7%94",
-        "population": 0,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -4.1325,
           40.9525
         ]
@@ -85151,6 +85134,2250 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%90%D7%A0%D7%95%D7%A7_(%D7%95%D7%99%D7%A8%D7%92%27%D7%99%D7%A0%D7%99%D7%94)",
         "population": 100011,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.017008,
+          41.093498
+        ]
+      },
+      "properties": {
+        "name": "דרום אירופה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%95%D7%9D_%D7%90%D7%99%D7%A8%D7%95%D7%A4%D7%94",
+        "population": 150925345,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.68333333,
+          40.41666667
+        ]
+      },
+      "properties": {
+        "name": "האימפריה הספרדית",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%99%D7%9E%D7%A4%D7%A8%D7%99%D7%94_%D7%94%D7%A1%D7%A4%D7%A8%D7%93%D7%99%D7%AA",
+        "population": 60000000,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.239166666,
+          40.24
+        ]
+      },
+      "properties": {
+        "name": "חצי האי האיברי",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%A6%D7%99_%D7%94%D7%90%D7%99_%D7%94%D7%90%D7%99%D7%91%D7%A8%D7%99",
+        "population": 58974804,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.5,
+          40.2
+        ]
+      },
+      "properties": {
+        "name": "ספרד",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A4%D7%A8%D7%93",
+        "population": 48592909,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.775,
+          40.521388888
+        ]
+      },
+      "properties": {
+        "name": "המדינה הספרדית",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94_%D7%94%D7%A1%D7%A4%D7%A8%D7%93%D7%99%D7%AA",
+        "population": 35563535,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.13333333,
+          19.43333333
+        ]
+      },
+      "properties": {
+        "name": "מלכות המשנה של ספרד החדשה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%9C%D7%9B%D7%95%D7%AA_%D7%94%D7%9E%D7%A9%D7%A0%D7%94_%D7%A9%D7%9C_%D7%A1%D7%A4%D7%A8%D7%93_%D7%94%D7%97%D7%93%D7%A9%D7%94",
+        "population": 20000000,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.0,
+          44.0
+        ]
+      },
+      "properties": {
+        "name": "אוקסיטניה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A7%D7%A1%D7%99%D7%98%D7%A0%D7%99%D7%94_(%D7%97%D7%91%D7%9C_%D7%94%D7%99%D7%A1%D7%98%D7%95%D7%A8%D7%99-%D7%AA%D7%A8%D7%91%D7%95%D7%AA%D7%99)",
+        "population": 16922045,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9875,
+          37.405
+        ]
+      },
+      "properties": {
+        "name": "אנדלוסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A0%D7%93%D7%9C%D7%95%D7%A1%D7%99%D7%94",
+        "population": 8619616,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.566666666,
+          41.85
+        ]
+      },
+      "properties": {
+        "name": "קטלוניה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%98%D7%9C%D7%95%D7%A0%D7%99%D7%94",
+        "population": 8034743,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.188916666,
+          41.388083333
+        ]
+      },
+      "properties": {
+        "name": "הרפובליקה הקטלאנית",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%A4%D7%95%D7%91%D7%9C%D7%99%D7%A7%D7%94_%D7%94%D7%A7%D7%98%D7%9C%D7%90%D7%A0%D7%99%D7%AA_(2017)",
+        "population": 7555830,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.69063,
+          40.42526
+        ]
+      },
+      "properties": {
+        "name": "מדריד",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%93%D7%A8%D7%99%D7%93_(%D7%A7%D7%94%D7%99%D7%9C%D7%94_%D7%90%D7%95%D7%98%D7%95%D7%A0%D7%95%D7%9E%D7%99%D7%AA)",
+        "population": 7001715,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.083333333,
+          41.45
+        ]
+      },
+      "properties": {
+        "name": "מחוז ברצלונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%A8%D7%A6%D7%9C%D7%95%D7%A0%D7%94",
+        "population": 5899063,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.75,
+          39.5
+        ]
+      },
+      "properties": {
+        "name": "ולנסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%9C%D7%A0%D7%A1%D7%99%D7%94_(%D7%A7%D7%94%D7%99%D7%9C%D7%94_%D7%90%D7%95%D7%98%D7%95%D7%A0%D7%95%D7%9E%D7%99%D7%AA)",
+        "population": 5316541,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.142244839,
+          41.346457144
+        ]
+      },
+      "properties": {
+        "name": "אזור המטרופולין של ברצלונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%96%D7%95%D7%A8_%D7%94%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A9%D7%9C_%D7%91%D7%A8%D7%A6%D7%9C%D7%95%D7%A0%D7%94",
+        "population": 5093585,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.935555555,
+          42.883055555
+        ]
+      },
+      "properties": {
+        "name": "ארץ הבסקים",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%A5_%D7%94%D7%91%D7%A1%D7%A7%D7%99%D7%9D",
+        "population": 3193513,
+        "poi_category": "major_city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.9,
+          42.8
+        ]
+      },
+      "properties": {
+        "name": "גליסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%9C%D7%99%D7%A1%D7%99%D7%94",
+        "population": 2703353,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.781944444,
+          41.754444444
+        ]
+      },
+      "properties": {
+        "name": "קסטיליה ולאון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%98%D7%99%D7%9C%D7%99%D7%94_%D7%95%D7%9C%D7%90%D7%95%D7%9F",
+        "population": 2388350,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75,
+          43.0
+        ]
+      },
+      "properties": {
+        "name": "חבל הבסקים",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%91%D7%9C_%D7%94%D7%91%D7%A1%D7%A7%D7%99%D7%9D",
+        "population": 2230452,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.75,
+          28.0
+        ]
+      },
+      "properties": {
+        "name": "האיים הקנריים",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%99%D7%99%D7%9D_%D7%94%D7%A7%D7%A0%D7%A8%D7%99%D7%99%D7%9D",
+        "population": 2228862,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.000033333,
+          39.500011111
+        ]
+      },
+      "properties": {
+        "name": "קסטיליה-לה מנצ'ה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%98%D7%99%D7%9C%D7%99%D7%94-%D7%9C%D7%94_%D7%9E%D7%A0%D7%A6%27%D7%94",
+        "population": 2098853,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.833333333,
+          38.0
+        ]
+      },
+      "properties": {
+        "name": "מורסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A8%D7%A1%D7%99%D7%94_(%D7%A7%D7%94%D7%99%D7%9C%D7%94_%D7%90%D7%95%D7%98%D7%95%D7%A0%D7%95%D7%9E%D7%99%D7%AA)",
+        "population": 1586989,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.882473,
+          36.515956
+        ]
+      },
+      "properties": {
+        "name": "קוסטה דל סול",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A1%D7%98%D7%94_%D7%93%D7%9C_%D7%A1%D7%95%D7%9C",
+        "population": 1364837,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0,
+          41.0
+        ]
+      },
+      "properties": {
+        "name": "אראגון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%90%D7%92%D7%95%D7%9F",
+        "population": 1347834,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.75,
+          36.5
+        ]
+      },
+      "properties": {
+        "name": "מחוז קדיס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%93%D7%99%D7%A1",
+        "population": 1254291,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0,
+          39.5
+        ]
+      },
+      "properties": {
+        "name": "האיים הבלאריים",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%99%D7%99%D7%9D_%D7%94%D7%91%D7%9C%D7%90%D7%A8%D7%99%D7%99%D7%9D",
+        "population": 1221403,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.932222222,
+          43.261944444
+        ]
+      },
+      "properties": {
+        "name": "ביסקאיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%A1%D7%A7%D7%90%D7%99%D7%94",
+        "population": 1160133,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4,
+          43.37
+        ]
+      },
+      "properties": {
+        "name": "מחוז לה קורוניה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%94_%D7%A7%D7%95%D7%A8%D7%95%D7%A0%D7%99%D7%94",
+        "population": 1128320,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.15,
+          39.2
+        ]
+      },
+      "properties": {
+        "name": "אקסטרמדורה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A7%D7%A1%D7%98%D7%A8%D7%9E%D7%93%D7%95%D7%A8%D7%94",
+        "population": 1052790,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.847777777,
+          43.361388888
+        ]
+      },
+      "properties": {
+        "name": "אסטוריאס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%98%D7%95%D7%A8%D7%99%D7%90%D7%A1",
+        "population": 1008028,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0,
+          41.583333333
+        ]
+      },
+      "properties": {
+        "name": "מחוז סרגוסה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%A8%D7%92%D7%95%D7%A1%D7%94",
+        "population": 983539,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.605555555,
+          28.268611111
+        ]
+      },
+      "properties": {
+        "name": "טנריפה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A0%D7%A8%D7%99%D7%A4%D7%94",
+        "population": 955063,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.983333333,
+          39.616666666
+        ]
+      },
+      "properties": {
+        "name": "מיורקה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%95%D7%A8%D7%A7%D7%94",
+        "population": 949047,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.633333333,
+          42.433333333
+        ]
+      },
+      "properties": {
+        "name": "מחוז פונטבדרה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%95%D7%A0%D7%98%D7%91%D7%93%D7%A8%D7%94",
+        "population": 945599,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.25,
+          37.25
+        ]
+      },
+      "properties": {
+        "name": "פרובינציית גרנדה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%92%D7%A8%D7%A0%D7%93%D7%94",
+        "population": 937135,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.5925,
+          27.958611111
+        ]
+      },
+      "properties": {
+        "name": "גראן קנריה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%A8%D7%90%D7%9F_%D7%A7%D7%A0%D7%A8%D7%99%D7%94",
+        "population": 863943,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.0,
+          41.166666666
+        ]
+      },
+      "properties": {
+        "name": "מחוז טרגונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%98%D7%A8%D7%92%D7%95%D7%A0%D7%94",
+        "population": 861531,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.666666666,
+          42.166666666
+        ]
+      },
+      "properties": {
+        "name": "מחוז ז'ירונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%96%27%D7%99%D7%A8%D7%95%D7%A0%D7%94",
+        "population": 822952,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.883333333,
+          41.65
+        ]
+      },
+      "properties": {
+        "name": "סרגוסה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A8%D7%92%D7%95%D7%A1%D7%94",
+        "population": 693091,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.995555555,
+          37.388611111
+        ]
+      },
+      "properties": {
+        "name": "סביליה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%91%D7%99%D7%9C%D7%99%D7%94",
+        "population": 689423,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.65,
+          42.816666666
+        ]
+      },
+      "properties": {
+        "name": "נווארה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%95%D7%90%D7%A8%D7%94",
+        "population": 678338,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.166666666,
+          40.166666666
+        ]
+      },
+      "properties": {
+        "name": "קאסטיון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%90%D7%A1%D7%98%D7%99%D7%95%D7%9F",
+        "population": 615849,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.416666666,
+          36.716666666
+        ]
+      },
+      "properties": {
+        "name": "מאלגה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%9C%D7%92%D7%94",
+        "population": 599063,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0,
+          43.333333333
+        ]
+      },
+      "properties": {
+        "name": "קנטבריה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%98%D7%91%D7%A8%D7%99%D7%94",
+        "population": 591563,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.0,
+          37.666666666
+        ]
+      },
+      "properties": {
+        "name": "מחוז אואלבה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%95%D7%90%D7%9C%D7%91%D7%94",
+        "population": 533448,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.8406603,
+          42.620046
+        ]
+      },
+      "properties": {
+        "name": "תבנית:הקהילות האוטונומיות של ספרד",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%90%D7%95%D7%9F",
+        "population": 446445,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.0,
+          38.833333333
+        ]
+      },
+      "properties": {
+        "name": "מחוז אלבסטה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%9C%D7%91%D7%A1%D7%98%D7%94",
+        "population": 388599,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.431388888,
+          28.127222222
+        ]
+      },
+      "properties": {
+        "name": "לאס פאלמס דה גראן קנריה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%A1_%D7%A4%D7%90%D7%9C%D7%9E%D7%90%D7%A1_%D7%93%D7%94_%D7%92%D7%A8%D7%90%D7%9F_%D7%A7%D7%A0%D7%A8%D7%99%D7%94",
+        "population": 381868,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.666666666,
+          42.383333333
+        ]
+      },
+      "properties": {
+        "name": "מחוז בורגוס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%95%D7%A8%D7%92%D7%95%D7%A1",
+        "population": 358948,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.935,
+          43.263055555
+        ]
+      },
+      "properties": {
+        "name": "בילבאו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%99%D7%9C%D7%91%D7%90%D7%95",
+        "population": 351124,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.75,
+          42.833333333
+        ]
+      },
+      "properties": {
+        "name": "מחוז אלאבה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%9C%D7%90%D7%91%D7%94",
+        "population": 339137,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.5,
+          43.0
+        ]
+      },
+      "properties": {
+        "name": "מחוז לוגו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%95%D7%92%D7%95",
+        "population": 324842,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.5,
+          42.25
+        ]
+      },
+      "properties": {
+        "name": "לה ריוחה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%94_%D7%A8%D7%99%D7%95%D7%97%D7%94",
+        "population": 324399,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.78,
+          37.89
+        ]
+      },
+      "properties": {
+        "name": "קורדובה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A8%D7%93%D7%95%D7%91%D7%94_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 323262,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.5,
+          42.166666666
+        ]
+      },
+      "properties": {
+        "name": "אורנסה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%95%D7%A8%D7%A0%D7%A1%D7%94",
+        "population": 304592,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.728561111,
+          41.651980555
+        ]
+      },
+      "properties": {
+        "name": "ואיאדוליד",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%90%D7%99%D7%90%D7%93%D7%95%D7%9C%D7%99%D7%93",
+        "population": 302614,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.726666666,
+          42.235833333
+        ]
+      },
+      "properties": {
+        "name": "ויגו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%92%D7%95",
+        "population": 294489,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.74315,
+          36.782338888
+        ]
+      },
+      "properties": {
+        "name": "פוניינטה אלמריאנסה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A0%D7%99%D7%99%D7%A0%D7%98%D7%94_%D7%90%D7%9C%D7%9E%D7%A8%D7%99%D7%90%D7%A0%D7%A1%D7%94",
+        "population": 283858,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.45,
+          36.133333333
+        ]
+      },
+      "properties": {
+        "name": "קמפו דה גיברלטר",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9E%D7%A4%D7%95_%D7%93%D7%94_%D7%92%D7%99%D7%91%D7%A8%D7%9C%D7%98%D7%A8",
+        "population": 278823,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.67732,
+          43.52931
+        ]
+      },
+      "properties": {
+        "name": "חיחון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%97%D7%95%D7%9F",
+        "population": 269894,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1633,
+          41.39202
+        ]
+      },
+      "properties": {
+        "name": "אישמפלה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A9%D7%9E%D7%A4%D7%9C%D7%94",
+        "population": 269349,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.673055555,
+          42.846666666
+        ]
+      },
+      "properties": {
+        "name": "ויטוריה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%98%D7%95%D7%A8%D7%99%D7%94",
+        "population": 260699,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.400027032,
+          43.37385694
+        ]
+      },
+      "properties": {
+        "name": "לה קורוניה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%94_%D7%A7%D7%95%D7%A8%D7%95%D7%A0%D7%99%D7%94",
+        "population": 251543,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.698333333,
+          38.266944444
+        ]
+      },
+      "properties": {
+        "name": "אלש",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%A9",
+        "population": 245557,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.198680555,
+          41.417863888
+        ]
+      },
+      "properties": {
+        "name": "סאנט מארטי",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%A0%D7%98_%D7%9E%D7%90%D7%A8%D7%98%D7%99_(%D7%9E%D7%97%D7%95%D7%96)",
+        "population": 241181,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.6,
+          37.175
+        ]
+      },
+      "properties": {
+        "name": "גרנדה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%A8%D7%A0%D7%93%D7%94_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 233975,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.166666666,
+          42.166666666
+        ]
+      },
+      "properties": {
+        "name": "מחוז אואסקה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%95%D7%A1%D7%A7%D7%94",
+        "population": 228634,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.850277777,
+          43.3625
+        ]
+      },
+      "properties": {
+        "name": "אוביידו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%91%D7%99%D7%99%D7%93%D7%95",
+        "population": 223968,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.984166666,
+          37.601944444
+        ]
+      },
+      "properties": {
+        "name": "קרטחנה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%98%D7%97%D7%A0%D7%94_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 220704,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.116666666,
+          36.7
+        ]
+      },
+      "properties": {
+        "name": "חרס דה לה פרונטרה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%A8%D7%A1_%D7%93%D7%94_%D7%9C%D7%94_%D7%A4%D7%A8%D7%95%D7%A0%D7%98%D7%A8%D7%94",
+        "population": 213634,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.25,
+          28.466666666
+        ]
+      },
+      "properties": {
+        "name": "סנטה קרוס דה טנריפה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%94_%D7%A7%D7%A8%D7%95%D7%A1_%D7%93%D7%94_%D7%98%D7%A0%D7%A8%D7%99%D7%A4%D7%94",
+        "population": 211957,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.65,
+          42.816666666
+        ]
+      },
+      "properties": {
+        "name": "פמפלונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%9E%D7%A4%D7%9C%D7%95%D7%A0%D7%94",
+        "population": 209094,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.463888888,
+          36.841666666
+        ]
+      },
+      "properties": {
+        "name": "אלמריה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%9E%D7%A8%D7%99%D7%94",
+        "population": 205468,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.364305,
+          40.481815
+        ]
+      },
+      "properties": {
+        "name": "אלקלה דה אנארס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%A7%D7%9C%D7%94_%D7%93%D7%94_%D7%90%D7%A0%D7%90%D7%A8%D7%A1",
+        "population": 203208,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.716666666,
+          40.3
+        ]
+      },
+      "properties": {
+        "name": "חטאפה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%98%D7%90%D7%A4%D7%94",
+        "population": 193238,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8,
+          40.283333333
+        ]
+      },
+      "properties": {
+        "name": "פואנלברדה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%90%D7%A0%D7%9C%D7%91%D7%A8%D7%93%D7%94",
+        "population": 190076,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.98,
+          43.32
+        ]
+      },
+      "properties": {
+        "name": "סן סבסטיאן",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%A1%D7%91%D7%A1%D7%98%D7%99%D7%90%D7%9F",
+        "population": 189866,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1406,
+          41.3372
+        ]
+      },
+      "properties": {
+        "name": "ברצלונה/סאנטס-מונז'ואיק",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%A0%D7%98%D7%A1-%D7%9E%D7%95%D7%A0%D7%96%27%D7%95%D7%90%D7%99%D7%A7",
+        "population": 187026,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.171944444,
+          41.441388888
+        ]
+      },
+      "properties": {
+        "name": "נואו באריס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%90%D7%95_%D7%91%D7%90%D7%A8%D7%99%D7%A1",
+        "population": 179590,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.699722222,
+          42.340833333
+        ]
+      },
+      "properties": {
+        "name": "בורגוס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%A8%D7%92%D7%95%D7%A1",
+        "population": 177402,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8284487,
+          40.3493217
+        ]
+      },
+      "properties": {
+        "name": "אלקורקון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%A7%D7%95%D7%A8%D7%A7%D7%95%D7%9F",
+        "population": 175719,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.8,
+          43.466666666
+        ]
+      },
+      "properties": {
+        "name": "סנטנדר",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%A0%D7%93%D7%A8",
+        "population": 175425,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.855833333,
+          38.995555555
+        ]
+      },
+      "properties": {
+        "name": "אלבסטה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%91%D7%A1%D7%98%D7%94",
+        "population": 175400,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.166388888,
+          41.413055555
+        ]
+      },
+      "properties": {
+        "name": "אורטה-גינארדו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%98%D7%94-%D7%92%D7%99%D7%A0%D7%90%D7%A8%D7%93%D7%95",
+        "population": 173944,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.0,
+          41.75
+        ]
+      },
+      "properties": {
+        "name": "מחוז זמורה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%9E%D7%95%D7%A8%D7%94",
+        "population": 165832,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.635,
+          29.035
+        ]
+      },
+      "properties": {
+        "name": "לנסרוטה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%A0%D7%A1%D7%A8%D7%95%D7%98%D7%94",
+        "population": 163467,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.883441666,
+          36.511363888
+        ]
+      },
+      "properties": {
+        "name": "מרבייה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%91%D7%99%D7%99%D7%94",
+        "population": 159786,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.929030555,
+          40.616091666
+        ]
+      },
+      "properties": {
+        "name": "מחוז אווילה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%95%D7%95%D7%99%D7%9C%D7%94",
+        "population": 158989,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.0,
+          41.166666666
+        ]
+      },
+      "properties": {
+        "name": "סגוביה (מחוז)",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%92%D7%95%D7%91%D7%99%D7%94_(%D7%9E%D7%97%D7%95%D7%96)",
+        "population": 156788,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.445555555,
+          42.47
+        ]
+      },
+      "properties": {
+        "name": "לוגרוניו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%92%D7%A8%D7%95%D7%A0%D7%99%D7%95",
+        "population": 152150,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.191111,
+          41.436111
+        ]
+      },
+      "properties": {
+        "name": "סאנט אנדראו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%A0%D7%98_%D7%90%D7%A0%D7%93%D7%A8%D7%90%D7%95",
+        "population": 149826,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.13111111,
+          41.39861111
+        ]
+      },
+      "properties": {
+        "name": "סאריה-סאנט ג'רבאזי",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%A8%D7%99%D7%94-%D7%A1%D7%90%D7%A0%D7%98_%D7%96%27%D7%A8%D7%95%D7%95%D7%90%D7%96%D7%99",
+        "population": 149201,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.633333333,
+          41.616666666
+        ]
+      },
+      "properties": {
+        "name": "ליידה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%99%D7%99%D7%93%D7%94",
+        "population": 146266,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.664166666,
+          40.965
+        ]
+      },
+      "properties": {
+        "name": "סלמנקה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9C%D7%9E%D7%A0%D7%A7%D7%94",
+        "population": 146110,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.677778,
+          40.43
+        ]
+      },
+      "properties": {
+        "name": "מדריד/סלמנקה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9C%D7%9E%D7%A0%D7%A7%D7%94_(%D7%9E%D7%93%D7%A8%D7%99%D7%93)",
+        "population": 145702,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.252777777,
+          41.1175
+        ]
+      },
+      "properties": {
+        "name": "טרגונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A8%D7%92%D7%95%D7%A0%D7%94",
+        "population": 143649,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.95,
+          37.25
+        ]
+      },
+      "properties": {
+        "name": "ולבה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%9C%D7%91%D7%94",
+        "population": 143215,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.666666666,
+          40.666666666
+        ]
+      },
+      "properties": {
+        "name": "מחוז טרואל",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%98%D7%A8%D7%95%D7%90%D7%9C",
+        "population": 135661,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.45,
+          41.533333333
+        ]
+      },
+      "properties": {
+        "name": "מטארו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%90%D7%A8%D7%95",
+        "population": 131683,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.0,
+          28.4
+        ]
+      },
+      "properties": {
+        "name": "פוארטוונטורה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%90%D7%A8%D7%98%D7%95%D7%95%D7%A0%D7%98%D7%95%D7%A8%D7%94",
+        "population": 127043,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.453888888,
+          36.1275
+        ]
+      },
+      "properties": {
+        "name": "אלחסירס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%97%D7%A1%D7%99%D7%A8%D7%A1",
+        "population": 126589,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.566944444,
+          42.598888888
+        ]
+      },
+      "properties": {
+        "name": "לאון",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%95%D7%9F_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 123446,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.158056,
+          41.406667
+        ]
+      },
+      "properties": {
+        "name": "ברצלונה/גרסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%A8%D7%A1%D7%99%D7%94_(%D7%91%D7%A8%D7%A6%D7%9C%D7%95%D7%A0%D7%94)",
+        "population": 123276,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.676729,
+          40.408072
+        ]
+      },
+      "properties": {
+        "name": "מדריד/רטירו ופאסיו דל ארטה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%98%D7%99%D7%A8%D7%95_(%D7%9E%D7%93%D7%A8%D7%99%D7%93)",
+        "population": 117918,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.793611111,
+          39.807777777
+        ]
+      },
+      "properties": {
+        "name": "סרה דה טרמונטנה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A8%D7%94_%D7%93%D7%94_%D7%98%D7%A8%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%94",
+        "population": 116270,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.788888888,
+          37.769722222
+        ]
+      },
+      "properties": {
+        "name": "חאאן",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%90%D7%90%D7%9F",
+        "population": 112235,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.10871,
+          41.15487
+        ]
+      },
+      "properties": {
+        "name": "ראוס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%95%D7%A1",
+        "population": 111601,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2975,
+          36.535
+        ]
+      },
+      "properties": {
+        "name": "קדיס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%93%D7%99%D7%A1",
+        "population": 109950,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.173055555,
+          41.380833333
+        ]
+      },
+      "properties": {
+        "name": "סיוטט וליה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%95%D7%98%D7%98_%D7%95%D7%9C%D7%99%D7%94",
+        "population": 109672,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.816666666,
+          41.983333333
+        ]
+      },
+      "properties": {
+        "name": "ז'ירונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%96%27%D7%99%D7%A8%D7%95%D7%A0%D7%94",
+        "population": 108666,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.533333333,
+          42.883333333
+        ]
+      },
+      "properties": {
+        "name": "סנטיאגו דה קומפוסטלה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98%D7%99%D7%90%D7%92%D7%95_%D7%93%D7%94_%D7%A7%D7%95%D7%9E%D7%A4%D7%95%D7%A1%D7%98%D7%9C%D7%94",
+        "population": 100965,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.083333333,
+          39.966666666
+        ]
+      },
+      "properties": {
+        "name": "מנורקה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A0%D7%95%D7%A8%D7%A7%D7%94",
+        "population": 100323,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.557222222,
+          43.011666666
+        ]
+      },
+      "properties": {
+        "name": "לוגו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%92%D7%95_(%D7%A2%D7%99%D7%A8)",
+        "population": 100143,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.683333333,
+          37.977777777
+        ]
+      },
+      "properties": {
+        "name": "טורבייחה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%A8%D7%91%D7%99%D7%99%D7%97%D7%94",
+        "population": 98533,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.371111111,
+          39.473055555
+        ]
+      },
+      "properties": {
+        "name": "קסרס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A1%D7%A8%D7%A1",
+        "population": 96651,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.637222222,
+          36.595555555
+        ]
+      },
+      "properties": {
+        "name": "מיחאס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%97%D7%90%D7%A1",
+        "population": 95104,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.166666666,
+          40.633333333
+        ]
+      },
+      "properties": {
+        "name": "גוודלחרה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%95%D7%95%D7%93%D7%9C%D7%97%D7%A8%D7%94_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 92834,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.033333333,
+          39.866666666
+        ]
+      },
+      "properties": {
+        "name": "טולדו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%9C%D7%93%D7%95",
+        "population": 87216,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.86,
+          28.66
+        ]
+      },
+      "properties": {
+        "name": "לה פלמה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%94_%D7%A4%D7%9C%D7%9E%D7%94",
+        "population": 85104,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6475,
+          42.433611111
+        ]
+      },
+      "properties": {
+        "name": "פונטבדרה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A0%D7%98%D7%91%D7%93%D7%A8%D7%94",
+        "population": 83316,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.182222222,
+          38.966666666
+        ]
+      },
+      "properties": {
+        "name": "גנדיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%A0%D7%93%D7%99%D7%94",
+        "population": 83135,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.141806,
+          41.387361
+        ]
+      },
+      "properties": {
+        "name": "לס קורטס (מחוז)",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%A1_%D7%A7%D7%95%D7%A8%D7%98%D7%A1_(%D7%9E%D7%97%D7%95%D7%96)",
+        "population": 81576,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.149444444,
+          36.424444444
+        ]
+      },
+      "properties": {
+        "name": "אסטפונה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%98%D7%A4%D7%95%D7%A0%D7%94",
+        "population": 79621,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.213111111,
+          38.054766666
+        ]
+      },
+      "properties": {
+        "name": "מולינה דה סגורה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%9C%D7%99%D7%A0%D7%94_%D7%93%D7%94_%D7%A1%D7%92%D7%95%D7%A8%D7%94",
+        "population": 78458,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.533333333,
+          42.016666666
+        ]
+      },
+      "properties": {
+        "name": "פלנסיה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%A0%D7%A1%D7%99%D7%94",
+        "population": 77466,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.916666666,
+          38.983333333
+        ]
+      },
+      "properties": {
+        "name": "סיודאד ריאל",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%95%D7%93%D7%90%D7%93_%D7%A8%D7%99%D7%90%D7%9C",
+        "population": 76217,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.922222222,
+          43.556111111
+        ]
+      },
+      "properties": {
+        "name": "אבילס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%9C%D7%A1",
+        "population": 75517,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.278333333,
+          39.68
+        ]
+      },
+      "properties": {
+        "name": "סגונטו",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%92%D7%95%D7%A0%D7%98%D7%95",
+        "population": 73031,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4996349,
+          36.624537
+        ]
+      },
+      "properties": {
+        "name": "טורמולינוס",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%A8%D7%9E%D7%95%D7%9C%D7%99%D7%A0%D7%95%D7%A1",
+        "population": 71329,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.875,
+          40.406944444
+        ]
+      },
+      "properties": {
+        "name": "בואדייה דל מונטה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%90%D7%93%D7%99%D7%99%D7%94_%D7%93%D7%9C_%D7%9E%D7%95%D7%A0%D7%98%D7%94",
+        "population": 66349,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.232777777,
+          43.484444444
+        ]
+      },
+      "properties": {
+        "name": "פרול",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%95%D7%9C",
+        "population": 64367,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.590833333,
+          42.546111111
+        ]
+      },
+      "properties": {
+        "name": "פונפראדה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A0%D7%A4%D7%A8%D7%90%D7%93%D7%94",
+        "population": 63186,
+        "poi_category": "city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.333333333,
+          38.915833333
+        ]
+      },
+      "properties": {
+        "name": "מרידה",
+        "ISO_A2": "ES",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%99%D7%93%D7%94_(%D7%A1%D7%A4%D7%A8%D7%93)",
+        "population": 60225,
         "poi_category": "city"
       }
     }
