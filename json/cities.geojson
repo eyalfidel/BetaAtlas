@@ -84564,23 +84564,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.70256,
-          40.4165
-        ]
-      },
-      "properties": {
-        "name": "מדריד",
-        "ISO_A2": "ES",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%93%D7%A8%D7%99%D7%93",
-        "population": 3280782,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.17694,
           41.3825
         ]
