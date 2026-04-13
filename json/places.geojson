@@ -82944,6 +82944,534 @@
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9C%D7%99%D7%9F_%D7%94%D7%90%D7%95%D7%A4%D7%98%D7%91%D7%A0%D7%94%D7%95%D7%A3",
         "poi_category": "monument"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.826111111,
+          21.4225
+        ]
+      },
+      "properties": {
+        "name": "מכה",
+        "ISO_A2": "SA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%9B%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.24,
+          50.0825
+        ]
+      },
+      "properties": {
+        "name": "ויסבאדן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A1%D7%91%D7%90%D7%93%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.083788,
+          50.776207
+        ]
+      },
+      "properties": {
+        "name": "אאכן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%90%D7%9B%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.071,
+          43.08
+        ]
+      },
+      "properties": {
+        "name": "מפלי ניאגרה",
+        "ISO_A2": "CA",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A4%D7%9C%D7%99_%D7%A0%D7%99%D7%90%D7%92%D7%A8%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.325,
+          -15.825
+        ]
+      },
+      "properties": {
+        "name": "אגם טיטיקקה",
+        "ISO_A2": "PE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9D_%D7%98%D7%99%D7%98%D7%99%D7%A7%D7%A7%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.85,
+          47.995
+        ]
+      },
+      "properties": {
+        "name": "פרייבורג",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%99%D7%99%D7%91%D7%95%D7%A8%D7%92",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.440277777,
+          30.328888888
+        ]
+      },
+      "properties": {
+        "name": "פטרה",
+        "ISO_A2": "JO",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%98%D7%A8%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.716666666,
+          34.733333333
+        ]
+      },
+      "properties": {
+        "name": "חומס",
+        "ISO_A2": "SY",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%9E%D7%A1",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.240833333,
+          48.761944444
+        ]
+      },
+      "properties": {
+        "name": "באדן-באדן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93%D7%9F-%D7%91%D7%90%D7%93%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.644444444,
+          25.696666666
+        ]
+      },
+      "properties": {
+        "name": "לוקסור",
+        "ISO_A2": "EG",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A7%D7%A1%D7%95%D7%A8",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.89,
+          29.935
+        ]
+      },
+      "properties": {
+        "name": "פרספוליס",
+        "ISO_A2": "IR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%A1%D7%A4%D7%95%D7%9C%D7%99%D7%A1",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.463055555,
+          31.856111111
+        ]
+      },
+      "properties": {
+        "name": "יריחו",
+        "ISO_A2": "PS",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%97%D7%95",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -54.436666666,
+          -25.695277777
+        ]
+      },
+      "properties": {
+        "name": "מפלי איגואסו",
+        "ISO_A2": "AR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A4%D7%9C%D7%99_%D7%90%D7%99%D7%92%D7%95%D7%90%D7%A1%D7%95",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.348611,
+          37.939722
+        ]
+      },
+      "properties": {
+        "name": "אפסוס",
+        "ISO_A2": "TR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A4%D7%A1%D7%95%D7%A1",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.0,
+          49.0
+        ]
+      },
+      "properties": {
+        "name": "הרי אלטאי",
+        "ISO_A2": "CN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%99_%D7%90%D7%9C%D7%98%D7%90%D7%99",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.0,
+          49.0
+        ]
+      },
+      "properties": {
+        "name": "הרי אלטאי",
+        "ISO_A2": "KZ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%99_%D7%90%D7%9C%D7%98%D7%90%D7%99",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          89.0,
+          49.0
+        ]
+      },
+      "properties": {
+        "name": "הרי אלטאי",
+        "ISO_A2": "MN",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%99_%D7%90%D7%9C%D7%98%D7%90%D7%99",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.246944444,
+          53.910277777
+        ]
+      },
+      "properties": {
+        "name": "שווינואוישצ'ה",
+        "ISO_A2": "PL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%95%D7%99%D7%A0%D7%95%D7%90%D7%95%D7%99%D7%A9%D7%A6%27%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.15,
+          36.366667
+        ]
+      },
+      "properties": {
+        "name": "נינוה",
+        "ISO_A2": "IQ",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%A0%D7%95%D7%94",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.093611111,
+          48.837222222
+        ]
+      },
+      "properties": {
+        "name": "אאלן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%90%D7%9C%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.083333333,
+          47.5
+        ]
+      },
+      "properties": {
+        "name": "גרמיש-פרטנקירכן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%A8%D7%9E%D7%99%D7%A9-%D7%A4%D7%A8%D7%98%D7%A0%D7%A7%D7%99%D7%A8%D7%9B%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.256111111,
+          32.189444444
+        ]
+      },
+      "properties": {
+        "name": "שׁוּשָׁן",
+        "ISO_A2": "IR",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A9%D7%9F_(%D7%A2%D7%99%D7%A8)",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.7,
+          53.866666666
+        ]
+      },
+      "properties": {
+        "name": "קוקסהאפן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A7%D7%A1%D7%94%D7%90%D7%A4%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.178888888,
+          49.377222222
+        ]
+      },
+      "properties": {
+        "name": "רוטנבורג על הטאובר",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%98%D7%A0%D7%91%D7%95%D7%A8%D7%92_%D7%A2%D7%9C_%D7%94%D7%98%D7%90%D7%95%D7%91%D7%A8",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.066666666,
+          50.2
+        ]
+      },
+      "properties": {
+        "name": "באד קיסינגן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93_%D7%A7%D7%99%D7%A1%D7%99%D7%A0%D7%92%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.576111111,
+          54.176111111
+        ]
+      },
+      "properties": {
+        "name": "קולברג",
+        "ISO_A2": "PL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%9C%D7%95%D7%91%D7%96%27%D7%92",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.2756031,
+          49.2926871
+        ]
+      },
+      "properties": {
+        "name": "ברדיוב",
+        "ISO_A2": "SK",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%93%D7%99%D7%95%D7%91",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.234444444,
+          48.0075
+        ]
+      },
+      "properties": {
+        "name": "באדן",
+        "ISO_A2": "AT",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93%D7%9F_(%D7%90%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%94)",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.004166666,
+          47.631388888
+        ]
+      },
+      "properties": {
+        "name": "ברכטסגאדן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9B%D7%98%D7%A1%D7%92%D7%90%D7%93%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.556666666,
+          47.760277777
+        ]
+      },
+      "properties": {
+        "name": "באד טלץ",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93_%D7%98%D7%9C%D7%A5",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.5,
+          48.85
+        ]
+      },
+      "properties": {
+        "name": "נורדלינגן",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%A8%D7%93%D7%9C%D7%99%D7%A0%D7%92%D7%9F",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.610486111,
+          50.229236111
+        ]
+      },
+      "properties": {
+        "name": "באד הומבורג",
+        "ISO_A2": "DE",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%93_%D7%94%D7%95%D7%9E%D7%91%D7%95%D7%A8%D7%92",
+        "poi_category": "monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.583333333,
+          49.95
+        ]
+      },
+      "properties": {
+        "name": "יסטשמביה-זדרוי",
+        "ISO_A2": "PL",
+        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%A1%D7%98%D7%A9%D7%9E%D7%91%D7%99%D7%94-%D7%96%D7%93%D7%A8%D7%95%D7%99",
+        "poi_category": "monument"
+      }
     }
   ]
 }
