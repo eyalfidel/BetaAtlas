@@ -57,6 +57,9 @@
         .info-label { font-weight: bold; color: #555; display: block; font-size: 13px; margin-bottom: 2px; }
         .info-value { color: #111; font-size: 15px; }
         .rank-text { font-size: 13px; color: #6b7280; margin-right: 5px; }
+        
+        .clickable-link { cursor: pointer; color: #3b82f6; text-decoration: underline; font-weight: 600; }
+        .clickable-link:hover { color: #1d4ed8; }
 
         .action-buttons { display: flex; gap: 10px; margin-bottom: 15px; margin-top: 5px; }
         .text-btn { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 13px; font-family: inherit; transition: background 0.2s; }
@@ -92,9 +95,10 @@
         #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
         /* עיצוב הפופאפ לנקודות העניין */
-        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .mapboxgl-popup-close-button { display: none; }
-        .poi-popup h4 { margin: 0 0 5px 0; color: #111; font-size: 16px; border-bottom: 2px solid #fbbf24; padding-bottom: 3px; display: inline-block;}
+        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 15px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 280px;}
+        .mapboxgl-popup-close-button { font-size: 16px; color: #888; }
+        .poi-popup h4 { margin: 0 0 5px 0; color: #111; font-size: 18px; border-bottom: 2px solid #fbbf24; padding-bottom: 3px; display: inline-block;}
+        .poi-popup p { font-size: 13px; line-height: 1.5; color: #444; margin: 8px 0; max-height: 150px; overflow-y: auto; text-align: justify; }
         .poi-popup a { color: #3b82f6; text-decoration: none; font-size: 13px; font-weight: bold; display: block; margin-top: 8px; }
         .poi-popup a:hover { text-decoration: underline; }
 
@@ -105,6 +109,7 @@
             #drag-handle-wrapper { display: flex; }
             .compare-table th, .compare-table td { padding: 8px 5px; font-size: 13px; }
             .compare-flag { width: 40px; }
+            .mapboxgl-popup-content { width: 240px; }
         }
     </style>
 </head>
@@ -192,6 +197,13 @@
     <div id="compare-banner">בחר מדינה נוספת מהמפה או בחיפוש (לחץ לביטול)</div>
 
     <script>
+        // תיקון RTL טקסט הפוך (עברית/ערבית) - נטען אוטומטית ע"י Mapbox
+        mapboxgl.setRTLTextPlugin(
+            'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.3.0/mapbox-gl-rtl-text.js',
+            null,
+            true // טעינה עצלה
+        );
+
         mapboxgl.accessToken = 'pk.eyJ1IjoiZXlhbGZpZGVsIiwiYSI6ImNtbm5kNHhjYTFocW0ycXM5eWN1bmprYTMifQ.o78OO-6F8ieXVTPGbmMCcA';
         
         const isMobile = window.innerWidth < 600;
@@ -221,6 +233,7 @@
         const globalData = new Map(); 
         let globalCapitalsData = { type: 'FeatureCollection', features: [] };
         const searchIndex = [];
+        let activePopup = null; // שמירת מופע הפופאפ הפתוח
         
         let isComparingMode = false;
         let baseCompareFeature = null;
@@ -228,7 +241,55 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
-        // אתחול נתונים מ-JSON, כולל את קובץ הבירות החדש
+        // פונקציה למשיכת תקציר מוויקיפדיה (API רשמי)
+        async function getWikiSummary(title) {
+            try {
+                const response = await fetch(`https://he.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
+                if (!response.ok) return 'לא נמצא תקציר זמין בוויקיפדיה עבור ערך זה.';
+                const data = await response.json();
+                return data.extract || 'לא נמצא תקציר.';
+            } catch (e) {
+                return 'שגיאה בטעינת התקציר מהשרת.';
+            }
+        }
+
+        // פונקציה לפתיחת בועית עיר בירה - משמשת גם בלחיצה על המפה וגם בלחיצה מהפאנל
+        function openCapitalPopup(feature, coordinates) {
+            if (activePopup) activePopup.remove();
+            
+            const props = feature.properties;
+            // חילוץ שם הערך מתוך הקישור (החלק האחרון אחרי ה-/)
+            let wikiTitle = props.name;
+            if (props.wiki_url && props.wiki_url.includes('/wiki/')) {
+                wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
+            }
+            
+            // יצירת פופאפ ראשוני עם מצב "טוען"
+            activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true })
+                .setLngLat(coordinates)
+                .setHTML(`
+                    <div class="poi-popup" dir="rtl">
+                        <h4>${props.name}</h4>
+                        <p><i>טוען נתונים מוויקיפדיה... ⏳</i></p>
+                    </div>
+                `)
+                .addTo(map);
+
+            // הבאת הנתונים ועדכון הפופאפ
+            getWikiSummary(wikiTitle).then(summary => {
+                if (activePopup && activePopup.isOpen()) {
+                    activePopup.setHTML(`
+                        <div class="poi-popup" dir="rtl">
+                            <h4>${props.name}</h4>
+                            <p>${summary}</p>
+                            ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
+                        </div>
+                    `);
+                }
+            });
+        }
+
+        // אתחול נתונים מ-JSON
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
@@ -239,7 +300,6 @@
             
             globalCapitalsData = capitalsData;
             
-            // במקרה שהמפה כבר נטענה בזמן שה-fetch רץ, נעדכן את המקור שלה
             if (map.getSource('capitals')) {
                 map.getSource('capitals').setData(globalCapitalsData);
             }
@@ -347,12 +407,11 @@
                 data: globalCapitalsData
             });
 
-            // סיכה עגולה זהובה
             map.addLayer({
                 'id': 'capitals-layer',
                 'type': 'circle',
                 'source': 'capitals',
-                'filter': ['==', 'ISO_A2', ''], // מוסתר כברירת מחדל עד שבוחרים מדינה
+                'filter': ['==', 'ISO_A2', ''], 
                 'paint': {
                     'circle-radius': 7,
                     'circle-color': '#fbbf24', 
@@ -362,7 +421,6 @@
                 }
             });
 
-            // כיתוב השם ליד הסיכה
             map.addLayer({
                 'id': 'capitals-label',
                 'type': 'symbol',
@@ -382,28 +440,17 @@
                 }
             });
 
-            // מנגנון הלחיצה הראשי (המחשב מוגן עם Bounding Box)
+            // מנגנון הלחיצה הראשי 
             map.on('click', (e) => {
                 
                 // 1. קודם כל נבדוק אם המשתמש לחץ על נקודת עניין (סיכת עיר בירה)
                 const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label'] });
                 if (poiFeatures.length > 0) {
-                    const props = poiFeatures[0].properties;
-                    const popupContent = `
-                        <div class="poi-popup" dir="rtl">
-                            <h4>${props.name}</h4>
-                            ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
-                        </div>
-                    `;
-                    new mapboxgl.Popup()
-                        .setLngLat(e.lngLat)
-                        .setHTML(popupContent)
-                        .addTo(map);
-                        
-                    return; // עוצר את המשך הפונקציה - כדי שהמדינה למטה לא תיטען מחדש!
+                    openCapitalPopup(poiFeatures[0], e.lngLat);
+                    return; // עוצר את הלחיצה כדי לא לטעון את המדינה שוב
                 }
 
-                // 2. אם לא לחצנו על סיכה, נמשיך לזהות לחיצה על מדינה/ים עם ה"אצבע השמנה" למחשב
+                // 2. זיהוי מדינה/ים עם "אצבע שמנה" למחשב
                 const bbox = [
                     [e.point.x - 5, e.point.y - 5],
                     [e.point.x + 5, e.point.y + 5]
@@ -449,7 +496,6 @@
                 }
             });
 
-            // שינוי סמן העכבר
             map.on('mouseenter', 'countries-fill', () => map.getCanvas().style.cursor = 'pointer');
             map.on('mouseleave', 'countries-fill', () => map.getCanvas().style.cursor = '');
             map.on('mouseenter', 'seas-fill', () => map.getCanvas().style.cursor = 'pointer');
@@ -462,17 +508,16 @@
             const data = globalData.get(iso);
             if (!data) return;
 
+            if (activePopup) activePopup.remove(); // סגירת פופאפ פתוח בעת מעבר למדינה חדשה
             currentLoadedISO = iso;
             const stats = data.stats;
             const p = data.pointFeature.properties;
             
-            // איפוס והחלת הדגשות (פוליגונים)
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']);
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']);
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            // פילטור נקודות העניין (כדי שרק הבירה של המדינה הזו תופיע)
             if (!data.isSea && !isComparingMode) {
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', iso]);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', iso]);
@@ -481,7 +526,6 @@
                 map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
             }
 
-            // תעופה
             const coords = data.pointFeature.geometry.coordinates;
             let targetArea = p.Area_KM2 || stats.Area_KM2;
             let z = 4;
@@ -493,7 +537,6 @@
             
             map.flyTo({ center: coords, zoom: Math.max(1, z) });
 
-            // UI
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
             panel.style.display = 'block';
@@ -513,10 +556,28 @@
             strictlyCountryRows.forEach(rowId => { document.getElementById(rowId).style.display = hideExtended ? 'none' : 'block'; });
 
             const fImg = document.getElementById('country-flag');
+            const capEl = document.getElementById('country-capital');
+
             if (hideExtended) {
                 fImg.style.display = 'none';
+                capEl.innerText = '---';
             } else {
-                document.getElementById('country-capital').innerText = stats.Capital_HE || '---';
+                // לוגיקת לחיצה על עיר הבירה מהפאנל
+                const capFeature = globalCapitalsData.features ? globalCapitalsData.features.find(f => f.properties.ISO_A2 === iso) : null;
+                const capName = stats.Capital_HE || '---';
+                
+                if (capFeature && capName !== '---') {
+                    capEl.innerHTML = `<span class="clickable-link" title="הצג מידע על עיר הבירה">${capName}</span>`;
+                    capEl.onclick = (e) => {
+                        e.stopPropagation();
+                        map.flyTo({ center: capFeature.geometry.coordinates, zoom: 7, essential: true });
+                        openCapitalPopup(capFeature, capFeature.geometry.coordinates);
+                    };
+                } else {
+                    capEl.innerText = capName;
+                    capEl.onclick = null;
+                }
+
                 document.getElementById('country-govtype').innerText = stats.Gov_Type || '---';
                 document.getElementById('country-languages').innerText = stats.Languages || '---';
                 document.getElementById('country-indep').innerText = stats.Indep_Year || '---';
@@ -567,7 +628,6 @@
             document.getElementById('link-wiki').href = `https://he.wikipedia.org/wiki/${encodeURIComponent(wikiSearchTerm)}`;
         }
 
-        /* ----- כפתורי ממשק ----- */
         document.getElementById('toggle-more-btn').onclick = function() {
             const extInfo = document.getElementById('extended-info');
             extInfo.style.display = extInfo.style.display === 'none' ? 'block' : 'none';
@@ -575,10 +635,11 @@
         };
 
         document.getElementById('close-panel').onclick = () => { 
+            if (activePopup) activePopup.remove();
             document.getElementById('info-panel').style.display = 'none'; 
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']); 
-            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); // הסתרת הסיכה בסגירה
+            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']); 
             history.pushState("", document.title, window.location.pathname + window.location.search);
         };
@@ -589,14 +650,14 @@
             if (validKeys.length) loadFeature(validKeys[Math.floor(Math.random() * validKeys.length)]); 
         };
 
-        /* ----- השוואת מדינות ----- */
         document.getElementById('compare-init-btn').onclick = () => {
             if (!currentLoadedISO) return;
             baseCompareFeature = globalData.get(currentLoadedISO);
             isComparingMode = true;
             document.getElementById('info-panel').style.display = 'none';
             document.getElementById('compare-banner').style.display = 'block';
-            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); // הסתרת סיכות במצב השוואה
+            if (activePopup) activePopup.remove();
+            map.setFilter('capitals-layer', ['==', 'ISO_A2', '']); 
             map.setFilter('capitals-label', ['==', 'ISO_A2', '']);
         };
 
@@ -660,7 +721,6 @@
         document.getElementById('close-compare-modal').onclick = closeCompare;
         document.getElementById('compare-backdrop').onclick = closeCompare;
 
-        /* ----- חיפוש ----- */
         const sIn = document.getElementById('search-input'), sSug = document.getElementById('suggestions');
         sIn.oninput = function() {
             const val = this.value.trim().toLowerCase(); 
@@ -694,7 +754,6 @@
         };
         document.onclick = e => { if (e.target !== sIn && e.target !== sSug) sSug.style.display = 'none'; };
 
-        /* ----- שיתוף וגרירה ----- */
         const handleShare = async (title, textSuffix) => {
             const url = window.location.href;
             if (navigator.share) {
