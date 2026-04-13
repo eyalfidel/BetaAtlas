@@ -412,10 +412,16 @@
             map.setFilter('small-cities-layer', smallFilter);
             map.setFilter('small-cities-label', smallFilter);
 
-            // פלייסס (טבע, מורשת ומונומנטים) - תוקן הבאג!
+            // פלייסס (טבע, מורשת ומונומנטים) - תחביר פילטר חסין-תקלות!
             const activePlacesCats = activeCats.filter(c => ['nature', 'history', 'monument'].includes(c));
             if (activePlacesCats.length > 0) {
-                const placesFilter = ['all', ['==', 'ISO_A2', iso], ['in', ['get', 'poi_category'], ['literal', activePlacesCats]]];
+                // בניית פילטר קלאסי שתמיד עובד
+                const catFilter = ['any'];
+                activePlacesCats.forEach(cat => {
+                    catFilter.push(['==', 'poi_category', cat]);
+                });
+                const placesFilter = ['all', ['==', 'ISO_A2', iso], catFilter];
+                
                 map.setFilter('places-layer', placesFilter);
                 map.setFilter('places-label', placesFilter);
             } else {
