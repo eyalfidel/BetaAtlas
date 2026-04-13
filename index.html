@@ -36,7 +36,7 @@
         button.icon-btn { background: none; border: none; font-size: 22px; cursor: pointer; transition: transform 0.2s; padding: 0; margin-right: 5px; }
         button.icon-btn:hover { transform: scale(1.15); }
         
-        /* חלונית מידע מתרחבת (Resize) */
+        /* חלונית מידע מתרחבת */
         #info-panel {
             position: absolute; top: 20px; right: 20px;
             width: 360px; min-width: 300px; max-width: 600px; max-height: 85vh;
@@ -44,7 +44,7 @@
             padding: 25px; border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: none; z-index: 10; overflow-y: auto; overflow-x: hidden;
-            resize: horizontal; direction: rtl; /* מאפשר מתיחה של החלונית ע"י המשתמש */
+            resize: horizontal; direction: rtl;
         }
 
         #drag-handle-wrapper { width: 100%; padding: 15px 0; margin-top: -15px; display: none; justify-content: center; cursor: ns-resize; touch-action: none; }
@@ -52,7 +52,6 @@
 
         .panel-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; margin-bottom: 15px; }
         #info-panel h2 { margin: 0; color: #1a1a1a; display: flex; align-items: center; gap: 10px; font-size: 20px; }
-        
         #country-flag { height: 26px; display: none; border-radius: 4px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         
         .info-row { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
@@ -74,20 +73,33 @@
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
-        /* מקרא המפה השמאלי (Legend) עם תיבות סימון */
+        /* המקרא (Legend) החדש והמשופר */
         #poi-legend {
             position: absolute; bottom: 20px; left: 20px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
             padding: 15px; border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             display: none; z-index: 5; border: 1px solid #eee;
-            user-select: none;
+            user-select: none; transition: all 0.3s ease;
         }
         #poi-legend h4 { margin: 0 0 12px 0; font-size: 15px; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; }
-        .legend-item:hover { background-color: #f8f9fa; border-radius: 4px; }
-        .legend-item input[type="checkbox"] { margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; }
+        
+        .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; padding: 4px 6px; border-radius: 6px; transition: background 0.2s, opacity 0.2s; }
+        .legend-item:hover { background-color: #f0f7ff; }
+        .legend-item.dimmed { opacity: 0.4; }
+        
+        /* הסתרת תיבות הסימון כברירת מחדל */
+        .legend-item input[type="checkbox"] { display: none; margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; }
+        /* הצגתן במצב מתקדם */
+        #poi-legend.advanced-mode .legend-item input[type="checkbox"] { display: inline-block; }
+        
         .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); margin-left: 8px; }
+
+        #toggle-advanced-btn { 
+            background: none; border: none; border-top: 1px solid #eee; margin-top: 5px; padding-top: 10px; 
+            width: 100%; text-align: center; color: #6b7280; font-size: 12px; cursor: pointer; font-family: inherit; transition: color 0.2s; 
+        }
+        #toggle-advanced-btn:hover { color: #3b82f6; }
 
         #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
         #toast { background: #333; }
@@ -96,7 +108,7 @@
 
         #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
 
-        /* חלון ההשוואה */
+        /* השוואה */
         #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
         #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
         .compare-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; padding-bottom: 15px; margin-bottom: 20px; }
@@ -108,10 +120,9 @@
         .compare-table .metric-name { font-weight: bold; color: #555; background: #f8f9fa; text-align: right; }
         .compare-flag { width: 50px; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); margin-bottom: 8px; }
         .compare-name { font-size: 18px; font-weight: bold; color: #111; display: block; }
-        
         #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
-        /* עיצוב הפופאפ לנקודות עניין */
+        /* פופאפ */
         .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw;}
         .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; }
         .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
@@ -145,12 +156,15 @@
     
     <div id="poi-legend">
         <h4>מקרא נקודות עניין</h4>
-        <label class="legend-item"><input type="checkbox" value="capital" checked> <span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</label>
-        <label class="legend-item"><input type="checkbox" value="major_city" checked> <span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</label>
-        <label class="legend-item"><input type="checkbox" value="city" checked> <span class="legend-color" style="background: #a78bfa;"></span> ערים קטנות (זום פנימה)</label>
-        <label class="legend-item"><input type="checkbox" value="monument" checked> <span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</label>
-        <label class="legend-item"><input type="checkbox" value="history" checked> <span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</label>
-        <label class="legend-item"><input type="checkbox" value="nature" checked> <span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</label>
+        <div id="legend-items-container">
+            <label class="legend-item" data-val="capital"><input type="checkbox" value="capital" checked> <span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</label>
+            <label class="legend-item" data-val="major_city"><input type="checkbox" value="major_city" checked> <span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</label>
+            <label class="legend-item" data-val="city"><input type="checkbox" value="city" checked> <span class="legend-color" style="background: #a78bfa;"></span> ערים קטנות</label>
+            <label class="legend-item" data-val="monument"><input type="checkbox" value="monument" checked> <span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</label>
+            <label class="legend-item" data-val="history"><input type="checkbox" value="history" checked> <span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</label>
+            <label class="legend-item" data-val="nature"><input type="checkbox" value="nature" checked> <span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</label>
+        </div>
+        <button id="toggle-advanced-btn">⚙️ סינון מתקדם</button>
     </div>
 
     <div id="info-panel">
@@ -182,17 +196,14 @@
             <div class="info-row" id="row-indep"><span class="info-label">שנת עצמאות:</span> <span class="info-value" id="country-indep"></span></div>
             <div class="info-row" id="row-climate"><span class="info-label">אקלים:</span> <span class="info-value" id="country-climate"></span></div>
             <div class="info-row" id="row-highest"><span class="info-label">פסגה גבוהה ביותר:</span> <span class="info-value" id="country-highest"></span></div>
-            
             <div class="info-row" id="row-gdp"><span class="info-label">תמ"ג (GDP):</span> <span class="info-value" id="country-gdp"></span></div>
             <div class="info-row" id="row-gdp-pc"><span class="info-label">תמ"ג לנפש:</span> <span class="info-value" id="country-gdp-pc"></span></div>
             <div class="info-row" id="row-currency"><span class="info-label">מטבע:</span> <span class="info-value" id="country-currency"></span></div>
-            
             <div class="info-row" id="row-pop-growth"><span class="info-label">קצב גידול אוכלוסייה:</span> <span class="info-value" id="country-pop-growth"></span></div>
             <div class="info-row" id="row-fertility"><span class="info-label">שיעור פריון:</span> <span class="info-value" id="country-fertility"></span></div>
             <div class="info-row" id="row-life"><span class="info-label">תוחלת חיים:</span> <span class="info-value" id="country-life"></span></div>
             <div class="info-row" id="row-hdi"><span class="info-label">מדד פיתוח אנושי (HDI):</span> <span class="info-value" id="country-hdi"></span></div>
             <div class="info-row" id="row-literacy"><span class="info-label">אחוזי אוריינות:</span> <span class="info-value" id="country-literacy"></span></div>
-            
             <div class="info-row" id="row-call"><span class="info-label">קידומת טלפון בינלאומית:</span> <span class="info-value" id="country-call"></span></div>
             <div class="info-row" id="row-tld"><span class="info-label">סיומת אינטרנט רשמית:</span> <span class="info-value" id="country-tld"></span></div>
         </div>
@@ -212,11 +223,7 @@
         </div>
         <table class="compare-table">
             <thead>
-                <tr>
-                    <th></th>
-                    <th id="comp-head-1"></th>
-                    <th id="comp-head-2"></th>
-                </tr>
+                <tr><th></th><th id="comp-head-1"></th><th id="comp-head-2"></th></tr>
             </thead>
             <tbody id="compare-tbody"></tbody>
         </table>
@@ -259,12 +266,11 @@
             } catch (e) { return 'שגיאה בטעינת התקציר מהשרת.'; }
         }
 
-        // צבעי הקטגוריות
         function getPoiColor(category) {
             switch(category) {
                 case 'capital': return '#fbbf24';
-                case 'major_city': return '#8b5cf6'; // סגול עז
-                case 'city': return '#a78bfa';       // סגול בהיר
+                case 'major_city': return '#8b5cf6';
+                case 'city': return '#a78bfa';
                 case 'nature': return '#22c55e';
                 case 'history': return '#d97706';
                 case 'monument': return '#ec4899';
@@ -278,7 +284,6 @@
             let wikiTitle = props.name;
             if (props.wiki_url && props.wiki_url.includes('/wiki/')) wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
             
-            // זיהוי הקטגוריה האמיתית (הוספנו סיווג גם לערים וגם לפלייסס)
             let realCategory = props.type === 'capital' ? 'capital' : props.poi_category;
             let borderColor = getPoiColor(realCategory);
             
@@ -309,7 +314,58 @@
             });
         }
 
-        // פונקציית סינון (פילטר) מרכזית המגיבה לתיבות הסימון במקרא ולמדינה הנבחרת
+        // --- לוגיקת המקרא המשופרת ---
+        let isAdvancedLegend = false;
+        let isolatedCategory = null;
+
+        const legendContainer = document.getElementById('poi-legend');
+        const toggleAdvancedBtn = document.getElementById('toggle-advanced-btn');
+        const legendItems = document.querySelectorAll('.legend-item');
+        const legendCheckboxes = document.querySelectorAll('.legend-item input[type="checkbox"]');
+
+        toggleAdvancedBtn.addEventListener('click', () => {
+            isAdvancedLegend = !isAdvancedLegend;
+            if (isAdvancedLegend) {
+                legendContainer.classList.add('advanced-mode');
+                toggleAdvancedBtn.innerText = '🔼 סגור סינון מתקדם';
+                legendItems.forEach(item => item.classList.remove('dimmed'));
+                isolatedCategory = null; // מאפסים בידוד במעבר למתקדם
+            } else {
+                legendContainer.classList.remove('advanced-mode');
+                toggleAdvancedBtn.innerText = '⚙️ סינון מתקדם';
+            }
+            updatePOIFilters(currentLoadedISO);
+        });
+
+        legendItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                // במצב מתקדם - הקליק מטופל על ידי הצ'קבוקס עצמו, לא עושים כלום כאן
+                if (isAdvancedLegend) return; 
+
+                const category = item.getAttribute('data-val');
+                
+                // אם לחצו על מה שכבר מבודד -> בטל בידוד (הראה הכל)
+                if (isolatedCategory === category) {
+                    isolatedCategory = null;
+                    legendItems.forEach(i => i.classList.remove('dimmed'));
+                } else {
+                    // בודד את השכבה שנלחצה
+                    isolatedCategory = category;
+                    legendItems.forEach(i => {
+                        if (i.getAttribute('data-val') === category) i.classList.remove('dimmed');
+                        else i.classList.add('dimmed');
+                    });
+                }
+                updatePOIFilters(currentLoadedISO);
+            });
+        });
+
+        legendCheckboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                if (isAdvancedLegend) updatePOIFilters(currentLoadedISO);
+            });
+        });
+
         function updatePOIFilters(iso) {
             if (!iso || isComparingMode) {
                 map.setFilter('capitals-highlight', ['==', 'ISO_A2', 'NONE']);
@@ -321,35 +377,43 @@
                 map.setFilter('small-cities-label', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('places-layer', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('places-label', ['==', 'ISO_A2', 'NONE']);
-                document.getElementById('poi-legend').style.display = 'none';
+                legendContainer.style.display = 'none';
                 return;
             }
 
-            document.getElementById('poi-legend').style.display = 'block';
+            legendContainer.style.display = 'block';
 
-            // מציאת אילו קטגוריות מסומנות (Checked) במקרא
-            const activeBoxes = Array.from(document.querySelectorAll('#poi-legend input[type="checkbox"]:checked')).map(cb => cb.value);
+            // קביעת הקטגוריות הפעילות לפי המצב
+            let activeCats = [];
+            if (isAdvancedLegend) {
+                activeCats = Array.from(document.querySelectorAll('#legend-items-container input[type="checkbox"]:checked')).map(cb => cb.value);
+            } else if (isolatedCategory) {
+                activeCats = [isolatedCategory];
+            } else {
+                // מצב בסיסי רגיל - הכל דלוק
+                activeCats = ['capital', 'major_city', 'city', 'monument', 'history', 'nature'];
+            }
 
             // ערי בירה
-            const showCapitals = activeBoxes.includes('capital');
+            const showCapitals = activeCats.includes('capital');
             map.setFilter('capitals-highlight', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
             map.setFilter('capitals-layer', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
             map.setFilter('capitals-label', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
 
-            // ערים מרכזיות (מופיעות בכל זום)
-            const showMajorCities = activeBoxes.includes('major_city');
+            // ערים מרכזיות
+            const showMajorCities = activeCats.includes('major_city');
             const majorFilter = showMajorCities ? ['all', ['==', 'ISO_A2', iso], ['==', 'poi_category', 'major_city']] : ['==', 'ISO_A2', 'NONE'];
             map.setFilter('major-cities-layer', majorFilter);
             map.setFilter('major-cities-label', majorFilter);
 
-            // ערים קטנות (הוספנו להן הגבלת זום מינימלי בטעינת המפה!)
-            const showSmallCities = activeBoxes.includes('city');
+            // ערים קטנות
+            const showSmallCities = activeCats.includes('city');
             const smallFilter = showSmallCities ? ['all', ['==', 'ISO_A2', iso], ['==', 'poi_category', 'city']] : ['==', 'ISO_A2', 'NONE'];
             map.setFilter('small-cities-layer', smallFilter);
             map.setFilter('small-cities-label', smallFilter);
 
-            // אתרי טבע, מורשת ומונומנטים (Places)
-            const activePlacesCats = activeBoxes.filter(c => ['nature', 'history', 'monument'].includes(c));
+            // פלייסס (טבע, מורשת ומונומנטים) - תוקן הבאג!
+            const activePlacesCats = activeCats.filter(c => ['nature', 'history', 'monument'].includes(c));
             if (activePlacesCats.length > 0) {
                 const placesFilter = ['all', ['==', 'ISO_A2', iso], ['in', ['get', 'poi_category'], ['literal', activePlacesCats]]];
                 map.setFilter('places-layer', placesFilter);
@@ -360,14 +424,7 @@
             }
         }
 
-        // האזנה לשינויים בתיבות הסימון של המקרא
-        document.querySelectorAll('#poi-legend input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                updatePOIFilters(currentLoadedISO);
-            });
-        });
-
-        // טעינת הקבצים (capitals, places, cities)
+        // טעינת נתונים עולמית
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
@@ -377,7 +434,6 @@
             fetch('json/places.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]})),
             fetch('json/cities.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]}))
         ]).then(([countriesData, seasData, statsData, wikiData, capitalsData, placesData, citiesData]) => {
-            
             globalCapitalsData = capitalsData;
             globalPlacesData = placesData;
             globalCitiesData = citiesData;
@@ -429,34 +485,32 @@
             map.addLayer({ 'id': 'countries-highlight', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } });
             map.addLayer({ 'id': 'seas-highlight', 'type': 'line', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#0284c7', 'line-width': 4 } });
 
-            // --- 1. מקור נתוני הערים ---
+            // 1. שכבת ערים (מרכזיות וקטנות)
             map.addSource('cities', { type: 'geojson', data: globalCitiesData });
             
-            // שכבת "ערים מרכזיות" (10 הגדולות, מופיעות מיד)
             map.addLayer({
                 'id': 'major-cities-layer', 'type': 'circle', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'], 
                 'paint': { 'circle-radius': 5.5, 'circle-color': '#8b5cf6', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1.5, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
                 'id': 'major-cities-label', 'type': 'symbol', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'],
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 14, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // שכבת "ערים קטנות" (כל השאר, מופיעות רק כשמתקרבים - minzoom: 5.5)
             map.addLayer({
                 'id': 'small-cities-layer', 'type': 'circle', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'], 
-                'minzoom': 5.5, // הסוד כדי לא להעמיס את רומניה וארה"ב בזום רחוק!
-                'paint': { 'circle-radius': 4, 'circle-color': '#a78bfa', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1, 'circle-pitch-alignment': 'map' }
+                'minzoom': 5.5,
+                'paint': { 'circle-radius': 4.5, 'circle-color': '#a78bfa', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
                 'id': 'small-cities-label', 'type': 'symbol', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'],
-                'minzoom': 6.0,
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'], 'text-size': 10, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'minzoom': 5.5,
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'], 'text-size': 12.5, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 1.5 }
             });
 
-            // --- 2. מקור נתוני ה-Places (טבע, מורשת, מונומנטים) ---
+            // 2. שכבת Places (טבע, מורשת, מונומנטים)
             map.addSource('places', { type: 'geojson', data: globalPlacesData });
             map.addLayer({
                 'id': 'places-layer', 'type': 'circle', 'source': 'places', 'filter': ['==', 'ISO_A2', 'NONE'], 
@@ -474,18 +528,17 @@
             });
             map.addLayer({
                 'id': 'places-label', 'type': 'symbol', 'source': 'places', 'filter': ['==', 'ISO_A2', 'NONE'],
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 13.5, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // --- 3. מקור ערי הבירה וההילה הפועמת ---
+            // 3. ערי בירה + הילה
             map.addSource('capitals', { type: 'geojson', data: globalCapitalsData });
             
-            // שכבת ההילה (Halo) של עיר הבירה
             map.addLayer({
                 'id': 'capitals-highlight', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'],
                 'paint': {
-                    'circle-radius': 10, // ישתנה באנימציה
+                    'circle-radius': 10,
                     'circle-color': 'rgba(251, 191, 36, 0.4)',
                     'circle-stroke-color': 'rgba(251, 191, 36, 0.8)',
                     'circle-stroke-width': 2,
@@ -495,20 +548,19 @@
 
             map.addLayer({
                 'id': 'capitals-layer', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'], 
-                'paint': { 'circle-radius': 7, 'circle-color': '#fbbf24', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
+                'paint': { 'circle-radius': 7.5, 'circle-color': '#fbbf24', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
                 'id': 'capitals-label', 'type': 'symbol', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'],
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 15, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 16, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 3 }
             });
 
-            // לולאת אנימציה שמפעילה את הפעימה (Pulse) על עיר הבירה!
             let pulseTime = 0;
             function animateCapitalHalo() {
                 pulseTime = (pulseTime + 1) % 100;
-                let radius = 10 + (pulseTime / 100) * 15; // גדל מ-10 ל-25
-                let opacity = 1 - (pulseTime / 100);      // שקיפות דועכת מ-1 ל-0
+                let radius = 10 + (pulseTime / 100) * 15;
+                let opacity = 1 - (pulseTime / 100);
                 
                 if (map.getLayer('capitals-highlight')) {
                     map.setPaintProperty('capitals-highlight', 'circle-radius', radius);
@@ -519,7 +571,7 @@
             }
             animateCapitalHalo();
 
-            // זיהוי לחיצות על נקודות עניין מכל הסוגים
+            // זיהוי לחיצות
             map.on('click', (e) => {
                 const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'places-layer', 'places-label', 'major-cities-layer', 'major-cities-label', 'small-cities-layer', 'small-cities-label'] });
                 if (poiFeatures.length > 0) {
@@ -544,6 +596,11 @@
                 }
 
                 if (clickedIso && globalData.has(clickedIso)) {
+                    // תיקון לחיצה כפולה על מדינה פעילה - פשוט מתעלמים
+                    if (clickedIso === currentLoadedISO && !isComparingMode) {
+                        return; 
+                    }
+
                     const targetData = globalData.get(clickedIso);
                     if (isComparingMode) {
                         if (targetData.isSea || targetData.isDisputed) { alert("לא ניתן להשוות לימים או לשטחים במחלוקת."); return; }
@@ -572,7 +629,6 @@
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            // עדכון המקרא והסיכות על המפה
             if (!data.isSea && !isComparingMode && !data.isDisputed) {
                 updatePOIFilters(iso);
             } else {
@@ -635,19 +691,15 @@
                 document.getElementById('country-indep').innerText = stats.Indep_Year || '---';
                 document.getElementById('country-climate').innerText = stats.Climate || '---';
                 document.getElementById('country-highest').innerText = stats.Highest_Point || '---';
-                
                 document.getElementById('country-pop-growth').innerHTML = (stats.Pop_Growth_Pct !== undefined && stats.Pop_Growth_Pct !== "") ? stats.Pop_Growth_Pct + '%' + formatRank(stats.Growth_Rank) : '---';
                 document.getElementById('country-fertility').innerHTML = (stats.Fertility_Rate || '---') + formatRank(stats.Fert_Rank);
                 document.getElementById('country-life').innerHTML = (stats.Life_Expectancy && stats.Life_Expectancy !== "אין נתונים" ? stats.Life_Expectancy + ' שנים' : '---') + formatRank(stats.LifeEx_Rank);
                 document.getElementById('country-hdi').innerHTML = (stats.HDI && stats.HDI !== "ללא" && stats.HDI !== "אין נתונים" ? stats.HDI : '---') + formatRank(stats.HDI_Rank);
-                
                 let lit = stats.Literacy_Pct;
                 document.getElementById('country-literacy').innerText = (lit && lit !== "אין נתונים" && lit !== "N/A") ? lit + '%' : "אין נתונים";
-                
                 document.getElementById('country-call').innerText = stats.Call_Code ? `+${stats.Call_Code}` : '---';
                 document.getElementById('country-tld').innerText = stats.TLD || '---';
                 document.getElementById('country-currency').innerText = stats.Currency_HE || '---';
-                
                 document.getElementById('country-pop').innerHTML = (stats.Population !== undefined && stats.Population !== "") ? Number(stats.Population).toLocaleString('he-IL') + formatRank(stats.Pop_Rank) : "---";
                 document.getElementById('country-gdp').innerHTML = (stats.GDP_Billion_USD !== undefined && stats.GDP_Billion_USD !== "") ? Number(stats.GDP_Billion_USD).toLocaleString('he-IL') + ' מיליארד $' + formatRank(stats.GDP_Rank) : "---";
                 document.getElementById('country-gdp-pc').innerHTML = (stats.GDP_Per_Capita_USD !== undefined && stats.GDP_Per_Capita_USD !== "") ? '$' + Number(stats.GDP_Per_Capita_USD).toLocaleString('he-IL') + formatRank(stats.GDPPC_Rank) : "---";
@@ -686,6 +738,7 @@
         document.getElementById('close-panel').onclick = () => { 
             if (activePopup) activePopup.remove();
             document.getElementById('info-panel').style.display = 'none'; 
+            currentLoadedISO = null;
             updatePOIFilters(null);
             map.setFilter('countries-highlight', ['==', 'ISO_A2', '']); 
             map.setFilter('seas-highlight', ['==', 'ISO_A2', '']); 
