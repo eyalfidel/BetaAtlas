@@ -6,7 +6,7 @@
     <title>Atlas Beta - האטלס האנציקלופדי</title>
     
     <meta property="og:title" content="Atlas Beta - האטלס האנציקלופדי">
-    <meta property="og:description" content="אטלס תלת-ממדי אינטראקטיבי לחקר מדינות, ימים ומידע גיאוגרפי (גרסת בטא).">
+    <meta property="og:description" content="אטלס תלת-ממדי אינטראקטיבי לחקר מדינות, ימים ומידע גיאוגרפי.">
     
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
@@ -36,14 +36,15 @@
         button.icon-btn { background: none; border: none; font-size: 22px; cursor: pointer; transition: transform 0.2s; padding: 0; margin-right: 5px; }
         button.icon-btn:hover { transform: scale(1.15); }
         
+        /* חלונית מידע מתרחבת (Resize) */
         #info-panel {
             position: absolute; top: 20px; right: 20px;
-            width: 350px; min-width: 300px; max-width: 50vw; max-height: 85vh;
+            width: 360px; min-width: 300px; max-width: 600px; max-height: 85vh;
             background: rgba(255, 255, 255, 0.95);
             padding: 25px; border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: none; z-index: 10; overflow-y: auto; overflow-x: hidden;
-            resize: horizontal; /* מאפשר מתיחה של החלונית */
+            resize: horizontal; direction: rtl; /* מאפשר מתיחה של החלונית ע"י המשתמש */
         }
 
         #drag-handle-wrapper { width: 100%; padding: 15px 0; margin-top: -15px; display: none; justify-content: center; cursor: ns-resize; touch-action: none; }
@@ -73,7 +74,7 @@
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
-        /* מקרא המפה החדש - שמאלי ולחיץ */
+        /* מקרא המפה השמאלי (Legend) עם תיבות סימון */
         #poi-legend {
             position: absolute; bottom: 20px; left: 20px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
@@ -83,10 +84,10 @@
             user-select: none;
         }
         #poi-legend h4 { margin: 0 0 12px 0; font-size: 15px; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; transition: opacity 0.2s; }
-        .legend-item:hover { opacity: 0.8; }
-        .legend-item.disabled { opacity: 0.3; }
-        .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); margin-left: 10px; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; }
+        .legend-item:hover { background-color: #f8f9fa; border-radius: 4px; }
+        .legend-item input[type="checkbox"] { margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; }
+        .legend-color { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); margin-left: 8px; }
 
         #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
         #toast { background: #333; }
@@ -110,7 +111,7 @@
         
         #close-compare-modal { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
         
-        /* עיצוב הפופאפ */
+        /* עיצוב הפופאפ לנקודות עניין */
         .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw;}
         .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; }
         .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
@@ -144,11 +145,12 @@
     
     <div id="poi-legend">
         <h4>מקרא נקודות עניין</h4>
-        <div class="legend-item" data-category="capital"><span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</div>
-        <div class="legend-item" data-category="city"><span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</div>
-        <div class="legend-item" data-category="monument"><span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</div>
-        <div class="legend-item" data-category="history"><span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</div>
-        <div class="legend-item" data-category="nature"><span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</div>
+        <label class="legend-item"><input type="checkbox" value="capital" checked> <span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</label>
+        <label class="legend-item"><input type="checkbox" value="major_city" checked> <span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</label>
+        <label class="legend-item"><input type="checkbox" value="city" checked> <span class="legend-color" style="background: #a78bfa;"></span> ערים קטנות (זום פנימה)</label>
+        <label class="legend-item"><input type="checkbox" value="monument" checked> <span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</label>
+        <label class="legend-item"><input type="checkbox" value="history" checked> <span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</label>
+        <label class="legend-item"><input type="checkbox" value="nature" checked> <span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</label>
     </div>
 
     <div id="info-panel">
@@ -246,9 +248,6 @@
         let baseCompareFeature = null;
         let currentLoadedISO = null;
 
-        // ניהול מצב המקרא (אילו קטגוריות דלוקות)
-        const activeCategories = new Set(['capital', 'city', 'monument', 'history', 'nature']);
-
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
         async function getWikiSummary(title) {
@@ -260,18 +259,28 @@
             } catch (e) { return 'שגיאה בטעינת התקציר מהשרת.'; }
         }
 
+        // צבעי הקטגוריות
+        function getPoiColor(category) {
+            switch(category) {
+                case 'capital': return '#fbbf24';
+                case 'major_city': return '#8b5cf6'; // סגול עז
+                case 'city': return '#a78bfa';       // סגול בהיר
+                case 'nature': return '#22c55e';
+                case 'history': return '#d97706';
+                case 'monument': return '#ec4899';
+                default: return '#9ca3af';
+            }
+        }
+
         function openPOIPopup(feature, coordinates) {
             if (activePopup) activePopup.remove();
             const props = feature.properties;
             let wikiTitle = props.name;
             if (props.wiki_url && props.wiki_url.includes('/wiki/')) wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
             
-            let borderColor = '#9ca3af'; 
-            if (props.type === 'capital') borderColor = '#fbbf24';
-            else if (props.poi_category === 'nature') borderColor = '#22c55e';
-            else if (props.poi_category === 'history') borderColor = '#d97706';
-            else if (props.poi_category === 'monument') borderColor = '#ec4899';
-            else if (props.poi_category === 'city') borderColor = '#8b5cf6';
+            // זיהוי הקטגוריה האמיתית (הוספנו סיווג גם לערים וגם לפלייסס)
+            let realCategory = props.type === 'capital' ? 'capital' : props.poi_category;
+            let borderColor = getPoiColor(realCategory);
             
             activePopup = new mapboxgl.Popup({ closeButton: true, closeOnClick: true, maxWidth: 'none' })
                 .setLngLat(coordinates)
@@ -285,9 +294,13 @@
 
             getWikiSummary(wikiTitle).then(summary => {
                 if (activePopup && activePopup.isOpen()) {
+                    let extraInfo = '';
+                    if (props.population) extraInfo = `<p style="margin-top:0; font-size:12px; color:#666;">👥 אוכלוסייה: ${Number(props.population).toLocaleString('he-IL')}</p>`;
+                    
                     activePopup.setHTML(`
                         <div class="poi-popup" dir="rtl">
                             <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
+                            ${extraInfo}
                             <p>${summary}</p>
                             ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank">📌 קרא עוד בוויקיפדיה</a>` : ''}
                         </div>
@@ -296,14 +309,16 @@
             });
         }
 
-        // פונקציית סינון מרכזית לנקודות העניין לפי המדינה הנבחרת ולפי המקרא
+        // פונקציית סינון (פילטר) מרכזית המגיבה לתיבות הסימון במקרא ולמדינה הנבחרת
         function updatePOIFilters(iso) {
             if (!iso || isComparingMode) {
                 map.setFilter('capitals-highlight', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('capitals-layer', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('capitals-label', ['==', 'ISO_A2', 'NONE']);
-                map.setFilter('cities-layer', ['==', 'ISO_A2', 'NONE']);
-                map.setFilter('cities-label', ['==', 'ISO_A2', 'NONE']);
+                map.setFilter('major-cities-layer', ['==', 'ISO_A2', 'NONE']);
+                map.setFilter('major-cities-label', ['==', 'ISO_A2', 'NONE']);
+                map.setFilter('small-cities-layer', ['==', 'ISO_A2', 'NONE']);
+                map.setFilter('small-cities-label', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('places-layer', ['==', 'ISO_A2', 'NONE']);
                 map.setFilter('places-label', ['==', 'ISO_A2', 'NONE']);
                 document.getElementById('poi-legend').style.display = 'none';
@@ -312,23 +327,29 @@
 
             document.getElementById('poi-legend').style.display = 'block';
 
+            // מציאת אילו קטגוריות מסומנות (Checked) במקרא
+            const activeBoxes = Array.from(document.querySelectorAll('#poi-legend input[type="checkbox"]:checked')).map(cb => cb.value);
+
             // ערי בירה
-            const showCapitals = activeCategories.has('capital');
+            const showCapitals = activeBoxes.includes('capital');
             map.setFilter('capitals-highlight', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
             map.setFilter('capitals-layer', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
             map.setFilter('capitals-label', showCapitals ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
 
-            // ערים מרכזיות
-            const showCities = activeCategories.has('city');
-            map.setFilter('cities-layer', showCities ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
-            map.setFilter('cities-label', showCities ? ['==', 'ISO_A2', iso] : ['==', 'ISO_A2', 'NONE']);
+            // ערים מרכזיות (מופיעות בכל זום)
+            const showMajorCities = activeBoxes.includes('major_city');
+            const majorFilter = showMajorCities ? ['all', ['==', 'ISO_A2', iso], ['==', 'poi_category', 'major_city']] : ['==', 'ISO_A2', 'NONE'];
+            map.setFilter('major-cities-layer', majorFilter);
+            map.setFilter('major-cities-label', majorFilter);
 
-            // שאר המקומות
-            const activePlacesCats = [];
-            if (activeCategories.has('nature')) activePlacesCats.push('nature');
-            if (activeCategories.has('history')) activePlacesCats.push('history');
-            if (activeCategories.has('monument')) activePlacesCats.push('monument');
+            // ערים קטנות (הוספנו להן הגבלת זום מינימלי בטעינת המפה!)
+            const showSmallCities = activeBoxes.includes('city');
+            const smallFilter = showSmallCities ? ['all', ['==', 'ISO_A2', iso], ['==', 'poi_category', 'city']] : ['==', 'ISO_A2', 'NONE'];
+            map.setFilter('small-cities-layer', smallFilter);
+            map.setFilter('small-cities-label', smallFilter);
 
+            // אתרי טבע, מורשת ומונומנטים (Places)
+            const activePlacesCats = activeBoxes.filter(c => ['nature', 'history', 'monument'].includes(c));
             if (activePlacesCats.length > 0) {
                 const placesFilter = ['all', ['==', 'ISO_A2', iso], ['in', ['get', 'poi_category'], ['literal', activePlacesCats]]];
                 map.setFilter('places-layer', placesFilter);
@@ -339,21 +360,14 @@
             }
         }
 
-        // ניהול לחיצות במקרא
-        document.querySelectorAll('.legend-item').forEach(item => {
-            item.onclick = function() {
-                const category = this.getAttribute('data-category');
-                if (activeCategories.has(category)) {
-                    activeCategories.delete(category);
-                    this.classList.add('disabled');
-                } else {
-                    activeCategories.add(category);
-                    this.classList.remove('disabled');
-                }
+        // האזנה לשינויים בתיבות הסימון של המקרא
+        document.querySelectorAll('#poi-legend input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
                 updatePOIFilters(currentLoadedISO);
-            };
+            });
         });
 
+        // טעינת הקבצים (capitals, places, cities)
         Promise.all([
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
@@ -406,12 +420,6 @@
             }
         });
 
-        function haversine(lat1, lon1, lat2, lon2) {
-            const R = 6371; const dLat = (lat2 - lat1) * Math.PI / 180; const dLon = (lon2 - lon1) * Math.PI / 180;
-            const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) * Math.sin(dLon/2);
-            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        }
-
         map.on('load', () => {
             map.addSource('seas-vec', { type: 'vector', url: 'mapbox://eyalfidel.9x1r7ppe' });
             map.addLayer({ 'id': 'seas-fill', 'type': 'fill', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'paint': { 'fill-color': '#000000', 'fill-opacity': 0.005 } });
@@ -421,22 +429,37 @@
             map.addLayer({ 'id': 'countries-highlight', 'type': 'line', 'source': 'countries-vec', 'source-layer': 'countries-50fsub', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#3b82f6', 'line-width': 3 } });
             map.addLayer({ 'id': 'seas-highlight', 'type': 'line', 'source': 'seas-vec', 'source-layer': 'seas-b6hmy3', 'filter': ['==', 'ISO_A2', ''], 'paint': { 'line-color': '#0284c7', 'line-width': 4 } });
 
-            // --- מקור וסיכות לערים מרכזיות ---
+            // --- 1. מקור נתוני הערים ---
             map.addSource('cities', { type: 'geojson', data: globalCitiesData });
+            
+            // שכבת "ערים מרכזיות" (10 הגדולות, מופיעות מיד)
             map.addLayer({
-                'id': 'cities-layer', 'type': 'circle', 'source': 'cities', 'filter': ['==', 'ISO_A2', ''], 
-                'paint': { 'circle-radius': 5, 'circle-color': '#8b5cf6', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1.5, 'circle-pitch-alignment': 'map' }
+                'id': 'major-cities-layer', 'type': 'circle', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'], 
+                'paint': { 'circle-radius': 5.5, 'circle-color': '#8b5cf6', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1.5, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
-                'id': 'cities-label', 'type': 'symbol', 'source': 'cities', 'filter': ['==', 'ISO_A2', ''],
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 11, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'id': 'major-cities-label', 'type': 'symbol', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'],
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // --- מקור וסיכות לפלייסס (טבע, היסטוריה וכו') ---
+            // שכבת "ערים קטנות" (כל השאר, מופיעות רק כשמתקרבים - minzoom: 5.5)
+            map.addLayer({
+                'id': 'small-cities-layer', 'type': 'circle', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'], 
+                'minzoom': 5.5, // הסוד כדי לא להעמיס את רומניה וארה"ב בזום רחוק!
+                'paint': { 'circle-radius': 4, 'circle-color': '#a78bfa', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1, 'circle-pitch-alignment': 'map' }
+            });
+            map.addLayer({
+                'id': 'small-cities-label', 'type': 'symbol', 'source': 'cities', 'filter': ['==', 'ISO_A2', 'NONE'],
+                'minzoom': 6.0,
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'], 'text-size': 10, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 1.5 }
+            });
+
+            // --- 2. מקור נתוני ה-Places (טבע, מורשת, מונומנטים) ---
             map.addSource('places', { type: 'geojson', data: globalPlacesData });
             map.addLayer({
-                'id': 'places-layer', 'type': 'circle', 'source': 'places', 'filter': ['==', 'ISO_A2', ''], 
+                'id': 'places-layer', 'type': 'circle', 'source': 'places', 'filter': ['==', 'ISO_A2', 'NONE'], 
                 'paint': { 
                     'circle-radius': 6, 
                     'circle-color': [
@@ -450,38 +473,55 @@
                 }
             });
             map.addLayer({
-                'id': 'places-label', 'type': 'symbol', 'source': 'places', 'filter': ['==', 'ISO_A2', ''],
+                'id': 'places-label', 'type': 'symbol', 'source': 'places', 'filter': ['==', 'ISO_A2', 'NONE'],
                 'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 12, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
                 'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
             });
 
-            // --- מקור וסיכות לערי בירה (כולל הילה) ---
+            // --- 3. מקור ערי הבירה וההילה הפועמת ---
             map.addSource('capitals', { type: 'geojson', data: globalCapitalsData });
             
-            // הילת ההבלטה של עיר הבירה (שכבה נפרדת שיושבת מתחת לסיכה)
+            // שכבת ההילה (Halo) של עיר הבירה
             map.addLayer({
-                'id': 'capitals-highlight', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', ''],
+                'id': 'capitals-highlight', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'],
                 'paint': {
-                    'circle-radius': 14,
-                    'circle-color': 'rgba(251, 191, 36, 0.3)',
+                    'circle-radius': 10, // ישתנה באנימציה
+                    'circle-color': 'rgba(251, 191, 36, 0.4)',
                     'circle-stroke-color': 'rgba(251, 191, 36, 0.8)',
-                    'circle-stroke-width': 3,
+                    'circle-stroke-width': 2,
                     'circle-pitch-alignment': 'map'
                 }
             });
 
             map.addLayer({
-                'id': 'capitals-layer', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', ''], 
+                'id': 'capitals-layer', 'type': 'circle', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'], 
                 'paint': { 'circle-radius': 7, 'circle-color': '#fbbf24', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' }
             });
             map.addLayer({
-                'id': 'capitals-label', 'type': 'symbol', 'source': 'capitals', 'filter': ['==', 'ISO_A2', ''],
-                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 14, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
-                'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 2 }
+                'id': 'capitals-label', 'type': 'symbol', 'source': 'capitals', 'filter': ['==', 'ISO_A2', 'NONE'],
+                'layout': { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'], 'text-size': 15, 'text-offset': [0, 1.2], 'text-anchor': 'top' },
+                'paint': { 'text-color': '#ffffff', 'text-halo-color': '#000000', 'text-halo-width': 3 }
             });
 
+            // לולאת אנימציה שמפעילה את הפעימה (Pulse) על עיר הבירה!
+            let pulseTime = 0;
+            function animateCapitalHalo() {
+                pulseTime = (pulseTime + 1) % 100;
+                let radius = 10 + (pulseTime / 100) * 15; // גדל מ-10 ל-25
+                let opacity = 1 - (pulseTime / 100);      // שקיפות דועכת מ-1 ל-0
+                
+                if (map.getLayer('capitals-highlight')) {
+                    map.setPaintProperty('capitals-highlight', 'circle-radius', radius);
+                    map.setPaintProperty('capitals-highlight', 'circle-opacity', opacity);
+                    map.setPaintProperty('capitals-highlight', 'circle-stroke-opacity', opacity);
+                }
+                requestAnimationFrame(animateCapitalHalo);
+            }
+            animateCapitalHalo();
+
+            // זיהוי לחיצות על נקודות עניין מכל הסוגים
             map.on('click', (e) => {
-                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'places-layer', 'places-label', 'cities-layer', 'cities-label'] });
+                const poiFeatures = map.queryRenderedFeatures(e.point, { layers: ['capitals-layer', 'capitals-label', 'places-layer', 'places-label', 'major-cities-layer', 'major-cities-label', 'small-cities-layer', 'small-cities-label'] });
                 if (poiFeatures.length > 0) {
                     openPOIPopup(poiFeatures[0], e.lngLat);
                     return; 
@@ -497,7 +537,7 @@
                     globalData.forEach((data, iso) => {
                         if (data.isSea) return; 
                         const coords = data.pointFeature.geometry.coordinates;
-                        const dist = haversine(clickLat, clickLng, coords[1], coords[0]);
+                        const dist = (Math.acos(Math.sin(clickLat * Math.PI / 180) * Math.sin(coords[1] * Math.PI / 180) + Math.cos(clickLat * Math.PI / 180) * Math.cos(coords[1] * Math.PI / 180) * Math.cos((coords[0] - clickLng) * Math.PI / 180)) * 6371);
                         if (dist < minDistance) { minDistance = dist; clickedIso = iso; }
                     });
                     if (minDistance > 600) clickedIso = null;
@@ -512,7 +552,7 @@
                 }
             });
 
-            ['countries-fill', 'seas-fill', 'capitals-layer', 'places-layer', 'cities-layer'].forEach(layer => {
+            ['countries-fill', 'seas-fill', 'capitals-layer', 'places-layer', 'major-cities-layer', 'small-cities-layer'].forEach(layer => {
                 map.on('mouseenter', layer, () => map.getCanvas().style.cursor = 'pointer');
                 map.on('mouseleave', layer, () => map.getCanvas().style.cursor = '');
             });
@@ -532,7 +572,7 @@
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            // עדכון המקרא והסיכות על המפה דרך פונקציית הסינון המרכזית
+            // עדכון המקרא והסיכות על המפה
             if (!data.isSea && !isComparingMode && !data.isDisputed) {
                 updatePOIFilters(iso);
             } else {
