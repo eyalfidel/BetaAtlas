@@ -1542,22 +1542,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.91944444,
-          49.18027778
-        ]
-      },
-      "properties": {
-        "name": "הפארק הלאומי טטרה",
-        "ISO_A2": "SK",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%98%D7%98%D7%A8%D7%94_(%D7%A1%D7%9C%D7%95%D7%91%D7%A7%D7%99%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           29.2758463,
           -2.5282157
         ]
@@ -2398,22 +2382,6 @@
         "name": "הפארק הלאומי אקדיה",
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%90%D7%A7%D7%93%D7%99%D7%94",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -113.8,
-          48.755
-        ]
-      },
-      "properties": {
-        "name": "הפארק הלאומי גליישר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%92%D7%9C%D7%99%D7%99%D7%A9%D7%A8",
         "poi_category": "nature"
       }
     },
@@ -9766,22 +9734,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -5.413111111,
-          35.898833333
-        ]
-      },
-      "properties": {
-        "name": "ג'בל מוסא",
-        "ISO_A2": "MA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%91%D7%9C_%D7%9E%D7%95%D7%A1%D7%90_(%D7%9E%D7%A8%D7%95%D7%A7%D7%95)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           39.861388888,
           21.458055555
         ]
@@ -11894,22 +11846,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.5333,
-          82.0167
-        ]
-      },
-      "properties": {
-        "name": "הר ויסלר",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%95%D7%99%D7%A1%D7%9C%D7%A8_(%D7%A0%D7%95%D7%A0%D7%90%D7%95%D7%95%D7%98)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           7.965583333,
           46.468333333
         ]
@@ -12710,22 +12646,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.786944444,
-          51.181944444
-        ]
-      },
-      "properties": {
-        "name": "הר מאסיב",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%9E%D7%90%D7%A1%D7%99%D7%91_(%D7%90%D7%9C%D7%91%D7%A8%D7%98%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           24.645277777,
           48.069444444
         ]
@@ -13382,22 +13302,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.894,
-          54.0467
-        ]
-      },
-      "properties": {
-        "name": "הר פיילוט",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A4%D7%99%D7%99%D7%9C%D7%95%D7%98_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           7.40222,
           43.7308
         ]
@@ -13502,22 +13406,6 @@
         "name": "הר רם",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A8%D7%9D",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.7458,
-          35.9158
-        ]
-      },
-      "properties": {
-        "name": "הר בראון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%90%D7%95%D7%9F_(%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%A0%D7%94_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%AA)",
         "poi_category": "nature"
       }
     },
@@ -14166,22 +14054,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -110.13963,
-          45.3066
-        ]
-      },
-      "properties": {
-        "name": "הר דאגלס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%93%D7%90%D7%92%D7%9C%D7%A1_(%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -123.545,
           47.698
         ]
@@ -14534,22 +14406,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.23,
-          52.380277777
-        ]
-      },
-      "properties": {
-        "name": "הר בראון",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%90%D7%95%D7%9F_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -115.1225,
           49.524722222
         ]
@@ -14574,22 +14430,6 @@
         "name": "פסגת איזבל",
         "ISO_A2": "CA",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%90%D7%99%D7%96%D7%91%D7%9C",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -113.818,
-          48.6383
-        ]
-      },
-      "properties": {
-        "name": "הר בראון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%90%D7%95%D7%9F_(%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -14798,22 +14638,6 @@
         "name": "הר קרומוול",
         "ISO_A2": "CA",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A7%D7%A8%D7%95%D7%9E%D7%95%D7%95%D7%9C_(%D7%A7%D7%A0%D7%93%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -106.298,
-          38.9039
-        ]
-      },
-      "properties": {
-        "name": "הר קולומביה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_(%D7%A7%D7%95%D7%9C%D7%95%D7%A8%D7%93%D7%95)",
         "poi_category": "nature"
       }
     },
@@ -15318,22 +15142,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -115.011388888,
-          49.613888888
-        ]
-      },
-      "properties": {
-        "name": "הר הוזמר",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%94%D7%95%D7%96%D7%9E%D7%A8_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           43.10657,
           38.24631
         ]
@@ -15342,22 +15150,6 @@
         "name": "הר ארטוס",
         "ISO_A2": "TR",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%A8%D7%98%D7%95%D7%A1",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          116.312,
-          -32.4239
-        ]
-      },
-      "properties": {
-        "name": "הר קוק",
-        "ISO_A2": "AU",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A7%D7%95%D7%A7_(%D7%90%D7%95%D7%A1%D7%98%D7%A8%D7%9C%D7%99%D7%94_%D7%94%D7%9E%D7%A2%D7%A8%D7%91%D7%99%D7%AA)",
         "poi_category": "nature"
       }
     },
@@ -15638,22 +15430,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.129166666,
-          50.551666666
-        ]
-      },
-      "properties": {
-        "name": "הר אודין",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%95%D7%93%D7%99%D7%9F_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -116.279722222,
           51.362222222
         ]
@@ -15678,22 +15454,6 @@
         "name": "הר אחירם",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%97%D7%99%D7%A8%D7%9D",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -147.146,
-          61.4853
-        ]
-      },
-      "properties": {
-        "name": "הר ת'ור",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%AA%27%D7%95%D7%A8_(%D7%90%D7%9C%D7%A1%D7%A7%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -16222,22 +15982,6 @@
         "name": "תל זהרה",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%96%D7%94%D7%A8%D7%94",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -113.642,
-          48.6006
-        ]
-      },
-      "properties": {
-        "name": "הר לוגן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%9C%D7%95%D7%92%D7%9F_(%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -17398,22 +17142,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.885277777,
-          42.8275
-        ]
-      },
-      "properties": {
-        "name": "הר טמפל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%98%D7%9E%D7%A4%D7%9C_(%D7%A0%D7%99%D7%95_%D7%94%D7%9E%D7%A4%D7%A9%D7%99%D7%99%D7%A8)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           7.713777777,
           46.541694444
         ]
@@ -17518,22 +17246,6 @@
         "name": "הר ידידיה",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%99%D7%93%D7%99%D7%93%D7%99%D7%94",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -137.317655555,
-          58.739761111
-        ]
-      },
-      "properties": {
-        "name": "הר וילבר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%95%D7%99%D7%9C%D7%91%D7%A8_(%D7%90%D7%9C%D7%A1%D7%A7%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -17942,22 +17654,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.961,
-          54.9081
-        ]
-      },
-      "properties": {
-        "name": "פסגת סנטינל",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%A1%D7%A0%D7%98%D7%99%D7%A0%D7%9C_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA,_%D7%A8%D7%9B%D7%A1%D7%99_%D7%9E%D7%99%D7%A1%D7%99%D7%A0%D7%A6%27%D7%99%D7%A0%D7%A7%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           34.858333333,
           31.034166666
         ]
@@ -18014,22 +17710,6 @@
         "name": "הר ניישן",
         "ISO_A2": "CA",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A0%D7%99%D7%99%D7%A9%D7%9F",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.810833333,
-          52.531111111
-        ]
-      },
-      "properties": {
-        "name": "הר כריסטי",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%9B%D7%A8%D7%99%D7%A1%D7%98%D7%99_(%D7%90%D7%9C%D7%91%D7%A8%D7%98%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -18134,22 +17814,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          178.2217,
-          -18.0683
-        ]
-      },
-      "properties": {
-        "name": "הר סמיית'",
-        "ISO_A2": "FJ",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A1%D7%9E%D7%99%D7%99%D7%AA%27_(%D7%A4%D7%99%D7%92%27%D7%99)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.72785,
           33.27499
         ]
@@ -18238,22 +17902,6 @@
         "name": "ג'בל נקם",
         "ISO_A2": "YE",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%91%D7%9C_%D7%A0%D7%95%D7%A7%D7%9D",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.6969,
-          43.8717
-        ]
-      },
-      "properties": {
-        "name": "הר דאגלס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%93%D7%90%D7%92%D7%9C%D7%A1_(%D7%9E%D7%99%D7%99%D7%9F)",
         "poi_category": "nature"
       }
     },
@@ -18502,22 +18150,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -106.341,
-          39.76
-        ]
-      },
-      "properties": {
-        "name": "הר פאוול",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A4%D7%90%D7%95%D7%95%D7%9C_(%D7%A7%D7%95%D7%9C%D7%95%D7%A8%D7%93%D7%95)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           33.0711,
           30.2501
         ]
@@ -18726,22 +18358,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          149.38472222,
-          -33.59861111
-        ]
-      },
-      "properties": {
-        "name": "הר בראון",
-        "ISO_A2": "AU",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%90%D7%95%D7%9F_(%D7%A0%D7%99%D7%95_%D7%A1%D7%90%D7%95%D7%AA%27_%D7%95%D7%99%D7%99%D7%9C%D7%A1)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.9575,
           33.131944444
         ]
@@ -18806,22 +18422,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          169.45,
-          -44.066
-        ]
-      },
-      "properties": {
-        "name": "הר ברוסטר",
-        "ISO_A2": "NZ",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%A8%D7%95%D7%A1%D7%98%D7%A8_(%D7%A0%D7%99%D7%95_%D7%96%D7%99%D7%9C%D7%A0%D7%93)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.989444444,
           33.128611111
         ]
@@ -18846,22 +18446,6 @@
         "name": "רכס מיטשל (הפארק הלאומי קוטניי)",
         "ISO_A2": "CA",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%9B%D7%A1_%D7%9E%D7%99%D7%98%D7%A9%D7%9C_(%D7%94%D7%A4%D7%90%D7%A8%D7%A7_%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99_%D7%A7%D7%95%D7%98%D7%A0%D7%99%D7%99)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.6846,
-          49.8641
-        ]
-      },
-      "properties": {
-        "name": "הר בלדר",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%9C%D7%93%D7%A8_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
         "poi_category": "nature"
       }
     },
@@ -19006,22 +18590,6 @@
         "name": "פיקו סן חואן",
         "ISO_A2": "CU",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A7%D7%95_%D7%A1%D7%9F_%D7%97%D7%95%D7%90%D7%9F",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -124.884166666,
-          57.903611111
-        ]
-      },
-      "properties": {
-        "name": "הר סמיית'",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A1%D7%9E%D7%99%D7%99%D7%AA%27_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
         "poi_category": "nature"
       }
     },
@@ -19382,22 +18950,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.581388888,
-          50.416666666
-        ]
-      },
-      "properties": {
-        "name": "פסגת סירק",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%A1%D7%99%D7%A8%D7%A7_(%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%94_%D7%94%D7%91%D7%A8%D7%99%D7%98%D7%99%D7%AA)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.484444444,
           32.895277777
         ]
@@ -19454,22 +19006,6 @@
         "name": "גבעת עמרם",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%A2%D7%AA_%D7%A2%D7%9E%D7%A8%D7%9D",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          170.361,
-          -43.507
-        ]
-      },
-      "properties": {
-        "name": "הר איילמר",
-        "ISO_A2": "NZ",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%99%D7%99%D7%9C%D7%9E%D7%A8_(%D7%A0%D7%99%D7%95_%D7%96%D7%99%D7%9C%D7%A0%D7%93)",
         "poi_category": "nature"
       }
     },
@@ -19670,38 +19206,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.23703,
-          36.47688
-        ]
-      },
-      "properties": {
-        "name": "פסגת סירק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%A1%D7%99%D7%A8%D7%A7_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -90.599444444,
-          37.628333333
-        ]
-      },
-      "properties": {
-        "name": "הר אנדרסון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%A0%D7%93%D7%A8%D7%A1%D7%95%D7%9F_(%D7%9E%D7%99%D7%96%D7%95%D7%A8%D7%99)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.415,
           32.991388888
         ]
@@ -19878,22 +19382,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -68.1880103,
-          44.3338009
-        ]
-      },
-      "properties": {
-        "name": "הר ביהייב",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%91%D7%99%D7%94%D7%99%D7%99%D7%91_(%D7%9E%D7%99%D7%99%D7%9F)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.03027,
           29.97874
         ]
@@ -19942,22 +19430,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.704722222,
-          42.314722222
-        ]
-      },
-      "properties": {
-        "name": "הר וורן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%95%D7%95%D7%A8%D7%9F_(%D7%A0%D7%99%D7%95_%D7%99%D7%95%D7%A8%D7%A7)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.460583333,
           32.938833333
         ]
@@ -19966,22 +19438,6 @@
         "name": "מצפה ימים",
         "ISO_A2": "IL",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A6%D7%A4%D7%94_%D7%99%D7%9E%D7%99%D7%9D",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -120.96538,
-          47.75761
-        ]
-      },
-      "properties": {
-        "name": "הר ארוהד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%90%D7%A8%D7%95%D7%94%D7%93_(%D7%95%D7%95%D7%A9%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F)",
         "poi_category": "nature"
       }
     },
@@ -20102,22 +19558,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -136.5625,
-          58.992777777
-        ]
-      },
-      "properties": {
-        "name": "פסגת סנטינל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%A1%D7%A0%D7%98%D7%99%D7%A0%D7%9C_(%D7%90%D7%9C%D7%A1%D7%A7%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -22.2725,
           63.905
         ]
@@ -20214,22 +19654,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          172.685,
-          -42.479
-        ]
-      },
-      "properties": {
-        "name": "הר וולי",
-        "ISO_A2": "NZ",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%95%D7%95%D7%9C%D7%99_(%D7%A0%D7%99%D7%95_%D7%96%D7%99%D7%9C%D7%A0%D7%93)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           35.991944444,
           33.062777777
         ]
@@ -20238,38 +19662,6 @@
         "name": "תל אל-חארה",
         "ISO_A2": "SY",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%9C_%D7%90%D7%9C-%D7%97%D7%90%D7%A8%D7%94",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -90.695277777,
-          37.573055555
-        ]
-      },
-      "properties": {
-        "name": "הר ראסל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A8%D7%90%D7%A1%D7%9C_(%D7%9E%D7%99%D7%96%D7%95%D7%A8%D7%99)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          117.96,
-          4.42
-        ]
-      },
-      "properties": {
-        "name": "הר מריה",
-        "ISO_A2": "MY",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%9E%D7%A8%D7%99%D7%94_(%D7%9E%D7%9C%D7%96%D7%99%D7%94)",
         "poi_category": "nature"
       }
     },
@@ -20334,22 +19726,6 @@
         "name": "הר חומש",
         "ISO_A2": "PS",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%97%D7%95%D7%9E%D7%A9",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -119.7113,
-          48.761
-        ]
-      },
-      "properties": {
-        "name": "הר דאגלס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%93%D7%90%D7%92%D7%9C%D7%A1_(%D7%95%D7%95%D7%A9%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F)",
         "poi_category": "nature"
       }
     },
@@ -20461,22 +19837,6 @@
       "properties": {
         "name": "מון בלאן",
         "ISO_A2": "IT",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%9F_%D7%91%D7%9C%D7%90%D7%9F",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.865,
-          45.832777777
-        ]
-      },
-      "properties": {
-        "name": "מון בלאן",
-        "ISO_A2": "FR",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%9F_%D7%91%D7%9C%D7%90%D7%9F",
         "poi_category": "nature"
       }
@@ -20822,22 +20182,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          86.925,
-          27.988055555
-        ]
-      },
-      "properties": {
-        "name": "אוורסט",
-        "ISO_A2": "CN",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%95%D7%A8%D7%A1%D7%98",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           131.036111111,
           -25.345
         ]
@@ -21030,22 +20374,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          170.141944444,
-          -43.595
-        ]
-      },
-      "properties": {
-        "name": "הר קוק",
-        "ISO_A2": "NZ",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A8_%D7%A7%D7%95%D7%A7",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           8.005286822,
           46.577607529
         ]
@@ -21054,22 +20382,6 @@
         "name": "אייגר",
         "ISO_A2": "CH",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99%D7%92%D7%A8",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -61.183333333,
-          13.333333333
-        ]
-      },
-      "properties": {
-        "name": "לה סופרייר",
-        "ISO_A2": "VC",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%94_%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%99%D7%A8_(%D7%A1%D7%A0%D7%98_%D7%95%D7%99%D7%A0%D7%A1%D7%A0%D7%98)",
         "poi_category": "nature"
       }
     },
@@ -21374,22 +20686,6 @@
         "name": "פינסטרארהורן",
         "ISO_A2": "CH",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A0%D7%A1%D7%98%D7%A8%D7%90%D7%A8%D7%94%D7%95%D7%A8%D7%9F",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          114.143827777,
-          22.275469444
-        ]
-      },
-      "properties": {
-        "name": "פסגת ויקטוריה",
-        "ISO_A2": "CN",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A1%D7%92%D7%AA_%D7%95%D7%99%D7%A7%D7%98%D7%95%D7%A8%D7%99%D7%94",
         "poi_category": "nature"
       }
     },
@@ -22598,22 +21894,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.749722222,
-          54.8525
-        ]
-      },
-      "properties": {
-        "name": "נרץ'",
-        "ISO_A2": "BY",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%A8%D7%A5%27_(%D7%90%D7%92%D7%9D)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -21.157322409,
           64.188518665
         ]
@@ -23470,22 +22750,6 @@
         "name": "אגם אלמנטייטה",
         "ISO_A2": "KE",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9D_%D7%90%D7%9C%D7%9E%D7%A0%D7%98%D7%99%D7%99%D7%98%D7%94",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          19.0875,
-          43.143333333
-        ]
-      },
-      "properties": {
-        "name": "האגם השחור",
-        "ISO_A2": "ME",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%92%D7%9D_%D7%94%D7%A9%D7%97%D7%95%D7%A8_(%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%92%D7%A8%D7%95)",
         "poi_category": "nature"
       }
     },
@@ -25750,38 +25014,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -118.096,
-          52.9225
-        ]
-      },
-      "properties": {
-        "name": "אגם פירמיד",
-        "ISO_A2": "CA",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9D_%D7%A4%D7%99%D7%A8%D7%9E%D7%99%D7%93_(%D7%90%D7%9C%D7%91%D7%A8%D7%98%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -65.894441666,
-          -23.63325
-        ]
-      },
-      "properties": {
-        "name": "סלינאס גראנדס",
-        "ISO_A2": "AR",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9C%D7%99%D7%A0%D7%90%D7%A1_%D7%92%D7%A8%D7%90%D7%A0%D7%93%D7%A1_(%D7%A6%D7%A4%D7%95%D7%9F-%D7%9E%D7%A2%D7%A8%D7%91_%D7%90%D7%A8%D7%92%D7%A0%D7%98%D7%99%D7%A0%D7%94)",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           13.3,
           37.973
         ]
@@ -26846,22 +26078,6 @@
         "name": "ברוד ביי",
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%95%D7%93_%D7%91%D7%99%D7%99",
-        "poi_category": "nature"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -114.889,
-          43.998
-        ]
-      },
-      "properties": {
-        "name": "אגם מקדונלד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%92%D7%9D_%D7%9E%D7%A7%D7%93%D7%95%D7%A0%D7%9C%D7%93_(%D7%90%D7%99%D7%99%D7%93%D7%94%D7%95)",
         "poi_category": "nature"
       }
     },
