@@ -31,7 +31,6 @@
         #search-settings label { display: block; margin-bottom: 8px; cursor: pointer; }
         #search-settings label:last-child { margin-bottom: 0; }
         #search-settings input[type="radio"], #search-settings input[type="checkbox"] { margin-left: 8px; accent-color: #3b82f6; }
-        
         #local-search-container { display: none; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; font-weight: bold; color: #1d4ed8; }
 
         #suggestions { position: absolute; top: calc(100% + 2px); right: 0; width: 100%; background: #fff; border: 1px solid #ddd; border-radius: 6px; max-height: 250px; overflow-y: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.15); display: none; z-index: 10; }
@@ -75,10 +74,11 @@
         .toggle-more-btn { background: none; border: none; color: #3b82f6; font-weight: bold; font-size: 14px; cursor: pointer; padding: 0; margin: 10px 0 15px 0; font-family: inherit; }
         .toggle-more-btn:hover { text-decoration: underline; }
 
-        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; }
+        #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; resize: vertical; overflow: auto; min-height: 60px; max-height: 300px; }
         .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
         .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
+        /* המקרא החדש - בידוד בלחיצה */
         #poi-legend {
             position: absolute; bottom: 20px; left: 20px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
@@ -91,7 +91,7 @@
         
         .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; padding: 4px 6px; border-radius: 6px; transition: background 0.2s, opacity 0.2s; }
         .legend-item:hover { background-color: #f0f7ff; }
-        .legend-item.dimmed { opacity: 0.4; }
+        .legend-item.dimmed { opacity: 0.3; }
         
         .legend-item input[type="checkbox"] { display: none; margin-left: 8px; cursor: pointer; width: 16px; height: 16px; accent-color: #3b82f6; }
         #poi-legend.advanced-mode .legend-item input[type="checkbox"] { display: inline-block; }
@@ -263,7 +263,7 @@
         
         const searchIndex = [];
         let activePopup = null;
-        let activePOIFeature = null; // למעקב אחרי השיתוף העמוק
+        let activePOIFeature = null; 
         
         let isComparingMode = false;
         let baseCompareFeature = null;
@@ -294,7 +294,7 @@
 
         function openPOIPopup(feature, coordinates) {
             if (activePopup) activePopup.remove();
-            activePOIFeature = feature; // שמירה לשיתוף
+            activePOIFeature = feature; 
             const props = feature.properties;
             let wikiTitle = props.name;
             if (props.wiki_url && props.wiki_url.includes('/wiki/')) wikiTitle = decodeURIComponent(props.wiki_url.split('/wiki/')[1]);
@@ -353,6 +353,7 @@
             updatePOIFilters(currentLoadedISO);
         });
 
+        // עדכון התנהגות המקרא לפי הבקשה: לחיצה מבודדת, לחיצה שנייה מחזירה הכל.
         legendItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 if (isAdvancedLegend) return; 
@@ -501,7 +502,7 @@
                 addPOItoSearch(f, f.properties.poi_category, dt);
             });
 
-            // מנוע טעינת קישורים עמוקים!
+            // מנגנון הטעינה דרך קישור מעודכן ל-Deep Links עבור POIs
             if (window.location.hash) {
                 const hash = decodeURIComponent(window.location.hash.substring(1));
                 if (hash.startsWith('POI-')) {
@@ -510,14 +511,15 @@
                         const iso = parts[1];
                         const poiName = parts.slice(2).join('-');
                         if (globalData.has(iso)) {
-                            loadFeature(iso); // טוען את המדינה תחילה
+                            loadFeature(iso);
                             setTimeout(() => {
                                 const poiMatch = searchIndex.find(item => item.code === iso && item.name === poiName && item.feature);
                                 if (poiMatch) {
-                                    map.flyTo({ center: poiMatch.feature.geometry.coordinates, zoom: 7 });
+                                    // זום ייעודי וממוקד על האתר
+                                    map.flyTo({ center: poiMatch.feature.geometry.coordinates, zoom: 14 });
                                     setTimeout(() => openPOIPopup(poiMatch.feature, poiMatch.feature.geometry.coordinates), 500);
                                 }
-                            }, 1000); // נותן למדינה להיטען לפני שקופצים לנקודה
+                            }, 1000); 
                         }
                     }
                 } else if (hash.includes('-')) {
@@ -662,7 +664,6 @@
             const targetLayer = data.isSea ? 'seas-highlight' : 'countries-highlight';
             map.setFilter(targetLayer, ['any', ['==', 'ISO_A2', iso], ['==', 'iso_a2', iso]]);
             
-            // עדכון צ'קבוקס חיפוש לוקאלי
             const localCbContainer = document.getElementById('local-search-container');
             const localCbLabel = document.getElementById('local-search-label');
             if (!data.isSea && !data.isDisputed) {
@@ -824,7 +825,7 @@
                 if (filterVal === 'seas' && i.type === 'sea') return true;
                 if (filterVal === 'cities' && ['capital', 'major_city', 'city'].includes(i.type)) return true;
                 if (filterVal === 'capitals' && i.type === 'capital') return true;
-                if (filterVal === 'places' && ['nature', 'history', 'monument'].includes(i.type)) return true;
+                if (filterVal === 'places' && ['nature', 'history', 'monument', 'place'].includes(i.type)) return true;
                 return false;
             }).slice(0, 15);
             
@@ -838,7 +839,8 @@
                     
                     if (m.feature) {
                         if (currentLoadedISO !== m.code) loadFeature(m.code);
-                        map.flyTo({ center: m.feature.geometry.coordinates, zoom: 7 });
+                        // זום ממוקד ישירות לאתר/עיר (רמה 14)
+                        map.flyTo({ center: m.feature.geometry.coordinates, zoom: 14 });
                         setTimeout(() => openPOIPopup(m.feature, m.feature.geometry.coordinates), 500);
                     } else {
                         const targetData = globalData.get(m.code);
@@ -865,7 +867,7 @@
                 if (filterVal === 'countries' && item.type === 'country') return true;
                 if (filterVal === 'cities' && ['capital', 'major_city', 'city'].includes(item.type)) return true;
                 if (filterVal === 'capitals' && item.type === 'capital') return true;
-                if (filterVal === 'places' && ['nature', 'history', 'monument'].includes(item.type)) return true;
+                if (filterVal === 'places' && ['nature', 'history', 'monument', 'place'].includes(item.type)) return true;
                 return false;
             });
 
@@ -873,7 +875,7 @@
                 let rand = pool[Math.floor(Math.random() * pool.length)];
                 if (rand.feature) {
                     if (currentLoadedISO !== rand.code) loadFeature(rand.code);
-                    map.flyTo({ center: rand.feature.geometry.coordinates, zoom: 7 });
+                    map.flyTo({ center: rand.feature.geometry.coordinates, zoom: 14 });
                     setTimeout(() => openPOIPopup(rand.feature, rand.feature.geometry.coordinates), 500);
                 } else {
                     loadFeature(rand.code);
@@ -945,19 +947,18 @@
         document.getElementById('close-compare-modal').onclick = closeCompare;
         document.getElementById('compare-backdrop').onclick = closeCompare;
 
+        // מערכת שיתוף משופרת ל-Deep Linking
         const handleShare = async () => {
             let url = window.location.origin + window.location.pathname;
             let shareTitle = 'Atlas Beta';
             let shareText = 'בדקו את האטלס!';
             
             if (activePopup && activePopup.isOpen() && activePOIFeature) {
-                // שיתוף נקודת עניין ספציפית
                 const poiName = activePOIFeature.properties.name;
                 url += `#POI-${currentLoadedISO}-${encodeURIComponent(poiName)}`;
                 shareTitle = poiName;
                 shareText = `בדקו את ${poiName} ב-Atlas Beta!`;
             } else if (currentLoadedISO) {
-                // שיתוף מדינה רגילה
                 url += `#${currentLoadedISO}`;
                 const countryName = document.getElementById('country-name').innerText;
                 shareTitle = countryName;
@@ -974,6 +975,7 @@
             }
         };
         document.getElementById('share-btn').onclick = handleShare;
+        
         document.getElementById('share-compare-btn').onclick = () => {
             let url = window.location.origin + window.location.pathname + window.location.hash;
             if (navigator.share) {
