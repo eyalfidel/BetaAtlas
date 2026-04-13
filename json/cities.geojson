@@ -77059,7 +77059,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%95%D7%A9%D7%94",
         "population": 99986,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77076,7 +77076,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%90%D7%A0%D7%92%27%D7%9C%D7%95",
         "population": 99893,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77093,7 +77093,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9B%D7%A8%D7%9E%D7%9C_(%D7%90%D7%99%D7%A0%D7%93%D7%99%D7%90%D7%A0%D7%94)",
         "population": 99757,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77110,7 +77110,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A1%D7%A7%D7%9C%D7%95%D7%A1%D7%94",
         "population": 99600,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77127,7 +77127,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A0%D7%93_(%D7%90%D7%95%D7%A8%D7%92%D7%95%D7%9F)",
         "population": 99178,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77144,7 +77144,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A9%D7%A8%D7%A1",
         "population": 98977,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77161,7 +77161,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%9D",
         "population": 98129,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77178,7 +77178,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98%D7%A1%D7%9E%D7%95%D7%AA%27_(%D7%95%D7%99%D7%A8%D7%92%27%D7%99%D7%A0%D7%99%D7%94)",
         "population": 97915,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77195,7 +77195,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%A7%D7%94_%D7%A8%D7%98%D7%95%D7%9F",
         "population": 97422,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -77212,7 +77212,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%A7%D7%99%D7%9E%D7%94",
         "population": 96968,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -78725,7 +78725,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98%D7%9C%D7%A0%D7%93_(%D7%9E%D7%99%D7%99%D7%9F)",
         "population": 68408,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -79660,7 +79660,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A8%D7%95%D7%9D-%D7%9E%D7%96%D7%A8%D7%97_%D7%90%D7%A1%D7%99%D7%94",
         "population": 684414205,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -79677,75 +79677,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%A6%D7%95%D7%AA_%D7%94%D7%91%D7%A8%D7%99%D7%AA",
         "population": 340110988,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -90.0,
-          41.0
-        ]
-      },
-      "properties": {
-        "name": "המערב התיכון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%A2%D7%A8%D7%91_%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F",
-        "population": 68985454,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -120.0,
-          37.0
-        ]
-      },
-      "properties": {
-        "name": "קליפורניה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94",
-        "population": 39538223,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -100.0,
-          31.0
-        ]
-      },
-      "properties": {
-        "name": "טקסס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A7%D7%A1%D7%A1",
-        "population": 29145505,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.631666666,
-          28.133333333
-        ]
-      },
-      "properties": {
-        "name": "פלורידה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%95%D7%A8%D7%99%D7%93%D7%94",
-        "population": 21538187,
-        "poi_category": "major_city"
+        "poi_category": "city"
       }
     },
     {
@@ -79770,23 +79702,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -74.020277777,
-          40.808611111
-        ]
-      },
-      "properties": {
-        "name": "המטרופולין של ניו יורק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A0%D7%99%D7%95_%D7%99%D7%95%D7%A8%D7%A7",
-        "population": 19940274,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -118.0,
           34.0
         ]
@@ -79796,193 +79711,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A1_%D7%90%D7%A0%D7%92%27%D7%9C%D7%A1_%D7%A8%D7%91%D7%AA%D7%99",
         "population": 18644680,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.306425,
-          44.205555555
-        ]
-      },
-      "properties": {
-        "name": "ניו אינגלנד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%90%D7%99%D7%A0%D7%92%D7%9C%D7%A0%D7%93",
-        "population": 14845063,
-        "poi_category": "major_city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.5,
-          41.0
-        ]
-      },
-      "properties": {
-        "name": "פנסילבניה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%A0%D7%A1%D7%99%D7%9C%D7%91%D7%A0%D7%99%D7%94",
-        "population": 13002700,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -89.250277777,
-          40.000277777
-        ]
-      },
-      "properties": {
-        "name": "אילינוי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%9C%D7%99%D7%A0%D7%95%D7%99",
-        "population": 12812508,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.5,
-          40.5
-        ]
-      },
-      "properties": {
-        "name": "אוהיו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%94%D7%99%D7%95",
-        "population": 11799448,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.5,
-          33.0
-        ]
-      },
-      "properties": {
-        "name": "ג'ורג'יה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%95%D7%A8%D7%92%27%D7%99%D7%94",
-        "population": 10711908,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -80.0,
-          35.5
-        ]
-      },
-      "properties": {
-        "name": "קרוליינה הצפונית",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%99%D7%A0%D7%94_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%AA",
-        "population": 10439388,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -85.58,
-          44.34
-        ]
-      },
-      "properties": {
-        "name": "מישיגן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A9%D7%99%D7%92%D7%9F",
-        "population": 10077331,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.25,
-          34.05
-        ]
-      },
-      "properties": {
-        "name": "מחוז לוס אנג'לס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%95%D7%A1_%D7%90%D7%A0%D7%92%27%D7%9C%D7%A1",
-        "population": 10014009,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.65,
-          41.899722222
-        ]
-      },
-      "properties": {
-        "name": "המטרופולין של שיקגו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A9%D7%9C_%D7%A9%D7%99%D7%A7%D7%92%D7%95",
-        "population": 9618502,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.5,
-          40.0
-        ]
-      },
-      "properties": {
-        "name": "ניו ג'רזי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%92%27%D7%A8%D7%96%D7%99",
-        "population": 9288994,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -79.0,
-          37.5
-        ]
-      },
-      "properties": {
-        "name": "וירג'יניה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A8%D7%92%27%D7%99%D7%A0%D7%99%D7%94",
-        "population": 8631393,
         "poi_category": "city"
       }
     },
@@ -80008,23 +79736,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.37,
-          37.81
-        ]
-      },
-      "properties": {
-        "name": "אזור מפרץ סן פרנסיסקו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%96%D7%95%D7%A8_%D7%9E%D7%A4%D7%A8%D7%A5_%D7%A1%D7%9F_%D7%A4%D7%A8%D7%A0%D7%A1%D7%99%D7%A1%D7%A7%D7%95",
-        "population": 7765640,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -120.5,
           47.5
         ]
@@ -80042,91 +79753,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -97.0326,
-          32.763
-        ]
-      },
-      "properties": {
-        "name": "מטרופולין דאלאס-פורט וורת'-ארלינגטון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%93%D7%90%D7%9C%D7%90%D7%A1-%D7%A4%D7%95%D7%A8%D7%98_%D7%95%D7%95%D7%A8%D7%AA%27-%D7%90%D7%A8%D7%9C%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F",
-        "population": 7637387,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.656944444,
-          34.286666666
-        ]
-      },
-      "properties": {
-        "name": "אריזונה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%96%D7%95%D7%A0%D7%94",
-        "population": 7151502,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.8,
-          42.3
-        ]
-      },
-      "properties": {
-        "name": "מסצ'וסטס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A6%27%D7%95%D7%A1%D7%98%D7%A1",
-        "population": 7029917,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.0,
-          36.0
-        ]
-      },
-      "properties": {
-        "name": "טנסי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%A0%D7%A1%D7%99",
-        "population": 6910840,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.216666666,
-          39.933333333
-        ]
-      },
-      "properties": {
-        "name": "אינדיאנה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%93%D7%99%D7%90%D7%A0%D7%94",
-        "population": 6785528,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -77.046666666,
           38.89
         ]
@@ -80136,40 +79762,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%95%D7%A9%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F_%D7%A8%D7%91%D7%AA%D7%99",
         "population": 6385162,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.7,
-          39.0
-        ]
-      },
-      "properties": {
-        "name": "מרילנד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A8%D7%99%D7%9C%D7%A0%D7%93",
-        "population": 6177224,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -92.5,
-          38.5
-        ]
-      },
-      "properties": {
-        "name": "מיזורי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%96%D7%95%D7%A8%D7%99",
-        "population": 6154913,
         "poi_category": "city"
       }
     },
@@ -80212,108 +79804,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -89.5,
-          44.5
-        ]
-      },
-      "properties": {
-        "name": "ויסקונסין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A1%D7%A7%D7%95%D7%A0%D7%A1%D7%99%D7%9F",
-        "population": 5893718,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.5,
-          39.0
-        ]
-      },
-      "properties": {
-        "name": "קולורדו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%9C%D7%95%D7%A8%D7%93%D7%95",
-        "population": 5773714,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.0,
-          46.0
-        ]
-      },
-      "properties": {
-        "name": "מינסוטה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A0%D7%A1%D7%95%D7%98%D7%94",
-        "population": 5706494,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.716666666,
-          41.8
-        ]
-      },
-      "properties": {
-        "name": "מחוז קוק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%95%D7%A7_(%D7%90%D7%99%D7%9C%D7%99%D7%A0%D7%95%D7%99)",
-        "population": 5275541,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.0,
-          34.0
-        ]
-      },
-      "properties": {
-        "name": "קרוליינה הדרומית",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%99%D7%A0%D7%94_%D7%94%D7%93%D7%A8%D7%95%D7%9E%D7%99%D7%AA",
-        "population": 5118425,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.7,
-          32.7
-        ]
-      },
-      "properties": {
-        "name": "אלבמה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%91%D7%9E%D7%94",
-        "population": 5024279,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -71.065,
           42.355
         ]
@@ -80348,57 +79838,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -92.0,
-          31.0
-        ]
-      },
-      "properties": {
-        "name": "לואיזיאנה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%90%D7%99%D7%96%D7%99%D7%90%D7%A0%D7%94",
-        "population": 4657757,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.93,
-          34.1216
-        ]
-      },
-      "properties": {
-        "name": "מטרופולין ריברסייד-סן ברנרדינו-אונטריו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A8%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%99%D7%93-%D7%A1%D7%9F_%D7%91%D7%A8%D7%A0%D7%A8%D7%93%D7%99%D7%A0%D7%95-%D7%90%D7%95%D7%A0%D7%98%D7%A8%D7%99%D7%95",
-        "population": 4599839,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -85.0,
-          37.5
-        ]
-      },
-      "properties": {
-        "name": "קנטקי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%98%D7%A7%D7%99",
-        "population": 4505836,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -112.475833333,
           33.513888888
         ]
@@ -80416,40 +79855,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -120.575,
-          43.935833333
-        ]
-      },
-      "properties": {
-        "name": "אורגון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%92%D7%95%D7%9F",
-        "population": 4237256,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -98.0,
-          35.5
-        ]
-      },
-      "properties": {
-        "name": "אוקלהומה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A7%D7%9C%D7%94%D7%95%D7%9E%D7%94",
-        "population": 3959353,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -118.24368,
           34.05223
         ]
@@ -80459,58 +79864,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%95%D7%A1_%D7%90%D7%A0%D7%92%27%D7%9C%D7%A1",
         "population": 3898747,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.2,
-          44.95
-        ]
-      },
-      "properties": {
-        "name": "מטרופולין מיניאפוליס–סנט פול",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%9E%D7%99%D7%A0%D7%99%D7%90%D7%A4%D7%95%D7%9C%D7%99%D7%A1%E2%80%93%D7%A1%D7%99%D7%99%D7%A0%D7%98_%D7%A4%D7%95%D7%9C",
-        "population": 3690261,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -72.7,
-          41.6
-        ]
-      },
-      "properties": {
-        "name": "קונטיקט",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A0%D7%98%D7%99%D7%A7%D7%98",
-        "population": 3605944,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.77,
-          33.02
-        ]
-      },
-      "properties": {
-        "name": "מחוז סן דייגו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%9F_%D7%93%D7%99%D7%99%D7%92%D7%95",
-        "population": 3298634,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -80535,142 +79889,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -111.5,
-          39.5
-        ]
-      },
-      "properties": {
-        "name": "יוטה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%98%D7%94",
-        "population": 3271616,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.0,
-          42.0
-        ]
-      },
-      "properties": {
-        "name": "איווה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%95%D7%95%D7%94",
-        "population": 3190369,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.78,
-          33.67
-        ]
-      },
-      "properties": {
-        "name": "מחוז אורנג'",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%95%D7%A8%D7%A0%D7%92%27_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
-        "population": 3186989,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.3,
-          28.0
-        ]
-      },
-      "properties": {
-        "name": "אזור מפרץ טמפה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%96%D7%95%D7%A8_%D7%9E%D7%A4%D7%A8%D7%A5_%D7%98%D7%9E%D7%A4%D7%94",
-        "population": 3175275,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.0,
-          39.0
-        ]
-      },
-      "properties": {
-        "name": "נבדה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%91%D7%93%D7%94",
-        "population": 3104614,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -92.2,
-          34.8
-        ]
-      },
-      "properties": {
-        "name": "ארקנסו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%A7%D7%A0%D7%A1%D7%95",
-        "population": 3011524,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -90.0,
-          33.0
-        ]
-      },
-      "properties": {
-        "name": "מיסיסיפי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A1%D7%99%D7%A1%D7%99%D7%A4%D7%99_(%D7%9E%D7%93%D7%99%D7%A0%D7%94)",
-        "population": 2961279,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -98.0,
-          38.5
-        ]
-      },
-      "properties": {
-        "name": "קנזס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%96%D7%A1",
-        "population": 2937880,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -87.627777777,
           41.881944444
         ]
@@ -80680,7 +79898,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A9%D7%99%D7%A7%D7%92%D7%95",
         "population": 2746388,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -80697,40 +79915,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%95%D7%A7%D7%9C%D7%99%D7%9F",
         "population": 2736074,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -80.193611111,
-          25.774166666
-        ]
-      },
-      "properties": {
-        "name": "מחוז מיאמי-דייד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%99%D7%90%D7%9E%D7%99-%D7%93%D7%99%D7%99%D7%93",
-        "population": 2701767,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.98,
-          33.73
-        ]
-      },
-      "properties": {
-        "name": "מחוז ריברסייד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A8%D7%99%D7%91%D7%A8%D7%A1%D7%99%D7%99%D7%93",
-        "population": 2418185,
         "poi_category": "city"
       }
     },
@@ -80765,41 +79949,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%A1%D7%98%D7%95%D7%9F",
         "population": 2304580,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.84,
-          47.47
-        ]
-      },
-      "properties": {
-        "name": "מחוז קינג",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%99%D7%A0%D7%92",
-        "population": 2269675,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.02,
-          36.2
-        ]
-      },
-      "properties": {
-        "name": "מחוז קלארק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%9C%D7%90%D7%A8%D7%A7_(%D7%A0%D7%91%D7%93%D7%94)",
-        "population": 2265461,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -80816,108 +79966,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%9C%D7%99%D7%A0%D7%96%D7%99%D7%94",
         "population": 2228747,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.58,
-          39.1
-        ]
-      },
-      "properties": {
-        "name": "המטרופולין של קנזס סיטי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A9%D7%9C_%D7%A7%D7%A0%D7%96%D7%A1_%D7%A1%D7%99%D7%98%D7%99",
-        "population": 2192035,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -116.19,
-          34.83
-        ]
-      },
-      "properties": {
-        "name": "מחוז סן ברנרדינו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%9F_%D7%91%D7%A8%D7%A0%D7%A8%D7%93%D7%99%D7%A0%D7%95",
-        "population": 2181654,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -106.0,
-          34.0
-        ]
-      },
-      "properties": {
-        "name": "ניו מקסיקו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%9E%D7%A7%D7%A1%D7%99%D7%A7%D7%95",
-        "population": 2117522,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -100.0,
-          41.5
-        ]
-      },
-      "properties": {
-        "name": "נברסקה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%91%D7%A8%D7%A1%D7%A7%D7%94",
-        "population": 1961504,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -121.97,
-          37.36
-        ]
-      },
-      "properties": {
-        "name": "מחוז סנטה קלרה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%A0%D7%98%D7%94_%D7%A7%D7%9C%D7%A8%D7%94",
-        "population": 1936259,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -114.0,
-          45.0
-        ]
-      },
-      "properties": {
-        "name": "איידהו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%99%D7%93%D7%94%D7%95",
-        "population": 1839106,
         "poi_category": "city"
       }
     },
@@ -80943,40 +79991,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.5,
-          39.0
-        ]
-      },
-      "properties": {
-        "name": "וירג'יניה המערבית",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%A8%D7%92%27%D7%99%D7%A0%D7%99%D7%94_%D7%94%D7%9E%D7%A2%D7%A8%D7%91%D7%99%D7%AA",
-        "population": 1793716,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.0,
-          40.716666666
-        ]
-      },
-      "properties": {
-        "name": "מחוז ניו יורק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A0%D7%99%D7%95_%D7%99%D7%95%D7%A8%D7%A7",
-        "population": 1694251,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -112.073888888,
           33.448333333
         ]
@@ -80986,7 +80000,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%A0%D7%99%D7%A7%D7%A1",
         "population": 1608139,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81003,7 +80017,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%9C%D7%93%D7%9C%D7%A4%D7%99%D7%94",
         "population": 1603797,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81020,23 +80034,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%91%D7%A8%D7%95%D7%A0%D7%A7%D7%A1",
         "population": 1472654,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -158.0,
-          21.5
-        ]
-      },
-      "properties": {
-        "name": "הוואי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%95%D7%95%D7%90%D7%99",
-        "population": 1455271,
         "poi_category": "city"
       }
     },
@@ -81071,24 +80068,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%90%D7%A0%D7%98%D7%95%D7%A0%D7%99%D7%95",
         "population": 1434625,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.638055555,
-          40.747222222
-        ]
-      },
-      "properties": {
-        "name": "מחוז נסאו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A0%D7%A1%D7%90%D7%95_(%D7%A0%D7%99%D7%95_%D7%99%D7%95%D7%A8%D7%A7)",
-        "population": 1395774,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81105,58 +80085,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%93%D7%99%D7%99%D7%92%D7%95",
         "population": 1386932,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.5,
-          44.0
-        ]
-      },
-      "properties": {
-        "name": "ניו המפשייר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%94%D7%9E%D7%A4%D7%A9%D7%99%D7%99%D7%A8",
-        "population": 1377529,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -69.0,
-          45.5
-        ]
-      },
-      "properties": {
-        "name": "מיין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%99%D7%9F",
-        "population": 1362359,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.000277777,
-          39.953611111
-        ]
-      },
-      "properties": {
-        "name": "מחוז פרנקלין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%A8%D7%A0%D7%A7%D7%9C%D7%99%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 1323807,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81173,143 +80102,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%90%D7%9C%D7%90%D7%A1",
         "population": 1304379,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -97.78,
-          30.33
-        ]
-      },
-      "properties": {
-        "name": "מחוז טראוויס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%98%D7%A8%D7%90%D7%95%D7%95%D7%99%D7%A1",
-        "population": 1290188,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.266666666,
-          44.975833333
-        ]
-      },
-      "properties": {
-        "name": "מחוז הנפין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%94%D7%A0%D7%A4%D7%99%D7%9F",
-        "population": 1281565,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.66,
-          41.54
-        ]
-      },
-      "properties": {
-        "name": "מחוז קייאהוגה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%99%D7%99%D7%90%D7%94%D7%95%D7%92%D7%94",
-        "population": 1264817,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.93,
-          40.67
-        ]
-      },
-      "properties": {
-        "name": "מחוז סולט לייק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%95%D7%9C%D7%98_%D7%9C%D7%99%D7%99%D7%A7",
-        "population": 1185238,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.28,
-          38.83
-        ]
-      },
-      "properties": {
-        "name": "מחוז פיירפקס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%99%D7%99%D7%A8%D7%A4%D7%A7%D7%A1",
-        "population": 1150309,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.5,
-          41.7
-        ]
-      },
-      "properties": {
-        "name": "רוד איילנד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%95%D7%93_%D7%90%D7%99%D7%99%D7%9C%D7%A0%D7%93",
-        "population": 1097379,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -110.0,
-          47.0
-        ]
-      },
-      "properties": {
-        "name": "מונטנה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A0%D7%98%D7%A0%D7%94",
-        "population": 1084225,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -157.966666666,
-          21.466666666
-        ]
-      },
-      "properties": {
-        "name": "מחוז הונולולו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%94%D7%95%D7%A0%D7%95%D7%9C%D7%95%D7%9C%D7%95",
-        "population": 1016508,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81326,41 +80119,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%97%D7%95%D7%96%D7%94_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
         "population": 1013240,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.775,
-          41.15
-        ]
-      },
-      "properties": {
-        "name": "מחוז וסטצ'סטר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%95%D7%A1%D7%98%D7%A6%27%D7%A1%D7%98%D7%A8",
-        "population": 1004457,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.5,
-          39.0
-        ]
-      },
-      "properties": {
-        "name": "דלאוור",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%9C%D7%90%D7%95%D7%95%D7%A8",
-        "population": 989948,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81394,7 +80153,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A1%D7%98%D7%99%D7%9F",
         "population": 961855,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81411,7 +80170,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%92%27%D7%A7%D7%A1%D7%95%D7%A0%D7%95%D7%95%D7%99%D7%9C",
         "population": 949611,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81428,24 +80187,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%95%D7%A8%D7%98_%D7%95%D7%95%D7%A8%D7%AA%27",
         "population": 918915,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.72,
-          35.34
-        ]
-      },
-      "properties": {
-        "name": "מחוז קרן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%A8%D7%9F",
-        "population": 909235,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81496,24 +80238,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%93%D7%99%D7%90%D7%A0%D7%A4%D7%95%D7%9C%D7%99%D7%A1",
         "population": 887642,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -100.0,
-          44.5
-        ]
-      },
-      "properties": {
-        "name": "דקוטה הדרומית",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%95%D7%98%D7%94_%D7%94%D7%93%D7%A8%D7%95%D7%9E%D7%99%D7%AA",
-        "population": 886667,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81530,7 +80255,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A9%D7%90%D7%A8%D7%9C%D7%95%D7%98_(%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%99%D7%A0%D7%94_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%AA)",
         "population": 874579,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81547,58 +80272,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%9F_%D7%A4%D7%A8%D7%A0%D7%A1%D7%99%D7%A1%D7%A7%D7%95",
         "population": 873965,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -84.54,
-          39.2
-        ]
-      },
-      "properties": {
-        "name": "מחוז המילטון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%94%D7%9E%D7%99%D7%9C%D7%98%D7%95%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 830639,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -100.5,
-          47.5
-        ]
-      },
-      "properties": {
-        "name": "דקוטה הצפונית",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A7%D7%95%D7%98%D7%94_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%AA",
-        "population": 779094,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.69,
-          43.3
-        ]
-      },
-      "properties": {
-        "name": "מחוז מונרו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%95%D7%A0%D7%A8%D7%95_(%D7%A0%D7%99%D7%95_%D7%99%D7%95%D7%A8%D7%A7)",
-        "population": 759443,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81615,24 +80289,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%90%D7%98%D7%9C",
         "population": 737015,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -150.0,
-          64.0
-        ]
-      },
-      "properties": {
-        "name": "אלסקה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%A1%D7%A7%D7%94",
-        "population": 733391,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81649,24 +80306,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%A0%D7%95%D7%95%D7%A8",
         "population": 715522,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.78,
-          42.43
-        ]
-      },
-      "properties": {
-        "name": "מחוז לייק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%99%D7%99%D7%A7_(%D7%90%D7%99%D7%9C%D7%99%D7%A0%D7%95%D7%99)",
-        "population": 714342,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81683,7 +80323,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%90%D7%A9%D7%95%D7%95%D7%99%D7%9C",
         "population": 689447,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81734,75 +80374,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%A1%D7%98%D7%95%D7%9F",
         "population": 675647,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.81,
-          33.52
-        ]
-      },
-      "properties": {
-        "name": "מחוז ג'פרסון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%92%27%D7%A4%D7%A8%D7%A1%D7%95%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 674721,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -111.67,
-          40.12
-        ]
-      },
-      "properties": {
-        "name": "מחוז יוטה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%99%D7%95%D7%98%D7%94",
-        "population": 659399,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.575278,
-          41.665556
-        ]
-      },
-      "properties": {
-        "name": "המטרופולין של טולידו",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%9F_%D7%A9%D7%9C_%D7%98%D7%95%D7%9C%D7%99%D7%93%D7%95",
-        "population": 646604,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -72.7,
-          44.0
-        ]
-      },
-      "properties": {
-        "name": "ורמונט",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%A8%D7%9E%D7%95%D7%A0%D7%98",
-        "population": 643077,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81819,7 +80391,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9C%D7%90%D7%A1_%D7%95%D7%92%D7%90%D7%A1",
         "population": 641903,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81836,7 +80408,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%93%D7%98%D7%A8%D7%95%D7%99%D7%98",
         "population": 639111,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81887,24 +80459,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9C%D7%95%D7%95%D7%A7%D7%99",
         "population": 577222,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -107.5,
-          43.0
-        ]
-      },
-      "properties": {
-        "name": "ויומינג",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%95%D7%9E%D7%99%D7%A0%D7%92",
-        "population": 576851,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -81963,40 +80518,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.53,
-          41.13
-        ]
-      },
-      "properties": {
-        "name": "מחוז סאמיט",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%90%D7%9E%D7%99%D7%98_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 540428,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -84.29,
-          39.75
-        ]
-      },
-      "properties": {
-        "name": "מחוז מונטגומרי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%95%D7%A0%D7%98%D7%92%D7%95%D7%9E%D7%A8%D7%99_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 537309,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -121.486111111,
           38.575277777
         ]
@@ -82006,7 +80527,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A7%D7%A8%D7%9E%D7%A0%D7%98%D7%95",
         "population": 524943,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82057,7 +80578,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%98%D7%9C%D7%A0%D7%98%D7%94",
         "population": 498715,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82074,23 +80595,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%98%D7%98%D7%9F_%D7%90%D7%99%D7%99%D7%9C%D7%A0%D7%93",
         "population": 495747,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.93,
-          38.51
-        ]
-      },
-      "properties": {
-        "name": "מחוז סונומה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%95%D7%A0%D7%95%D7%9E%D7%94",
-        "population": 488863,
         "poi_category": "city"
       }
     },
@@ -82142,7 +80646,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%90%D7%9C%D7%99_(%D7%A7%D7%A8%D7%95%D7%9C%D7%99%D7%99%D7%A0%D7%94_%D7%94%D7%A6%D7%A4%D7%95%D7%A0%D7%99%D7%AA)",
         "population": 467665,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82193,7 +80697,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%90%D7%9E%D7%99",
         "population": 442241,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82218,23 +80722,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.5,
-          41.68
-        ]
-      },
-      "properties": {
-        "name": "מחוז לוקאס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%95%D7%A7%D7%90%D7%A1_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 431279,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -93.269166666,
           44.981944444
         ]
@@ -82244,24 +80731,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A0%D7%99%D7%90%D7%A4%D7%95%D7%9C%D7%99%D7%A1",
         "population": 429954,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -88.213888888,
-          30.786388888
-        ]
-      },
-      "properties": {
-        "name": "מחוז מוביל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%95%D7%91%D7%99%D7%9C",
-        "population": 414809,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82337,40 +80807,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.58,
-          39.44
-        ]
-      },
-      "properties": {
-        "name": "מחוז באטלר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%90%D7%98%D7%9C%D7%A8_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 390357,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.557777777,
-          34.765833333
-        ]
-      },
-      "properties": {
-        "name": "מחוז מדיסון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%93%D7%99%D7%A1%D7%95%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 388153,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.8125,
           39.710833333
         ]
@@ -82397,7 +80833,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%98%D7%9E%D7%A4%D7%94",
         "population": 384959,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82414,7 +80850,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%95_%D7%90%D7%95%D7%A8%D7%9C%D7%99%D7%A0%D7%A1",
         "population": 383997,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82439,40 +80875,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -82.06,
-          29.21
-        ]
-      },
-      "properties": {
-        "name": "מחוז מריון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%A8%D7%99%D7%95%D7%9F_(%D7%A4%D7%9C%D7%95%D7%A8%D7%99%D7%93%D7%94)",
-        "population": 375908,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.37,
-          40.81
-        ]
-      },
-      "properties": {
-        "name": "מחוז סטארק",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%98%D7%90%D7%A8%D7%A7_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 374853,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -81.694722222,
           41.499166666
         ]
@@ -82482,7 +80884,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9C%D7%99%D7%91%D7%9C%D7%A0%D7%93",
         "population": 372624,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82567,7 +80969,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%A8%D7%9C%D7%A0%D7%93%D7%95",
         "population": 334854,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82660,23 +81062,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -82.15,
-          41.47
-        ]
-      },
-      "properties": {
-        "name": "מחוז לוריין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%95%D7%A8%D7%99%D7%99%D7%9F",
-        "population": 312964,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -74.172222222,
           40.735555555
         ]
@@ -82754,7 +81139,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%99%D7%A0%D7%A1%D7%99%D7%A0%D7%98%D7%99",
         "population": 309317,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82788,7 +81173,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%98%D7%A1%D7%91%D7%95%D7%A8%D7%92",
         "population": 302971,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -82805,7 +81190,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A0%D7%98_%D7%9C%D7%95%D7%90%D7%99%D7%A1",
         "population": 301578,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -83009,23 +81394,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%93%D7%99%D7%A1%D7%95%D7%9F",
         "population": 269840,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.99,
-          44.48
-        ]
-      },
-      "properties": {
-        "name": "מחוז בראון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%A8%D7%90%D7%95%D7%9F",
-        "population": 268740,
         "poi_category": "city"
       }
     },
@@ -83255,23 +81623,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.17,
-          39.43
-        ]
-      },
-      "properties": {
-        "name": "מחוז וורן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%95%D7%95%D7%A8%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 242337,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -111.926111111,
           33.493055555
         ]
@@ -83281,23 +81632,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A7%D7%95%D7%98%D7%A1%D7%93%D7%99%D7%99%D7%9C",
         "population": 241361,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.108333333,
-          38.880277777
-        ]
-      },
-      "properties": {
-        "name": "מחוז ארלינגטון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%A8%D7%9C%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F",
-        "population": 238643,
         "poi_category": "city"
       }
     },
@@ -83332,23 +81666,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%95%D7%99%D7%A1%D7%99",
         "population": 235684,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.74984,
-          30.66097
-        ]
-      },
-      "properties": {
-        "name": "מחוז בולדווין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%95%D7%9C%D7%93%D7%95%D7%95%D7%99%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 231767,
         "poi_category": "city"
       }
     },
@@ -83408,23 +81725,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.77,
-          41.02
-        ]
-      },
-      "properties": {
-        "name": "מחוז מאהונינג",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%90%D7%94%D7%95%D7%A0%D7%99%D7%A0%D7%92",
-        "population": 228614,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -91.178611111,
           30.4475
         ]
@@ -83434,23 +81734,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%90%D7%98%D7%95%D7%9F_%D7%A8%D7%95%D7%96%27",
         "population": 227470,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.534607,
-          33.20654
-        ]
-      },
-      "properties": {
-        "name": "מחוז טסקלוסה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%98%D7%A1%D7%A7%D7%9C%D7%95%D7%A1%D7%94",
-        "population": 227036,
         "poi_category": "city"
       }
     },
@@ -83476,23 +81759,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.74,
-          42.42
-        ]
-      },
-      "properties": {
-        "name": "מחוז ג'קסון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%92%27%D7%A7%D7%A1%D7%95%D7%9F",
-        "population": 223259,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -80.293888888,
           25.860555555
         ]
@@ -83502,23 +81768,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%99%D7%99%D7%9C%D7%99%D7%94",
         "population": 223109,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.667777777,
-          33.265277777
-        ]
-      },
-      "properties": {
-        "name": "מחוז שלבי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A9%D7%9C%D7%91%D7%99_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 223024,
         "poi_category": "city"
       }
     },
@@ -83646,23 +81895,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.01,
-          40.28
-        ]
-      },
-      "properties": {
-        "name": "מחוז דלאוור",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%93%D7%9C%D7%90%D7%95%D7%95%D7%A8_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 214124,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -113.863055555,
           35.681944444
         ]
@@ -83748,23 +81980,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.15,
-          39.05
-        ]
-      },
-      "properties": {
-        "name": "מחוז קלרמון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%9C%D7%A8%D7%9E%D7%95%D7%9F",
-        "population": 208601,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -117.466666666,
           34.1
         ]
@@ -83808,23 +82023,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%95%D7%95%D7%A1%D7%98%D7%A8_(%D7%9E%D7%A1%D7%A6%27%D7%95%D7%A1%D7%98%D7%A1)",
         "population": 206518,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -88.2,
-          40.14
-        ]
-      },
-      "properties": {
-        "name": "מחוז שמפיין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A9%D7%9E%D7%A4%D7%99%D7%99%D7%9F",
-        "population": 205865,
         "poi_category": "city"
       }
     },
@@ -83901,23 +82099,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.76,
-          41.32
-        ]
-      },
-      "properties": {
-        "name": "מחוז טראמבל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%98%D7%A8%D7%90%D7%9E%D7%91%D7%9C",
-        "population": 201977,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -73.9375,
           40.841666666
         ]
@@ -83961,23 +82142,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%9E%D7%99%D7%A0%D7%92%D7%94%D7%90%D7%9D_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
         "population": 200733,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -155.5,
-          19.583333333
-        ]
-      },
-      "properties": {
-        "name": "מחוז הוואי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%94%D7%95%D7%95%D7%90%D7%99",
-        "population": 200629,
         "poi_category": "city"
       }
     },
@@ -84037,23 +82201,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -92.46,
-          47.58
-        ]
-      },
-      "properties": {
-        "name": "מחוז סנט לואיס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A1%D7%A0%D7%98_%D7%9C%D7%95%D7%90%D7%99%D7%A1_(%D7%9E%D7%99%D7%A0%D7%A1%D7%95%D7%98%D7%94)",
-        "population": 200231,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -111.883333333,
           40.75
         ]
@@ -84063,7 +82210,7 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%95%D7%9C%D7%98_%D7%9C%D7%99%D7%99%D7%A7_%D7%A1%D7%99%D7%98%D7%99",
         "population": 199723,
-        "poi_category": "city"
+        "poi_category": "major_city"
       }
     },
     {
@@ -84097,23 +82244,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%A0%D7%98%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F_%D7%91%D7%99%D7%A5%27",
         "population": 198711,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.888313,
-          42.136986
-        ]
-      },
-      "properties": {
-        "name": "מחוז ברום",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%91%D7%A8%D7%95%D7%9D",
-        "population": 198683,
         "poi_category": "city"
       }
     },
@@ -84394,40 +82524,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.9,
-          41.12
-        ]
-      },
-      "properties": {
-        "name": "מחוז מדינה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%93%D7%99%D7%A0%D7%94_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 182470,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -74.26,
-          41.89
-        ]
-      },
-      "properties": {
-        "name": "מחוז אלסטר",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%9C%D7%A1%D7%98%D7%A8",
-        "population": 181851,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -85.267222222,
           35.045555555
         ]
@@ -84437,40 +82533,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A6%27%D7%98%D7%A0%D7%95%D7%92%D7%94",
         "population": 181099,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -115.35,
-          33.04
-        ]
-      },
-      "properties": {
-        "name": "מחוז אימפריאל",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%99%D7%9E%D7%A4%D7%A8%D7%99%D7%90%D7%9C",
-        "population": 179702,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.48,
-          40.09
-        ]
-      },
-      "properties": {
-        "name": "מחוז ליקינג",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%99%D7%A7%D7%99%D7%A0%D7%92",
-        "population": 178519,
         "poi_category": "city"
       }
     },
@@ -84598,23 +82660,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -85.353611111,
-          32.601388888
-        ]
-      },
-      "properties": {
-        "name": "מחוז לי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%99_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 174241,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -117.325833333,
           33.211666666
         ]
@@ -84734,23 +82779,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.89,
-          39.69
-        ]
-      },
-      "properties": {
-        "name": "מחוז גרין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%92%D7%A8%D7%99%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 167966,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -87.3594444,
           36.5297222
         ]
@@ -84760,23 +82788,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%9C%D7%90%D7%A8%D7%A7%D7%A1%D7%95%D7%95%D7%99%D7%9C",
         "population": 166722,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -156.61706,
-          20.86774
-        ]
-      },
-      "properties": {
-        "name": "מחוז מאווי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%90%D7%95%D7%95%D7%99",
-        "population": 164754,
         "poi_category": "city"
       }
     },
@@ -84819,23 +82830,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.2,
-          41.17
-        ]
-      },
-      "properties": {
-        "name": "מחוז פורטאז'",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%96%27_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 161791,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -74.172222222,
           40.916666666
         ]
@@ -84862,23 +82856,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%9B%D7%A1%D7%A0%D7%93%D7%A8%D7%99%D7%94_(%D7%95%D7%99%D7%A8%D7%92%27%D7%99%D7%A0%D7%99%D7%94)",
         "population": 159467,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.63,
-          39.75
-        ]
-      },
-      "properties": {
-        "name": "מחוז פיירפילד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%99%D7%99%D7%A8%D7%A4%D7%99%D7%9C%D7%93_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 158921,
         "poi_category": "city"
       }
     },
@@ -85040,23 +83017,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -68.722466,
-          45.171928
-        ]
-      },
-      "properties": {
-        "name": "מחוז פנובסקוט",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A4%D7%A0%D7%95%D7%91%D7%A1%D7%A7%D7%95%D7%98",
-        "population": 152199,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -95.173888888,
           29.676111111
         ]
@@ -85117,23 +83077,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%A1%D7%A7%D7%95%D7%A0%D7%93%D7%99%D7%93%D7%95",
         "population": 151038,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.6528,
-          34.7836
-        ]
-      },
-      "properties": {
-        "name": "האזור המטרופוליטני פלורנס–מאסל שולס",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%94%D7%90%D7%96%D7%95%D7%A8_%D7%94%D7%9E%D7%98%D7%A8%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%98%D7%A0%D7%99_%D7%A4%D7%9C%D7%95%D7%A8%D7%A0%D7%A1%E2%80%93%D7%9E%D7%90%D7%A1%D7%9C_%D7%A9%D7%95%D7%9C%D7%A1",
-        "population": 150791,
         "poi_category": "city"
       }
     },
@@ -85550,23 +83493,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.32,
-          38.5
-        ]
-      },
-      "properties": {
-        "name": "מחוז נאפה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A0%D7%90%D7%A4%D7%94",
-        "population": 138019,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -91.668611111,
           41.983333333
         ]
@@ -85661,23 +83587,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A7%D7%A0%D7%98_(%D7%95%D7%95%D7%A9%D7%99%D7%A0%D7%92%D7%98%D7%95%D7%9F)",
         "population": 136588,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -123.8,
-          40.8
-        ]
-      },
-      "properties": {
-        "name": "מחוז המבולדט",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%94%D7%95%D7%9E%D7%91%D7%95%D7%9C%D7%93%D7%98_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
-        "population": 136463,
         "poi_category": "city"
       }
     },
@@ -85831,23 +83740,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%93%D7%9C%D7%A0%D7%93_(%D7%98%D7%A7%D7%A1%D7%A1)",
         "population": 132524,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.62,
-          41.36
-        ]
-      },
-      "properties": {
-        "name": "מחוז ווד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%95%D7%95%D7%93_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 132248,
         "poi_category": "city"
       }
     },
@@ -86077,23 +83969,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -82.54,
-          40.78
-        ]
-      },
-      "properties": {
-        "name": "מחוז ריצ'לנד",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A8%D7%99%D7%A6%27%D7%9C%D7%A0%D7%93_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 124936,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -105.0874842,
           39.8027644
         ]
@@ -86137,23 +84012,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%90%D7%9F_%D7%90%D7%A8%D7%91%D7%95%D7%A8",
         "population": 123851,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.857222222,
-          34.451666666
-        ]
-      },
-      "properties": {
-        "name": "מחוז מורגן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%95%D7%A8%D7%92%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 123421,
         "poi_category": "city"
       }
     },
@@ -86400,23 +84258,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.89,
-          40.83
-        ]
-      },
-      "properties": {
-        "name": "מחוז ויין",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%95%D7%99%D7%99%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 116894,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -122.347777777,
           37.935833333
         ]
@@ -86426,23 +84267,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A8%D7%99%D7%A6%27%D7%9E%D7%95%D7%A0%D7%93_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
         "population": 116448,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -85.820833333,
-          33.769444444
-        ]
-      },
-      "properties": {
-        "name": "מחוז קלהון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%9C%D7%94%D7%95%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 116441,
         "poi_category": "city"
       }
     },
@@ -86825,23 +84649,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -123.18,
-          43.29
-        ]
-      },
-      "properties": {
-        "name": "מחוז דאגלס באורגון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%93%D7%90%D7%92%D7%9C%D7%A1",
-        "population": 111201,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -117.2025,
           33.569444444
         ]
@@ -86978,23 +84785,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.23,
-          40.05
-        ]
-      },
-      "properties": {
-        "name": "מחוז מיאמי",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9E%D7%99%D7%90%D7%9E%D7%99_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 108774,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -104.843888888,
           39.596388888
         ]
@@ -87106,23 +84896,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%91%D7%A0%D7%A7",
         "population": 107337,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -85.293333333,
-          31.152222222
-        ]
-      },
-      "properties": {
-        "name": "מחוז יוסטון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%99%D7%95%D7%A1%D7%98%D7%95%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 107202,
         "poi_category": "city"
       }
     },
@@ -87250,23 +85023,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -86.984166666,
-          34.811111111
-        ]
-      },
-      "properties": {
-        "name": "מחוז ליימסטון",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%9C%D7%99%D7%99%D7%9E%D7%A1%D7%98%D7%95%D7%9F_(%D7%90%D7%9C%D7%91%D7%9E%D7%94)",
-        "population": 103570,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -86.250277777,
           41.676388888
         ]
@@ -87276,23 +85032,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%90%D7%95%D7%AA%27_%D7%91%D7%A0%D7%93",
         "population": 103453,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -86.033333333,
-          34.05
-        ]
-      },
-      "properties": {
-        "name": "מחוז אטווה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%98%D7%95%D7%95%D7%94",
-        "population": 103436,
         "poi_category": "city"
       }
     },
@@ -87327,40 +85066,6 @@
         "ISO_A2": "US",
         "wiki_url": "https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A8%D7%95%D7%95%D7%A7_(%D7%A7%D7%9C%D7%99%D7%A4%D7%95%D7%A8%D7%A0%D7%99%D7%94)",
         "population": 102773,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -84.116666666,
-          40.766666666
-        ]
-      },
-      "properties": {
-        "name": "מחוז אלן",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%90%D7%9C%D7%9F_(%D7%90%D7%95%D7%94%D7%99%D7%95)",
-        "population": 102206,
-        "poi_category": "city"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -80.78,
-          40.77
-        ]
-      },
-      "properties": {
-        "name": "מחוז קולומביאנה",
-        "ISO_A2": "US",
-        "wiki_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%97%D7%95%D7%96_%D7%A7%D7%95%D7%9C%D7%95%D7%9E%D7%91%D7%99%D7%90%D7%A0%D7%94",
-        "population": 101877,
         "poi_category": "city"
       }
     },
