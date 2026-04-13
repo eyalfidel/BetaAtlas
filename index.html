@@ -12,41 +12,46 @@
         body { margin: 0; padding: 0; overflow: hidden; background-color: #0b0b19; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; touch-action: none; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
         
-        /* הבר העליון החדש */
+        /* הבר העליון הממורכז */
         #top-bar {
             position: absolute; top: 15px; left: 15px; right: 15px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
-            padding: 10px 20px; border-radius: 8px; z-index: 2;
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 20px; border-radius: 8px; z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center; gap: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .top-bar-right, .top-bar-left { display: flex; align-items: center; gap: 15px; }
+        .top-bar-right { display: flex; align-items: center; flex: 1; }
+        .top-bar-center { display: flex; justify-content: center; flex: 2; position: relative; }
+        .top-bar-left { display: flex; align-items: center; justify-content: flex-end; flex: 1; gap: 5px; }
+        
         #top-bar h1 { margin: 0; font-size: 22px; font-weight: 800; color: #111; white-space: nowrap; }
         
-        #search-container { position: relative; }
-        #search-wrapper { display: flex; align-items: center; background: #fff; border: 1px solid #ccc; border-radius: 6px; }
-        #search-input { border: none; border-radius: 0 6px 6px 0; padding: 8px 12px; width: 220px; font-size: 15px; outline: none; background: transparent; }
-        #search-filter-btn { background: none; border: none; border-right: 1px solid #eee; cursor: pointer; padding: 0 10px; font-size: 16px; border-radius: 6px 0 0 6px; }
+        /* שורת חיפוש */
+        #search-container { position: relative; width: 100%; max-width: 450px; }
+        #search-wrapper { display: flex; align-items: center; background: #fff; border: 1px solid #ccc; border-radius: 6px; width: 100%; }
+        #search-input { border: none; border-radius: 0 6px 6px 0; padding: 10px 15px; width: 100%; font-size: 15px; outline: none; background: transparent; }
+        #search-filter-btn { background: none; border: none; border-right: 1px solid #eee; cursor: pointer; padding: 0 15px; font-size: 18px; border-radius: 6px 0 0 6px; transition: background 0.2s; }
         #search-filter-btn:hover { background: #f0f7ff; }
         
-        #search-settings { position: absolute; top: calc(100% + 5px); right: 0; background: #fff; padding: 12px; border: 1px solid #ddd; border-radius: 8px; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 220px; z-index: 15; font-size: 14px; color: #333; }
-        #search-settings label { display: block; margin-bottom: 8px; cursor: pointer; }
+        #search-settings { position: absolute; top: calc(100% + 5px); right: 0; background: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 8px; display: none; box-shadow: 0 4px 15px rgba(0,0,0,0.15); width: 240px; z-index: 1001; font-size: 14px; color: #333; }
+        #search-settings label { display: block; margin-bottom: 10px; cursor: pointer; }
         #search-settings label:last-child { margin-bottom: 0; }
         #search-settings input[type="radio"], #search-settings input[type="checkbox"] { margin-left: 8px; accent-color: #3b82f6; }
-        #local-search-container { display: none; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; font-weight: bold; color: #1d4ed8; }
+        #local-search-container { display: none; margin-top: 12px; border-top: 1px solid #eee; padding-top: 12px; font-weight: bold; color: #1d4ed8; }
 
-        #suggestions { position: absolute; top: calc(100% + 2px); right: 0; width: 100%; background: #fff; border: 1px solid #ddd; border-radius: 6px; max-height: 250px; overflow-y: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.15); display: none; z-index: 10; }
-        .suggestion-item { padding: 10px 12px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 14px; text-align: right; }
+        #suggestions { position: absolute; top: calc(100% + 2px); right: 0; width: 100%; background: #fff; border: 1px solid #ddd; border-radius: 6px; max-height: 300px; overflow-y: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: none; z-index: 1001; }
+        .suggestion-item { padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 14px; text-align: right; transition: background 0.2s; }
         .suggestion-item:last-child { border-bottom: none; }
         .suggestion-item:hover { background-color: #f0f7ff; }
-        .suggestion-type { font-size: 11px; color: #888; float: left; margin-top: 2px; background: #eee; padding: 2px 6px; border-radius: 10px; }
+        .suggestion-type { font-size: 11px; color: #888; float: left; margin-top: 2px; background: #f1f5f9; padding: 2px 8px; border-radius: 12px; }
 
-        button.icon-btn { background: none; border: none; font-size: 22px; cursor: pointer; transition: transform 0.2s; padding: 0; }
-        button.icon-btn:hover { transform: scale(1.15); }
+        button.icon-btn { background: none; border: none; font-size: 22px; cursor: pointer; transition: transform 0.2s; padding: 5px; border-radius: 5px; }
+        button.icon-btn:hover { transform: scale(1.15); background: #f8f9fa; }
         
+        /* חלונית מידע (מדינות) */
         #info-panel {
-            position: absolute; top: 85px; right: 15px;
-            width: 360px; min-width: 300px; max-width: 600px; max-height: calc(100vh - 110px);
+            position: absolute; top: 90px; right: 15px;
+            width: 360px; min-width: 300px; max-width: 600px; max-height: calc(100vh - 120px);
             background: rgba(255, 255, 255, 0.95);
             padding: 25px; border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -77,19 +82,21 @@
         .toggle-more-btn:hover { text-decoration: underline; }
 
         #country-wiki { font-size: 14px; color: #333; line-height: 1.6; text-align: justify; background: #f8f9fa; padding: 12px; border-radius: 8px; border-right: 4px solid #3b82f6; resize: vertical; overflow: auto; min-height: 60px; max-height: 300px; }
-        .sources-links { margin-top: 15px; border-top: 1px solid #eee; padding-top: 12px; display: flex; gap: 15px; font-size: 13px; }
-        .sources-links a { color: #3b82f6; text-decoration: none; font-weight: bold; }
         
-        /* המקרא */
+        /* המקרא המתקפל */
         #poi-legend {
             position: absolute; bottom: 20px; left: 15px;
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
             padding: 15px; border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             display: none; z-index: 5; border: 1px solid #eee;
-            user-select: none; transition: all 0.3s ease;
+            user-select: none; min-width: 180px;
         }
-        #poi-legend h4 { margin: 0 0 12px 0; font-size: 15px; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        #legend-header { margin: 0 0 12px 0; font-size: 15px; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+        #legend-header:hover { color: #3b82f6; }
+        
+        #legend-content { display: block; overflow: hidden; transition: max-height 0.3s ease; }
+        #legend-content.collapsed { display: none; }
         
         .legend-item { display: flex; align-items: center; margin-bottom: 8px; font-size: 14px; color: #444; cursor: pointer; padding: 4px 6px; border-radius: 6px; transition: background 0.2s, opacity 0.2s; }
         .legend-item:hover { background-color: #f0f7ff; }
@@ -103,16 +110,16 @@
         #toggle-advanced-btn { background: none; border: none; border-top: 1px solid #eee; margin-top: 5px; padding-top: 10px; width: 100%; text-align: center; color: #6b7280; font-size: 12px; cursor: pointer; font-family: inherit; transition: color 0.2s; }
         #toggle-advanced-btn:hover { color: #3b82f6; }
 
-        /* חלוניות ומודלים */
-        #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
+        /* מודלים והודעות */
+        #toast, #compare-banner { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: white; padding: 12px 24px; border-radius: 25px; font-size: 15px; display: none; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-align: center; }
         #toast { background: #333; }
         #compare-banner { background: #1d4ed8; border: 2px solid #60a5fa; cursor: pointer; }
         #compare-banner:hover { background: #1e3a8a; }
 
         #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
 
-        #about-backdrop, #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 150; display: none; backdrop-filter: blur(2px); }
-        #about-modal, #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 200; display: none; }
+        #about-backdrop, #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; backdrop-filter: blur(2px); }
+        #about-modal, #compare-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 2001; display: none; }
         
         .compare-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; padding-bottom: 15px; margin-bottom: 20px; }
         .compare-header h2 { margin: 0; font-size: 22px; color: #111; }
@@ -128,25 +135,36 @@
         .about-content { font-size: 15px; line-height: 1.6; color: #333; }
         .about-content ul { padding-right: 20px; margin-top: 5px; }
 
-        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw;}
-        .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; }
+        /* חלונית פופאפ נגררת */
+        .mapboxgl-popup { z-index: 50; }
+        .mapboxgl-popup-content { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); width: 340px; max-width: 90vw; position: relative; transition: transform 0s; }
+        .mapboxgl-popup-close-button { font-size: 20px; color: #666; padding: 4px; right: 4px; top: 4px; z-index: 2;}
         .mapboxgl-popup-close-button:hover { background-color: #f0f0f0; border-radius: 50%; }
+        
+        .popup-drag-handle { text-align: center; cursor: grab; color: #aaa; font-size: 20px; padding-bottom: 5px; margin-top: -15px; user-select: none; font-weight: bold;}
+        .popup-drag-handle:active { cursor: grabbing; color: #3b82f6;}
+        
         .poi-popup h4 { margin: 0 0 8px 0; color: #111; font-size: 18px; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; display: inline-block;}
-        .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 200px; overflow-y: auto; text-align: justify; }
-        .poi-btn { color: #1d4ed8; text-decoration: none; font-size: 13px; font-weight: bold; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; cursor: pointer; display:inline-block;}
+        .poi-popup p { font-size: 14px; line-height: 1.6; color: #333; margin: 10px 0; max-height: 150px; overflow-y: auto; text-align: justify; }
+        .poi-btn { color: #1d4ed8; text-decoration: none; font-size: 13px; font-weight: bold; background: #eff6ff; padding: 6px 12px; border-radius: 6px; border: 1px solid #bfdbfe; transition: background 0.2s; cursor: pointer; display:inline-block; font-family: inherit;}
         .poi-btn:hover { background: #dbeafe; }
 
+        /* התאמות מובייל */
         @media (max-width: 600px) {
-            #top-bar { padding: 8px 10px; top: 10px; left: 10px; right: 10px; }
-            #top-bar h1 { font-size: 18px; }
-            #search-input { width: 130px; font-size: 14px; }
-            #info-panel { top: auto; bottom: 0; right: 0; left: 0; width: auto; max-width: none; height: 50vh; border-radius: 20px 20px 0 0; padding: 15px 20px; resize: none; }
+            #top-bar { flex-wrap: wrap; padding: 10px; top: 10px; left: 10px; right: 10px; gap: 10px; }
+            .top-bar-right, .top-bar-left { flex: none; width: auto; }
+            .top-bar-center { order: 3; flex-basis: 100%; width: 100%; }
+            #search-container { max-width: none; }
+            #search-settings { width: 100%; box-sizing: border-box; }
+            
+            #info-panel { top: auto; bottom: 0; right: 0; left: 0; width: auto; max-width: none; height: 50vh; border-radius: 20px 20px 0 0; padding: 15px 20px; resize: none; z-index: 10;}
             #info-panel.minimized { height: 60px !important; overflow: hidden; padding-bottom: 0; }
             #drag-handle-wrapper { display: flex; }
+            
             .compare-table th, .compare-table td { padding: 8px 5px; font-size: 13px; }
             .compare-flag { width: 40px; }
             .mapboxgl-popup-content { width: 280px; }
-            #poi-legend { bottom: auto; top: 70px; left: 10px; padding: 10px; }
+            #poi-legend { bottom: auto; top: 120px; left: 10px; padding: 10px; }
         }
     </style>
 </head>
@@ -155,9 +173,11 @@
     <div id="top-bar">
         <div class="top-bar-right">
             <h1>Atlas (Beta)</h1>
+        </div>
+        <div class="top-bar-center">
             <div id="search-container">
                 <div id="search-wrapper">
-                    <input type="text" id="search-input" placeholder="חיפוש מכל סוג..." autocomplete="off">
+                    <input type="text" id="search-input" placeholder="חפש מדינה, עיר, אתר או מפל..." autocomplete="off">
                     <button id="search-filter-btn" title="סנן תוצאות חיפוש">⚙️</button>
                 </div>
                 <div id="search-settings">
@@ -182,16 +202,18 @@
     </div>
     
     <div id="poi-legend">
-        <h4>מקרא נקודות עניין</h4>
-        <div id="legend-items-container">
-            <label class="legend-item" data-val="capital"><input type="checkbox" value="capital" checked> <span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</label>
-            <label class="legend-item" data-val="major_city"><input type="checkbox" value="major_city" checked> <span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</label>
-            <label class="legend-item" data-val="city"><input type="checkbox" value="city" checked> <span class="legend-color" style="background: #a78bfa;"></span> ערים קטנות</label>
-            <label class="legend-item" data-val="monument"><input type="checkbox" value="monument" checked> <span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</label>
-            <label class="legend-item" data-val="history"><input type="checkbox" value="history" checked> <span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</label>
-            <label class="legend-item" data-val="nature"><input type="checkbox" value="nature" checked> <span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</label>
+        <div id="legend-header">מקרא <span id="legend-arrow">▲</span></div>
+        <div id="legend-content">
+            <div id="legend-items-container">
+                <label class="legend-item" data-val="capital"><input type="checkbox" value="capital" checked> <span class="legend-color" style="background: #fbbf24;"></span> עיר בירה</label>
+                <label class="legend-item" data-val="major_city"><input type="checkbox" value="major_city" checked> <span class="legend-color" style="background: #8b5cf6;"></span> ערים מרכזיות</label>
+                <label class="legend-item" data-val="city"><input type="checkbox" value="city" checked> <span class="legend-color" style="background: #a78bfa;"></span> ערים קטנות</label>
+                <label class="legend-item" data-val="monument"><input type="checkbox" value="monument" checked> <span class="legend-color" style="background: #ec4899;"></span> מונומנטים ואתרים</label>
+                <label class="legend-item" data-val="history"><input type="checkbox" value="history" checked> <span class="legend-color" style="background: #d97706;"></span> היסטוריה וארכאולוגיה</label>
+                <label class="legend-item" data-val="nature"><input type="checkbox" value="nature" checked> <span class="legend-color" style="background: #22c55e;"></span> טבע ונוף</label>
+            </div>
+            <button id="toggle-advanced-btn">⚙️ סינון מתקדם</button>
         </div>
-        <button id="toggle-advanced-btn">⚙️ סינון מתקדם</button>
     </div>
 
     <div id="info-panel">
@@ -247,12 +269,23 @@
         </div>
         <div class="about-content">
             <p><strong>פיתוח, ארכיטקטורת נתונים ועיצוב:</strong><br>איל פידל (Eyal Fidel)</p>
-            <p><strong>מקורות מידע ותשתית:</strong></p>
-            <ul>
-                <li><strong>ויקיפדיה (Wikipedia):</strong> תקצירי ערכים ומידע כללי.</li>
-                <li><strong>ויקינתונים (Wikidata):</strong> קואורדינטות, אוכלוסיות וסיווג גיאוגרפי.</li>
-                <li><strong>Natural Earth (NE):</strong> פוליגונים וגבולות מדינות וימים.</li>
-                <li><strong>Mapbox GL JS:</strong> מנוע הרינדור ותשתית המפה התלת-ממדית.</li>
+            
+            <h4 style="color: #1d4ed8; margin-bottom: 5px;">מה אפשר לעשות באתר?</h4>
+            <ul style="margin-top: 0;">
+                <li>לחקור ולגלות מדינות, איים וימים ולקבל עליהם מידע עשיר ונתונים דמוגרפיים.</li>
+                <li>למצוא ולסייר בין אלפי ערים, אתרי טבע, מונומנטים ואתרי מורשת בעולם.</li>
+                <li>להשוות נתונים סטטיסטיים בין שתי מדינות (בעזרת כפתור ⚖️).</li>
+                <li>לסנן את התצוגה במפה בעזרת מערכת המקרא החכמה והחיפוש המתקדם.</li>
+                <li>להגריל יעד אקראי (🎲) מתוך רשימת הסינונים ולגלות מקומות חדשים.</li>
+                <li>לשתף חברים מדויק ישירות לכל עיר, אתר או מדינה (🔗).</li>
+            </ul>
+
+            <h4 style="color: #1d4ed8; margin-bottom: 5px; margin-top: 20px;">מקורות מידע ותשתית:</h4>
+            <ul style="margin-top: 0;">
+                <li><strong>ויקיפדיה העברית:</strong> תקצירי ערכים ומידע כללי.</li>
+                <li><strong>ויקינתונים (Wikidata):</strong> קואורדינטות, אוכלוסיות, וסיווג גיאוגרפי של הערים והאתרים.</li>
+                <li><strong>Natural Earth (NE):</strong> פוליגונים תלת-ממדיים וגבולות.</li>
+                <li><strong>Mapbox GL JS:</strong> מנוע הרינדור ותשתית המפה.</li>
             </ul>
         </div>
     </div>
@@ -303,6 +336,25 @@
 
         const formatRank = (rank) => rank ? `<span class="rank-text"> (מקום ${rank})</span>` : "";
 
+        // קיפול מקרא במובייל כברירת מחדל
+        if (isMobile) {
+            document.getElementById('legend-content').classList.add('collapsed');
+            document.getElementById('legend-arrow').innerText = '▼';
+        }
+
+        // לוגיקת פתיחה/סגירה של המקרא
+        document.getElementById('legend-header').onclick = () => {
+            const content = document.getElementById('legend-content');
+            const arrow = document.getElementById('legend-arrow');
+            if(content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                arrow.innerText = '▲';
+            } else {
+                content.classList.add('collapsed');
+                arrow.innerText = '▼';
+            }
+        };
+
         window.sharePOI = function(iso, name) {
             const url = window.location.origin + window.location.pathname + `#POI-${iso}-${encodeURIComponent(name)}`;
             if (navigator.share) {
@@ -337,6 +389,43 @@
             }
         }
 
+        // הפעלת פונקציית גרירה (Drag) לתוכן של הפופאפ
+        function enablePopupDrag(popupObj) {
+            const popupEl = popupObj.getElement();
+            if(!popupEl) return;
+            const content = popupEl.querySelector('.mapboxgl-popup-content');
+            const handle = popupEl.querySelector('.popup-drag-handle');
+            if(!content || !handle) return;
+
+            let isDown = false, startX, startY, currentTransX = 0, currentTransY = 0;
+            
+            const startDrag = (clientX, clientY) => {
+                isDown = true;
+                startX = clientX - currentTransX;
+                startY = clientY - currentTransY;
+                map.dragPan.disable(); // מונע הזזה של המפה תוך כדי
+            };
+            const doDrag = (clientX, clientY) => {
+                if(!isDown) return;
+                currentTransX = clientX - startX;
+                currentTransY = clientY - startY;
+                content.style.transform = `translate(${currentTransX}px, ${currentTransY}px)`;
+            };
+            const endDrag = () => {
+                if(isDown) { isDown = false; map.dragPan.enable(); }
+            };
+
+            // עכבר (מחשב)
+            handle.addEventListener('mousedown', e => startDrag(e.clientX, e.clientY));
+            window.addEventListener('mousemove', e => doDrag(e.clientX, e.clientY));
+            window.addEventListener('mouseup', endDrag);
+            
+            // מגע (מובייל)
+            handle.addEventListener('touchstart', e => startDrag(e.touches[0].clientX, e.touches[0].clientY), {passive: false});
+            window.addEventListener('touchmove', e => doDrag(e.touches[0].clientX, e.touches[0].clientY), {passive: false});
+            window.addEventListener('touchend', endDrag);
+        }
+
         function openPOIPopup(feature, coordinates) {
             if (activePopup) activePopup.remove();
             activePOIFeature = feature; 
@@ -352,16 +441,16 @@
                 .setLngLat(coordinates)
                 .setHTML(`
                     <div class="poi-popup" dir="rtl">
+                        <div class="popup-drag-handle" title="הזז חלונית">≡</div>
                         <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
                         <p><i>טוען נתונים מוויקיפדיה... ⏳</i></p>
                     </div>
                 `)
                 .addTo(map);
 
-            // במובייל: מזער את חלונית המדינה כדי שהפופאפ לא יוסתר!
-            if (isMobile) {
-                document.getElementById('info-panel').classList.add('minimized');
-            }
+            enablePopupDrag(activePopup);
+
+            if (isMobile) document.getElementById('info-panel').classList.add('minimized');
 
             activePopup.on('close', () => { 
                 activePOIFeature = null; 
@@ -375,6 +464,7 @@
                     
                     activePopup.setHTML(`
                         <div class="poi-popup" dir="rtl">
+                            <div class="popup-drag-handle" title="הזז חלונית">≡</div>
                             <h4 style="border-bottom-color: ${borderColor};">${props.name}</h4>
                             ${extraInfo}
                             <p>${summary}</p>
@@ -384,6 +474,7 @@
                             </div>
                         </div>
                     `);
+                    enablePopupDrag(activePopup);
                 }
             });
         }
@@ -481,10 +572,10 @@
             map.setFilter('small-cities-layer', smallFilter);
             map.setFilter('small-cities-label', smallFilter);
 
-            // לוגיקת הזום החכמה לערים קטנות: אם בודדנו אותן, הן יופיעו בכל זום!
+            // לוגיקת זום חכמה: ערים קטנות תמיד יופיעו אם בודדנו אותן במקרא
             if (map.getLayer('small-cities-layer')) {
                 let minZ = 5.5; 
-                if (isolatedCategory === 'city' || (isAdvancedLegend && activeCats.includes('city'))) {
+                if (isolatedCategory === 'city' || (isAdvancedLegend && activeCats.includes('city') && activeCats.length === 1)) {
                     minZ = 0; 
                 }
                 map.setLayerZoomRange('small-cities-layer', minZ, 24);
@@ -986,6 +1077,11 @@
             const iso2 = targetData.iso;
             window.location.hash = `${iso1}-${iso2}`;
             
+            // תוקן באג השוואת הגבולות - מסמן את שתי המדינות במקביל!
+            map.setFilter('countries-highlight', ['in', 'ISO_A2', iso1, iso2]);
+            map.setFilter('seas-highlight', ['in', 'ISO_A2', iso1, iso2]);
+            
+            // מציג אתרים רק של המדינה החדשה שנבחרה
             updatePOIFilters(iso2);
 
             const s1 = baseCompareFeature.stats || {};
@@ -1020,6 +1116,11 @@
             document.getElementById('compare-backdrop').style.display = 'none';
             document.getElementById('compare-modal').style.display = 'none';
             if (currentLoadedISO) window.location.hash = currentLoadedISO;
+            // מנקה את ההיילייט הכפול ומחזיר לבודד
+            if (currentLoadedISO) {
+                map.setFilter('countries-highlight', ['==', 'ISO_A2', currentLoadedISO]);
+                map.setFilter('seas-highlight', ['==', 'ISO_A2', currentLoadedISO]);
+            }
         };
         document.getElementById('close-compare-modal').onclick = closeCompare;
         document.getElementById('compare-backdrop').onclick = closeCompare;
@@ -1033,7 +1134,7 @@
             } else {
                 navigator.clipboard.writeText(url);
                 const t = document.getElementById('toast'); 
-                t.innerText = 'הקישור הועתק ללוח!';
+                t.innerText = 'הקישור למדינה הועתק ללוח!';
                 t.style.display = 'block'; t.style.opacity = '1';
                 setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
             }
@@ -1046,13 +1147,12 @@
             } else {
                 navigator.clipboard.writeText(url);
                 const t = document.getElementById('toast'); 
-                t.innerText = 'הקישור הועתק ללוח!';
+                t.innerText = 'קישור ההשוואה הועתק ללוח!';
                 t.style.display = 'block'; t.style.opacity = '1';
                 setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.style.display = 'none', 300); }, 2000);
             }
         };
 
-        // לוגיקת כפתור אודות
         document.getElementById('about-btn').onclick = () => {
             document.getElementById('about-backdrop').style.display = 'block';
             document.getElementById('about-modal').style.display = 'block';
@@ -1068,7 +1168,6 @@
         const handle = document.getElementById('drag-handle-wrapper');
         let isDragging = false;
         
-        // לחיצה על הפס האפור במובייל ממזערת/מרחיבה את החלונית
         handle.addEventListener('click', () => {
             if (isMobile) {
                 panel.classList.toggle('minimized');
