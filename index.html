@@ -118,7 +118,7 @@
 
         #close-panel { font-size: 18px; color: #888; margin-right: 10px; cursor: pointer; background: none; border: none; padding: 0; }
 
-        #about-backdrop, #compare-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; backdrop-filter: blur(2px); }
+        #about-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: none; backdrop-filter: blur(2px); }
         #about-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 700px; max-height: 85vh; overflow-y: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); z-index: 2001; display: none; }
         
         /* חלונית השוואה נגררת עם אפשרות לשינוי גודל */
@@ -268,7 +268,7 @@
         <div class="info-row" style="margin-top: 15px;"><span class="info-label">תקציר:</span><div id="country-wiki"></div></div>
         
         <div class="bottom-actions">
-            <a id="link-wiki" target="_blank" class="primary-btn">🌐 ערך בוויקיפדיה</a>
+            <a id="link-wiki" target="_blank" class="primary-btn">🌐 ויקיפדיה</a>
             <button id="compare-init-btn" class="primary-btn">⚖️ השוואת מדינות</button>
             <button id="share-btn" class="primary-btn icon-only-btn" title="שיתוף מדינה">🔗</button>
         </div>
@@ -437,6 +437,7 @@
         // אנימציית פעימה והדגשת אתר נבחר
         let pulseActive = false;
         let pulseFrame = 0;
+        let pulseAnimReq;
         
         function animatePulse() {
             if (!pulseActive) return;
@@ -449,14 +450,17 @@
                 map.setPaintProperty('active-poi-pulse', 'circle-opacity', opacity * 0.6);
                 map.setPaintProperty('active-poi-pulse', 'circle-stroke-opacity', opacity);
             }
-            requestAnimationFrame(animatePulse);
+            pulseAnimReq = requestAnimationFrame(animatePulse);
         }
 
         function updatePulse(coordinates) {
             pulseActive = false;
+            cancelAnimationFrame(pulseAnimReq);
+            
+            const feature = { type: 'Feature', geometry: { type: 'Point', coordinates: coordinates } };
+            
             if(!map.getSource('active-poi-source')) {
-                map.addSource('active-poi-source', { type: 'geojson', data: { type: 'Point', coordinates: coordinates } });
-                // ציור עיגול אנימטיבי שמרנדר מעל כל האייקונים
+                map.addSource('active-poi-source', { type: 'geojson', data: feature });
                 map.addLayer({
                     'id': 'active-poi-pulse',
                     'type': 'circle',
@@ -470,14 +474,15 @@
                     }
                 });
             } else {
-                map.getSource('active-poi-source').setData({ type: 'Point', coordinates: coordinates });
+                map.getSource('active-poi-source').setData(feature);
             }
             pulseActive = true;
-            animatePulse();
+            if(pulseFrame === 0) animatePulse();
         }
         
         function clearPulse() {
             pulseActive = false;
+            cancelAnimationFrame(pulseAnimReq);
             if(map.getSource('active-poi-source')) {
                 map.getSource('active-poi-source').setData({ type: 'FeatureCollection', features: [] });
             }
@@ -541,7 +546,7 @@
                             ${extraInfo}
                             <p>${summary}</p>
                             <div class="bottom-actions" style="margin-top: 10px; border-top: none; padding-top: 0;">
-                                ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank" class="primary-btn">🌐 ערך בוויקיפדיה</a>` : ''}
+                                ${props.wiki_url ? `<a href="${props.wiki_url}" target="_blank" class="primary-btn">🌐 ויקיפדיה</a>` : ''}
                                 <button onclick="sharePOI('${props.ISO_A2}', '${safeName}')" class="primary-btn icon-only-btn" title="שיתוף אתר">🔗</button>
                             </div>
                         </div>
@@ -668,7 +673,7 @@
             fetch('json/countries_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/seas_points.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/stats.json').then(res => res.ok ? res.json() : []),
-            fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {}).catch(() => ({})), // הגנה חזקה מקריסות
+            fetch('json/wiki_summaries.json').then(res => res.ok ? res.json() : {}).catch(() => ({})), 
             fetch('json/capitals.geojson').then(res => res.ok ? res.json() : {features:[]}),
             fetch('json/places.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]})),
             fetch('json/cities.geojson').then(res => res.ok ? res.json() : {features:[]}).catch(() => ({features:[]}))
@@ -1001,8 +1006,8 @@
             const areaRankHtml = (!data.isSea && !data.isDisputed && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
             document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
 
-            const safeIso = iso.toUpperCase();
-            document.getElementById('country-wiki').innerText = wikiSummaries[safeIso] || 'לא נמצא תקציר זמין כרגע.';
+            // משיכה תקינה מהקובץ
+            document.getElementById('country-wiki').innerText = wikiSummaries[iso.toUpperCase()] || 'לא נמצא תקציר זמין כרגע.';
             
             let wikiSearchTerm = p.Wiki_HE || p.WIKI_HE || data.name;
             if (iso === 'PS') wikiSearchTerm = 'הרשות הפלסטינית';
@@ -1159,10 +1164,10 @@
             const iso2 = targetData.iso;
             window.location.hash = `${iso1}-${iso2}`;
             
-            map.setFilter('countries-highlight', ['in', 'ISO_A2', iso1, iso2]);
-            map.setFilter('seas-highlight', ['in', 'ISO_A2', iso1, iso2]);
-            
-            updatePOIFilters(iso2);
+            // תוקן פוקוס למדינה המקורית (לא עוברים למדינה השנייה)
+            map.setFilter('countries-highlight', ['==', 'ISO_A2', iso1]);
+            map.setFilter('seas-highlight', ['==', 'ISO_A2', iso1]);
+            updatePOIFilters(iso1);
 
             const s1 = baseCompareFeature.stats || {};
             const s2 = targetData.stats || {};
