@@ -57,7 +57,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             display: none; z-index: 10; overflow-y: auto; overflow-x: hidden;
             direction: rtl; transition: height 0.3s ease; resize: both;
-            display: flex; flex-direction: column; /* הוסף כדי לנהל את תוכן החלונית טוב יותר */
+            display: flex; flex-direction: column;
         }
 
         #drag-handle-wrapper { width: 100%; padding: 15px 0; margin-top: -15px; display: none; justify-content: center; cursor: pointer; touch-action: none; flex-direction: column; align-items: center;}
@@ -68,7 +68,7 @@
         #info-panel h2 { margin: 0; color: #1a1a1a; display: flex; align-items: center; gap: 10px; font-size: 20px; }
         #country-flag { height: 26px; display: none; border-radius: 4px; border: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         
-        .info-content-wrapper { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; } /* מנהל את התוכן הנגלל בחלונית */
+        .info-content-wrapper { flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; }
 
         .info-row { margin-bottom: 12px; font-size: 15px; line-height: 1.4; flex-shrink: 0; }
         .info-label { font-weight: bold; color: #555; display: block; font-size: 13px; margin-bottom: 2px; }
@@ -130,7 +130,7 @@
         #compare-modal { 
             position: absolute; 
             top: 15vh; 
-            right: 15vh; /* במקום למרכז עם left: 50%, מצמידים לימין כדי שהresize שמאלה יעבוד טוב ב-RTL */
+            right: 15vh; 
             width: 600px; 
             max-height: 80vh; 
             overflow-y: auto; 
@@ -207,7 +207,8 @@
         }
     </style>
 </head>
-<body style="display: none;"> <div id="map"></div>
+<body>
+    <div id="map"></div>
     <div id="top-bar">
         <div class="top-bar-right">
             <h1>Atlas (Beta)</h1>
@@ -925,7 +926,7 @@
 
             window.location.hash = iso;
             const panel = document.getElementById('info-panel');
-            panel.style.display = 'flex'; // שונה ל-flex כדי לתמוך בפריסה החדשה
+            panel.style.display = 'flex'; 
             
             if (isMobile) {
                 panel.style.height = "50vh";
@@ -1004,6 +1005,7 @@
             const areaRankHtml = (!data.isSea && !data.isDisputed && stats && stats.Area_Rank) ? formatRank(stats.Area_Rank) : "";
             document.getElementById('country-area').innerHTML = areaText + areaRankHtml;
 
+            // שימוש בקובץ המקומי שעודכן, חיפוש אותיות גדולות בלבד למניעת שגיאות
             document.getElementById('country-wiki').innerText = wikiSummaries[iso.toUpperCase()] || 'לא נמצא תקציר זמין כרגע.';
             
             let wikiSearchTerm = p.Wiki_HE || p.WIKI_HE || data.name;
@@ -1139,7 +1141,7 @@
             document.getElementById('compare-banner').style.display = 'block';
             if (activePopup) activePopup.remove();
             
-            // תוקן: המפה לא מתאפסת אלא נשארת ממוקדת על המדינה המקורית ומציגה את האתרים שלה
+            // תצוגת האתרים נשארת של המדינה הראשונה שנבחרה
             updatePOIFilters(currentLoadedISO);
         };
 
@@ -1163,7 +1165,7 @@
             const iso2 = targetData.iso;
             window.location.hash = `${iso1}-${iso2}`;
             
-            // המפה מסמנת את שתי המדינות, אבל משאירה את האתרים של מדינה א' בלבד
+            // משאיר את הפילטרים והאתרים על מדינה א' 
             map.setFilter('countries-highlight', ['in', 'ISO_A2', iso1, iso2]);
             map.setFilter('seas-highlight', ['in', 'ISO_A2', iso1, iso2]);
             updatePOIFilters(iso1);
